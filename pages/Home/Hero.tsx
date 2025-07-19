@@ -7,7 +7,7 @@ import CountUp from "@/components/Animations/count-up";
 // Temporary hero image – place a suitable image at public/hero.jpg or replace the src with your own URL
 const HERO_IMAGE = "/hero.jpg";
 
-export const Hero = () => {
+const Hero = () => {
   // Statistics data (value, suffix, description)
   const stats: Array<{
     value: number;
@@ -89,3 +89,5 @@ export const Hero = () => {
     </section>
   );
 };
+
+export default Hero;

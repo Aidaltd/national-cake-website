@@ -38,7 +38,7 @@ const TESTIMONIALS: Testimonial[] = [
   },
 ];
 
-export const Testimonials = () => {
+const Testimonials = () => {
   const [idx, setIdx] = useState(0);
   const quoteRef = useRef<HTMLDivElement>(null);
 
@@ -131,3 +131,6 @@ export const Testimonials = () => {
     </section>
   );
 };
+
+
+export default Testimonials;

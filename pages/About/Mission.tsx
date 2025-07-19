@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { Eye, Target, Download } from "lucide-react";
 
-export const Mission = () => {
+const Mission = () => {
   const items = [
     {
       title: "Vision",
@@ -57,3 +57,5 @@ export const Mission = () => {
     </section>
   );
 };
+
+export default Mission;

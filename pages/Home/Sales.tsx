@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Check, CheckCircle } from "lucide-react";
 
-export const Sales = () => {
+const Sales = () => {
   const firstBullets = [
     "A real income: ₦2,500 per box",
     "A real purpose: Educate. Connect. Inspire.",
@@ -104,3 +104,6 @@ export const Sales = () => {
     </section>
   );
 };
+
+
+export default Sales;
