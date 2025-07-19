@@ -63,7 +63,7 @@ const FEATURES: FeatureItem[] = [
   },
 ];
 
-export const Features = () => {
+ const Features = () => {
   return (
     <section className="bg-custom-primary text-white py-16 px-6 lg:py-16 lg:pb-24">
       <div className="container mx-auto space-y-12 lg:space-y-16">
@@ -97,3 +97,5 @@ export const Features = () => {
     </section>
   );
 };
+
+export default Features;

@@ -9,7 +9,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 
-export const LogoTicker = () => {
+ const LogoTicker = () => {
   return (
     <div className="py-8 bg-custom-primary">
       <div className="container">
@@ -93,3 +93,5 @@ export const LogoTicker = () => {
     </div>
   );
 };
+
+export default LogoTicker;

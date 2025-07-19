@@ -8,7 +8,7 @@ import { Check, CheckCircle } from "lucide-react";
 const COMMUNITY_HERO = "/community.jpg";
 const AVATARS = ["/avatar1.png", "/avatar2.png", "/avatar3.png"];
 
-export const Community = () => {
+const Community = () => {
   const bullets = [
     {
       title: "For the Youth:",
@@ -106,3 +106,5 @@ export const Community = () => {
     </section>
   );
 };
+
+export default Community;
