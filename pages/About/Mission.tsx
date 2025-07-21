@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Eye, Target, Download } from "lucide-react";
-import missionImage from "@/public/Nationalcake-22.jpg";
+
 export const Mission = () => {
   const items = [
     {
@@ -55,3 +55,5 @@ export const Mission = () => {
     </section>
   );
 };
+
+export default Mission;

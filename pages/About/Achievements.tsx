@@ -13,9 +13,9 @@ const AWARDS: Award[] = [
   { year: 2019, title: "Best Practice in Counseling Award" },
   { year: 2020, title: "Wellness and Self-Care Advocate" },
   { year: 2021, title: "Contributions to Positive Psychology Award" },
-];
+]
 
-export const Achievements = () => {
+const Achievements = () => {
   return (
     <section className="container mx-auto px-6 py-16 lg:py-24 space-y-12">
       {/* Heading & description */}
@@ -64,3 +64,5 @@ export const Achievements = () => {
     </section>
   );
 };
+
+export default Achievements;

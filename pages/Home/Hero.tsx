@@ -9,7 +9,7 @@ import  HERO_IMAGE from "@/public/Nationalcake-11.jpg"
 // Temporary hero image – place a suitable image at public/hero.jpg or replace the src with your own URL
 // const HERO_IMAGE = "/hero.jpg";
 
-export const Hero = () => {
+const Hero = () => {
   // Statistics data (value, suffix, description)
   const stats: Array<{
     value: number;
@@ -93,3 +93,5 @@ export const Hero = () => {
     </section>
   );
 };
+
+export default Hero;

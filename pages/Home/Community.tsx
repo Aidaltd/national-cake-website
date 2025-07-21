@@ -12,7 +12,7 @@ import DONOR from '@/public/donor.jpg'
 // temporary assets – replace with real paths later
 const AVATARS = ["/avatar-4.png", "/avatar-7.png", "/avatar-6.png"];
 
-export const Community = () => {
+const Community = () => {
   const bullets = [
     {
       title: "For the Youth",

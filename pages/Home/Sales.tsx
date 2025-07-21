@@ -3,10 +3,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Check, CheckCircle } from "lucide-react";
-import PreOrder from "@/app/(landing)/pre-order/page";
-import imagePreOrder from "@/public/preorder.jpg";
-import imageMarket from "@/public/distributor.jpg";
-import src from "gsap/src";
+
 export const Sales = () => {
   const firstBullets = [
     "A real income: ₦2,500 per box",
@@ -105,3 +102,6 @@ export const Sales = () => {
     </section>
   );
 };
+
+
+export default Sales;
