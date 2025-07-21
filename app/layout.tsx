@@ -2,6 +2,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import { ReactNode } from "react";
 import "./globals.css";
 import HeaderBar from "@/constants/HeaderBar";
+import ClickSpark from "@/components/Animations/click-spark";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta-sans",
@@ -20,8 +21,14 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <body
       className={`${plusJakartaSans.className} bg-white antialiased`}
     >
-      <HeaderBar /> 
-      {children}
+<ClickSpark
+  sparkColor='black'
+  sparkSize={32}
+  sparkRadius={50}
+  sparkCount={8}
+  duration={500}
+>      {children}
+</ClickSpark>
     </body>
   </html>
   );

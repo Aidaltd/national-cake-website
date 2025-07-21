@@ -9,19 +9,20 @@ import {
   Send,
   ArrowRight,
 } from "lucide-react";
+import creator from "@/public/creator.jpeg";
 
 export const Creator = () => {
   return (
-    <section className="container mx-auto px-6 py-20 lg:pt-28 lg:pb-0 border-y border-gray-200">
-      <div className="grid gap-12 lg:grid-cols-2 items-start">
+    <section className="container mx-auto px-6 py-20 lg:py-16  border-y border-gray-200">
+      <div className="grid gap-12 lg:grid-cols-2 items-center">
         {/* Portrait */}
-        <div className="w-full max-w-lg lg:max-w-none mx-auto lg:mx-0">
+        <div className="w-full max-w-lg h-full md:h-[35rem] lg:max-w-none mx-auto lg:mx-0">
           <Image
-            src="/creator.jpg" // TODO: replace with actual asset path
+            src={creator} // TODO: replace with actual asset path
             alt="Victor Prince Dickson"
             width={800}
             height={800}
-            className="rounded-lg w-full object-cover"
+            className="rounded-lg w-full h-full object-center object-cover"
           />
         </div>
 
@@ -38,7 +39,8 @@ export const Creator = () => {
             He is the inventor of Kommon Sense, Psychometric Consultant, Licensed Genos EI Practitioner, Fellow, Chartered Institute of Human Capital Development of Nigeria (CIHCDN), Coordinating Ambassador, World Creativity and Innovation (WCI), and Author of seven (7) books. He has developed over 12 Cognitive Behavioural Tools and Frameworks with over a decade impact in Strategic Leadership, Personal Transformation, Woman Intelligence, Problem Solving and Workplace Culture.
           </p>
           <p className="text-base leading-relaxed text-gray-700">
-            For more on Victor, please visit www.victorprincedickson.com
+            For more on Victor, please visit: <br />
+             <a href="https://www.victorprincedickson.com" target="_blank" rel="noopener noreferrer" className="text-custom-primary hover:underline">www.victorprincedickson.com</a>
           </p>
 
           {/* Social Icons */}
@@ -59,7 +61,7 @@ export const Creator = () => {
 
           {/* Know more link */}
           <Link
-            href="#"
+            href="/about"
             className="inline-flex items-center gap-2 text-custom-primary font-medium pt-4 hover:underline underline-offset-4"
           >
             Know more <ArrowRight className="h-4 w-4" />

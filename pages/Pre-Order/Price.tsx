@@ -1,166 +1,199 @@
 "use client";
 
-import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import React from "react";
+import productImage from "@/public/Nationalcake-2.jpg";
+import Image from "next/image";
 
 interface FeatureListProps {
   features: string[];
 }
 
 const FeatureList: React.FC<FeatureListProps> = ({ features }) => (
-  <ul className="space-y-2 text-sm text-gray-700">
+  <ul className="space-y-2 text-sm font-semibold text-custom-primary">
     {features.map((feature) => (
-      <li key={feature} className="flex items-center gap-2">
-        <Check className="h-4 w-4 flex-shrink-0 text-custom-primary" />
-        {feature}
+      <li key={feature} className="flex items-start gap-2">
+        <span className="text-gray-400">•</span>
+        <span>{feature}</span>
       </li>
     ))}
   </ul>
 );
 
-interface PlanCardProps {
-  name: string;
-  description: string;
-  price: string;
-  features: string[];
-  popular?: boolean;
-}
-
-const PlanCard: React.FC<PlanCardProps> = ({
-  name,
-  description,
-  price,
-  features,
-  popular = false,
-}) => (
-  <div
-    className={`relative flex flex-col rounded-xl border bg-white p-8 shadow-sm transition-all duration-300 lg:p-10 ${
-      popular ? "border-gray-300 bg-gray-100 ring-2 ring-gray-300" : "border-gray-200"
-    }`}
-  >
-    {popular && (
-      <span className="absolute right-4 top-4 rounded-md bg-custom-primary px-2.5 py-0.5 text-xs font-semibold text-white">
-        Popular
-      </span>
-    )}
-    <h3 className="text-xl font-semibold text-gray-900">{name}</h3>
-    <p className="mt-1 text-sm text-gray-500">{description}</p>
-
-    {/* Price */}
-    <div className="mt-6 flex items-end gap-1">
-      <span className="text-3xl font-bold text-gray-900">{price}</span>
-      <span className="text-sm text-gray-500">/ per month</span>
+// Star Rating Component
+const StarRating: React.FC<{ rating: number; maxRating?: number }> = ({ rating, maxRating = 5 }) => {
+  return (
+    <div className="flex items-center gap-1">
+      {[...Array(maxRating)].map((_, index) => (
+        <svg
+          key={index}
+          className={`w-4 h-4 ${index < rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`}
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+      ))}
     </div>
+  );
+};
 
-    {/* Divider */}
-    <hr className="my-6 border-t border-gray-200" />
-
-    {/* Features */}
-    <FeatureList features={features} />
-
-    {/* CTA */}
-    <Button
-      className={`mt-auto w-full text-sm ${
-        popular ? "bg-black hover:bg-gray-800 text-white" : "bg-white text-gray-900 hover:bg-gray-100"
-      }`}
-      variant={popular ? "default" : "outline"}
-    >
-      Get started for — {price.replace("$", "").trim() === "0" ? "Free" : price}
-    </Button>
-  </div>
-);
+// Rating Bar Component
+const RatingBar: React.FC<{ rating: number; count: number; total: number }> = ({ rating, count, total }) => {
+  const percentage = total > 0 ? (count / total) * 100 : 0;
+  
+  return (
+    <div className="flex items-center gap-2 text-sm">
+      <span className="w-2 text-gray-600">{rating}</span>
+      <StarRating rating={1} maxRating={1} />
+      <div className="flex-1 bg-gray-200 rounded-full h-2">
+        <div 
+          className="bg-yellow-400 h-2 rounded-full transition-all duration-300"
+          style={{ width: `${percentage}%` }}
+        />
+      </div>
+      <span className="w-6 text-xs text-gray-500">{count}</span>
+    </div>
+  );
+};
 
 const Price: React.FC = () => {
-  const plans: PlanCardProps[] = [
-    {
-      name: "Free",
-      description: "Ideal for hobbyists and individuals exploring web app creation.",
-      price: "$0",
-      features: [
-        "NewMode Domain",
-        "NewMode Badge",
-        "10 Members",
-        "5 Spaces",
-      ],
-    },
-    {
-      name: "Pro",
-      description: "Designed for creators and startups scaling their digital products.",
-      price: "$49",
-      features: [
-        "Unlimited Members",
-        "Custom Domain",
-        "20 Spaces",
-        "25 GB Storage",
-        "5 Collaborators",
-        "2 Translation Locale",
-      ],
-      popular: true,
-    },
-    {
-      name: "Business",
-      description: "For small creators and freelancers needing more and/or brands, businesses or emerging enterprises growth.",
-      price: "$99",
-      features: [
-        "Unlimited Members",
-        "Custom Domain",
-        "30 Spaces",
-        "50 Collaborators",
-        "3 Translation Locale",
-        "SEO optimization",
-      ],
-    },
+  const features = [
+    'Box — 14" x 14" x 3"',
+    'Board — 25.5" x 26"',
+    'Spin pads — 5" x 5"',
+    'Weight — 1.9 kg',
+    'Components:',
+    '1 Board',
+    '4 Personal Spin Pads',
+    '8 Race Counters (2 Blue, 2 Red, 2 Green & 2 Yellow)',
+    '40 Bridge Tokens (20 white & 20 green)',
   ];
 
+  // Mock data for ratings and reviews
+  const totalReviews = 50;
+  const averageRating = 4.5;
+  const ratingBreakdown = [
+    { rating: 5, count: 30 },
+    { rating: 4, count: 15 },
+    { rating: 3, count: 3 },
+    { rating: 2, count: 1 },
+    { rating: 1, count: 1 },
+  ];
+
+  const testimonial = {
+    name: "Dr. Hyeladi Haruna",
+    rating: 5,
+    date: "13 JUL 2025",
+    comment: "Every student must have to play this National Cake to pass their exams because it is very strategic. We are learning other people’s history, not our own. I like the idea; I have even benefitted by sitting here. I don’t pay attention to history that much but just going through the timeline, already it is impacting my curiosity.",
+    avatar: "/DR. HYELADI HARUNA.jpg" 
+  };
+
   return (
-    <section className="py-16 sm:py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Heading */}
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-           Our Pre-Order Plans
-          </h2>
-          <p className="mt-2 text-lg text-gray-500">
-            Choose the pre-order plan that works for you and enjoy the experience and exclusive benefits of the national cake.
-          </p>
-        </div>
-        <div className="grid gap-6 md:grid-cols-3 lg:gap-8">
-          {plans.map((plan) => (
-            <PlanCard key={plan.name} {...plan} />
-          ))}
-        </div>
-      
-        {/* Breakdown table */}
-        <div className="mt-16 overflow-x-auto">
-          <table className="min-w-full divide-y divide-gray-200 text-left text-sm">
-            <thead>
-              <tr>
-                <th className="px-4 py-3 font-semibold text-gray-900">Feature</th>
-                <th className="px-4 py-3 font-semibold text-gray-900">Free</th>
-                <th className="px-4 py-3 font-semibold text-gray-900">Pro</th>
-                <th className="px-4 py-3 font-semibold text-gray-900">Business</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-gray-100">
-              {[
-                { feature: "Members", free: "10", pro: "Unlimited", business: "Unlimited" },
-                { feature: "Custom Domain", free: "-", pro: "✓", business: "✓" },
-                { feature: "Spaces", free: "5", pro: "20", business: "30" },
-                { feature: "Storage", free: "-", pro: "25 GB", business: "-" },
-                { feature: "Collaborators", free: "-", pro: "5", business: "50" },
-                { feature: "Translation Locale", free: "-", pro: "2", business: "3" },
-                { feature: "SEO optimization", free: "-", pro: "-", business: "✓" },
-              ].map((row) => (
-                <tr key={row.feature}>
-                  <td className="whitespace-nowrap px-4 py-3 font-medium text-gray-700">{row.feature}</td>
-                  <td className="px-4 py-3 text-gray-600">{row.free}</td>
-                  <td className="px-4 py-3 text-gray-600">{row.pro}</td>
-                  <td className="px-4 py-3 text-gray-600">{row.business}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+    <section className="py-16 sm:py-24 bg-gray-50">
+      <div className="mx-auto max-w-8xl md:px-4">
+        <div className="bg-white md:rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+          <div className="flex flex-col lg:flex-row">
+            {/* Product Image */}
+            <div className="w-full lg:w-1/2 bg-gray-100 flex justify-center items-center">
+              <div className="w-full h-full">
+                <Image src={productImage} alt="National Cake Board Game" className="w-full h-full object-cover" />
+              </div>
+            </div>
+
+            {/* Product Details */}
+            <div className="w-full lg:w-1/2 p-8 lg:p-12">
+              {/* Brand */}
+              <p className="text-sm text-gray-500 mb-2">Game</p>
+              
+              {/* Product Title */}
+              <h1 className="text-3xl lg:text-4xl font-bold text-custom-primary mb-4">
+                National Cake Board Game
+              </h1>
+
+              {/* Price */}
+              <div className="mb-6">
+                <div className="flex items-center gap-3 mb-2">
+                  <span className="text-3xl font-bold text-custom-primary">₦25,000</span>
+                  <span className="text-lg text-gray-500 line-through">₦30,000</span>
+                </div>
+              </div>
+
+              {/* Product Description */}
+              <div className="mb-8">
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">Description & Fit</h3>
+                <p className="text-sm text-gray-600 mb-4">
+                  Enjoy the thrill of political campaigning and bridge-building with friends and family. 
+                  This limited pre-order bundle includes premium components designed for hours of strategic gameplay.
+                </p>
+                <FeatureList features={features} />
+              </div> 
+
+              {/* Action Buttons */}
+              <a href="https://paystack.com/buy/national-cake" target="_blank" rel="noopener noreferrer">
+                <Button className="flex-1 bg-custom-primary w-full hover:bg-custom-primary/90 text-white py-3">
+                  Preorder Now
+                </Button>
+              </a>
+            </div>
+          </div>
+
+          {/* Rating & Reviews Section */}
+          <div className="border-t border-gray-200 p-4 lg:p-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-8">Rating & Reviews</h2>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              {/* Rating Summary */}
+              <div>
+                <div className="flex items-end gap-4 mb-6">
+                  <div className="text-6xl font-bold text-gray-900">
+                    {averageRating}
+                  </div>
+                  <div className="pb-2">
+                    <div className="text-lg text-gray-600 mb-1">/5</div>
+                    <div className="text-sm text-gray-500">({totalReviews} New Reviews)</div>
+                  </div>
+                </div>
+
+                {/* Rating Breakdown */}
+                <div className="space-y-2">
+                  {ratingBreakdown.map((item) => (
+                    <RatingBar 
+                      key={item.rating}
+                      rating={item.rating}
+                      count={item.count}
+                      total={totalReviews}
+                    />
+                  ))}
+                </div>
+              </div>
+
+              {/* Featured Review */}
+              <div className="bg-gray-50 rounded-lg p-6">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="w-10 h-10 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
+                    <Image 
+                      src={testimonial.avatar} 
+                      alt={testimonial.name}
+                      width={40}
+                      height={40}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center justify-between mb-2">
+                      <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
+                      <span className="text-sm text-gray-500">{testimonial.date}</span>
+                    </div>
+                    <StarRating rating={testimonial.rating} />
+                  </div>
+                </div>
+                <p className="text-sm text-gray-700 leading-relaxed">
+                  "{testimonial.comment}"
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

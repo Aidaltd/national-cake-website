@@ -3,15 +3,19 @@ import { Creator } from "@/constants/Creator";
 import { Mission } from "@/pages/About/Mission";
 import { TitleBanner } from "@/constants/TitleBanner";
 import { Achievements } from "@/pages/About/Achievements";
+import { HeroDelivery } from "@/pages/About/HeroDelivery";
+import WhyChooseUs from "@/pages/About/WhyChooseUs";
 
 export default function About() {
     return (
         <>
-            <TitleBanner title="About Us" />
+        <HeroDelivery />
+            {/* <TitleBanner title="About Us" /> */}
             <AboutGame />   
             <TitleBanner title="About Creator" />
             <Creator />
             <Mission />
+            <WhyChooseUs />
             <Achievements />            
         </>
     );

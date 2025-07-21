@@ -1,41 +1,71 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { gsap } from "gsap";
 import { Button } from "@/components/ui/button";
 import { Quote, ChevronLeft, ChevronRight } from "lucide-react";
+import test1 from "@/public/BEM PEVER.jpeg";
+import test2 from "@/public/dummy.png";
+import test3 from "@/public/COACH RALPH.jpeg";
+import test4 from "@/public/DR. HYELADI HARUNA.jpg"; 
+import test5 from "@/public/NANCY OBLETE.jpg";
+import test6 from "@/public/OBINNA CHUKWUEZIE.jpg";
+
+
 
 interface Testimonial {
   name: string;
   role: string;
   quote: string;
-  image: string;
+  image: StaticImageData;
 }
 
 const TESTIMONIALS: Testimonial[] = [
   {
-    name: "Mrs. Titi O.",
-    role: "Secondary School Teacher, Abuja",
+    name: "Bem Pever",
+    role: "Creative Producer and Communication Expert",
     quote:
-      "I’ve taught civic education for years, but nothing has ever connected with my students like National Cake. They laughed, they argued, they cared. For the first time, Nigeria felt personal to them.",
-    image: "/testimonial1.jpg", // replace with actual asset
+      "The layout is very impressive. It should be incorporated into film festivals and supplied to every university.",
+    image:test1,  
   },
   {
-    name: "Mr. Ade B.",
-    role: "Youth Facilitator, Lagos",
+    name: "Mrs. Oluwatobiloba Ojediran",
+    role: "Financial Expert",
     quote:
-      "This game turned abstract civic lessons into real conversations. My group finally saw how their choices impact Nigeria’s future.",
-    image: "/testimonial2.jpg",
+      "Well-done this is actually a very good initiative and concept. I like the game part. I like the thought process of solving a problem in a very unique way.",
+    image: test2,
   },
   {
-    name: "Pastor Jane K.",
-    role: "Faith Leader, Port Harcourt",
+    name: "Ralph Ayua",
+    role: "Founder: Centre for Attitudinal Change",
     quote:
-      "National Cake bridges generation gaps. We played it during a family retreat and watched grandparents strategise with teenagers—beautiful!",
-    image: "/testimonial3.jpg",
+      "This is a brilliant idea that the Federal Ministry of Education should adopt. It can educate young people about Nigeria’s history, help reduce smartphone addiction, and promote meaningful engagement. A companion dictionary of Nigerian history is also recommended, and the game should be present in every Nigerian household.",
+    image: test3,
   },
+  { 
+    name: "Dr. Hyeladi Haruna",
+    role: "Founder: Heladi Holdings",
+    quote:
+      "Every student must have to play this National Cake to pass their exams because it is very strategic. We are learning other people’s history, not our own. I like the idea; I have even benefitted by sitting here. I don’t pay attention to history that much but just going through the timeline, already it is impacting my curiosity.",
+    image: test4,
+  },
+  {
+    name: "Obinna CHUKWUEZIE",
+    role: "Communication die-hard & Founder, @JCMCentre",
+    quote:
+      "I realised that every move, every card drawn, challenges players to think, reflect, and propose solutions to a challenge in Nigeria. The game entertains, informs, and most importantly, stimulates critical thinking around development issues in Nigeria. This is truly a gamification with a strategic objective, if you like, refer to it as #GameForDevelopment!",
+    image: test6,
+  },
+  {
+    name: "Nancy Oblete",
+    role: "Founder: Panaceaville International",
+    quote:
+      "This is sophisticated. This is a massive concept. I love the “Experience Spot” because we cannot shy away from the bad experiences. I like the fact that it doesn’t just end in the game but goes on to the National Oven.",
+    image: test5,
+  },
+  
 ];
 
 export const Testimonials = () => {

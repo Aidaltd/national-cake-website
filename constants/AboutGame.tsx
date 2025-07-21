@@ -2,28 +2,53 @@
 
 import GradientText from "@/components/Animations/gradient-text";
 import { Button } from "@/components/ui/button";
-import { Check, CheckCircle } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 
 export const AboutGame = () => {
     const checklist = [
-        "Create a detailed strategic plan that outlines strategies.",
-        "This comprehensive suite of payment products offers",
-        "Implement the strategic plan, manage resources effectively.",
+        "Reconnect Nigerians to their roots and identity.",
+        "Use storytelling and play to drive civic education.",
+        "Foster patriotism through fun, inclusive experiences.",
+        "Break resistance to learning with emotionally engaging content.",
+        "Transform classrooms into living labs of Nigerian imagination.",
     ];
 
     return (
-        <section className="container mx-auto px-6 py-16 lg:py-24 lg:px-12">
+        <section className="container mx-auto px-6 py-16 lg:py-24 lg:px-12" id="about">
             {/* Intro */}
             <div className=" mx-auto flex flex-col items-start justify-start space-y-6 lg:space-y-10">
-               <h1 className="section-title">
+                <h1 className="section-title">
                     About the Game
                 </h1>
-                <p className="section-description max-w-3xl">
-                    At the heart of our organisation is a commitment to our customers, our
-                    community, and the world around us. We believe in fostering strong
-                    relationships, embracing new ideas, and driving positive change. Our
-                    diverse team of talented professionals brings together a wealth of
-                    expertise and a shared dedication to excellence.
+                <p className="section-description w-full">
+                    The Game Nigeria Didn’t Know It Needed
+
+                    Nigeria is bleeding silently, not from lack of money or manpower, but from something far deeper:
+                    We forgot who we are.
+                    We no longer teach our children where they come from.
+                    We debate symptoms, but we don't heal the root.
+                    National Cake is a metaphor made real, a mirror of Nigeria’s soul, a classroom without walls, a battleground of consequences and the laboratory for civic imagination. This is history funified, education simplified and patriotism verified.It will dare you to feel, think, investigate, act, belong, believe & become.
+                    Built with neuroscience
+                    Rooted in Transformation
+                    Designed to heal
+                    Powered by the 7th Sense
+                    Perfect for Families, Organizations, Schools and Competitions.
+                    <br />
+                    <span className="text-custom-primary">Ready to play for the future of Nigeria?</span>
+                    <br />
+                    In the National Oven, every player becomes a patriot-in-training.
+
+                    Every move becomes a mirror.
+
+                    Every shared story becomes a spark through:
+                    <span className="text-custom-primary">Play</span>,
+                    <span className="text-custom-primary">Learn</span>,
+                    <span className="text-custom-primary">Compete</span>,
+                    <span className="text-custom-primary">Influence</span>.
+
+                    From schoolyards in Sokoto to churches in Warri, from NYSC camps to family game nights, this is where a new Nigeria is baking.
+
+                    You have prayed, protested and planned. Now, let’s play and heal together.
                 </p>
             </div>
 
@@ -35,17 +60,10 @@ export const AboutGame = () => {
                         <h3 className="text-xl font-semibold mb-4">Our Vision</h3>
                         <div className="space-y-4 text-gray-600 text-sm">
                             <p>
-                                Our vision is to build a world where innovation, creativity &
-                                collaboration drive sustainable progress and positive change.
-                                We aspire to be a leader in our industry, recognised for our
-                                commitment to excellence, integrity, and social responsibility.
+                                Our vision is to use the transformative power of play to reconnect Nigeria to its people and its people to their purpose. We envision a future where every Nigerian, young and old, understands their history, embraces their identity, and is empowered to build a unified and purposeful nation.
                             </p>
                             <p>
-                                We envision a future where our solutions empower people,
-                                enhance lives, and inspire communities. Through continuous
-                                improvement and a passion for what we do, we aim to set new
-                                standards, break boundaries, and create opportunities for
-                                everyone to thrive.
+                                National Cake is more than a board game — it’s a mirror of Nigeria’s soul and a tool for civic rebirth. Through it, we aim to restore cultural pride, promote historical awareness, and spark a nationwide renaissance in values, leadership, and belonging.
                             </p>
                         </div>
                     </div>
@@ -67,18 +85,10 @@ export const AboutGame = () => {
                         <h3 className="text-xl font-semibold mb-4">Our Mission</h3>
                         <div className="space-y-4 text-gray-600 text-sm">
                             <p>
-                                Our mission is to empower and inspire people through innovative
-                                solutions and exceptional service. We are committed to fostering
-                                a culture of creativity, collaboration, and continuous
-                                improvement. By delivering value, building trust, and making a
-                                positive impact on our community and beyond, we strive to lead
-                                with integrity.
+                                Our mission is to spark national re-orientation through an engaging, inclusive, and emotionally resonant educational game. We aim to bridge the disconnection between Nigerians and Nigeria by using play to create a safe, interactive space for storytelling, reflection, dialogue, and civic education.
                             </p>
                             <p>
-                                We strive to lead with integrity, transparency, and a deep
-                                sense of responsibility to our customers, partners, and
-                                stakeholders. Through continuous learning, improvement, and
-                                innovation.
+                                Built on neuroscience and emotional intelligence, the game breaks learning resistance, simplifies civic knowledge, and fosters unity without attacking religion or culture. National Cake invites every player to feel, investigate, act, and believe — turning ordinary game nights into extraordinary journeys of rediscovery and healing.
                             </p>
                         </div>
                     </div>
@@ -89,7 +99,7 @@ export const AboutGame = () => {
                             asChild
                             className="px-8 text-white bg-custom-primary w-full sm:w-auto lg:w-auto"
                         >
-                            <a href="/about-game.pdf" download>
+                            <a href="/NationalCakeVision.pdf" download>
                                 Download PDF For More Info
                             </a>
                         </Button>

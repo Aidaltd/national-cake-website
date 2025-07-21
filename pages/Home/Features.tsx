@@ -2,15 +2,15 @@
 
 import { Button } from "@/components/ui/button";
 import {
-  Leaf,
-  Target,
-  Shield,
-  Bell,
-  Users,
-  Filter as FilterIcon,
-  BarChart2,
-  Clock,
+  Calendar,
+  Award,
+  Zap,
+  Cake,
+  ShoppingBag,
+  MessageSquare,
+  Plane,
   ArrowRight,
+  ArrowUpRight,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -22,50 +22,50 @@ interface FeatureItem {
 
 const FEATURES: FeatureItem[] = [
   {
-    title: "Integration ecosystem",
-    description: "Track your progress and motivate your efforts everyday.",
-    icon: <Leaf className="size-6" />,
+    title: "Events",
+    description: "Take part in exciting on-ground and online events that bring our community together.",
+    icon: <Calendar className="size-6" />,
   },
   {
-    title: "Goal setting and tracking",
-    description: "Set and track goals with manageable task breakdowns.",
-    icon: <Target className="size-6" />,
+    title: "Badges",
+    description: "Earn collectible badges as you hit milestones and show off your accomplishments.",
+    icon: <Award className="size-6" />,
   },
   {
-    title: "Secure data encryption",
-    description: "Ensure your data's safety with top-tier encryption.",
-    icon: <Shield className="size-6" />,
+    title: "Influence Points",
+    description: "Rack up points for every contribution and climb to the top of the leaderboards.",
+    icon: <Zap className="size-6" />,
   },
   {
-    title: "Customizable notifications",
-    description: "Get alerts on tasks and deadlines that matter most.",
-    icon: <Bell className="size-6" />,
+    title: "Cake Shop",
+    description: "Spend your points on delicious cakes and sweet exclusive goodies in our shop.",
+    icon: <Cake className="size-6" />,
   },
   {
-    title: "Progress Dashboard",
-    description: "Track your progress and motivate your efforts everyday.",
-    icon: <BarChart2 className="size-6" />,
+    title: "Merchandise",
+    description: "Grab exclusive branded merchandise and wear your Cake pride everywhere.",
+    icon: <ShoppingBag className="size-6" />,
   },
   {
-    title: "Collaborative workspaces",
-    description: "Share tasks and progress in a real-time team space.",
-    icon: <Users className="size-6" />,
+    title: "Forums & Discussions",
+    description: "Join lively discussions, ask questions, and connect with fellow members.",
+    icon: <MessageSquare className="size-6" />,
   },
   {
-    title: "Intuitive time tracking",
-    description: "Track your progress and motivate your efforts everyday.",
-    icon: <Clock className="size-6" />,
+    title: "All-Expense Paid Trips",
+    description: "Stand a chance to win fully sponsored trips to cake conventions and experiences.",
+    icon: <Plane className="size-6" />,
   },
   {
-    title: "Advanced filters",
-    description: "Find exactly what you need with custom task filters.",
-    icon: <FilterIcon className="size-6" />,
+    title: "Cake Trivia",
+    description: "Test your knowledge about the art of cake making and history with our fun trivia challenges.",
+    icon: <Cake className="size-6" />,
   },
 ];
 
 export const Features = () => {
   return (
-    <section className="bg-custom-primary text-white py-16 px-6 lg:py-16 lg:pb-24">
+    <section className="bg-green-900 text-white py-16 px-6 lg:py-16 lg:pb-24" id="features">
       <div className="container mx-auto space-y-12 lg:space-y-16">
         {/* Heading row */}
         <div className="flex flex-col lg:flex-row items-start justify-between gap-8">
@@ -81,17 +81,36 @@ export const Features = () => {
         </div>
 
         {/* Features grid */}
-        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
-          {FEATURES.map((feat) => (
-            <div key={feat.title} className="space-y-4">
-              <div className="text-white">{feat.icon}</div>
-              <h3 className="font-semibold text-base lg:text-lg">{feat.title}</h3>
-              <p className="text-sm text-white/90 leading-relaxed">{feat.description}</p>
-              <Link href="#" className="inline-flex items-center gap-1 text-sm font-medium hover:underline underline-offset-2">
-                Learn more <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-          ))}
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {FEATURES.map((feat, idx) => {
+            const colors = [
+              "bg-lime-100 text-black",
+              "bg-purple-100 text-black",
+              "bg-yellow-100 text-black",
+              "bg-sky-100 text-black",
+            ];
+            const colorClass = colors[idx % colors.length];
+            return (
+              <div
+                key={feat.title}
+                className={`relative rounded-lg p-6 shadow-md ${colorClass} hover:-translate-y-1 transition-transform duration-200`}
+              >
+                {/* arrow icon */}
+                <ArrowUpRight className="w-5 h-5 absolute top-4 right-4" />
+
+                <div className="mb-4 text-xl">{feat.icon}</div>
+                <h3 className="font-semibold text-base lg:text-lg mb-2">
+                  {feat.title}
+                </h3>
+                <p className="text-sm leading-relaxed mb-4">
+                  {feat.description}
+                </p>
+                <Link href="#" className="inline-flex items-center gap-1 text-sm font-medium underline">
+                  Learn more <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

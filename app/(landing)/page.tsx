@@ -7,12 +7,14 @@ import { Sales } from "@/pages/Home/Sales";
 import { Testimonials } from "@/pages/Home/Testimonials";
 import { Creator } from "@/constants/Creator";
 import { Faq } from "@/constants/Faq";
-  export default function Home() {
+import  Prototype from "@/constants/Prototype";
+export default function Home() {
   return (
     <>
     <Hero />
-    <LogoTicker />  
+    {/* <LogoTicker />   */}
     <AboutGame />
+    <Prototype />
     <Community />   
     <Features />  
     <Sales />

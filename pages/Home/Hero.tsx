@@ -3,9 +3,11 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import CountUp from "@/components/Animations/count-up";
+import Link from "next/link";
+import  HERO_IMAGE from "@/public/Nationalcake-11.jpg"
 
 // Temporary hero image – place a suitable image at public/hero.jpg or replace the src with your own URL
-const HERO_IMAGE = "/hero.jpg";
+// const HERO_IMAGE = "/hero.jpg";
 
 export const Hero = () => {
   // Statistics data (value, suffix, description)
@@ -15,19 +17,20 @@ export const Hero = () => {
     prefix?: string;
     description: string;
   }> = [
-    { value: 150, suffix: "K", description: "Top-rated, highly skilled global talent pool" },
-    { value: 80000, prefix: "$", description: "Cost savings per talent hired through Andela" },
-    { value: 66, suffix: "%", description: "Faster time to hire" },
-    { value: 33, suffix: "%", description: "Faster project delivery" },
-  ];
+    { value: 223, suffix: "M", description: "Total population of Nigeria (2025 estimate)" },
+    { value: 62, suffix: "%", description: "Adult literacy rate in Nigeria" },
+    { value: 4.1, suffix: "%", description: "Unemployment rate in Nigeria (2023 revised data)" },
+    { value: 120, suffix: "M", description: "Number of internet users in Nigeria (2024)" }
+  ]
+  ;
 
   return (
     <section className="relative isolate overflow-hidden text-white">
       {/* Background image */}
       <div className="absolute inset-0 -z-10">
         {/* Use native img tag to avoid Next remote config hassle */}
-        <img
-          src={HERO_IMAGE}
+        <Image
+          src={HERO_IMAGE}  
           alt="Chess hero"
           className="h-full w-full object-cover object-center"
         />
@@ -36,8 +39,8 @@ export const Hero = () => {
       </div>
 
       {/* Content wrapper */}
-      <div className="container relative mx-auto flex flex-col items-start gap-8 px-6 py-16 sm:py-24 md:py-32 lg:px-10">
-        <h1 className="max-w-4xl text-3xl font-bold leading-tight tracking-tight sm:text-5xl md:text-6xl">
+      <div className="container relative mx-auto flex flex-col items-start gap-8 px-4 py-16 sm:py-24 md:py-32 lg:px-10">
+        <h1 className="max-w-4xl section-title text-white">
           If Nigeria Were a Game,
           <br className="hidden sm:block" /> Would You Win?
         </h1>
@@ -51,20 +54,21 @@ export const Hero = () => {
 
         {/* Action buttons */}
         <div className="flex flex-col sm:flex-row sm:items-center gap-4 pt-4">
-          <Button className="px-8 text-white bg-custom-primary">Pre-Order Your Box</Button>
-          <Button variant="outline" className="px-8 bg-white text-black border-transparent hover:bg-gray-100">
-            Become an Agent
-          </Button>
-          <a
-            href="#join"
-            className="mt-2 sm:mt-0 text-sm font-semibold underline underline-offset-2 hover:text-white"
-          >
-            Join the Movement
-          </a>
+          <Link href="/pre-order">
+            <Button className="px-8 text-white bg-custom-primary">Pre-Order Your Box</Button>
+          </Link>
+          <Link href="/become-an-agent">
+            <Button variant="outline" className="px-8 bg-white text-black border-transparent hover:bg-gray-100">
+              Become an Agent
+            </Button>
+          </Link>
+          <Link href="/join" className="mt-2 sm:mt-0 text-sm font-semibold underline underline-offset-2 hover:text-white">
+            Join Our Community
+          </Link>
         </div>
 
         {/* Stats */}
-        <div className="mt-12 grid w-full gap-y-10 gap-x-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid w-full gap-y-10 gap-x-8 grid-cols-2 lg:grid-cols-4">
           {stats.map(({ value, suffix, prefix, description }, i) => (
             <div key={i} className="space-y-2">
               <h3 className="text-3xl font-bold">
