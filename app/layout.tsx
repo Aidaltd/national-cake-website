@@ -21,13 +21,14 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <body
       className={`${plusJakartaSans.className} bg-white antialiased`}
     >
-<ClickSpark
+<ClickSpark 
   sparkColor='black'
   sparkSize={32}
   sparkRadius={50}
   sparkCount={8}
   duration={500}
->      {children}
+>   
+   {children}
 </ClickSpark>
     </body>
   </html>

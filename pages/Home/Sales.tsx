@@ -2,6 +2,10 @@
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+
+// Static images stored in the `public` folder
+const imageMarket = "/pexels-kindelmedia-6869044.jpg" as const;
+const imagePreOrder = "/preorder.jpg" as const;
 import { Check, CheckCircle } from "lucide-react";
 
 export const Sales = () => {
@@ -25,9 +29,12 @@ export const Sales = () => {
       <div className="grid items-center gap-10 lg:grid-cols-2">
         {/* Image */}
         <Image
-          src={imageMarket} // TODO: replace with real asset
+          src={imageMarket}
           alt="Market scene"
+          width={1920}
+          height={1280}
           className="rounded-lg w-full object-cover h-full sm:h-80 lg:h-[35rem]"
+          priority
         />
 
         {/* Content */}
@@ -92,7 +99,7 @@ export const Sales = () => {
 
         {/* Image */} 
         <Image
-          src={imagePreOrder}// TODO: replace with real asset
+          src={imagePreOrder}
           alt="Happy customer with bags"
           width={800}
           height={600}

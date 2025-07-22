@@ -34,13 +34,13 @@ function BoxWithLid() {
   });
 
   /* ----- Pointer handlers ----- */
-  const handlePointerDown = (e: THREE.Event) => {
+  const handlePointerDown = (e: PointerEvent) => {
     isDragging.current = true;
-    if (e.pointerType === "touch") e.target.setPointerCapture(e.pointerId);
+    if (e.pointerType === "touch") (e.target as Element).setPointerCapture(e.pointerId);
     prev.current = { x: e.clientX, y: e.clientY };
   };
 
-  const handlePointerMove = (e: THREE.Event) => {
+  const handlePointerMove = (e: PointerEvent) => {
     if (!isDragging.current || !groupRef.current) return;
     const dx = e.clientX - prev.current.x;
     const dy = e.clientY - prev.current.y;
@@ -123,7 +123,7 @@ export default function Prototype({ size = "60vw" }: PrototypeProps) {
       <Canvas
         shadows
         camera={{ position: [10, 5, 12], fov: 25 }}
-        dpr={Math.min(window.devicePixelRatio, 2)}
+        dpr={typeof window !== "undefined" ? Math.min(window.devicePixelRatio, 2) : 1}
         style={{ width: "100%", height: typeof size === "number" ? `${size}px` : size }}
       >
         {/* Lights */}

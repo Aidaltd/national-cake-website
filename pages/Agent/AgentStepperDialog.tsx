@@ -408,3 +408,5 @@ function SuccessAlertDialog({ open, onOpenChange, onConfirm }: any) {
     </DialogContainer>
   );
 }
+
+export default AgentStepperDialog;

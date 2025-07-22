@@ -21,15 +21,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${plusJakartaSans.className} bg-white antialiased`}
-      >
-        <HeaderBar />
-        <Header />
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <>
+      <HeaderBar />
+      <Header />
+      {children}
+      <Footer />
+    </>
   );
 }

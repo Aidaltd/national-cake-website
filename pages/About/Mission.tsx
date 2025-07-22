@@ -1,6 +1,9 @@
 "use client";
 
 import Image from "next/image";
+
+// Static image located in the `public` folder
+const missionImage = "/Nationalcake-11.jpg" as const;
 import { Eye, Target, Download } from "lucide-react";
 
 export const Mission = () => {
@@ -49,7 +52,10 @@ export const Mission = () => {
         <Image
           src={missionImage}
           alt="national cake mission"
+          width={1920}
+          height={1280}
           className="rounded-lg w-full object-cover h-64 sm:h-96 lg:h-[45rem]"
+          priority
         />
       </div>
     </section>

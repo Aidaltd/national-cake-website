@@ -48,3 +48,5 @@ export const HeroDelivery = () => {
     </section>
   );
 };
+
+export default HeroDelivery;
