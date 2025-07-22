@@ -96,7 +96,7 @@ export const Faq = () => {
             <div className="text-center mt-8">
               <button
                 onClick={() => setShowAll(!showAll)}
-                className="px-4 py-2 border border-custom-primary text-custom-primary rounded-lg hover:bg-custom-primary hover:text-white transition"
+                className="px-4 w-full md:w-auto py-2 border border-custom-primary text-custom-primary rounded-lg hover:bg-custom-primary hover:text-white transition"
               >
                 {showAll ? "View Less" : "View More"}
               </button>

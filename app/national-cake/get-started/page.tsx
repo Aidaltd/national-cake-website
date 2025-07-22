@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, FacebookIcon, InstagramIcon, TwitterIcon } from "lucide-react";
+import { ArrowLeft, ArrowRight, FacebookIcon, InstagramIcon, TwitterIcon, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Logo from "@/public/logo-primary.png";
 import Spiral from "@/public/spiral.png";
@@ -15,8 +15,8 @@ export default function GetStarted() {
                 <div className="flex justify-between items-center gap-4 px-10 w-full">
                     <div className="flex items-center gap-2">
                         <p className="text-white/60 hover:text-white">Mail:</p>
-                        <a href="mailto:hello@nationalcake.com" className="text-white/60 hover:text-white">
-                            Info@nationalcake.com
+                        <a href="mailto:info@nationalcake.ng" className="text-white/60 hover:text-white">
+                            info@nationalcake.ng
                         </a>
                     </div>
                     <div className="flex items-center gap-10">
@@ -25,11 +25,14 @@ export default function GetStarted() {
                             <a href="https://twitter.com/nationalcake" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white">
                                 <TwitterIcon className="h-3 w-3" />
                             </a>
-                            <a href="https://www.facebook.com/nationalcake" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white">
+                            <a href="https://www.facebook.com/share/1FBCfef5d2/" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white">
                                 <FacebookIcon className="h-3 w-3" />
                             </a>
                             <a href="https://www.instagram.com/nationalcake" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white">
                                 <InstagramIcon className="h-3 w-3" />
+                            </a>
+                            <a href="https://www.linkedin.com/showcase/kommon-sense-masters/" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white">
+                                <Linkedin className="h-3 w-3" />
                             </a>
                         </div>
                         <a href="tel:+2349022222222" className="text-white/60 hover:text-white">Contact: +234 902 222 2222</a>

@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Check, CheckCircle } from "lucide-react";
 
-const Sales = () => {
+export const Sales = () => {
   const firstBullets = [
     "A real income: ₦2,500 per box",
     "A real purpose: Educate. Connect. Inspire.",
@@ -25,11 +25,9 @@ const Sales = () => {
       <div className="grid items-center gap-10 lg:grid-cols-2">
         {/* Image */}
         <Image
-          src="/sales-market.jpg" // TODO: replace with real asset
+          src={imageMarket} // TODO: replace with real asset
           alt="Market scene"
-          width={800}
-          height={600}
-          className="rounded-lg w-full object-cover h-64 sm:h-80 lg:h-[420px]"
+          className="rounded-lg w-full object-cover h-full sm:h-80 lg:h-[35rem]"
         />
 
         {/* Content */}
@@ -60,7 +58,7 @@ const Sales = () => {
       </div>
 
       {/* Block 2 */}
-      <div className="grid items-center gap-10 lg:grid-cols-2">
+      <div className="flex items-center flex-row-reverse gap-10 lg:grid-cols-2">
         {/* Content */}
         <div className="space-y-6 max-w-lg">
           <h3 className="text-2xl sm:text-3xl lg:text-4xl font-semibold">
@@ -88,17 +86,17 @@ const Sales = () => {
           </ul>
 
           <Button className="mt-4 w-max" variant="default">
-            Click Here to Pre-Order Now
+            Click Here to Pre-Order Now 
           </Button>
         </div>
 
-        {/* Image */}
+        {/* Image */} 
         <Image
-          src="/sales-bags.jpg" // TODO: replace with real asset
+          src={imagePreOrder}// TODO: replace with real asset
           alt="Happy customer with bags"
           width={800}
           height={600}
-          className="rounded-lg w-full object-cover h-64 sm:h-80 lg:h-[420px] lg:order-first"
+          className="rounded-lg w-full object-cover h-64 sm:h-80 lg:h-[33rem] lg:order-first"
         />
       </div>
     </section>

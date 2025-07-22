@@ -3,18 +3,18 @@
 import Image from "next/image";
 import { Eye, Target, Download } from "lucide-react";
 
-const Mission = () => {
+export const Mission = () => {
   const items = [
     {
       title: "Vision",
       desc:
-        "To reconnect Nigerians with Nigeria…",
+        "Our vision is to use the transformative power of play to reconnect Nigeria to its people and its people to their purpose. We envision a future where every Nigerian, young and old, understands their history, embraces their identity, and is empowered to build a unified and purposeful nation.National Cake is more than a board game — it’s a mirror of Nigeria’s soul and a tool for civic rebirth. Through it, we aim to restore cultural pride, promote historical awareness, and spark a nationwide renaissance in values, leadership, and belonging.",
       icon: <Eye className="h-5 w-5 text-custom-primary" />,
     },
     {
       title: "Mission",
       desc:
-        "To kick start a wave of national rebirth where every Nigerian helps bake the New Nigeria.",
+        "Our mission is to spark national re-orientation through an engaging, inclusive, and emotionally resonant educational game. We aim to bridge the disconnection between Nigerians and Nigeria by using play to create a safe, interactive space for storytelling, reflection, dialogue, and civic education.Built on neuroscience and emotional intelligence, the game breaks learning resistance, simplifies civic knowledge, and fosters unity without attacking religion or culture. National Cake invites every player to feel, investigate, act, and believe — turning ordinary game nights into extraordinary journeys of rediscovery and healing.",
       icon: <Target className="h-5 w-5 text-custom-primary" />,
     }
   ];
@@ -25,7 +25,7 @@ const Mission = () => {
         {/* Text column */}
         <div className="space-y-10 max-w-xl">
           <h2 className="section-title">Vision & Mission</h2>
-          <a href="/vision-mission.pdf" download className="inline-flex items-center gap-2 text-custom-primary underline text-sm">
+          <a href="/NationalCakeVision.pdf" download className="inline-flex items-center gap-2 text-custom-primary underline text-sm">
             <Download className="h-4 w-4" />
             Download detailed Vision & Mission (PDF)
           </a>
@@ -47,11 +47,9 @@ const Mission = () => {
 
         {/* Image */}
         <Image
-          src="/mission-dart.jpg" // TODO: replace with real image
-          alt="Dart on target"
-          width={700}
-          height={700}
-          className="rounded-lg w-full object-cover h-64 sm:h-96 lg:h-[460px]"
+          src={missionImage}
+          alt="national cake mission"
+          className="rounded-lg w-full object-cover h-64 sm:h-96 lg:h-[45rem]"
         />
       </div>
     </section>

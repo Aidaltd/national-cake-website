@@ -16,7 +16,7 @@ import {
     Linkedin,
 } from "lucide-react";
 
-import Logo from "@/public/logo-white.png";
+import Logo from "@/public/logo-4.png";
 import Silk from "@/components/Animations/silk";
 
 /**
@@ -64,8 +64,13 @@ const socialLinks: SocialLink[] = [
     },
     {
         name: "LinkedIn",
-        href: "#",
+        href: "https://www.linkedin.com/showcase/kommon-sense-masters/",
         icon: <Linkedin />,
+    },
+    {
+        name: "Facebook",
+        href: "https://www.facebook.com/share/1FBCfef5d2/",
+        icon: <Facebook />,
     },
 ];
 
@@ -74,21 +79,19 @@ const footerLinks: FooterLinksData = {
     product: {
         title: "Product",
         links: [
-            { name: "Features", href: "#features" },
-            { name: "AI Assistant", href: "#ai-assistant" },
-            { name: "Clinical Tools", href: "#clinical-tools" },
-            { name: "Integrations", href: "#integrations" },
-            { name: "Pricing", href: "/pricing" },
+            { name: "Features", href: "/#features" },
+            { name: "Prototype", href: "/#prototype" },
+            { name: "Pricing", href: "/pre-order" },
         ],
     },
     company: {
         title: "Company",
         links: [
-            { name: "About", href: "#about" },
+            { name: "About", href: "/about" },
             { name: "Blog", href: "#blog" },
-            { name: "Careers", href: "#careers" },
-            { name: "Press", href: "#press" },
-            { name: "Contact", href: "#contact" },
+            { name: "Community", href: "/national-cake/get-started" },
+            { name: "Agents", href: "/become-an-agent" },
+            // { name: "Contact", href: "#contact" },
         ],
     },
     contact: {
@@ -96,7 +99,10 @@ const footerLinks: FooterLinksData = {
         links: [
             { name: "+234 816 837 8999", href: "tel:+2348168378999", icon: <Phone className="size-4 text-custom-primary" /> },
             { name: "+234 803 612 6128", href: "tel:+2348036126128", icon: <Phone className="size-4 text-custom-primary" /> },
-            { name: "info@nationalcake.com", href: "mailto:info@nationalcake.com", icon: <Mail className="size-4 text-custom-primary" /> },
+            { name: "info@nationalcake.ng", href: "mailto:info@nationalcake.ng", icon: <Mail className="size-4 text-custom-primary" /> },
+            { name: "creator@nationalcake.ng", href: "mailto:creator@nationalcake.ng", icon: <Mail className="size-4 text-custom-primary" /> },
+            { name: "agent@nationalcake.ng", href: "mailto:agent@nationalcake.ng", icon: <Mail className="size-4 text-custom-primary" /> },
+            { name: "distributor@nationalcake.ng", href: "mailto:distributor@nationalcake.ng", icon: <Mail className="size-4 text-custom-primary" /> },
             { name: "Suite B09 Tsukunda House, CBD, Abuja, Nigeria", href: "https://www.google.com/maps/search/?api=1&query=Suite+B09+Tsukunda+House+CBD+Abuja+Nigeria", icon: <MapPin className="size-4 text-custom-primary" /> },
         ],
     },
@@ -147,7 +153,7 @@ export const Footer = () => {
                     {/* subscribe form */}
                     <form
                         onSubmit={(e) => e.preventDefault()}
-                        className="flex w-full max-w-md overflow-hidden items-center rounded-md bg-white p-1 shadow-lg"
+                        className="flex max-w-md overflow-hidden items-center rounded-md bg-white p-1 shadow-lg"
                     >
                         <input
                             type="email"
@@ -167,7 +173,7 @@ export const Footer = () => {
                 size="icon"
                 variant="secondary"
                 onClick={scrollToTop}
-                className="absolute z-50 md:size-12 size-10 left-1/2 border-3 border-custom-primary -translate-x-1/2 -translate-y-1/2 rounded-full bg-white text-black shadow-lg transition-colors hover:bg-gray-100"
+                className="absolute z-40 md:size-12 size-10 left-1/2 border-3 border-custom-primary -translate-x-1/2 -translate-y-1/2 rounded-full bg-white text-black shadow-lg transition-colors hover:bg-gray-100"
             >
                 <ChevronUp className="h-5 w-5" />
             </Button>
@@ -181,14 +187,13 @@ export const Footer = () => {
                             <div className="flex items-center space-x-2">
                                 <Image
                                     src={Logo}
-                                    alt="Buki Logo"
+                                    alt="nationalcake Logo"
                                     className="md:w-40 w-32"
                                 />
                             </div>
                         </Link>
                         <p className="text-gray-400 max-w-sm mt-1 text-sm">
-                            Buki is an AI-powered clinical assistant that helps healthcare professionals
-                            deliver better patient care with real-time insights and support.
+                           National Cake is a transformational board game and civic tool designed to reconnect Nigerians with their history, identity, and purpose. Built for homes, schools, churches, and communities, it turns storytelling into nation-building. Together, let’s bake a better Nigeria — one game at a time.
                         </p>
                         {/* Social Icons */}
                         <div className="flex space-x-5 mt-6">
@@ -236,12 +241,12 @@ export const Footer = () => {
                     <nav className="flex flex-wrap items-center justify-center gap-4 text-gray-400">
                         {[
                             "About us",
-                            "Contact",
-                            "Privacy policy",
-                            "Sitemap",
-                            "Terms of Use",
+                            // "Contact",
+                            // "Privacy policy",
+                            // "Sitemap",
+                            // "Terms of Use",
                         ].map((item) => (
-                            <Link key={item} href="#" className="transition-colors hover:text-white">
+                            <Link key={item} href={item === "About us" ? "/about" : "#"} className="transition-colors hover:text-white">
                                 {item}
                             </Link>
                         ))}

@@ -3,7 +3,9 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+// import { AgentStepperDialog } from "./AgentStepperDialog";
+import Image from "next/image";
+import communityHero from "@/public/Nationalcake-22.jpg";
 
 interface CardItem {
   title: string;
@@ -54,6 +56,15 @@ export default function Context() {
           </p>
         </div>
 
+        {/* Hero image */}
+        <div className="mt-10">
+          <Image
+            src={communityHero}
+            alt="National Cake"
+            className="w-full rounded-lg object-cover object-center h-64 sm:h-80 lg:h-[450px] border border-gray-400"
+          />
+        </div>
+
         {/* Cards title */}
         <div className="space-y-10">
           <h3 className="text-2xl sm:text-3xl font-semibold text-white">
@@ -88,13 +99,17 @@ export default function Context() {
 
         {/* CTA */}
         <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ delay: 0.6, duration: 0.6, ease: "easeOut" }} layout className="pt-8 flex justify-center">
-          <Link href="national-cake/become-an-agent">
-          <Button size="lg" className="px-10 py-6 text-base rounded-full">
-            Join 1,000+ agents already rewriting the Nigerian story
+
+          <Button asChild size="lg" className="px-10 py-6 text-base rounded-full">
+            <a href="https://paystack.shop/pay/macro-agent" target="_blank" rel="noopener noreferrer">
+            Join 1,000+ agents today
+          </a>
           </Button>
-          </Link>
+
         </motion.div>
       </div>
+
+
 
       {/* Subtle gradient ring */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-custom-primary/10 to-transparent" />
