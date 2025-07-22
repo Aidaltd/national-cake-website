@@ -62,10 +62,11 @@ const Hero = () => {
               Become an Agent
             </Button>
           </Link>
-          <Link href="/join" className="mt-2 sm:mt-0 text-sm font-semibold underline underline-offset-2 hover:text-white">
+          <Link href="/national-cake/get-started" className="mt-2 sm:mt-0 text-sm font-semibold underline underline-offset-2 hover:text-white">
             Join Our Community
           </Link>
         </div>
+      
 
         {/* Stats */}
         <div className="mt-12 grid w-full gap-y-10 gap-x-8 grid-cols-2 lg:grid-cols-4">

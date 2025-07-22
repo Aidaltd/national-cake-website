@@ -14,7 +14,7 @@ export default function Home() {
     <Hero />
     {/* <LogoTicker />   */}
     <AboutGame />
-    <Prototype />
+    <Prototype size="60vw" mobileSize="90vw" />
     <Community />   
     <Features />  
     <Sales />

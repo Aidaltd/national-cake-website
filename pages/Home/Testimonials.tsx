@@ -118,7 +118,7 @@ const Testimonials = () => {
             alt={testimonial.name}
             width={600}
             height={500}
-            className="rounded-lg w-full object-cover h-64 sm:h-80 lg:h-[400px]"
+            className="rounded-lg w-full object-cover object-top h-80 sm:h-80 lg:h-[450px]"
           />
 
           {/* Quote block */}

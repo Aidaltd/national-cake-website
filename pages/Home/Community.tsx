@@ -17,9 +17,9 @@ export const Community = () => {
     {
       title: "For the Youth",
       body: "it is where you turn curiosity into voice, story into strategy and play into power.",
-      color: "bg-green-400",
+      color: "bg-green-300",
       textColor: "text-black",
-      icon: <Users className="w-6 h-6" />,
+      icon: <Users className="w-5 h-5" />,
       badge: "18-35",   
       category: "Years",
       image: YOUTH // Replace with actual image path
@@ -29,7 +29,7 @@ export const Community = () => {
       body: "it is your chance to sponsor not a project but a generation, that will change the narrative",
       color: "bg-purple-300",
       textColor: "text-black",
-      icon: <Target className="w-6 h-6" />,
+      icon: <Target className="w-5 h-5" />,
       badge: "35+",
       category: "Years",
       image:  LEADER // Replace with actual image path
@@ -37,9 +37,9 @@ export const Community = () => {
     {
       title: "For Faith Leaders",
       body: "it is where morality meets memory without preaching, lets change the narrative",
-      color: "bg-gradient-to-br from-teal-400 to-cyan-400",
+      color: "bg-teal-300 ",
       textColor: "text-black",
-      icon: <Heart className="w-6 h-6" />,
+      icon: <Heart className="w-5 h-5" />,
       badge: "All Ages",
       category: "Ministry",
       image: FAITH // Replace with actual image path
@@ -47,9 +47,9 @@ export const Community = () => {
     {
       title: "For Donors",
       body: "it is the platform where patriotism becomes measurable and legacy becomes visible.",
-      color: "bg-blue-400",
+      color: "bg-blue-300",
       textColor: "text-black",
-      icon: <Gift className="w-6 h-6" />,
+      icon: <Gift className="w-5 h-5" />,
       badge: "Impact",
       category: "Driven",
       image: DONOR // Replace with actual image path
@@ -133,7 +133,7 @@ export const Community = () => {
               </div>
 
               {/* Icon */}
-              <div className="mb-4">
+              <div className="mb-4 rounded-full w-fit bg-white/50 p-2">
                 {item.icon}
               </div>
 

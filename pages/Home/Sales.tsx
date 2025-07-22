@@ -33,7 +33,7 @@ export const Sales = () => {
           alt="Market scene"
           width={1920}
           height={1280}
-          className="rounded-lg w-full object-cover h-full sm:h-80 lg:h-[35rem]"
+          className="rounded-lg w-full object-cover h-80 sm:h-80 lg:h-[35rem]"
           priority
         />
 
@@ -65,7 +65,7 @@ export const Sales = () => {
       </div>
 
       {/* Block 2 */}
-      <div className="flex items-center flex-row-reverse gap-10 lg:grid-cols-2">
+      <div className="flex items-center flex-col-reverse md:flex-row-reverse gap-10 lg:grid-cols-2">
         {/* Content */}
         <div className="space-y-6 max-w-lg">
           <h3 className="text-2xl sm:text-3xl lg:text-4xl font-semibold">
@@ -103,7 +103,7 @@ export const Sales = () => {
           alt="Happy customer with bags"
           width={800}
           height={600}
-          className="rounded-lg w-full object-cover h-64 sm:h-80 lg:h-[33rem] lg:order-first"
+          className="rounded-lg w-full object-cover h-80 sm:h-80 lg:h-[33rem] lg:order-first"
         />
       </div>
     </section>

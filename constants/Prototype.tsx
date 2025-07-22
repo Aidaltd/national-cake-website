@@ -1,7 +1,7 @@
 "use client";
 
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import { useRef, useMemo } from "react";
+import { useRef, useMemo, useState, useEffect } from "react";
 import * as THREE from "three";
 
 /**
@@ -111,10 +111,24 @@ function BoxWithLid() {
   );
 }
 
+      {/* change the size of the prototype box on mobile by modifying the `size` prop of the `Prototype` component */}
 
-interface PrototypeProps { size?: number | string }
+interface PrototypeProps { size?: number | string; mobileSize?: number | string }
 
-export default function Prototype({ size = "60vw" }: PrototypeProps) {
+export default function Prototype({ size = "80vw", mobileSize }: PrototypeProps) {
+  const [height, setHeight] = useState<string | number>(typeof size === "number" ? `${size}px` : size);
+
+  useEffect(() => {
+    const updateSize = () => {
+      const isMobile = window.innerWidth <= 768; // breakpoint for mobile
+      const selected = isMobile && mobileSize !== undefined ? mobileSize : size;
+      setHeight(typeof selected === "number" ? `${selected}px` : selected);
+    };
+
+    updateSize();
+    window.addEventListener("resize", updateSize);
+    return () => window.removeEventListener("resize", updateSize);
+  }, [size, mobileSize]);
   return (
     <div
         className="w-full h-auto select-none cursor-grab active:cursor-grabbing"
@@ -124,7 +138,7 @@ export default function Prototype({ size = "60vw" }: PrototypeProps) {
         shadows
         camera={{ position: [10, 5, 12], fov: 25 }}
         dpr={typeof window !== "undefined" ? Math.min(window.devicePixelRatio, 2) : 1}
-        style={{ width: "100%", height: typeof size === "number" ? `${size}px` : size }}
+        style={{ width: "100%", height }}
       >
         {/* Lights */}
         <ambientLight intensity={0.8} />
