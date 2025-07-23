@@ -1,5 +1,4 @@
 "use client";
-
 import Hero from "@/pages/Home/Hero";
 import LogoTicker from "@/pages/Home/LogoTicker";
 import {AboutGame} from "@/constants/AboutGame";

@@ -75,9 +75,11 @@ const FEATURES: FeatureItem[] = [
             Be a part of the movement that rewrites the story in classrooms, hearts and <span className="text-gray-200">history</span>.
           </h2>
           </div>
+          <Link href="/community">
           <Button variant="secondary" className="bg-white text-custom-primary px-8 w-full sm:w-auto">
             Join the Community
           </Button>
+          </Link>
         </div>
 
         {/* Features grid */}

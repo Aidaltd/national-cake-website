@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 const imageMarket = "/pexels-kindelmedia-6869044.jpg" as const;
 const imagePreOrder = "/preorder.jpg" as const;
 import { Check, CheckCircle } from "lucide-react";
+import Link from "next/link";
 
 export const Sales = () => {
   const firstBullets = [
@@ -60,7 +61,9 @@ export const Sales = () => {
             ))}
           </ul>
 
+          <Link href="/become-an-agent">
           <Button className="mt-4 w-max">Become an agent Today</Button>
+          </Link>
         </div>
       </div>
 
@@ -92,9 +95,11 @@ export const Sales = () => {
             ))}
           </ul>
 
+          <Link href="/pre-order">
           <Button className="mt-4 w-max" variant="default">
             Click Here to Pre-Order Now 
           </Button>
+          </Link>
         </div>
 
         {/* Image */} 
