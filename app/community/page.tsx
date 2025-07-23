@@ -1,8 +1,5 @@
 "use client";
 
-import Image from "next/image";
-
-import HERO_IMAGE from "@/public/Nationalcake-11.jpg"
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import GridDistortion from "@/components/Animations/grid-distortion";

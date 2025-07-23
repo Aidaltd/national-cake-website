@@ -88,8 +88,8 @@ const footerLinks: FooterLinksData = {
         title: "Company",
         links: [
             { name: "About", href: "/about" },
-            { name: "Blog", href: "#blog" },
-            { name: "Community", href: "/national-cake/get-started" },
+            { name: "Blog", href: "/#blog" },
+            { name: "Community", href: "/community" },
             { name: "Agents", href: "/become-an-agent" },
             // { name: "Contact", href: "#contact" },
         ],
@@ -117,10 +117,10 @@ const footerLinks: FooterLinksData = {
     // },
 };
 export const Footer = () => {
-    const pathname = usePathname();
-    if (pathname?.startsWith("/get-started") || pathname?.startsWith("national-cake/get-started" )|| pathname?.startsWith("not-found")) {
-        return null;
-    }
+    // const pathname = usePathname();
+    // if (pathname?.startsWith("/get-started") || pathname?.startsWith("national-cake/get-started" )|| pathname?.startsWith("not-found")) {
+    //     return null;
+    // }
     const year = new Date().getFullYear();
 
     const scrollToTop = () => {
