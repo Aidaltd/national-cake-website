@@ -14,7 +14,7 @@ const FeatureList: React.FC<FeatureListProps> = ({ features }) => (
     {features.map((feature) => (
       <li key={feature} className="flex items-start gap-2">
         <span className="text-gray-400">•</span>
-        <span>{feature}</span>
+        <span className="text-base">{feature}</span>
       </li>
     ))}
   </ul>
@@ -107,22 +107,22 @@ const Price: React.FC = () => {
               <p className="text-sm text-gray-500 mb-2">Game</p>
               
               {/* Product Title */}
-              <h1 className="text-3xl lg:text-4xl font-bold text-custom-primary mb-4">
+              <h1 className="text-3xl lg:text-4xl tracking-tighter font-bold text-custom-primary mb-4">
                 National Cake Board Game
               </h1>
 
               {/* Price */}
               <div className="mb-6">
                 <div className="flex items-center gap-3 mb-2">
-                  <span className="text-3xl font-bold text-custom-primary">₦25,000</span>
-                  <span className="text-lg text-gray-500 line-through">₦30,000</span>
+                  <span className="text-3xl font-bold tracking-tighter text-custom-primary">₦25,000</span>
+                  <span className="text-lg text-gray-500 tracking-tighter line-through">₦30,000</span>
                 </div>
               </div>
 
               {/* Product Description */}
               <div className="mb-8">
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Description & Fit</h3>
-                <p className="text-sm text-gray-600 mb-4">
+                <p className="text-base text-gray-600 mb-4">
                   Enjoy the thrill of political campaigning and bridge-building with friends and family. 
                   This limited pre-order bundle includes premium components designed for hours of strategic gameplay.
                 </p>
@@ -140,13 +140,13 @@ const Price: React.FC = () => {
 
           {/* Rating & Reviews Section */}
           <div className="border-t border-gray-200 p-4 lg:p-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-8">Rating & Reviews</h2>
+            <h2 className="text-3xl font-bold tracking-tighter text-gray-900 mb-8">Rating & Reviews</h2>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Rating Summary */}
               <div>
                 <div className="flex items-end gap-4 mb-6">
-                  <div className="text-6xl font-bold text-gray-900">
+                  <div className="text-6xl tracking-tighter font-bold text-gray-900">
                     {averageRating}
                   </div>
                   <div className="pb-2">

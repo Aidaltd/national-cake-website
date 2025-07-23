@@ -39,10 +39,10 @@ export const Sales = () => {
 
         {/* Content */}
         <div className="space-y-6 max-w-lg lg:ml-auto">
-          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-semibold">
+          <h3 className="section-title">
             Sell Something That Changes Lives
           </h3>
-          <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+          <p className="section-description text-gray-700 leading-relaxed">
             Bake Tomorrow … Earn Today. This is nation-building for profit. Whether you are an
             entrepreneur, teacher, trainer, coach, faith-based leader, youth leader, side-hustler,
             changemaker or public servant.
@@ -68,10 +68,10 @@ export const Sales = () => {
       <div className="flex items-center flex-col-reverse md:flex-row-reverse gap-10 lg:grid-cols-2">
         {/* Content */}
         <div className="space-y-6 max-w-lg">
-          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-semibold">
+          <h3 className="section-title">
             Pre-Order Now and Bake the Future With Us
           </h3>
-          <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+          <p className="section-description text-gray-700 leading-relaxed">
             You are not just buying a board game but giving yourself leverage, your students’ insights
             and your family in Nigeria. This is history funified, education simplified, and patriotism
             verified. Triggers critical thinking and civic values. Unites families through laughter and

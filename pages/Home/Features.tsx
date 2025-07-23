@@ -65,13 +65,13 @@ const FEATURES: FeatureItem[] = [
 
  const Features = () => {
   return (
-    <section className="bg-green-900 text-white py-16 px-6 lg:py-16 lg:pb-24" id="features">
+    <section className="bg-neutral-950 text-white py-16 px-6 lg:py-16 lg:pb-24" id="features">
       <div className="container mx-auto space-y-12 lg:space-y-16">
         {/* Heading row */}
         <div className="flex flex-col lg:flex-row items-start justify-between gap-8">
             <div>
             <h1 className="section-title text-white">Our Features</h1>
-          <h2 className="max-w-xl text-sm font-light text-white/90 mt-2">
+          <h2 className="md:max-w-lg max-w-xl section-description font-light text-white/90 mt-2">
             Be a part of the movement that rewrites the story in classrooms, hearts and <span className="text-gray-200">history</span>.
           </h2>
           </div>
@@ -99,7 +99,7 @@ const FEATURES: FeatureItem[] = [
                 <ArrowUpRight className="w-5 h-5 absolute top-4 right-4" />
 
                 <div className="mb-4 text-xl">{feat.icon}</div>
-                <h3 className="font-semibold text-base lg:text-lg mb-2">
+                <h3 className="font-bold text-base lg:text-lg mb-2">
                   {feat.title}
                 </h3>
                 <p className="text-sm leading-relaxed mb-4">

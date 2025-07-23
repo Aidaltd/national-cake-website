@@ -20,7 +20,7 @@ export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Hide global header on Get Started flow
-  if (pathname?.startsWith("/get-started") || pathname?.startsWith("national-cake/get-started" )|| pathname?.startsWith("not-found")) {
+  if (pathname?.startsWith("/community") || pathname?.startsWith("community" )|| pathname?.startsWith("not-found")) {
     return null;
   }
 
@@ -32,7 +32,7 @@ export const Header = () => {
     { name: "Pre-Order", link: "/pre-order" },
   ];
   
-  if (pathname?.startsWith("/get-started") || pathname?.startsWith("national-cake/get-started" )|| pathname?.startsWith("not-found")) {
+  if (pathname?.startsWith("/community") || pathname?.startsWith("community" )|| pathname?.startsWith("not-found")) {
     return null;
   }
 
@@ -109,7 +109,7 @@ const MobileNavLink = ({
               <a href="/blog" className="transition-all duration-300 hover:underline">
                 Blog
               </a> */}
-              <a href="/national-cake/get-started">
+              <a href="/community">
                 <Button className="text-custom-primary/80 bg-white hover:bg-white/90 hover:text-custom-primary px-8">
                   Join our community
                 </Button>
@@ -160,7 +160,7 @@ const MobileNavLink = ({
 
                 <motion.div variants={itemVariants} className="mt-4">
                   <a
-                    href="/get-started"
+                    href="/community"
                     onClick={() => setIsMenuOpen(false)}
                     className="mt-8 bg-custom-primary text-white w-full py-3 text-base px-4 rounded-md font-bold block text-center hover:-translate-y-0.5 transition duration-200"
                   >

@@ -20,7 +20,7 @@ const Achievements = () => {
     <section className="container mx-auto px-6 py-16 lg:py-24 space-y-12">
       {/* Heading & description */}
       <div className="max-w-4xl space-y-4">
-      <h2 className="section-title ">
+      <h2 className="section-title max-w-xl ">
   Not Just a Game — A National Rebirth
 </h2>
 

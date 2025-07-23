@@ -10,9 +10,7 @@ export default function About() {
     return (
         <>
         <HeroDelivery />
-            {/* <TitleBanner title="About Us" /> */}
             <AboutGame />   
-            <TitleBanner title="About Creator" />
             <Creator />
             <Mission />
             <WhyChooseUs />

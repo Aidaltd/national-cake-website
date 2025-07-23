@@ -45,10 +45,10 @@ const Hero = () => {
           <br className="hidden sm:block" /> Would You Win?
         </h1>
 
-        <p className="max-w-lg text-sm sm:max-w-xl sm:text-sm text-white/90">
+        <p className="max-w-lg text-sm sm:max-w-xl sm:text-lg text-white/90">
           Discover the board game that is transforming homes into classrooms, strangers into allies and history into action.
         </p>
-        <p className="text-green-500 text-sm ">
+        <p className="text-green-500 text-sm md:text-lg ">
          ## This is not entertainment, it is a reawakening.
         </p>
 
@@ -62,7 +62,7 @@ const Hero = () => {
               Become an Agent
             </Button>
           </Link>
-          <Link href="/national-cake/get-started" className="mt-2 sm:mt-0 text-sm font-semibold underline underline-offset-2 hover:text-white">
+          <Link href="/community" className="mt-2 sm:mt-0 text-base font-semibold underline underline-offset-2 hover:text-white">
             Join Our Community
           </Link>
         </div>
@@ -84,7 +84,7 @@ const Hero = () => {
                 />
                 {suffix}
               </h3>
-              <p className="text-xs leading-snug text-white/80 max-w-[14ch] sm:max-w-none">
+              <p className="text-sm md:text-base leading-snug text-white/80 max-w-[14ch] sm:max-w-none">
                 {description}
               </p>
             </div>

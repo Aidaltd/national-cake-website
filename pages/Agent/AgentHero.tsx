@@ -133,7 +133,7 @@ const TennisMarketingHero: React.FC = () => {
               <span className=" text-custom-primary">Bake a Better Nigeria</span>
             </h1>
             <div className="flex md:items-end items-start justify-start gap-10 flex-col space-x-4">
-              <p className="text-sm text-gray-600 leading-relaxed max-w-xs md:max-w-md">
+              <p className="section-description text-base text-gray-800 leading-relaxed max-w-xs md:max-w-md">
                 National Cake is not just a game — it's a tool for transformation.
                 As an agent, you’re not selling a product, you’re igniting patriotism,
                 restoring civic identity, and inspiring a generation to remember who they are.
@@ -174,7 +174,7 @@ const TennisMarketingHero: React.FC = () => {
                   <ChevronRight className="w-6 h-6" />
                 </button>
               </div>
-              <p className="text-gray-500 md:text-sm text-xs uppercase tracking-wider my-5 font-medium">
+              <p className="text-gray-700  md:text-base text-xs uppercase tracking-wider mt-10 mb-5 font-semibold">
               Meet Our Extraordinary Agents of Change
             </p>
                {/* Scrollable Carousel */}
@@ -216,7 +216,7 @@ const TennisMarketingHero: React.FC = () => {
                 {service.icon}
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
-              <p className="text-gray-600 text-xs leading-relaxed">{service.description}</p>
+              <p className="text-gray-600 text-sm leading-relaxed">{service.description}</p>
             </div>
           ))}
         </div>

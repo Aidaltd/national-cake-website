@@ -3,6 +3,8 @@ import { ReactNode } from "react";
 import "./globals.css";
 import HeaderBar from "@/constants/HeaderBar";
 import ClickSpark from "@/components/Animations/click-spark";
+import { Header } from "@/constants/Header";
+import { Footer } from "@/constants/Footer";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta-sans",
@@ -22,13 +24,16 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       className={`${plusJakartaSans.className} bg-white antialiased`}
     >
 <ClickSpark 
-  sparkColor='black'
-  sparkSize={32}
-  sparkRadius={50}
-  sparkCount={8}
-  duration={500}
+  sparkColor='green'
+  sparkSize={20}
+  sparkRadius={35}
+  sparkCount={14}
+  duration={400}
 >   
+ <HeaderBar />
+      <Header />
    {children}
+    <Footer />
 </ClickSpark>
     </body>
   </html>

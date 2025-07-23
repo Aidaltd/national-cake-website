@@ -45,12 +45,12 @@ export default function Context() {
     <section className="relative overflow-hidden py-20 md:py-28 bg-neutral-950 text-white">
       <div className="container mx-auto px-6 md:px-10 space-y-10">
         {/* Heading */}
-        <div className="max-w-3xl space-y-6">
-          <h2 className="section-title text-white max-w-xl">
+        <div className="max-w-4xl space-y-6">
+          <h2 className="section-title text-white ">
             Sell Something That Changes Lives, Bake Tomorrow ... Earn
             Today.
           </h2>
-          <p className="text-gray-300 text-xs max-w-xl md:text-sm">
+          <p className="section-description text-base text-gray-200 max-w-xl md:text-sm">
             This is nation-building for profit. Whether you are an entrepreneur, teacher, trainer, coach,
             faith-based leader, youth leader, side-hustler, changemaker or public servant.
           </p>
@@ -67,7 +67,7 @@ export default function Context() {
 
         {/* Cards title */}
         <div className="space-y-10">
-          <h3 className="text-2xl sm:text-3xl font-semibold text-white">
+          <h3 className="text-3xl font-semibold text-white">
             National Cake offers you something rare:
           </h3>
 
@@ -86,10 +86,10 @@ export default function Context() {
                 <span className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-black text-white">
                   <ArrowUpRight className="h-4 w-4" />
                 </span>
-                <h4 className="text-lg font-semibold mb-2">
+                <h4 className="text-lg font-bold mb-2">
                   {card.title}
                 </h4>
-                <p className="text-sm leading-relaxed">
+                <p className="text-sm md:text-base leading-relaxed">
                   {card.description}
                 </p>
               </motion.div>

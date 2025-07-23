@@ -1,6 +1,4 @@
 "use client";
-
-import GradientText from "@/components/Animations/gradient-text";
 import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
 
@@ -14,7 +12,7 @@ export const AboutGame = () => {
     ];
 
     return (
-        <section className="container mx-auto px-6 py-16 lg:py-24 lg:px-12" id="about">
+        <section className="container mx-auto px-6 py-16 lg:pt-24 lg:pb-0 lg:px-12" id="about">
             {/* Intro */}
             <div className=" mx-auto flex flex-col items-start justify-start space-y-6 lg:space-y-10">
                 <h1 className="section-title">
@@ -35,7 +33,7 @@ export const AboutGame = () => {
                     Perfect for Families, Organizations, Schools and Competitions.
                     <br />
                     <span className="text-custom-primary">Ready to play for the future of Nigeria?</span>
-                    <br />
+                    {/* <br />
                     In the National Oven, every player becomes a patriot-in-training.
 
                     Every move becomes a mirror.
@@ -48,7 +46,7 @@ export const AboutGame = () => {
 
                     From schoolyards in Sokoto to churches in Warri, from NYSC camps to family game nights, this is where a new Nigeria is baking.
 
-                    You have prayed, protested and planned. Now, let’s play and heal together.
+                    You have prayed, protested and planned. Now, let’s play and heal together. */}
                 </p>
             </div>
 
@@ -58,7 +56,7 @@ export const AboutGame = () => {
                 <div className="space-y-8">
                     <div>
                         <h3 className="text-xl font-semibold mb-4">Our Vision</h3>
-                        <div className="space-y-4 text-gray-600 text-sm">
+                        <div className="space-y-4 section-description">
                             <p>
                                 Our vision is to use the transformative power of play to reconnect Nigeria to its people and its people to their purpose. We envision a future where every Nigerian, young and old, understands their history, embraces their identity, and is empowered to build a unified and purposeful nation.
                             </p>
@@ -73,7 +71,7 @@ export const AboutGame = () => {
                         {checklist.map((item) => (
                             <li key={item} className="flex items-start gap-3 text-sm text-gray-700">
                                 <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-custom-primary" />
-                                <span>{item}</span>
+                                <span className="section-description">{item}</span>
                             </li>
                         ))}
                     </ul>
@@ -83,7 +81,7 @@ export const AboutGame = () => {
                 <div className="space-y-8">
                     <div>
                         <h3 className="text-xl font-semibold mb-4">Our Mission</h3>
-                        <div className="space-y-4 text-gray-600 text-sm">
+                        <div className="space-y-4 section-description">
                             <p>
                                 Our mission is to spark national re-orientation through an engaging, inclusive, and emotionally resonant educational game. We aim to bridge the disconnection between Nigerians and Nigeria by using play to create a safe, interactive space for storytelling, reflection, dialogue, and civic education.
                             </p>

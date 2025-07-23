@@ -14,12 +14,12 @@ export default function Home() {
     <Hero />
     {/* <LogoTicker />   */}
     <AboutGame />
-    <Prototype size="60vw" mobileSize="90vw" />
+    <Prototype size="60vw" mobileSize="90vw" /> 
+    <Testimonials />
     <Community />   
     <Features />  
     <Sales />
     <Creator />
-    <Testimonials />
     <Faq />
     </>
   );

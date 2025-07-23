@@ -28,7 +28,7 @@ export const Creator = () => {
 
         {/* Content */}
         <div className="space-y-6 max-w-xl lg:ml-auto">
-          <h2 className="text-3xl sm:text-4xl font-semibold">About Creator</h2>
+          <h2 className="section-title">About Creator</h2>
           <p className="text-base leading-relaxed text-gray-700">
             <span className="font-semibold text-custom-primary">
               Victor Prince Dickson f. hcd

@@ -88,16 +88,16 @@ const Testimonials = () => {
   const testimonial = TESTIMONIALS[idx];
 
   return (
-    <section className="px-6 py-16 lg:py-24 container mx-auto">
+    <section className="px-6 py-16 lg:py-0 container mx-auto">
       {/* Header */}
       <div className="mb-10 space-y-2 max-w-3xl">
         <span className="tag">
           Testimonials
         </span>
-        <h2 className="section-title">
+        <h2 className="section-title max-w-2xl">
           Word From The Educators & Facilitators
         </h2>
-        <p className="text-sm sm:text-base text-gray-600">
+        <p className="text-sm sm:text-base max-w-xl text-gray-600">
           Discover the inspiration behind our travel blog, where we share captivating stories and hidden gems from around the globe.
         </p>
       </div>
@@ -123,12 +123,12 @@ const Testimonials = () => {
 
           {/* Quote block */}
           <div className="space-y-6" ref={quoteRef}>
-            <Quote className="h-10 w-10 text-custom-primary" />
-            <p className="text-lg sm:text-xl lg:text-2xl font-medium leading-relaxed">
+            <Quote className="h-12 w-12 text-custom-primary" />
+            <p className="text-lg sm:text-xl lg:text-3xl font-medium leading-tight tracking-tight">
               “{testimonial.quote}”
             </p>
-            <div>
-              <h4 className="font-semibold">{testimonial.name}</h4>
+            <div> 
+              <h3 className="font-semibold max-w-xl">{testimonial.name}</h3>
               <p className="text-sm text-gray-600">{testimonial.role}</p>
             </div>
           </div>
@@ -153,10 +153,6 @@ const Testimonials = () => {
             <ChevronRight className="h-5 w-5" />
           </button>
         </div>
-
-        <Button variant="secondary" className="bg-custom-primary text-white px-6 sm:px-8">
-          View More Testimonials
-        </Button>
       </div>
     </section>
   );

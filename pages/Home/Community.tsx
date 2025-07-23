@@ -66,7 +66,7 @@ export const Community = () => {
             Insights, Into the <span className="text-custom-primary">National Cake's</span>{" "}
             Developing Community
           </h2>
-          <p className="text-sm  text-gray-700 w-full md:max-w-2xl">
+          <p className="section-description w-full md:max-w-2xl">
             This is not just a network rather it is Nigeria's first civic revival, disguised as a game, a national oven where a new cake is in progress. This is the living, breathing extension of the game itself.
           </p>
         </div>
@@ -133,16 +133,16 @@ export const Community = () => {
               </div>
 
               {/* Icon */}
-              <div className="mb-4 rounded-full w-fit bg-white/50 p-2">
+              <div className="mb-2 rounded-full w-fit bg-white/50 p-2">
                 {item.icon}
               </div>
 
               {/* Content */}
-              <div className="space-y-3 flex-1">
-                <h3 className="font-bold text-lg leading-tight">
+              <div className="space-y-2 flex-1">
+                <h3 className="font-bold text-xl leading-tight">
                   {item.title}
                 </h3>
-                <p className="text-xs leading-relaxed opacity-90">
+                <p className="text-sm leading-relaxed opacity-90">
                   {item.body}
                 </p>
               </div>
@@ -150,7 +150,7 @@ export const Community = () => {
             </div>
 
             {/* Person Image at Bottom */}
-            <div className="h-52 rounded-t-lg relative">
+            <div className="h-56 rounded-t-lg relative">
               <Image
                 src={item.image}
                 alt={`Person representing ${item.title}`}
