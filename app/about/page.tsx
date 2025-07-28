@@ -1,4 +1,3 @@
-"use client";
 import { AboutGame } from "@/constants/AboutGame";
 import { Creator } from "@/constants/Creator";
 import Mission from "@/pages/About/Mission";

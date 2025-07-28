@@ -1,4 +1,3 @@
-"use client";
 
 import { Faq } from "@/constants/Faq";
 import LogoTicker from "@/pages/Home/LogoTicker";

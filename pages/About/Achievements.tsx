@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import bottomImage from "@/public/Nationalcake-11.jpg";
+import bottomImage from "@/public/Nationalcake-2.jpg";
 interface Award {
   year: number;
   title: string;

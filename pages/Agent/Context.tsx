@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-// import { AgentStepperDialog } from "./AgentStepperDialog";
 import Image from "next/image";
 import communityHero from "@/public/Nationalcake-22.jpg";
 

@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useRef } from 'react';
 import { ArrowRight, Target, Users, TrendingUp, BarChart3, ChevronLeft, ChevronRight } from 'lucide-react';
 
