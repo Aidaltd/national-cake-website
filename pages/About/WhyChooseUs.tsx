@@ -61,7 +61,7 @@ export default function MarketingHeroSection() {
   
 
   return (
-    <section className="bg-black text-white min-h-screen p-4 md:p-8 lg:p-12 ">
+    <section className="bg-black text-white min-h-screen px-4 md:px-8 lg:px-12 py-16 md:py-24 lg:py-32 ">
       <div className="max-w-7xl mx-auto">
 
         {/* Hero Title */}
