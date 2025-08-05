@@ -1,11 +1,11 @@
 "use client";
-import { faqdata } from "@/lib/nationalcakeData";
+import { agentFaqData } from "@/lib/nationalcakeData";
 import { CheckCircle, Plus } from "lucide-react";
 import React, { useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { AnimatePresence, motion } from "motion/react";
 
-export default function Faq() {
+export default function AgentFaq() {
   // Using null instead of an index to indicate no FAQ is open initially
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [showAll, setShowAll] = useState(false);
@@ -40,7 +40,7 @@ export default function Faq() {
         </div>
         {/* Questions */}
         <motion.div layout className="max-w-4xl mx-auto mt-12 flex flex-col gap-6">
-          {faqdata.filter((_, idx) => showAll || idx < 6).map((faq, faqIndex) => (
+          { agentFaqData.filter((_, idx) => showAll || idx < 6).map((faq, faqIndex) => (
             <div
               key={faq.id}
               className="bg-custom-primary/5 rounded-2xl border border-custom-primary/20 p-6"
@@ -76,23 +76,23 @@ export default function Faq() {
                     className="overflow-hidden"
                   >
                     <p className="text-black/90 font-light">{faq.answer}</p>
-                    {/* {faq.list && (
+                    {faq.list && (
                       <ul className="mt-4 space-y-2">
                         {faq.list.map((item, index) => (
                           <li key={index} className="flex items-center gap-3">
                             <CheckCircle size={18} className="text-custom-primary" />
-                            <span className="text-gray-500">{item}</span>
+                            <span className="text-custom-primary">{item}</span>
                           </li>
                         ))}
                       </ul>
-                    )} */}
+                    )}
                   </motion.div>
                 )}
               </AnimatePresence>
             </div>
           ))}
 
-          {faqdata.length > 6 && (
+          {agentFaqData.length > 6 && (
             <div className="text-center mt-8">
               <button
                 onClick={() => setShowAll(!showAll)}

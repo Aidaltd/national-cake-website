@@ -57,12 +57,12 @@ const RatingBar: React.FC<{ rating: number; count: number; total: number }> = ({
   );
 };
 
-const Price: React.FC = () => {
+export default function Price() {
   const features = [
     'Box — 14" x 14" x 3"',
     'Board — 25.5" x 26"',
     'Spin pads — 5" x 5"',
-    'Weight — 1.9 kg',
+    'Weight — 20 kg',
     'Components:',
     '1 Board',
     '4 Personal Spin Pads',
@@ -90,7 +90,7 @@ const Price: React.FC = () => {
   };
 
   return (
-    <section className="py-16 sm:py-24 bg-gray-50">
+    <section className="py-16 sm:py-24">
       <div className="mx-auto max-w-8xl md:px-4">
         <div className="bg-white md:rounded-lg shadow-sm border border-gray-200 overflow-hidden">
           <div className="flex flex-col lg:flex-row">
@@ -108,14 +108,14 @@ const Price: React.FC = () => {
               
               {/* Product Title */}
               <h1 className="text-3xl lg:text-4xl tracking-tighter font-bold text-custom-primary mb-4">
-                National Cake Board Game
+              National Cake Board Game (limited Edition)
               </h1>
 
               {/* Price */}
               <div className="mb-6">
                 <div className="flex items-center gap-3 mb-2">
                   <span className="text-3xl font-bold tracking-tighter text-custom-primary">₦25,000</span>
-                  <span className="text-lg text-gray-500 tracking-tighter line-through">₦30,000</span>
+                  <span className="text-2xl text-gray-500 font-seminbold tracking-tighter line-through">₦30,000</span>
                 </div>
               </div>
 
@@ -123,8 +123,7 @@ const Price: React.FC = () => {
               <div className="mb-8">
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Description & Fit</h3>
                 <p className="text-base text-gray-600 mb-4">
-                  Enjoy the thrill of political campaigning and bridge-building with friends and family. 
-                  This limited pre-order bundle includes premium components designed for hours of strategic gameplay.
+                If we do not teach ourselves who we are, the world will tell us who we are not. If we do not guide the children through the crossroads, they may lose the road entirely.
                 </p>
                 <FeatureList features={features} />
               </div> 
@@ -137,6 +136,22 @@ const Price: React.FC = () => {
               </a>
             </div>
           </div>
+
+          {/* Content Section */}
+          <div className="p-4 lg:p-12 bg-gray-50">
+            <h2 className="text-3xl font-bold tracking-tighter text-gray-900 mb-8">
+              So, we ask you:
+            </h2>
+            <ul className="list-disc pl-8 space-y-4 mb-8">
+              <li className="text-base"><span className="font-semibold text-custom-primary">Sponsor a state</span> with National cake boxes and become a chapter in our national rebirth.</li>
+              <li className="text-base"><span className="font-semibold text-custom-primary">Champion a region </span>with National Cake in every school, and inscribe your name in the chronicles of our civic awakening.</li>
+              <li className="text-base"><span className="font-semibold text-custom-primary">Adopt a school </span>with national cake boxes and give a child the gift of belonging.</li>
+              <li className="text-base"><span className="font-semibold text-custom-primary">Speak up </span>with National cake boxes from your pulpit, your office, and your boardroom, for unity, for truth, for transformation.</li>
+              <li className="text-base"><span className="font-semibold text-custom-primary">Just get a copy</span> for yourself and your loved ones.</li>
+            </ul>
+          </div>
+
+          <h1 className="lg:text-8xl md:text-6xl text-3xl text-center font-bold tracking-tighter text-gray-900 my-8">DELIVERY ONLY IN <span className="text-custom-primary">ABUJA</span> </h1>
 
           {/* Rating & Reviews Section */}
           <div className="border-t border-gray-200 p-4 lg:p-12">
@@ -200,4 +215,3 @@ const Price: React.FC = () => {
   );
 };
 
-export default Price;

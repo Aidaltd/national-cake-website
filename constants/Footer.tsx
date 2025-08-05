@@ -88,7 +88,7 @@ const footerLinks: FooterLinksData = {
         title: "Company",
         links: [
             { name: "About", href: "/about" },
-            { name: "Blog", href: "/#blog" },
+            // { name: "Blog", href: "/#blog" },
             { name: "Community", href: "/community" },
             { name: "Agents", href: "/become-an-agent" },
             // { name: "Contact", href: "#contact" },
@@ -116,7 +116,7 @@ const footerLinks: FooterLinksData = {
     //   ],
     // },
 };
-export const Footer = () => {
+export default function Footer() {
     // const pathname = usePathname();
     // if (pathname?.startsWith("/get-started") || pathname?.startsWith("national-cake/get-started" )|| pathname?.startsWith("not-found")) {
     //     return null;
@@ -193,8 +193,7 @@ export const Footer = () => {
                             </div>
                         </Link>
                         <p className="text-gray-400 max-w-sm mt-1 text-sm">
-                           National Cake is a transformational board game and civic tool designed to reconnect Nigerians with their history, identity, and purpose. Built for homes, schools, churches, and communities, it turns storytelling into nation-building. Together, let’s bake a better Nigeria — one game at a time.
-                        </p>
+                        National Cake is the one oasis board game that reveals Nigeria’s true story, the events and how it shapes you. Built for homes, schools, churches, and communities, it turns storytelling into nation-building. Together, let’s bake a better Nigeria, one game at a time.                        </p>
                         {/* Social Icons */}
                         <div className="flex space-x-5 mt-6">
                             {socialLinks.map((social) => (

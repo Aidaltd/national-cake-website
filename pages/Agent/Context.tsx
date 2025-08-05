@@ -99,9 +99,9 @@ export default function Context() {
         {/* CTA */}
         <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ delay: 0.6, duration: 0.6, ease: "easeOut" }} layout className="pt-8 flex justify-center">
 
-          <Button asChild size="lg" className="px-10 py-6 text-base rounded-full">
+          <Button asChild size="lg" className="px-10 py-6 text-base rounded-xl">
             <a href="https://paystack.shop/pay/macro-agent" target="_blank" rel="noopener noreferrer">
-            Join 1,000+ agents today
+            Become an AGENT TODAY
           </a>
           </Button>
 

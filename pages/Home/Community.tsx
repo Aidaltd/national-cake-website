@@ -8,48 +8,49 @@ import YOUTH from '@/public/youth.jpg'
 import LEADER from '@/public/leader.jpg'
 import FAITH from '@/public/faith.jpg'
 import DONOR from '@/public/donor.jpg'
+import { color } from "framer-motion";
 
 // temporary assets – replace with real paths later
 const AVATARS = ["/avatar-4.png", "/avatar-7.png", "/avatar-6.png"];
 
-export const Community = () => {
+ export default function Community() {
   const bullets = [
     {
       title: "For the Youth",
-      body: "it is where you turn curiosity into voice, story into strategy and play into power.",
+      body: "This is where you turn curiosity into voice, story into strategy and play into power.",
       color: "bg-green-300",
       textColor: "text-black",
-      icon: <Users className="w-5 h-5" />,
+      icon: <CheckCircle className="w-5 h-5" />,
       badge: "18-35",   
       category: "Years",
       image: YOUTH // Replace with actual image path
     },
     {
       title: "For Leaders & Elders",
-      body: "it is your chance to sponsor not a project but a generation, that will change the narrative",
+      body: "This is your moment to plant seeds of unity, wisdom, and responsibility in the hearts of tomorrow’s nation-builders",
       color: "bg-purple-300",
       textColor: "text-black",
-      icon: <Target className="w-5 h-5" />,
+      icon: <CheckCircle className="w-5 h-5" />,
       badge: "35+",
       category: "Years",
       image:  LEADER // Replace with actual image path
     },
     {
       title: "For Faith Leaders",
-      body: "it is where morality meets memory without preaching, lets change the narrative",
+      body: "National Cake is your brand’s opportunity to align with purpose, culture, and civic transformation that resonates.",
       color: "bg-teal-300 ",
       textColor: "text-black",
-      icon: <Heart className="w-5 h-5" />,
+      icon: <CheckCircle className="w-5 h-5" />,
       badge: "All Ages",
       category: "Ministry",
       image: FAITH // Replace with actual image path
     },
     {
-      title: "For Donors",
-      body: "it is the platform where patriotism becomes measurable and legacy becomes visible.",
+      title: "For Civil Society Organizations (CSOs)",
+      body: "Through National Cake, engagement is not just reported, it is played, seen, felt, and remembered.",
       color: "bg-blue-300",
       textColor: "text-black",
-      icon: <Gift className="w-5 h-5" />,
+      icon: <CheckCircle className="w-5 h-5" />,
       badge: "Impact",
       category: "Driven",
       image: DONOR // Replace with actual image path
@@ -74,11 +75,14 @@ export const Community = () => {
         {/* Stat & avatar */}
         <div className="flex flex-col sm:flex-row lg:flex-col gap-6 items-start lg:items-end">
           {/* Blog posts */}
-          <div className="flex items-baseline gap-2">
-            <h3 className="lg:text-5xl text-3xl font-bold">
+          <div className="flex items-baseline flex-col gap-2">
+            {/* <h3 className="lg:text-5xl text-3xl font-bold">
               <CountUp from={0} to={500} duration={1.2} separator="," className="inline-block " />+
-            </h3>
-            <span className="text-sm text-gray-600">Blog Posts</span>
+            </h3> */}
+            <h2 className="text-center font-semibold text-5xl text-custom-primary">
+             Coming Soon 
+            </h2>
+              
           </div>
 
           {/* Avatar group */}
@@ -99,6 +103,14 @@ export const Community = () => {
               Connect With Your People
             </span>
           </div>
+          <a
+                href="https://forms.gle/o61VpSp7zPo8cWqB6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline text-md md:text-xl text-custom-primary"
+              >
+                Join the Community Waitlist
+              </a>
         </div>
       </div>
 
@@ -121,7 +133,7 @@ export const Community = () => {
             className={`${item.color} ${item.textColor} rounded-2xl relative overflow-hidden group hover:scale-105 transition-all duration-300 cursor-pointer shadow-lg h-[400px] flex flex-col`}
           >
             {/* Top Content Section */}
-            <div className="p-6 flex-1 flex flex-col">
+            <div className="p-4 flex-1 flex flex-col">
               {/* Badge */}
               <div className="flex justify-between items-start mb-4">
                 <div className="bg-white/20 backdrop-blur-sm rounded-full px-3 py-1 text-xs font-semibold">
@@ -171,4 +183,4 @@ export const Community = () => {
   );
 };
 
-export default Community;
+

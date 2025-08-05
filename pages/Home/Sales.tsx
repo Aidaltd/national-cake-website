@@ -4,12 +4,12 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 // Static images stored in the `public` folder
-const imageMarket = "/pexels-kindelmedia-6869044.jpg" as const;
-const imagePreOrder = "/preorder.jpg" as const;
+const imageMarket = "/Nationalcake-30.jpg" as const;
+const imagePreOrder = "/Nationalcake-29.jpg" as const;
 import { Check, CheckCircle } from "lucide-react";
 import Link from "next/link";
 
-export const Sales = () => {
+ export default function Sales() {
   const firstBullets = [
     "A real income: ₦2,500 per box",
     "A real purpose: Educate. Connect. Inspire.",
@@ -27,7 +27,7 @@ export const Sales = () => {
   return (
     <section className="container mx-auto px-6 py-16 lg:py-24 space-y-24">
       {/* Block 1 */}
-      <div className="grid items-center gap-10 lg:grid-cols-2">
+      <div className="grid items-center md:justify-between gap-10 lg:grid-cols-2">
         {/* Image */}
         <Image
           src={imageMarket}
@@ -41,7 +41,7 @@ export const Sales = () => {
         {/* Content */}
         <div className="space-y-6 max-w-lg lg:ml-auto">
           <h3 className="section-title">
-            Sell Something That Changes Lives
+            <span className="text-custom-primary">Sell</span> Something That Changes <span className="text-custom-primary">Lives</span>
           </h3>
           <p className="section-description text-gray-700 leading-relaxed">
             Bake Tomorrow … Earn Today. This is nation-building for profit. Whether you are an
@@ -68,22 +68,27 @@ export const Sales = () => {
       </div>
 
       {/* Block 2 */}
-      <div className="flex items-center flex-col-reverse md:flex-row-reverse gap-10 lg:grid-cols-2">
+      <div className="flex items-center flex-col-reverse md:justify-between md:flex-row-reverse gap-10 lg:grid-cols-2">
         {/* Content */}
-        <div className="space-y-6 max-w-lg">
+        <div className="space-y-4 max-w-lg">
           <h3 className="section-title">
-            Pre-Order Now and Bake the Future With Us
+          <span className="text-custom-primary">Pre-Order</span> Now and Bake the <span className="text-custom-primary">Future</span> With Us
           </h3>
           <p className="section-description text-gray-700 leading-relaxed">
-            You are not just buying a board game but giving yourself leverage, your students’ insights
-            and your family in Nigeria. This is history funified, education simplified, and patriotism
-            verified. Triggers critical thinking and civic values. Unites families through laughter and
-            discovery.
+          If you know your history, your future will not be a mystery…
             <br />
             <br />
-            <span className="font-medium text-custom-primary">
+            <span className="font-bold text-xl tracking-tight leading-tight text-custom-primary">
               Join the Pioneers of National Cake, enter the land of promise before others!
             </span>
+          </p>
+          <p className="section-description text-gray-700 leading-relaxed">
+          (Delivery only within Abuja)
+
+Available for 4 weeks only from 1st to 28th September 2025
+
+Delivery begins after 30th September 2025
+
           </p>
 
           <ul className="space-y-3">
@@ -108,7 +113,7 @@ export const Sales = () => {
           alt="Happy customer with bags"
           width={800}
           height={600}
-          className="rounded-lg w-full object-cover h-80 sm:h-80 lg:h-[33rem] lg:order-first"
+          className="rounded-lg w-full md:w-[50%] object-cover h-80 sm:h-80 lg:h-[33rem] lg:order-first"
         />
       </div>
     </section>
@@ -116,4 +121,3 @@ export const Sales = () => {
 };
 
 
-export default Sales;

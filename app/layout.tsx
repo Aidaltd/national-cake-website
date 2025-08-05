@@ -3,8 +3,8 @@ import { ReactNode } from "react";
 import "./globals.css";
 import HeaderBar from "@/constants/HeaderBar";
 import ClickSpark from "@/components/Animations/click-spark";
-import { Header } from "@/constants/Header";
-import { Footer } from "@/constants/Footer";
+import Header from "@/constants/Header";
+import Footer from "@/constants/Footer";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta-sans",
@@ -12,8 +12,42 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata = {
-  title: "Get Started | National Cake",
-  description: "Join National Cake's Community and take part in baking a better nation.",
+  title: "National Cake",
+  description: [
+    "Join National Cake's Community and take part in baking a better nation.",
+    "Nigeria’s First Civic Board Game",
+    "The Game That Builds a Nation",
+  ].join(" || "),
+  keywords: [
+    "National Cake",
+    "Nigerian Board Game",
+    "Civic Education",
+    "Learning",
+    "Fun",
+    "Games",
+    "Community",
+    "Nigeria",
+    "Nigerians",
+    "Africa",
+    "Nation Building",
+    "Education",
+    "Gamification",
+    "Citizenship",
+    "Transformation",
+    "Creative Learning",
+    "Leadership",
+    "Civic Education",
+    "History",
+    "Culture",
+    "National Oven",
+    "Experience",
+  ],
+  authors: [
+    {
+      name: "Victor Prince Dickson",
+      url: "https://www.victorprincedickson.com",
+    },
+  ],
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

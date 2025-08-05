@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import creator from "@/public/creator.jpeg";
 
-export const Creator = () => {
+export default function Creator() {
   return (
     <section className="container mx-auto px-6 py-20 lg:py-16  border-y border-gray-200">
       <div className="grid gap-12 lg:grid-cols-2 items-center">
@@ -61,7 +61,7 @@ export const Creator = () => {
 
           {/* Know more link */}
           <Link
-            href="/about"
+            href="https://www.victorprincedickson.com"
             className="inline-flex items-center gap-2 text-custom-primary font-medium pt-4 hover:underline underline-offset-4"
           >
             Know more <ArrowRight className="h-4 w-4" />
@@ -70,4 +70,4 @@ export const Creator = () => {
       </div>
     </section>
   );
-};
+}

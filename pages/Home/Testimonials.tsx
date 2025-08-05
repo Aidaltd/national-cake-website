@@ -7,7 +7,7 @@ import { gsap } from "gsap";
 import { Button } from "@/components/ui/button";
 import { Quote, ChevronLeft, ChevronRight } from "lucide-react";
 import test1 from "@/public/BEM PEVER.jpeg";
-import test2 from "@/public/dummy.png";
+import test2 from "@/public/PRINCESS BUNMI PUKAT.jpeg";
 import test3 from "@/public/COACH RALPH.jpeg";
 import test4 from "@/public/DR. HYELADI HARUNA.jpg"; 
 import test5 from "@/public/NANCY OBLETE.jpg";
@@ -68,7 +68,7 @@ const TESTIMONIALS: Testimonial[] = [
   
 ];
 
-const Testimonials = () => {
+export default function Testimonials() {
   const [idx, setIdx] = useState(0);
   const quoteRef = useRef<HTMLDivElement>(null);
 
@@ -91,14 +91,14 @@ const Testimonials = () => {
     <section className="px-6 py-16 lg:py-0 container mx-auto">
       {/* Header */}
       <div className="mb-10 space-y-2 max-w-3xl">
-        <span className="tag">
+        {/* <span className="tag">
           Testimonials
-        </span>
-        <h2 className="section-title max-w-2xl">
-          Word From The Educators & Facilitators
+        </span> */}
+        <h2 className="section-title max-w-2xl mb-8">
+        What <span className="text-custom-primary">Experts</span> are <span className="text-custom-primary">Saying</span>
         </h2>
         <p className="text-sm sm:text-base max-w-xl text-gray-600">
-          Discover the inspiration behind our travel blog, where we share captivating stories and hidden gems from around the globe.
+          Hear what experts and thought leaders are saying about National Cake, the innovative way to bake a better nation.
         </p>
       </div>
 
@@ -158,5 +158,3 @@ const Testimonials = () => {
   );
 };
 
-
-export default Testimonials;

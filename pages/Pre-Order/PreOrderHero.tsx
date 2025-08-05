@@ -3,10 +3,10 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import HERO_IMAGE from "@/public/Nationalcake-28.jpg";
+import HERO_IMAGE from "@/public/Nationalcake-29.jpg";
 import Link from "next/link";
 
-export default function AgentHero() {
+export default function PreOrderHero() {
   return (
     <section className="relative h-full w-full overflow-hidden isolate">
       {/* Background image */}
@@ -29,32 +29,32 @@ export default function AgentHero() {
         {/* Left column - hero copy */}
         <div className="space-y-8 max-w-3xl text-white">
           {/* Pill tag */}
-          <span className="inline-block bg-white/20 border border-white/30 backdrop-blur-[2px] px-4 py-1 rounded-full text-xs uppercase tracking-wide text-white/90 mb-3">
-            Become a National Cake Agent
+          <span className="inline-block bg-white/20 border border-white/30 backdrop-blur-[2px] px-4 py-1 rounded-full text-xs uppercase tracking-wide text-white/90 mb-10">
+            Pre-Order Now Open
           </span>
 
-          <h1 className="section-title lg:text-6xl lg:tracking-tighter lg:leading-16 text-white max-w-3xl">
-          Become an Agent of National Rebirth. Bake a Better Nigeria!
-Register Now!
+          <h1 className="section-title lg:text-7xl lg:tracking-tighter lg:leading-tighter text-white max-w-3xl">
+          This is History Funified, Education simplified, Patriotism verified.
           </h1>
 
-          <p className="text-sm md:text-base text-gray-200 max-w-xl">
-            Join our network of passionate agents spreading the National Cake board game across Nigeria. 
-            Earn while promoting national unity and civic education through play.
-          </p>
+          {/* <p className="text-sm md:text-base text-white max-w-xl">
+            National Cake is a history funified, education simplified and patriotism verified board game. 
+            It's a game that redefines how we see Nigeria, her history and her people. 
+            Play with friends and family and discover the Nigeria you never knew existed.
+          </p> */}
 
           {/* Action buttons */}
-          <div className="flex flex-col sm:flex-row sm:items-center gap-4 pt-4">
-            <Link href="/become-an-agent#faq">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4 pt-16">
+            <a href="https://paystack.com/buy/national-cake">
               <Button className="px-8 text-white bg-custom-primary hover:bg-custom-primary/90">
+                Pre-Order Now
+              </Button>
+            </a>
+            <a href="#faq">
+              <Button variant="outline" className="px-8 bg-white text-black border-transparent hover:bg-gray-100">
                 Learn More
               </Button>
-            </Link>
-            <Link href="https://paystack.shop/pay/macro-agent" target="_blank" rel="noopener noreferrer">
-              <Button variant="outline" className="px-8 bg-white text-black border-transparent hover:bg-gray-100">
-                Join as Agent
-              </Button>
-            </Link>
+            </a>
             <Link href="/community" className="mt-2 sm:mt-0 text-base font-semibold underline underline-offset-2 hover:text-white">
             Join Our Community
           </Link>

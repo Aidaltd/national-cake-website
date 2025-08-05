@@ -9,7 +9,7 @@ import  HERO_IMAGE from "@/public/Nationalcake-11.jpg"
 // Temporary hero image – place a suitable image at public/hero.jpg or replace the src with your own URL
 // const HERO_IMAGE = "/hero.jpg";
 
-const Hero = () => {
+  export default function Hero() {
   // Statistics data (value, suffix, description)
   const stats: Array<{
     value: number;
@@ -17,10 +17,10 @@ const Hero = () => {
     prefix?: string;
     description: string;
   }> = [
-    { value: 223, suffix: "M", description: "Total population of Nigeria (2025 estimate)" },
-    { value: 62, suffix: "%", description: "Adult literacy rate in Nigeria" },
-    { value: 4.1, suffix: "%", description: "Unemployment rate in Nigeria (2023 revised data)" },
-    { value: 120, suffix: "M", description: "Number of internet users in Nigeria (2024)" }
+    { value: 50, suffix: "", description: "Years Simulation of Nigeria 2.0" },
+    { value: 200, suffix: "", description: "Events that defines Nigeria" },
+    { value: 89, suffix: "%", description: "Commitment, Forgiveness, Apology & Retraction" },
+    { value: 3, suffix: "", description: "Bridges for Personal, Community & Political Transformation" },
   ]
   ;
 
@@ -40,18 +40,16 @@ const Hero = () => {
 
       {/* Content wrapper */}
       <div className="container relative mx-auto flex flex-col items-start gap-8 px-4 py-16 sm:py-24 md:py-32 lg:px-10">
-        <h1 className="max-w-4xl section-title text-white">
+        <h1 className="max-w-4xl lg:text-7xl lg:leading-tight section-title text-white">
           If Nigeria Were a Game,
           <br className="hidden sm:block" /> Would You Win?
         </h1>
-
         <p className="max-w-lg text-sm sm:max-w-xl sm:text-lg text-white/90">
-          Discover the board game that is transforming homes into classrooms, strangers into allies and history into action.
+        Discover the one oasis board game that reveals Nigeria’s true story, the events and how it shapes you.
         </p>
         <p className="text-green-500 text-sm md:text-lg ">
-         ## This is not entertainment, it is a reawakening.
+        ## This is nation building in a box.
         </p>
-
         {/* Action buttons */}
         <div className="flex flex-col sm:flex-row sm:items-center gap-4 pt-4">
           <Link href="/pre-order">
@@ -94,5 +92,3 @@ const Hero = () => {
     </section>
   );
 };
-
-export default Hero;

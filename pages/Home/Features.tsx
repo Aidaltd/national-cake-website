@@ -11,6 +11,8 @@ import {
   Plane,
   ArrowRight,
   ArrowUpRight,
+  Clock,
+  Users,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -20,10 +22,11 @@ interface FeatureItem {
   icon: React.ReactNode;
 }
 
-const FEATURES: FeatureItem[] = [
+export default function Features() {
+  const FEATURES: FeatureItem[] = [
   {
     title: "Events",
-    description: "Take part in exciting on-ground and online events that bring our community together.",
+    description: "Take part in exciting National Cake on-site and online events that bring our community together",
     icon: <Calendar className="size-6" />,
   },
   {
@@ -33,12 +36,12 @@ const FEATURES: FeatureItem[] = [
   },
   {
     title: "Influence Points",
-    description: "Rack up points for every contribution and climb to the top of the leaderboards.",
+    description: "Rack up points for every contribution and climb to the top of the National Oven leaderboard.",
     icon: <Zap className="size-6" />,
   },
   {
-    title: "Cake Shop",
-    description: "Spend your points on delicious cakes and sweet exclusive goodies in our shop.",
+    title: "Problem Jar",
+    description: "Create ideas and contribute solutions to nation building to earn points.",
     icon: <Cake className="size-6" />,
   },
   {
@@ -52,25 +55,25 @@ const FEATURES: FeatureItem[] = [
     icon: <MessageSquare className="size-6" />,
   },
   {
-    title: "All-Expense Paid Trips",
-    description: "Stand a chance to win fully sponsored trips to cake conventions and experiences.",
+    title: "Rewards & Trips",
+    description: "Stand a chance to win prizes, fully sponsored trips to National Cake conventions, experiences and more...",
     icon: <Plane className="size-6" />,
   },
   {
-    title: "Cake Trivia",
-    description: "Test your knowledge about the art of cake making and history with our fun trivia challenges.",
-    icon: <Cake className="size-6" />,
+    title: "Become an Ambassador",
+    description: "Join the ever-increasing list of National Cake Ambassadors bearing the torch of national reorientation for transformation.",
+    icon: <Users className="size-6" />,
   },
+ 
 ];
 
- const Features = () => {
-  return (
+ return (
     <section className="bg-neutral-950 text-white py-16 px-6 lg:py-16 lg:pb-24" id="features">
       <div className="container mx-auto space-y-12 lg:space-y-16">
         {/* Heading row */}
         <div className="flex flex-col lg:flex-row items-start justify-between gap-8">
             <div>
-            <h1 className="section-title text-white">Our Features</h1>
+            <h1 className="section-title text-white">Community Features</h1>
           <h2 className="md:max-w-lg max-w-xl section-description font-light text-white/90 mt-2">
             Be a part of the movement that rewrites the story in classrooms, hearts and <span className="text-gray-200">history</span>.
           </h2>
@@ -119,4 +122,3 @@ const FEATURES: FeatureItem[] = [
   );
 };
 
-export default Features;

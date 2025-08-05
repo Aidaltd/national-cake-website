@@ -4,8 +4,9 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import HERO_IMAGE  from "@/public/Nationalcake-4.jpg";
+import Link from "next/link";
 
-export const HeroDelivery = () => {
+export default function HeroDelivery() {
   return (
     <section className="relative h-full w-full overflow-hidden isolate">
       {/* Background image */}
@@ -27,26 +28,33 @@ export const HeroDelivery = () => {
         <div className="space-y-8 max-w-3xl  text-white">
           {/* Pill tag */}
           <span className="inline-block bg-white/20 border border-white/30 backdrop-blur-[2px] px-4 py-1 rounded-full text-xs uppercase tracking-wide text-white/90 mb-3">
-            Sustainable Growth through Game play
+          The National Renaissance
           </span>
 
-          <h1 className="section-title text-white max-w-xl">
-            Building a <span className="text-green-500">Better Nation</span> Through <span className="text-green-500">Healthy Competition</span>
+          <h1 className="section-title lg:text-7xl lg:tracking-tight lg:leading-16 text-white max-w-3xl">
+          Building the Nation One Story at a Time. 
           </h1>
 
           <p className="text-sm md:text-sm text-gray-200 max-w-xl">
             We believe that with the right tools and practices, farming can be a force for good. Join us in our mission to make a positive impact on the world, one farm at a time.
           </p>
 
-           <a href="/about/#about">
-            <Button size="lg" className="mt-6 w-40 bg-green-500 text-white hover:bg-green-600">
-              Learn More <ArrowRight className="h-4 w-4" />
+            {/* Action buttons */}
+        <div className="flex flex-col sm:flex-row sm:items-center gap-4 pt-4">
+          <Link href="/pre-order">
+            <Button className="px-8 text-white bg-custom-primary">Pre-Order Your Box</Button>
+          </Link>
+          <Link href="/become-an-agent">
+            <Button variant="outline" className="px-8 bg-white text-black border-transparent hover:bg-gray-100">
+              Become an Agent
             </Button>
-          </a>
+          </Link>
+          <Link href="/community" className="mt-2 sm:mt-0 text-base font-semibold underline underline-offset-2 hover:text-white">
+            Join Our Community
+          </Link>
+        </div>
         </div>
       </div>
     </section>
   );
 };
-
-export default HeroDelivery;

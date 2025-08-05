@@ -131,7 +131,7 @@ export default function Prototype({ size = "80vw", mobileSize }: PrototypeProps)
   }, [size, mobileSize]);
   return (
     <div
-        className="w-full h-auto select-none cursor-grab active:cursor-grabbing"
+        className="w-full h-auto lg:-mt-12 select-none cursor-grab active:cursor-grabbing"
         id="prototype"
       >
       <Canvas

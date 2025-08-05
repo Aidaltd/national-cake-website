@@ -3,7 +3,7 @@ import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowRight, Users, Eye, Heart, TrendingUp } from 'lucide-react';
 
-const MarketingHeroSection = () => {
+export default function MarketingHeroSection() {
   const stats = [
     {
       number: "70%",
@@ -66,14 +66,14 @@ const MarketingHeroSection = () => {
 
         {/* Hero Title */}
         <div className="mb-16">
-          <h1 className="section-title text-white">
-            Nation building is an art<br />
-            and we're artists
+          <h1 className="section-title max-w-4xl text-white">
+          Nation-building is an Art, and we are all artists. Let's build a Nation the World will stand still for. 
+
           </h1>
         </div>
 
         {/* Stats Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {stats.map((stat, index) => (
             <div key={index} className="text-left">
               <div className="text-sm md:text-base text-gray-400 mb-1">
@@ -88,7 +88,7 @@ const MarketingHeroSection = () => {
               </button>
             </div>
           ))}
-        </div>
+        </div> */}
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
@@ -132,4 +132,3 @@ const MarketingHeroSection = () => {
   );
 };
 
-export default MarketingHeroSection;
