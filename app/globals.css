@@ -145,7 +145,7 @@
    @apply text-5xl md:text-[58px] md:leading-[60px] font-semibold tracking-tighter text-black;
   }
   .section-description{
-      @apply text-sm md:text-base tracking-tight text-gray-600 ;
+      @apply text-base md:text-base tracking-tight text-gray-600 ;
   }
   .section-heading{
       @apply  max-w-[540px] mx-auto;
