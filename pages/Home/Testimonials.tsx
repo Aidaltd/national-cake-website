@@ -31,10 +31,10 @@ const TESTIMONIALS: Testimonial[] = [
     image:test1,  
   },
   {
-    name: "Mrs. Oluwatobiloba Ojediran",
+    name: "Princess Bunmi Pukat (Queen Mother of Nigerian Youths)",
     role: "Financial Expert",
     quote:
-      "Well-done this is actually a very good initiative and concept. I like the game part. I like the thought process of solving a problem in a very unique way.",
+      "National Cake is an unusual and educative game. It took me back to the old habit of studying in the library. Honestly, this is a laudable project. We are supposed to take it to picnics, buy it for our offices, have it in lounges, have it in homes for our children because it is doesn’t need 100% supervision. This is the kind of gift that you give during birthdays and gift days, when it is unwrapped, the receiver will know that he/she has been gifted what it takes to be a “Green–blooded Nigerian",
     image: test2,
   },
   {
