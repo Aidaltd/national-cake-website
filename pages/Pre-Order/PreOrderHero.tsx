@@ -33,7 +33,7 @@ export default function PreOrderHero() {
             Pre-Order Now Open
           </span>
 
-          <h1 className="section-title lg:text-7xl lg:tracking-tighter lg:leading-tighter text-white max-w-3xl">
+          <h1 className="section-title lg:text-7xl lg:tracking-tighter lg:leading-tighter text-white max-w-4xl md:max-w-3xl">
           This is History Funified, Education simplified, Patriotism verified.
           </h1>
 
