@@ -86,7 +86,9 @@ const MobileNavLink = ({
     <header className="sticky top-0 z-50 bg-custom-primary/95 backdrop-blur-md">
         <div className="md:px-10 px-5 h-16 w-full">
           <div className="flex w-full h-full items-center justify-between">
-            <Image src={Logo} alt="Sass Logo" className="w-48" />
+            <Link href="/">
+              <Image src={Logo} alt="National Cake Logo" className="w-48" />
+            </Link>
             <nav className="hidden md:flex gap-6 text-sm text-white/80 items-center">
               <a href="/" className="transition-all duration-300 hover:underline">
                 Home
@@ -138,9 +140,9 @@ const MobileNavLink = ({
                 exit="exit"
               >
                 <div className="">
-                  <div className="flex items-start justify-start mb-6 mt-3">
-                    <Image src={Logo2} alt="Buki Logo" className="w-52" />
-                  </div>
+                  <Link href="/" className="flex items-start justify-start mb-6 mt-3">
+                    <Image src={Logo2} alt="National Cake Logo" className="w-52" />
+                  </Link>
                 </div>
 
                 {navItems.map((item, idx) => (

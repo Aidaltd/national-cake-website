@@ -45,13 +45,13 @@ export default function Creator() {
 
           {/* Social Icons */}
           <div className="flex gap-6 pt-2">
-            <Link href="#" aria-label="Facebook" className="hover:text-custom-primary transition">
+            <Link href="https://web.facebook.com/alphakulture.ng" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-custom-primary transition">
               <Facebook className="h-5 w-5" />
             </Link>
-            <Link href="#" aria-label="YouTube" className="hover:text-custom-primary transition">
+            <Link href="https://www.youtube.com/@alphakulture" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="hover:text-custom-primary transition">
               <Youtube className="h-5 w-5" />
             </Link>
-            <Link href="#" aria-label="Instagram" className="hover:text-custom-primary transition">
+            <Link href="https://www.instagram.com/alphakulture.ng" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-custom-primary transition">
               <Instagram className="h-5 w-5" />
             </Link>
             <Link href="#" aria-label="Telegram" className="hover:text-custom-primary transition">

@@ -37,11 +37,17 @@ export default function GetStarted() {
                 {/* Action buttons */}
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4 pt-4">
 
-                    <Link href="/">
-                        <Button variant="outline" className="px-8 bg-white text-black border-transparent hover:bg-gray-100">
-                            Back to Home
-                        </Button>
-                    </Link>
+                 <Link href="https://forms.gle/o61VpSp7zPo8cWqB6">
+                 <Button variant="outline" className="px-8 bg-custom-primary text-white border-transparent hover:bg-custom-primary/90">
+                 Join the waitlist
+                 </Button>
+                 </Link>
+
+                 <Link href="/">
+                 <Button variant="outline" className="px-8 bg-white text-custom-primary border-transparent hover:bg-gray-100">
+                 Back to Home
+                 </Button>
+                 </Link>
                 </div>    </div>
         </section>
     );

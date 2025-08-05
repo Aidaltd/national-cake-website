@@ -64,12 +64,12 @@ const socialLinks: SocialLink[] = [
     },
     {
         name: "LinkedIn",
-        href: "https://www.linkedin.com/showcase/kommon-sense-masters/",
+        href: "https://www.linkedin.com/company/alphakulture",
         icon: <Linkedin />,
     },
     {
         name: "Facebook",
-        href: "https://www.facebook.com/share/1FBCfef5d2/",
+        href: "https://web.facebook.com/alphakulture.ng",
         icon: <Facebook />,
     },
 ];
