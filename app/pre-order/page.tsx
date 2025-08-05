@@ -8,7 +8,7 @@ export default function PreOrder() {
     return (
         <>
      <PreOrderHero />
-     <LogoTicker />
+     {/* <LogoTicker /> */}
       <Price />
       <Testimonials />
       <PreOrderFaq />

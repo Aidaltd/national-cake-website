@@ -22,7 +22,7 @@ export default function AboutGame() {
                    National Cake is a metaphor made real, a mirror of Nigeria’s soul, a classroom without walls, a battleground of consequences and the laboratory for civic imagination. This is history funified, education simplified and patriotism verified. The Board game will dare you to feel, think, investigate, act, belong, believe & become. 
 
                    <br />
-                   <span className="text-custom-primary">Ready to play for the future of Nigeria?</span>
+                   <span className="text-custom-primary md:text-2xl text-lg font-bold">Ready to play for the future of Nigeria?</span>
                 </p>
                {/* Checklist */}
                 <div className="space-y-6 mt-">
@@ -63,7 +63,7 @@ export default function AboutGame() {
                         <h3 className="text-xl font-semibold mb-4">Our Vision</h3>
                         <div className="space-y-4 section-description">
                            
-                            <p className="text-custom-primary">
+                            <p className="text-custom-primary text-2xl font-bold">
                             To unite Nigerians with Nigeria.
 
                             </p>

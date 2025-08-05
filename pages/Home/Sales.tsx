@@ -11,17 +11,17 @@ import Link from "next/link";
 
  export default function Sales() {
   const firstBullets = [
-    "A real income: ₦2,500 per box",
-    "A real purpose: Educate. Connect. Inspire.",
-    "A real legacy: Bring history home",
-    "A real fulfillment; reignite the Nigerian fire.",
-    "Join 1,000+ agents already rewriting the Nigerian story.",
-    "Register Now: We will Train and Equip You",
+   <span> <span className="font-bold text-custom-primary">₦2,500</span> per box </span>,
+    <span className="font-medium">A real purpose: Educate. Connect. Inspire.</span>,
+    <span className="font-medium">A real legacy: Bring history home</span>,
+    <span className="font-medium">A real fulfillment; reignite the Nigerian fire.</span>,
+    <span className="font-medium">Join 1,000+ agents already rewriting the Nigerian story.</span>,
+    <span className="font-medium">Register Now: We will Train and Equip You</span>,
   ];
 
   const secondBullets = [
-    "₦25,000 per unit Available for 4 weeks only.",
-    "Be a part of the movement that rewrites the story in classrooms, hearts and history.",
+   <span> <span className="font-bold text-custom-primary">₦25,000</span> per unit Available for 4 weeks only.</span>,
+    <span className="font-medium">Be a part of the movement that rewrites the story in classrooms, hearts and history.</span>,
   ];
 
   return (
@@ -34,7 +34,7 @@ import Link from "next/link";
           alt="Market scene"
           width={1920}
           height={1280}
-          className="rounded-lg w-full object-cover h-80 sm:h-80 lg:h-[35rem]"
+          className="rounded-lg w-full object-cover object-top h-80 sm:h-80 lg:h-[35rem]"
           priority
         />
 
@@ -54,7 +54,7 @@ import Link from "next/link";
 
           <ul className="space-y-3">
             {firstBullets.map((txt) => (
-              <li key={txt} className="flex items-start gap-3 text-sm sm:text-base">
+              <li key={txt.toString()} className="flex items-start gap-3 text-sm sm:text-base">
                 <CheckCircle className="min-w-4 h-5 w-5 text-custom-primary mt-1" />
                 <span>{txt}</span>
               </li>
@@ -87,13 +87,13 @@ import Link from "next/link";
 
 Available for 4 weeks only from 1st to 28th September 2025
 
-Delivery begins after 30th September 2025
+Delivery begins after 30th September 2025 
 
           </p>
 
           <ul className="space-y-3">
             {secondBullets.map((txt) => (
-              <li key={txt} className="flex items-start gap-3 text-sm sm:text-base">
+              <li key={txt.toString()} className="flex items-start gap-3 text-sm sm:text-base">
                 <CheckCircle className="min-w-4 h-5 w-5 text-custom-primary mt-1" />
                 <span>{txt}</span>
               </li>

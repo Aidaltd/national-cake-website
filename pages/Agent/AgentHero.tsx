@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import HERO_IMAGE from "@/public/Nationalcake-28.jpg";
+import HERO_IMAGE from "@/public/Nationalcake-30.jpg";
 import Link from "next/link";
 
 export default function AgentHero() {

@@ -10,7 +10,7 @@ export default function About() {
     return (        
         <>
             <HeroDelivery />
-            <LogoTicker />  
+            {/* <LogoTicker />   */}
             <AboutSection />
             <Creator />
             {/* <Mission /> */}

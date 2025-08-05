@@ -36,7 +36,7 @@ const AVATARS = ["/avatar-4.png", "/avatar-7.png", "/avatar-6.png"];
       image:  LEADER // Replace with actual image path
     },
     {
-      title: "For Faith Leaders",
+      title: "Business Executives",
       body: "National Cake is your brand’s opportunity to align with purpose, culture, and civic transformation that resonates.",
       color: "bg-teal-300 ",
       textColor: "text-black",

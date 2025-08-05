@@ -24,7 +24,7 @@ export default  function AboutSection() {
                     The only way forward is through courageous action and audacious moves not only to save Nigeria but to redirect it toward renaissance and renationalization.
 
                     <br />
-                    <span className="text-custom-primary">The Game Nigeria Didn’t Know It Needed!!!</span>
+                    <span className="text-custom-primary font-bold md:text-2xl text-lg">The Game Nigeria Didn’t Know It Needed!!!</span>
                 </p>
 
             </div>
@@ -38,7 +38,7 @@ export default  function AboutSection() {
                         </h3>
                         <div className="space-y-4 section-description">
 
-                            <p className="text-custom-primary">
+                            <p className="text-custom-primary font-bold">
                                 To unite Nigerians with Nigeria.
 
                             </p>
@@ -59,7 +59,7 @@ export default  function AboutSection() {
                     </ul> */}
 
 <p className="section-description ">
-The game is designed to <span className="text-custom-primary">teach, engage, and inspire</span>, all while honoring Nigeria’s sacred heritage and diverse story.
+The game is designed to <span className="text-custom-primary font-bold">teach, engage, and inspire</span>, all while honoring Nigeria’s sacred heritage and diverse story.
 </p>
 
 <h2 className="text-custom-primary text-xl font-semibold mb-4">Nigeria is not just a country; it is a calling.
@@ -91,7 +91,7 @@ A link for joining the community...
                                 That is why games have become one of the most powerful educational and transformational tools in the world. Games don’t preach. They invite. They allow people to experience, reflect, and connect, historically, emotionally, socially, and intellectually.
                             </p>
                             <ul className="space-y-3">
-                                <p className="section-description text-custom-primary">
+                                <p className="section-description text-custom-primary font-bold">
                                     National Cake is not just a board game, with National Cake, we can:
                                 </p>
                                 {[

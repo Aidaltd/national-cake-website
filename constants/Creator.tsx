@@ -22,7 +22,7 @@ export default function Creator() {
             alt="Victor Prince Dickson"
             width={800}
             height={800}
-            className="rounded-lg w-full h-full object-center object-cover"
+            className="rounded-lg w-full h-full object-top object-cover"
           />
         </div>
 

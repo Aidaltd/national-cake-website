@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
     <Hero />
-    <LogoTicker />  
+    {/* <LogoTicker />   */}
     <AboutGame />
     <Prototype size="60vw" mobileSize="90vw" /> 
     <Testimonials /> 

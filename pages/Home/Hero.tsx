@@ -47,8 +47,8 @@ import  HERO_IMAGE from "@/public/Nationalcake-11.jpg"
         <p className="max-w-lg text-sm sm:max-w-xl sm:text-lg text-white/90">
         Discover the one oasis board game that reveals Nigeria’s true story, the events and how it shapes you.
         </p>
-        <p className="text-green-500 text-sm md:text-lg ">
-        ## This is nation building in a box.
+        <p className="text-green-500 bg-white/20 backdrop-blur-[2px] rounded-lg p-3 font-bold text-base md:text-xl">
+       This is nation building in a box.
         </p>
         {/* Action buttons */}
         <div className="flex flex-col sm:flex-row sm:items-center gap-4 pt-4">
