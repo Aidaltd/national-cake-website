@@ -1,0 +1,70 @@
+import Image from "next/image";
+import Link from "next/link";
+
+type MentionItem = {
+  id: number;
+  url: string;
+  imageSrc: string;
+  alt: string;
+};
+
+const mentions: MentionItem[] = [
+  {
+    id: 1,
+    url: "https://nigeriatimes.ng/dickson-to-launch-national-cake-nigerias-civic-board-game/",
+    imageSrc: "/nigerian-times.jpg",
+    alt: "Nigeria Times"
+  },
+  {
+    id: 2,
+    url: "https://www.facebook.com/share/p/1JDEGstViM/",
+    imageSrc: "/facebook.jpg",
+    alt: "Facebook"
+  },
+  {
+    id: 3,
+    url: "https://nationaltrailonline.com.ng/dickson-to-launch-national-cake-nigerias-civic-board-game/",
+    imageSrc: "/nigerian-trail.jpg",
+    alt: "National Trail"
+  },
+  {
+    id: 4,
+    url: "https://dailytimesnigeria.com.ng/dickson-to-launch-national-cake-nigerias-civic-board-game/",
+    imageSrc: "/daily-times.jpg",
+    alt: "Daily Times Nigeria"
+  }
+];
+
+
+export default function Mentions() {
+  return (
+    <section className="py-16 bg-white">
+      <div className="container mx-auto px-4">
+        <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">
+          As Seen and Mentioned On
+        </h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 px-10 md:gap-12 items-center justify-items-center">
+          {mentions.map((mention) => (
+            <Link 
+              key={mention.id} 
+              href={mention.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group w-full h-24 flex items-center justify-center p-4 hover:shadow-lg rounded-lg transition-all duration-300 transform hover:-translate-y-1"
+            >
+              <div className="relative w-full h-full">
+                <Image
+                  src={mention.imageSrc}
+                  alt={mention.alt}
+                  fill
+                  className="object-contain p-2"
+                  // style={{ filter: 'grayscale(100%)' }}
+                />
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
