@@ -32,7 +32,19 @@ const mentions: MentionItem[] = [
     url: "https://dailytimesnigeria.com.ng/dickson-to-launch-national-cake-nigerias-civic-board-game/",
     imageSrc: "/daily-times.jpg",
     alt: "Daily Times Nigeria"
-  }
+  },
+  {
+  id: 5,
+  url:"https://punchng.com/coach-launches-board-game-to-spark-civic-rebirth/",
+  imageSrc:"/punch.png",
+  alt:"Punch News",
+  },
+  {
+    id: 6,
+    url:"https://www.thisdaylive.com/2025/08/05/victor-prince-dickson-to-launch-national-cake-nigerias-civic-board-game-designed-to-heal-the-nation/",
+    imageSrc:"/thisday.jpeg",
+    alt:"This Day News",
+    },
 ];
 
 
@@ -50,7 +62,7 @@ export default function Mentions() {
               href={mention.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group w-full h-24 flex items-center justify-center p-4 hover:shadow-lg rounded-lg transition-all duration-300 transform hover:-translate-y-1"
+              className="group w-full h-24 flex flex-col items-center justify-center p-4 hover:shadow-lg rounded-lg transition-all duration-300 transform hover:-translate-y-1"
             >
               <div className="relative w-full h-full">
                 <Image
@@ -60,7 +72,8 @@ export default function Mentions() {
                   className="object-contain p-2"
                   // style={{ filter: 'grayscale(100%)' }}
                 />
-              </div>
+              </div> 
+                <p className="text-sm md:text-base font-semibold">{mention.alt}</p>
             </Link>
           ))}
         </div>
