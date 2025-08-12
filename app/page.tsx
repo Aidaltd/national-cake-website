@@ -9,7 +9,7 @@ import Testimonials from "@/pages/Home/Testimonials";
 import Creator from "@/constants/Creator";
 import Faq from "@/constants/Faq";
 import Prototype from "@/constants/Prototype";
-import { ImageCarousel } from "@/pages/Home/ImageCarousel";
+import ImageCarousel from "@/pages/Home/ImageCarousel";
 
 
 export const metadata = {

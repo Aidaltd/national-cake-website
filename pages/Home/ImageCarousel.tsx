@@ -3,7 +3,7 @@
 import { Carousel } from "@/components/Animations/carousel";
 
 
-export function ImageCarousel() {
+export default function ImageCarousel() {
   const slideData = [
     {
       title: "Learn History",
