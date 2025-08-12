@@ -87,7 +87,7 @@ const MobileNavLink = ({
         <div className="md:px-10 px-5 h-16 w-full">
           <div className="flex w-full h-full items-center justify-between">
             <Link href="/">
-              <Image src={Logo} alt="National Cake Logo" className="w-48" />
+              <Image src={Logo} alt="National-cake Logo" className="w-48" />
             </Link>
             <nav className="hidden md:flex gap-6 text-sm text-white/80 items-center">
               <a href="/" className="transition-all duration-300 hover:underline">
@@ -141,7 +141,7 @@ const MobileNavLink = ({
               >
                 <div className="">
                   <Link href="/" className="flex items-start justify-start mb-6 mt-3">
-                    <Image src={Logo2} alt="National Cake Logo" className="w-52" />
+                    <Image src={Logo2} alt="National-cake Logo" className="w-52" />
                   </Link>
                 </div>
 

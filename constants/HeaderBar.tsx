@@ -31,7 +31,7 @@ export default function   HeaderBar() {
       className={`sticky top-0 left-0 z-50 w-full transform transition-all duration-300 ${visible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}`}
     >
       <div className="flex w-full justify-between items-center gap-4 md:px-10 px-4 py-3 bg-black text-white text-xs">
-        <div className="flex font-bold text-base items-center gap-2">
+        <div className="flex font-semibold text-base items-center gap-2">
           <p className="text-white/60 hover:text-white">Mail:</p>
           <a
             href="mailto:info@nationalcake.ng"
@@ -40,7 +40,7 @@ export default function   HeaderBar() {
             info@nationalcake.ng
           </a>
         </div>
-        <div className="flex font-bold text-base items-center gap-10">
+        <div className="flex font-semibold text-base items-center gap-10">
           <div className=" hidden md:flex items-center gap-2">
             <p className="text-white/60 hover:text-white">Follow us:</p>
             <a

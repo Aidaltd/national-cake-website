@@ -13,7 +13,7 @@ export default function NotFound() {
       <div className="w-full max-w-lg text-center space-y-6">
         <Image
           src="/404.png"
-          alt="404 graphic"
+          alt="National-cake 404 graphic"
           width={300}
           height={200}
           priority

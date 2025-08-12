@@ -146,7 +146,7 @@ export default function Footer() {
                 <div className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/60 blur-[120px] md:blur-[160px] h-80 w-80" />
 
                 <div className="container relative z-20 mx-auto flex flex-col items-center gap-6 py-16 text-center">
-                    <h2 className="mx-auto max-w-md md:max-w-xl bg-gradient-to-b from-white to-neutral-500 bg-clip-text py-8 text-4xl md:text-5xl font-bold text-transparent">
+                    <h2 className="mx-auto max-w-md md:max-w-xl text-white py-8 text-4xl md:text-5xl font-bold">
                         Join our newsletter to get the latest guides!
                     </h2>
 
@@ -187,7 +187,7 @@ export default function Footer() {
                             <div className="flex items-center space-x-2">
                                 <Image
                                     src={Logo}
-                                    alt="nationalcake Logo"
+                                    alt="National-cake Logo"
                                     className="md:w-40 w-32"
                                 />
                             </div>

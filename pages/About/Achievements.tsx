@@ -55,11 +55,11 @@ export default function Achievements() {
 
       {/* Photo */}
       <Image
-        src={ bottomImage  }// TODO replace with actual asset
-        alt="People celebrating"
+        src={ bottomImage  }
+        alt="National-cake - People celebrating"
         width={1200}
         height={800}
-        className="rounded-lg w-full object-cover h-64 sm:h-80 lg:h-[450px]"
+        className="rounded-lg w-full h-[22rem] md:h-[30rem] object-cover object-center"
       />
     </section>
   );

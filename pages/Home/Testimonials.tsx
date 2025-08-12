@@ -115,7 +115,7 @@ export default function Testimonials() {
           {/* Image */}
           <Image
             src={testimonial.image}
-            alt={testimonial.name}
+            alt={`National-cake - ${testimonial.name}`}
             width={600}
             height={500}
             className="rounded-lg w-full object-cover object-top h-80 sm:h-80 lg:h-[450px]"

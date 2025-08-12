@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import React from "react";
 import productImage from "@/public/Nationalcake-2.jpg";
 import Image from "next/image";
+import Head from "next/head";
 
 interface FeatureListProps {
   features: string[];
@@ -58,6 +59,10 @@ const RatingBar: React.FC<{ rating: number; count: number; total: number }> = ({
 };
 
 export default function Price() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://nationalcake.ng";
+  const pagePath = "/Pre-Order/Price";
+  const pageUrl = `${siteUrl}${pagePath}`;
+
   const features = [
     'Box — 14" x 14" x 3"',
     'Board — 25.5" x 26"',
@@ -89,7 +94,59 @@ export default function Price() {
     avatar: "/DR. HYELADI HARUNA.jpg" 
   };
 
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: "National-cake Board Game",
+    description:
+      "Nigeria’s first civic board game that teaches history, citizenship, and nation-building.",
+    image: [`${siteUrl}/Nationalcake-2.jpg`],
+    brand: {
+      "@type": "Brand",
+      name: "National-cake",
+    },
+    offers: {
+      "@type": "Offer",
+      url: pageUrl,
+      priceCurrency: "NGN",
+      price: "25000",
+      availability: "https://schema.org/InStock",
+      itemCondition: "https://schema.org/NewCondition",
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: 4.5,
+      reviewCount: 50,
+    },
+  } as const;
+
   return (
+    <>
+    <Head>
+      <title>Pre-Order National-cake Board Game | Price & Availability</title>
+      <meta
+        name="description"
+        content="Pre-order the National-cake Board Game. Nigeria’s first civic board game for learning history, citizenship, and nation-building. Limited edition."
+      />
+      <link rel="canonical" href={pageUrl} />
+      {/* Open Graph */}
+      <meta property="og:type" content="product" />
+      <meta property="og:url" content={pageUrl} />
+      <meta property="og:title" content="Pre-Order National-cake Board Game" />
+      <meta property="og:description" content="Nigeria’s first civic board game. Limited edition." />
+      <meta property="og:image" content={`${siteUrl}/logo1.png`} />
+      {/* Twitter */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Pre-Order National-cake Board Game" />
+      <meta name="twitter:description" content="Nigeria's first civic board game. Limited edition." />
+      <meta name="twitter:image" content={`${siteUrl}/logo1.png`} />
+      {/* Product JSON-LD */}
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
+    </Head>
     <section className="py-16 sm:py-24">
       <div className="mx-auto max-w-8xl md:px-4">
         <div className="bg-white md:rounded-lg shadow-sm border border-gray-200 overflow-hidden">
@@ -97,7 +154,7 @@ export default function Price() {
             {/* Product Image */}
             <div className="w-full lg:w-1/2 bg-gray-100 flex justify-center items-center">
               <div className="w-full h-full">
-                <Image src={productImage} alt="National Cake Board Game" className="w-full h-full object-cover" />
+                <Image src={productImage} alt="National-cake Board Game" className="w-full h-full object-cover" />
               </div>
             </div>
 
@@ -189,7 +246,7 @@ export default function Price() {
                   <div className="w-10 h-10 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
                     <Image 
                       src={testimonial.avatar} 
-                      alt={testimonial.name}
+                      alt={`National-cake - ${testimonial.name}`}
                       width={40}
                       height={40}
                       className="w-full h-full object-cover"
@@ -212,6 +269,7 @@ export default function Price() {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

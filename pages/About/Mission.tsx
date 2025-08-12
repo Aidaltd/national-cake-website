@@ -51,7 +51,7 @@ export default function Mission() {
         {/* Image */}
         <Image
           src={missionImage}
-          alt="national cake mission"
+          alt="National-cake mission"
           width={1920}
           height={1280}
           className="rounded-lg w-full object-cover h-64 sm:h-96 lg:h-[45rem]"

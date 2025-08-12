@@ -118,7 +118,7 @@ const AVATARS = ["/avatar-4.png", "/avatar-7.png", "/avatar-6.png"];
       <div className="mt-10">
         <Image
           src={COMMUNITY_HERO}
-          alt="Community"
+          alt="National--Community"
           width={1200}
           height={600}
           className="w-full rounded-lg object-cover object-top h-64 sm:h-80 lg:h-[380px] border border-gray-400"

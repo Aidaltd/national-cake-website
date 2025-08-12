@@ -1,6 +1,22 @@
-"use client";
+import { Metadata } from "next";
 import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
+
+export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: false,
+      follow: true,
+      noimageindex: true,
+    },
+  },
+};
+
+// Keep the client component export
+export const dynamic = 'force-static';
 
 export default  function AboutSection() {
     const checklist = [

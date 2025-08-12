@@ -11,40 +11,41 @@ type MentionItem = {
 const mentions: MentionItem[] = [
   {
     id: 1,
+    url:"https://punchng.com/coach-launches-board-game-to-spark-civic-rebirth/",
+    imageSrc:"/punch.png",
+    alt:"Punch News",
+    },
+    {
+      id: 2,
+      url:"https://www.thisdaylive.com/2025/08/05/victor-prince-dickson-to-launch-national-cake-nigerias-civic-board-game-designed-to-heal-the-nation/",
+      imageSrc:"/thisday.jpeg",
+      alt:"This Day News",
+      },
+  {
+    id: 3,
     url: "https://nigeriatimes.ng/dickson-to-launch-national-cake-nigerias-civic-board-game/",
     imageSrc: "/nigerian-times.jpg",
     alt: "Nigeria Times"
   },
-  {
-    id: 2,
-    url: "https://www.facebook.com/share/p/1JDEGstViM/",
-    imageSrc: "/facebook.jpg",
-    alt: "Facebook"
-  },
-  {
-    id: 3,
-    url: "https://nationaltrailonline.com.ng/dickson-to-launch-national-cake-nigerias-civic-board-game/",
-    imageSrc: "/nigerian-trail.jpg",
-    alt: "National Trail"
-  },
-  {
+  // {
+  //   id: 4,
+  //   url: "https://www.facebook.com/share/p/1JDEGstViM/",
+  //   imageSrc: "/facebook.jpg",
+  //   alt: "Facebook"
+  // },
+  // {
+  //   id:   4,
+  //   url: "https://nationaltrailonline.com.ng/dickson-to-launch-national-cake-nigerias-civic-board-game/",
+  //   imageSrc: "/nigerian-trail.jpg",
+  //   alt: "National Trail"
+  // },
+  { 
     id: 4,
     url: "https://dailytimesnigeria.com.ng/dickson-to-launch-national-cake-nigerias-civic-board-game/",
     imageSrc: "/daily-times.jpg",
     alt: "Daily Times Nigeria"
   },
-  {
-  id: 5,
-  url:"https://punchng.com/coach-launches-board-game-to-spark-civic-rebirth/",
-  imageSrc:"/punch.png",
-  alt:"Punch News",
-  },
-  {
-    id: 6,
-    url:"https://www.thisdaylive.com/2025/08/05/victor-prince-dickson-to-launch-national-cake-nigerias-civic-board-game-designed-to-heal-the-nation/",
-    imageSrc:"/thisday.jpeg",
-    alt:"This Day News",
-    },
+  
 ];
 
 

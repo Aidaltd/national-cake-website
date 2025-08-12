@@ -14,7 +14,7 @@ export default function HeroDelivery() {
              {/* Use native img tag to avoid Next remote config hassle */}
              <Image
                src={HERO_IMAGE}  
-               alt="Chess hero"
+               alt="National-cake hero"
                className="h-full w-full object-cover object-center"
              />
              {/* Dark overlay */}

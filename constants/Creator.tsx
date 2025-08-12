@@ -19,7 +19,7 @@ export default function Creator() {
         <div className="w-full max-w-lg h-full md:h-[35rem] lg:max-w-none mx-auto lg:mx-0">
           <Image
             src={creator} // TODO: replace with actual asset path
-            alt="Victor Prince Dickson"
+            alt="National-cake - Victor Prince Dickson"
             width={800}
             height={800}
             className="rounded-lg w-full h-full object-top object-cover"
