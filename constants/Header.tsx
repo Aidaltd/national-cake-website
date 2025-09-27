@@ -28,8 +28,9 @@ export default function Header() {
     { name: "Home", link: "/" },
     { name: "About", link: "/about" },
     // { name: "Features", link: "/#features" },
+    { name: "Gallery", link: "/gallery" },
     { name: "Agents", link: "/become-an-agent" },
-    { name: "Pre-Order", link: "/pre-order" },
+    { name: "Order", link: "/order" },
   ];
   
   if (pathname?.startsWith("/community") || pathname?.startsWith("community" )|| pathname?.startsWith("not-found")) {
@@ -99,11 +100,14 @@ const MobileNavLink = ({
               {/* <a href="/#features" className="transition-all duration-300 hover:underline">
                 Features
               </a> */}
+              <a href="/gallery" className="transition-all duration-300 hover:underline">
+                Gallery
+              </a>
               <a href="/become-an-agent" className="transition-all duration-300 hover:underline">
                 Agents
               </a>
-              <a href="/pre-order" className="transition-all duration-300 hover:underline">
-                Pre-Order
+              <a href="/order" className="transition-all duration-300 hover:underline">
+                Order
               </a>
               {/* <a href="/testimonials" className="transition-all duration-300 hover:underline">
                 Testiomonials

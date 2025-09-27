@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { AnimatePresence, motion } from "motion/react";
 
-export default function PreOrderFaq() {
+export default function OrderFaq() {
   // Using null instead of an index to indicate no FAQ is open initially
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [showAll, setShowAll] = useState(false);

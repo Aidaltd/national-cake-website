@@ -13,7 +13,13 @@
 <priority>0.8</priority>
 </url>
 <url>
-<loc>https://www.nationalcake.ng/pre-order</loc>
+<loc>https://www.nationalcake.ng/gallery</loc>
+<lastmod>2025-08-05</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.nationalcake.ng/order</loc>
 <lastmod>2025-08-05</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>

@@ -8,18 +8,13 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      // Legacy pre-order route
+      // Legacy order route
       {
-        source: '/Pre-Order/Price',
-        destination: '/pre-order',
+        source: '/Order/Price',
+        destination: '/order',
         permanent: true,
       },
-      // Section pages (if accessed directly)
-      {
-        source: '/About/:path*',
-        destination: '/about',
-        permanent: true,
-      },
+      // Removed problematic About redirect that was causing redirect loops
       {
         source: '/Agent/:path*',
         destination: '/become-an-agent',

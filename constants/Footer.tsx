@@ -81,7 +81,7 @@ const footerLinks: FooterLinksData = {
         links: [
             { name: "Features", href: "/#features" },
             { name: "Prototype", href: "/#prototype" },
-            { name: "Pricing", href: "/pre-order" },
+            { name: "Pricing", href: "/order" },
         ],
     },
     company: {

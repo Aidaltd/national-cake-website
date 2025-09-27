@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import React from "react";
-import productImage from "@/public/Nationalcake-2.jpg";
+const productImage = "/Nationalcake-2.jpg";
 import Image from "next/image";
 import Head from "next/head";
 
@@ -60,7 +60,7 @@ const RatingBar: React.FC<{ rating: number; count: number; total: number }> = ({
 
 export default function Price() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://nationalcake.ng";
-  const pagePath = "/Pre-Order/Price";
+  const pagePath = "/Order/Price";
   const pageUrl = `${siteUrl}${pagePath}`;
 
   const features = [
@@ -109,7 +109,7 @@ export default function Price() {
       "@type": "Offer",
       url: pageUrl,
       priceCurrency: "NGN",
-      price: "25000",
+      price: "30000",
       availability: "https://schema.org/InStock",
       itemCondition: "https://schema.org/NewCondition",
     },
@@ -123,21 +123,21 @@ export default function Price() {
   return (
     <>
     <Head>
-      <title>Pre-Order National-cake Board Game | Price & Availability</title>
+      <title>Order National-cake Board Game | Price & Availability</title>
       <meta
         name="description"
-        content="Pre-order the National-cake Board Game. Nigeria’s first civic board game for learning history, citizenship, and nation-building. Limited edition."
+        content="Order the National-cake Board Game. Nigeria's first civic board game for learning history, citizenship, and nation-building. Limited edition."
       />
       <link rel="canonical" href={pageUrl} />
       {/* Open Graph */}
       <meta property="og:type" content="product" />
       <meta property="og:url" content={pageUrl} />
-      <meta property="og:title" content="Pre-Order National-cake Board Game" />
-      <meta property="og:description" content="Nigeria’s first civic board game. Limited edition." />
+      <meta property="og:title" content="Order National-cake Board Game" />
+      <meta property="og:description" content="Nigeria's first civic board game. Limited edition." />
       <meta property="og:image" content={`${siteUrl}/logo1.png`} />
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Pre-Order National-cake Board Game" />
+      <meta name="twitter:title" content="Order National-cake Board Game" />
       <meta name="twitter:description" content="Nigeria's first civic board game. Limited edition." />
       <meta name="twitter:image" content={`${siteUrl}/logo1.png`} />
       {/* Product JSON-LD */}
@@ -171,8 +171,7 @@ export default function Price() {
               {/* Price */}
               <div className="mb-6">
                 <div className="flex items-center gap-3 mb-2">
-                  <span className="text-3xl font-bold tracking-tighter text-custom-primary">₦25,000</span>
-                  <span className="text-2xl text-gray-500 font-seminbold tracking-tighter line-through">₦30,000</span>
+                  <span className="text-3xl font-bold tracking-tighter text-custom-primary">₦30,000</span>
                 </div>
               </div>
 
@@ -188,9 +187,86 @@ export default function Price() {
               {/* Action Buttons */}
               <a href="https://paystack.com/buy/national-cake" target="_blank" rel="noopener noreferrer">
                 <Button className="flex-1 bg-custom-primary w-full hover:bg-custom-primary/90 text-white py-3">
-                  Preorder Now
+                  Order Now
                 </Button>
               </a>
+            </div>
+          </div>
+
+          {/* Premium Sales Banner */}
+          <div className="relative bg-gradient-to-br from-custom-primary via-custom-primary/90 to-custom-primary/80 p-8 lg:p-12 text-white overflow-hidden">
+            {/* Background Pattern */}
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_50%)]"></div>
+            </div>
+            
+            {/* Premium Badge */}
+            <div className="absolute top-4 right-4">
+              <div className="bg-white text-custom-primary px-4 py-2 rounded-full font-bold text-sm shadow-lg">
+                🔥 LIMITED OFFER
+              </div>
+            </div>
+
+            <div className="relative max-w-6xl mx-auto">
+              <div className="grid lg:grid-cols-2 gap-8 items-center">
+                {/* Left Content */}
+                <div className="text-center lg:text-left">
+                  <div className="inline-block bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-bold mb-4 tracking-wider border border-white/30">
+                    EXCLUSIVE BULK OFFER
+                  </div>
+                  
+                  <h2 className="text-3xl lg:text-4xl font-bold tracking-tight mb-4">
+                    Premium <span className="text-yellow-300">Bulk</span> Pricing
+                  </h2>
+                  
+                  <p className="text-lg text-white/90 mb-6 leading-relaxed">
+                    Perfect for schools, organizations, and institutions. 
+                    <span className="text-yellow-300 font-semibold"> 50+ copies</span> at special rates.
+                  </p>
+
+                  {/* Pricing Cards */}
+                  <div className="flex flex-col sm:flex-row gap-4 mb-6">
+                    <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 flex-1">
+                      <div className="text-sm text-white/70 mb-1">Regular Price</div>
+                      <div className="text-2xl font-bold line-through text-white/60">₦30,000</div>
+                    </div>
+                    
+                    <div className="bg-white text-custom-primary rounded-xl p-4 flex-1 relative shadow-lg">
+                      <div className="absolute -top-2 -right-2 bg-yellow-400 text-custom-primary text-xs px-2 py-1 rounded-full font-bold">
+                        SAVE ₦5,000
+                      </div>
+                      <div className="text-sm font-semibold mb-1 text-custom-primary">Bulk Price (50+)</div>
+                      <div className="text-2xl font-bold text-custom-primary">₦25,000</div>
+                    </div>
+                  </div>
+
+                  <div className="text-sm text-white/70">
+                    Contact us for bulk orders and custom pricing
+                  </div>
+                </div>
+
+                {/* Right Content - Visual Elements */}
+                <div className="flex justify-center lg:justify-end">
+                  <div className="relative">
+                    {/* Main Badge */}
+                    <div className="bg-white text-custom-primary rounded-2xl p-8 shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-300">
+                      <div className="text-center">
+                        <div className="text-4xl font-bold mb-2 text-custom-primary">₦25,000</div>
+                        <div className="text-sm font-semibold mb-1 text-custom-primary">BULK PRICE</div>
+                        <div className="text-xs opacity-80 text-custom-primary">50+ copies</div>
+                      </div>
+                    </div>
+                    
+                    {/* Floating Elements */}
+                    <div className="absolute -top-4 -left-4 bg-yellow-400 text-custom-primary px-3 py-1 rounded-full text-xs font-bold animate-pulse">
+                      SAVE ₦5,000
+                    </div>
+                    <div className="absolute -bottom-4 -right-4 bg-yellow-400 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-bold border border-yellow-400">
+                      LIMITED OFFER
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 

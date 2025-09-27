@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import bottomImage from "@/public/Nationalcake-2.jpg";
+const bottomImage = "/Nationalcake-2.jpg";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 interface Award {
@@ -40,8 +40,8 @@ export default function Achievements() {
    
             {/* Action buttons */}
             <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-          <Link href="/pre-order">
-            <Button className="px-8 text-white bg-custom-primary">Pre-Order Your Box</Button>
+          <Link href="/order">
+            <Button className="px-8 text-white bg-custom-primary">Order Your Box</Button>
           </Link>
           <Link href="/become-an-agent">
             <Button variant="outline" className="px-8 bg-white border-gray-400 text-black hover:bg-gray-100">

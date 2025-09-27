@@ -1,5 +1,4 @@
 import "./globals.css";
-import { Plus_Jakarta_Sans } from "next/font/google";
 import { ReactNode } from "react";
 import Script from "next/script";
 import HeaderBar from "@/constants/HeaderBar";
@@ -7,11 +6,6 @@ import ClickSpark from "@/components/Animations/click-spark";
 import Header from "@/constants/Header";
 import Footer from "@/constants/Footer";
 import LenisProvider from "@/components/LenisProvider";
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  variable: "--font-plus-jakarta-sans",
-  subsets: ["latin"],
-});
 
 export const metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://nationalcake.ng"),
@@ -69,7 +63,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           })}
         </Script>
       </head>
-      <body className={`${plusJakartaSans.className} bg-white antialiased`}>
+      <body className="bg-white antialiased font-sans">
         <LenisProvider>
           <ClickSpark 
             sparkColor='green'

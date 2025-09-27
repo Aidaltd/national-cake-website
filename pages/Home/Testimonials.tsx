@@ -1,17 +1,17 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { gsap } from "gsap";
 import { Button } from "@/components/ui/button";
 import { Quote, ChevronLeft, ChevronRight } from "lucide-react";
-import test1 from "@/public/BEM PEVER.jpeg";
-import test2 from "@/public/PRINCESS BUNMI PUKAT.jpeg";
-import test3 from "@/public/COACH RALPH.jpeg";
-import test4 from "@/public/DR. HYELADI HARUNA.jpg"; 
-import test5 from "@/public/NANCY OBLETE.jpg";
-import test6 from "@/public/OBINNA CHUKWUEZIE.jpg";
+const test1 = "/BEM PEVER.jpeg";
+const test2 = "/PRINCESS BUNMI PUKAT.jpeg";
+const test3 = "/COACH RALPH.jpeg";
+const test4 = "/DR. HYELADI HARUNA.jpg";
+const test5 = "/NANCY OBLETE.jpg";
+const test6 = "/OBINNA CHUKWUEZIE.jpg";
 
 
 
@@ -19,7 +19,7 @@ interface Testimonial {
   name: string;
   role: string;
   quote: string;
-  image: StaticImageData;
+  image: string;
 }
 
 const TESTIMONIALS: Testimonial[] = [

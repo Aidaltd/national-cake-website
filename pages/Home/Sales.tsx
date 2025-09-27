@@ -5,13 +5,13 @@ import { Button } from "@/components/ui/button";
 
 // Static images stored in the `public` folder
 const imageMarket = "/Nationalcake-30.jpg" as const;
-const imagePreOrder = "/Nationalcake-29.jpg" as const;
+const imageOrder = "/Nationalcake-29.jpg" as const;
 import { Check, CheckCircle } from "lucide-react";
 import Link from "next/link";
 
  export default function Sales() {
   const firstBullets = [
-   <span> <span className="font-bold text-custom-primary">₦2,500</span> per box </span>,
+   <span> <span className="font-bold text-custom-primary">₦30,000</span> per box </span>,
     <span className="font-medium">A real purpose: Educate. Connect. Inspire.</span>,
     <span className="font-medium">A real legacy: Bring history home</span>,
     <span className="font-medium">A real fulfillment; reignite the Nigerian fire.</span>,
@@ -20,7 +20,7 @@ import Link from "next/link";
   ];
 
   const secondBullets = [
-   <span> <span className="font-bold text-custom-primary">₦25,000</span> per unit Available for 4 weeks only.</span>,
+   <span> <span className="font-bold text-custom-primary">₦30,000</span> per unit Available for 4 weeks only.</span>,
     <span className="font-medium">Be a part of the movement that rewrites the story in classrooms, hearts and history.</span>,
   ];
 
@@ -72,7 +72,7 @@ import Link from "next/link";
         {/* Content */}
         <div className="space-y-4 max-w-lg">
           <h3 className="section-title">
-          <span className="text-custom-primary">Pre-Order</span> Now and Bake the <span className="text-custom-primary">Future</span> With Us
+          <span className="text-custom-primary">Order</span> Now and Bake the <span className="text-custom-primary">Future</span> With Us
           </h3>
           <p className="section-description text-gray-700 leading-relaxed">
           If you know your history, your future will not be a mystery…
@@ -100,16 +100,16 @@ Delivery begins after 30th September 2025
             ))}
           </ul>
 
-          <Link href="/pre-order">
+          <Link href="/order">
           <Button className="mt-4 w-max" variant="default">
-            Click Here to Pre-Order Now 
+            Click Here to Order Now 
           </Button>
           </Link>
         </div>
 
         {/* Image */} 
         <Image
-          src={imagePreOrder}
+          src={imageOrder}
           alt="Happy customer with bags"
           width={800}
           height={600}

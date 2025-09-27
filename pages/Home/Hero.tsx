@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import CountUp from "@/components/Animations/count-up";
 import Link from "next/link";
-import  HERO_IMAGE from "@/public/Nationalcake-11.jpg"
+const HERO_IMAGE = "/Nationalcake-11.jpg";
 
 // Temporary hero image – place a suitable image at public/hero.jpg or replace the src with your own URL
 // const HERO_IMAGE = "/hero.jpg";
@@ -32,7 +32,10 @@ import  HERO_IMAGE from "@/public/Nationalcake-11.jpg"
         <Image
           src={HERO_IMAGE}  
           alt="Chess hero"
+          width={1920}
+          height={1080}
           className="h-full w-full object-cover object-center"
+          priority
         />
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/70" />
@@ -52,8 +55,8 @@ import  HERO_IMAGE from "@/public/Nationalcake-11.jpg"
         </p>
         {/* Action buttons */}
         <div className="flex flex-col sm:flex-row sm:items-center gap-4 pt-4">
-          <Link href="/pre-order">
-            <Button className="px-8 text-white bg-custom-primary">Pre-Order Your Box</Button>
+          <Link href="/order">
+            <Button className="px-8 text-white bg-custom-primary">Order Your Box</Button>
           </Link>
           <Link href="/become-an-agent">
             <Button variant="outline" className="px-8 bg-white text-black border-transparent hover:bg-gray-100">

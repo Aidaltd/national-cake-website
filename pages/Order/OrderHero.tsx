@@ -3,10 +3,10 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import HERO_IMAGE from "@/public/Nationalcake-29.jpg";
+const HERO_IMAGE = "/Nationalcake-29.jpg";
 import Link from "next/link";
 
-export default function PreOrderHero() {
+export default function OrderHero() {
   return (
     <section className="relative h-full w-full overflow-hidden isolate">
       {/* Background image */}
@@ -30,7 +30,7 @@ export default function PreOrderHero() {
         <div className="space-y-8 max-w-3xl text-white">
           {/* Pill tag */}
           <span className="inline-block bg-white/20 border border-white/30 backdrop-blur-[2px] px-4 py-1 rounded-full text-xs uppercase tracking-wide text-white/90 mb-10">
-            Pre-Order Now Open
+            Order Now Available
           </span>
 
           <h1 className="section-title lg:text-7xl lg:tracking-tighter lg:leading-tighter text-white max-w-4xl md:max-w-3xl">
@@ -47,7 +47,7 @@ export default function PreOrderHero() {
           <div className="flex flex-col sm:flex-row sm:items-center gap-4 pt-16">
             <a href="https://paystack.com/buy/national-cake">
               <Button className="px-8 text-white bg-custom-primary hover:bg-custom-primary/90">
-                Pre-Order Now
+                Order Now
               </Button>
             </a>
             <a href="#faq">

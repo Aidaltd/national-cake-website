@@ -7,10 +7,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     { path: '', priority: 1.0, changeFreq: 'weekly' }, // Home
     { path: '/about', priority: 0.8, changeFreq: 'monthly' },
+    { path: '/gallery', priority: 0.8, changeFreq: 'weekly' },
     { path: '/become-an-agent', priority: 0.7, changeFreq: 'monthly' },
     { path: '/community', priority: 0.7, changeFreq: 'weekly' },
-    { path: '/pre-order', priority: 0.9, changeFreq: 'weekly' },
-    // Excluded: /Pre-Order/Price (legacy route, should redirect to /pre-order)
+    { path: '/order', priority: 0.9, changeFreq: 'weekly' },
+    // Excluded: /Order/Price (legacy route, should redirect to /order)
     // Excluded: /not-found (error page, should not be in sitemap)
     // Excluded: /About/*, /Agent/*, /Home/* (section pages, not meant to be standalone)
   ]

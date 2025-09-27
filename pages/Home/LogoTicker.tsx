@@ -1,10 +1,10 @@
 "use client"
-import Partner1 from "@/public/partner1.png";
-import Partner2 from "@/public/partner2.png";
-import Partner3 from "@/public/partner3.png";
-import Partner4 from "@/public/partner4.png";
-import Partner5 from "@/public/partner5.png";
-import Partner6 from "@/public/partner6.png";
+const Partner1 = "/partner1.png";
+const Partner2 = "/partner2.png";
+const Partner3 = "/partner3.png";
+const Partner4 = "/partner4.png";
+const Partner5 = "/partner5.png";
+const Partner6 = "/partner6.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
