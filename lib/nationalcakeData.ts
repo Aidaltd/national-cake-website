@@ -218,147 +218,9 @@ export const preorderfaqdata = [
 ];
 
 export const galleryData = [
-  // Nationalcake series images
-  {
-    id: 1,
-    title: "National Cake Game Board",
-    description: "The main game board featuring Nigeria's timeline and historical events. Players navigate through 50 years of Nigerian history.",
-    image: "/Nationalcake-2.jpg",
-    tags: ["Game Board", "History", "Timeline", "Education"],
-    category: "Game Components"
-  },
-  {
-    id: 2,
-    title: "Game Components Overview",
-    description: "Detailed view of National Cake game components including the board, spin pads, and game pieces.",
-    image: "/Nationalcake-4.jpg",
-    tags: ["Components", "Game Pieces", "Quality", "Design"],
-    category: "Game Components"
-  },
-  {
-    id: 3,
-    title: "Educational Gameplay",
-    description: "Students and teachers using National Cake as an educational tool in classrooms across Nigeria.",
-    image: "/Nationalcake-7.jpg",
-    tags: ["Education", "Students", "Teachers", "Classroom"],
-    category: "Education"
-  },
-  {
-    id: 4,
-    title: "Community Learning Session",
-    description: "Community members engaging with National Cake during educational workshops and civic education programs.",
-    image: "/Nationalcake-8.jpg",
-    tags: ["Community", "Learning", "Workshop", "Civic Education"],
-    category: "Community"
-  },
-  {
-    id: 5,
-    title: "Family Game Night",
-    description: "A family enjoying National Cake during game night, learning about Nigeria's history together.",
-    image: "/Nationalcake-9.jpg",
-    tags: ["Family", "Game Night", "Bonding", "History"],
-    category: "Gameplay"
-  },
-  {
-    id: 6,
-    title: "Players in Action",
-    description: "Families and friends enjoying National Cake together. The game brings people together to learn about Nigeria's rich history.",
-    image: "/Nationalcake-11.jpg",
-    tags: ["Community", "Family", "Learning", "Engagement"],
-    category: "Gameplay"
-  },
-  {
-    id: 7,
-    title: "Educational Session",
-    description: "Students and teachers using National Cake as an educational tool in classrooms across Nigeria.",
-    image: "/Nationalcake-12.jpg",
-    tags: ["Education", "Students", "Teachers", "Classroom"],
-    category: "Education"
-  },
-  {
-    id: 8,
-    title: "Game Components Detail",
-    description: "Close-up view of the game components including spin pads, race counters, and bridge tokens.",
-    image: "/Nationalcake-14.jpg",
-    tags: ["Components", "Game Pieces", "Quality", "Design"],
-    category: "Game Components"
-  },
-  {
-    id: 9,
-    title: "Game Setup Complete",
-    description: "Complete game setup showing all components organized and ready for play.",
-    image: "/Nationalcake-14.jpeg",
-    tags: ["Setup", "Organization", "Components", "Ready"],
-    category: "Game Components"
-  },
-  {
-    id: 10,
-    title: "Community Engagement",
-    description: "Community leaders and members participating in National Cake sessions to promote civic education.",
-    image: "/Nationalcake-21.jpg",
-    tags: ["Community", "Civic Education", "Leadership", "Engagement"],
-    category: "Community"
-  },
-  {
-    id: 11,
-    title: "Family Game Night Session",
-    description: "A family enjoying National Cake during game night, learning about Nigeria's history together.",
-    image: "/Nationalcake-22.jpg",
-    tags: ["Family", "Game Night", "Bonding", "History"],
-    category: "Gameplay"
-  },
-  {
-    id: 12,
-    title: "Historical Timeline",
-    description: "The detailed historical timeline featured in National Cake, covering key events in Nigeria's history.",
-    image: "/Nationalcake-25.jpg",
-    tags: ["Timeline", "History", "Events", "Education"],
-    category: "Education"
-  },
-  {
-    id: 13,
-    title: "Gameplay in Progress",
-    description: "Players actively engaged in a National Cake game session, demonstrating the interactive learning experience.",
-    image: "/Nationalcake-27.jpg",
-    tags: ["Gameplay", "Interactive", "Learning", "Engagement"],
-    category: "Gameplay"
-  },
-  {
-    id: 14,
-    title: "Educational Workshop",
-    description: "Educational workshop session using National Cake to teach Nigerian history and civic values.",
-    image: "/Nationalcake-28.jpg",
-    tags: ["Workshop", "Education", "History", "Civic Values"],
-    category: "Education"
-  },
-  {
-    id: 15,
-    title: "Community Learning",
-    description: "Community members learning together through National Cake, fostering unity and historical awareness.",
-    image: "/Nationalcake-29.jpg",
-    tags: ["Community", "Learning", "Unity", "Historical Awareness"],
-    category: "Community"
-  },
-  {
-    id: 16,
-    title: "Group Learning Session",
-    description: "A group learning session with National Cake, showcasing collaborative learning and civic education.",
-    image: "/Nationalcake-30.jpg",
-    tags: ["Group Learning", "Collaboration", "Civic Education", "Community"],
-    category: "Education"
-  },
-  {
-    id: 17,
-    title: "National Cake Main Image",
-    description: "The primary National Cake game image showcasing the complete game setup and components.",
-    image: "/Nationalcake.jpg",
-    tags: ["Main Game", "Complete Setup", "Components", "Overview"],
-    category: "Game Components"
-  },
-  
   // NCLU series images (National Cake Learning Units)
   {
-    id: 18,
+    id: 1,
     title: "Learning Unit 1 - Historical Foundation",
     description: "First learning unit focusing on Nigeria's historical foundation and early development.",
     image: "/NCLU1.JPG",
@@ -366,7 +228,7 @@ export const galleryData = [
     category: "Education"
   },
   {
-    id: 19,
+    id: 2,
     title: "Learning Unit 2 - Colonial Era",
     description: "Educational content covering Nigeria's colonial period and its impact on modern development.",
     image: "/NCLU2.JPG",
@@ -374,7 +236,7 @@ export const galleryData = [
     category: "Education"
   },
   {
-    id: 20,
+    id: 3,
     title: "Learning Unit 3 - Independence Movement",
     description: "Learning materials about Nigeria's independence movement and key historical figures.",
     image: "/NCLU3.JPG",
@@ -382,7 +244,7 @@ export const galleryData = [
     category: "Education"
   },
   {
-    id: 21,
+    id: 4,
     title: "Learning Unit 4 - Post-Independence",
     description: "Educational content covering Nigeria's development after independence and nation-building efforts.",
     image: "/NCLU4.JPG",
@@ -390,7 +252,7 @@ export const galleryData = [
     category: "Education"
   },
   {
-    id: 22,
+    id: 5,
     title: "Learning Unit 5 - Cultural Heritage",
     description: "Learning materials focusing on Nigeria's rich cultural heritage and diverse traditions.",
     image: "/NCLU5.JPG",
@@ -398,7 +260,7 @@ export const galleryData = [
     category: "Education"
   },
   {
-    id: 23,
+    id: 6,
     title: "Learning Unit 6 - Economic Development",
     description: "Educational content about Nigeria's economic development and key economic milestones.",
     image: "/NCLU6.JPG",
@@ -406,7 +268,7 @@ export const galleryData = [
     category: "Education"
   },
   {
-    id: 24,
+    id: 7,
     title: "Learning Unit 7 - Political Evolution",
     description: "Learning materials covering Nigeria's political evolution and democratic development.",
     image: "/NCLU7.JPG",
@@ -414,7 +276,7 @@ export const galleryData = [
     category: "Education"
   },
   {
-    id: 25,
+    id: 8,
     title: "Learning Unit 8 - Social Development",
     description: "Educational content about Nigeria's social development and community building initiatives.",
     image: "/NCLU8.JPG",
@@ -422,7 +284,7 @@ export const galleryData = [
     category: "Education"
   },
   {
-    id: 26,
+    id: 9,
     title: "Learning Unit 9 - Youth Empowerment",
     description: "Learning materials focusing on youth empowerment and the role of young people in nation-building.",
     image: "/NCLU9.JPG",
@@ -430,7 +292,7 @@ export const galleryData = [
     category: "Education"
   },
   {
-    id: 27,
+    id: 10,
     title: "Learning Unit 10 - Leadership Development",
     description: "Educational content about leadership development and civic responsibility in Nigeria.",
     image: "/NCLU10.JPG",
@@ -438,7 +300,7 @@ export const galleryData = [
     category: "Education"
   },
   {
-    id: 28,
+    id: 11,
     title: "Learning Unit 11 - National Unity",
     description: "Learning materials promoting national unity and understanding among Nigeria's diverse communities.",
     image: "/NCLU11.JPG",
@@ -446,7 +308,7 @@ export const galleryData = [
     category: "Community"
   },
   {
-    id: 29,
+    id: 12,
     title: "Learning Unit 12 - Civic Engagement",
     description: "Educational content about civic engagement and active participation in democratic processes.",
     image: "/NCLU12.JPG",
@@ -454,7 +316,7 @@ export const galleryData = [
     category: "Community"
   },
   {
-    id: 30,
+    id: 13,
     title: "Learning Unit 13 - Environmental Awareness",
     description: "Learning materials about environmental awareness and sustainable development in Nigeria.",
     image: "/NCLU13.JPG",
@@ -462,7 +324,7 @@ export const galleryData = [
     category: "Education"
   },
   {
-    id: 31,
+    id: 14,
     title: "Learning Unit 14 - Technology & Innovation",
     description: "Educational content covering Nigeria's technological advancement and innovation landscape.",
     image: "/NCLU14.JPG",
@@ -470,7 +332,7 @@ export const galleryData = [
     category: "Education"
   },
   {
-    id: 32,
+    id: 15,
     title: "Learning Unit 15 - International Relations",
     description: "Learning materials about Nigeria's role in international relations and global partnerships.",
     image: "/NCLU15.JPG",
@@ -478,7 +340,7 @@ export const galleryData = [
     category: "Education"
   },
   {
-    id: 33,
+    id: 16,
     title: "Learning Unit 16 - Women in Development",
     description: "Educational content highlighting the role of women in Nigeria's development and progress.",
     image: "/NCLU16.JPG",
@@ -486,7 +348,7 @@ export const galleryData = [
     category: "Education"
   },
   {
-    id: 34,
+    id: 17,
     title: "Learning Unit 17 - Education System",
     description: "Learning materials about Nigeria's education system and its evolution over time.",
     image: "/NCLU17.JPG",
@@ -494,7 +356,7 @@ export const galleryData = [
     category: "Education"
   },
   {
-    id: 35,
+    id: 18,
     title: "Learning Unit 18 - Healthcare Development",
     description: "Educational content about Nigeria's healthcare development and public health initiatives.",
     image: "/NCLU18.JPG",
@@ -502,7 +364,7 @@ export const galleryData = [
     category: "Education"
   },
   {
-    id: 36,
+    id: 19,
     title: "Learning Unit 19 - Infrastructure Development",
     description: "Learning materials covering Nigeria's infrastructure development and modernization efforts.",
     image: "/NCLU19.JPG",
@@ -510,7 +372,7 @@ export const galleryData = [
     category: "Education"
   },
   {
-    id: 37,
+    id: 20,
     title: "Learning Unit 20 - Future Vision",
     description: "Educational content about Nigeria's future vision and development goals for the next generation.",
     image: "/NCLU20.jpeg",
@@ -518,11 +380,149 @@ export const galleryData = [
     category: "Education"
   },
   {
-    id: 38,
+    id: 21,
     title: "Learning Unit 21 - National Pride",
     description: "Learning materials fostering national pride and patriotism through understanding Nigeria's achievements.",
     image: "/NCLU21.jpeg",
     tags: ["Learning Unit", "National Pride", "Patriotism", "Achievements"],
     category: "Community"
+  },
+  
+  // Nationalcake series images
+  {
+    id: 22,
+    title: "National Cake Game Board",
+    description: "The main game board featuring Nigeria's timeline and historical events. Players navigate through 50 years of Nigerian history.",
+    image: "/Nationalcake-2.jpg",
+    tags: ["Game Board", "History", "Timeline", "Education"],
+    category: "Game Components"
+  },
+  {
+    id: 23,
+    title: "Game Components Overview",
+    description: "Detailed view of National Cake game components including the board, spin pads, and game pieces.",
+    image: "/Nationalcake-4.jpg",
+    tags: ["Components", "Game Pieces", "Quality", "Design"],
+    category: "Game Components"
+  },
+  {
+    id: 24,
+    title: "Educational Gameplay",
+    description: "Students and teachers using National Cake as an educational tool in classrooms across Nigeria.",
+    image: "/Nationalcake-7.jpg",
+    tags: ["Education", "Students", "Teachers", "Classroom"],
+    category: "Education"
+  },
+  {
+    id: 25,
+    title: "Community Learning Session",
+    description: "Community members engaging with National Cake during educational workshops and civic education programs.",
+    image: "/Nationalcake-8.jpg",
+    tags: ["Community", "Learning", "Workshop", "Civic Education"],
+    category: "Community"
+  },
+  {
+    id: 26,
+    title: "Family Game Night",
+    description: "A family enjoying National Cake during game night, learning about Nigeria's history together.",
+    image: "/Nationalcake-9.jpg",
+    tags: ["Family", "Game Night", "Bonding", "History"],
+    category: "Gameplay"
+  },
+  {
+    id: 27,
+    title: "Players in Action",
+    description: "Families and friends enjoying National Cake together. The game brings people together to learn about Nigeria's rich history.",
+    image: "/Nationalcake-11.jpg",
+    tags: ["Community", "Family", "Learning", "Engagement"],
+    category: "Gameplay"
+  },
+  {
+    id: 28,
+    title: "Educational Session",
+    description: "Students and teachers using National Cake as an educational tool in classrooms across Nigeria.",
+    image: "/Nationalcake-12.jpg",
+    tags: ["Education", "Students", "Teachers", "Classroom"],
+    category: "Education"
+  },
+  {
+    id: 29,
+    title: "Game Components Detail",
+    description: "Close-up view of the game components including spin pads, race counters, and bridge tokens.",
+    image: "/Nationalcake-14.jpg",
+    tags: ["Components", "Game Pieces", "Quality", "Design"],
+    category: "Game Components"
+  },
+  {
+    id: 30,
+    title: "Game Setup Complete",
+    description: "Complete game setup showing all components organized and ready for play.",
+    image: "/Nationalcake-14.jpeg",
+    tags: ["Setup", "Organization", "Components", "Ready"],
+    category: "Game Components"
+  },
+  {
+    id: 31,
+    title: "Community Engagement",
+    description: "Community leaders and members participating in National Cake sessions to promote civic education.",
+    image: "/Nationalcake-21.jpg",
+    tags: ["Community", "Civic Education", "Leadership", "Engagement"],
+    category: "Community"
+  },
+  {
+    id: 32,
+    title: "Family Game Night Session",
+    description: "A family enjoying National Cake during game night, learning about Nigeria's history together.",
+    image: "/Nationalcake-22.jpg",
+    tags: ["Family", "Game Night", "Bonding", "History"],
+    category: "Gameplay"
+  },
+  {
+    id: 33,
+    title: "Historical Timeline",
+    description: "The detailed historical timeline featured in National Cake, covering key events in Nigeria's history.",
+    image: "/Nationalcake-25.jpg",
+    tags: ["Timeline", "History", "Events", "Education"],
+    category: "Education"
+  },
+  {
+    id: 34,
+    title: "Gameplay in Progress",
+    description: "Players actively engaged in a National Cake game session, demonstrating the interactive learning experience.",
+    image: "/Nationalcake-27.jpg",
+    tags: ["Gameplay", "Interactive", "Learning", "Engagement"],
+    category: "Gameplay"
+  },
+  {
+    id: 35,
+    title: "Educational Workshop",
+    description: "Educational workshop session using National Cake to teach Nigerian history and civic values.",
+    image: "/Nationalcake-28.jpg",
+    tags: ["Workshop", "Education", "History", "Civic Values"],
+    category: "Education"
+  },
+  {
+    id: 36,
+    title: "Community Learning",
+    description: "Community members learning together through National Cake, fostering unity and historical awareness.",
+    image: "/Nationalcake-29.jpg",
+    tags: ["Community", "Learning", "Unity", "Historical Awareness"],
+    category: "Community"
+  },
+  {
+    id: 37,
+    title: "Group Learning Session",
+    description: "A group learning session with National Cake, showcasing collaborative learning and civic education.",
+    image: "/Nationalcake-30.jpg",
+    tags: ["Group Learning", "Collaboration", "Civic Education", "Community"],
+    category: "Education"
+  },
+  {
+    id: 38,
+    title: "National Cake Main Image",
+    description: "The primary National Cake game image showcasing the complete game setup and components.",
+    image: "/Nationalcake.jpg",
+    tags: ["Main Game", "Complete Setup", "Components", "Overview"],
+    category: "Game Components"
   }
 ];
