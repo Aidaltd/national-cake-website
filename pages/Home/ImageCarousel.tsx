@@ -5,37 +5,75 @@ import { Carousel } from "@/components/Animations/carousel";
 
 export default function ImageCarousel() {
   const slideData = [
+    
+    // from 1-9
     {
-      title: "Learn History",
-      src: "/Nationalcake-11.jpg",
+      title: "Teaching about Nigeria",
+      src: "DSC1.jpg",
     },
     {
       title: "Practice Citizenship",
-      src: "/Nationalcake-12.jpg",
+      src: "DSC2.jpg",
+    },
+    {
+      title: "Learn History",
+      src: "DSC3.jpg",
+    },
+    {
+      title: "Learning about Nigeria",
+      src: "DSC24.jpg",
+    },
+    {
+      title: "Learn History",
+      src: "DSC5.jpg",
+    },
+    {
+      title: "Practice Citizenship",
+      src: "DSC6.jpg",
+    },
+    {
+      title: "Learn History",
+      src: "DSC7.jpg",
+    },
+    {
+      title: "Practice Citizenship",
+      src: "DSC8.jpg",
+    },
+    {
+      title: "Practice Citizenship",
+      src: "DSC9.jpg",
+    },
+    {
+      title: "Learn History",
+      src: "DSC11.jpg",
+    },
+    {
+      title: "Practice Citizenship",
+      src: "DSC12.jpg",
     },
     {
       title: "Build a Nation",
-      src: "/Nationalcake-21.jpg",
+      src: "DSC21.jpg",
     },
     {
       title: "Get Ready to Play National Cake",
-      src: "/Nationalcake-14.jpg",
+      src: "DSC14.jpg",
     },
     {
       title: "Play with Friends",
-      src: "/Nationalcake-22.jpg",
+      src: "DSC22.jpg",
     },
     {
       title: "Learn from the Past",
-      src: "/Nationalcake-25.jpg",
+      src: "DSC20.jpg",
     },
     {
       title: "Build a Brighter Future",
-      src: "/Nationalcake-14.jpg",
+      src: "DSC26.jpg",
     },
     {
       title: "Bring People Together",
-      src: "/Nationalcake-14.jpeg",
+      src: "DSC27.jpg",
     },
   ];
   return (

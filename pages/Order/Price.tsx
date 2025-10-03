@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import React from "react";
-const productImage = "/Nationalcake-2.jpg";
+import productImage from "@/public/Nationalcake-28.jpg";
 import Image from "next/image";
 import Head from "next/head";
 

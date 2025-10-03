@@ -3,11 +3,11 @@
 import Image from "next/image";
 import CountUp from "@/components/Animations/count-up";
 import { Check, CheckCircle, Users, Heart, Target, Gift } from "lucide-react";
-const COMMUNITY_HERO = '/Nationalcake-21.jpg';
-const YOUTH = '/youth.jpg';
-const LEADER = '/leader.jpg';
-const FAITH = '/faith.jpg';
-const DONOR = '/donor.jpg';
+import  COMMUNITY_HERO from  '@/public/DSC147.jpg';
+import  YOUTH from  '@/public/DSC6.jpg'; 
+import  LEADER from  '@/public/DSC8.jpg';
+import  FAITH from  '@/public/DSC125.jpg';
+import  DONOR from  '@/public/DSC17.jpg'; 
 import { color } from "framer-motion";
 
 // temporary assets – replace with real paths later
@@ -121,7 +121,7 @@ const AVATARS = ["/avatar-4.png", "/avatar-7.png", "/avatar-6.png"];
           alt="National--Community"
           width={1200}
           height={600}
-          className="w-full rounded-lg object-cover object-top h-64 sm:h-80 lg:h-[380px] border border-gray-400"
+          className="w-full rounded-lg object-cover h-64 sm:h-80 lg:h-[380px] border border-gray-400"
         />
       </div>
 

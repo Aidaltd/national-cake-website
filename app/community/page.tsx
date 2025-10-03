@@ -11,7 +11,7 @@ export default function GetStarted() {
              <div className="absolute inset-0 -z-10">  
                  <div style={{ width: '100%', height: '100%', position: 'relative', zIndex: -1 }}>
                 <GridDistortion
-                    imageSrc="/Nationalcake-8.jpg"
+                    imageSrc="/DSC97.jpg"
                     grid={12}
                     mouse={0.1}
                     strength={0.15}
@@ -38,7 +38,7 @@ export default function GetStarted() {
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4 pt-4">
 
                  <Link href="https://forms.gle/o61VpSp7zPo8cWqB6">
-                 <Button variant="outline" className="px-8 bg-custom-primary text-white border-transparent hover:bg-custom-primary/90">
+                 <Button variant="outline" className="px-8 bg-custom-primary text-white border-transparent hover:bg-custom-primary/90 hover:text-white">
                  Join the waitlist
                  </Button>
                  </Link>

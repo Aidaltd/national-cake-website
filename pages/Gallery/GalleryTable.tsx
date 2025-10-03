@@ -7,6 +7,7 @@ import { Search, Filter, X, Tag, Calendar, Users, ChevronLeft, ChevronRight } fr
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { motion, AnimatePresence } from "framer-motion";
+import GalleryModal from "@/components/ui/gallery-modal";
 
 interface GalleryItem {
   id: number;
@@ -23,7 +24,9 @@ export default function GalleryTable() {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 8;
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const itemsPerPage = 9;
 
   // Get unique categories
   const categories = useMemo(() => {
@@ -95,6 +98,21 @@ export default function GalleryTable() {
     if (currentPage < totalPages) {
       setCurrentPage(currentPage + 1);
     }
+  };
+
+  // Modal handlers
+  const openModal = (imageIndex: number) => {
+    const actualIndex = filteredData.findIndex(item => item.id === paginatedData[imageIndex].id);
+    setCurrentImageIndex(actualIndex);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const navigateModal = (index: number) => {
+    setCurrentImageIndex(index);
   };
 
   return (
@@ -220,7 +238,7 @@ export default function GalleryTable() {
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
           <AnimatePresence>
             {paginatedData.map((item: GalleryItem, index) => (
               <motion.div
@@ -232,7 +250,10 @@ export default function GalleryTable() {
                 className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow duration-300 group"
               >
                 {/* Image */}
-                <div className="relative h-48 overflow-hidden">
+                <div 
+                  className="relative h-48 overflow-hidden cursor-pointer"
+                  onClick={() => openModal(index)}
+                >
                   <Image
                     src={item.image}
                     alt={item.title}
@@ -240,6 +261,13 @@ export default function GalleryTable() {
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                  
+                  {/* Hover overlay with view text */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="bg-white/90 text-gray-900 px-4 py-2 rounded-full text-sm font-medium">
+                      View Image
+                    </span>
+                  </div>
                   
                   {/* Category Badge */}
                   <div className="absolute top-3 left-3">
@@ -356,6 +384,15 @@ export default function GalleryTable() {
             </Button>
           </div>
         )}
+
+        {/* Gallery Modal */}
+        <GalleryModal
+          isOpen={isModalOpen}
+          onClose={closeModal}
+          images={filteredData}
+          currentIndex={currentImageIndex}
+          onNavigate={navigateModal}
+        />
       </div>
     </section>
   );

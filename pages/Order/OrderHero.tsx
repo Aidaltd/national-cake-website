@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-const HERO_IMAGE = "/Nationalcake-29.jpg";
+import HERO_IMAGE from "@/public/DSC83.jpg";
 import Link from "next/link";
 
 export default function OrderHero() {
@@ -34,7 +34,7 @@ export default function OrderHero() {
           </span>
 
           <h1 className="section-title lg:text-7xl lg:tracking-tighter lg:leading-tighter text-white max-w-4xl md:max-w-3xl">
-          This is History Funified, Education simplified, Patriotism verified.
+          This is <span className="text-custom-primary">History</span> Funified, <span className="text-custom-primary">Education</span> simplified, Patriotism <span className="text-custom-primary">verified</span>.
           </h1>
 
           {/* <p className="text-sm md:text-base text-white max-w-xl">

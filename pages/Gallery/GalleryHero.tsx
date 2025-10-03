@@ -9,14 +9,14 @@ import { motion, AnimatePresence } from "framer-motion";
 
 // Gallery images for the slider - using Nationalcake series images
 const GALLERY_IMAGES = [
-  "/Nationalcake-21.jpg",
-  "/Nationalcake-11.jpg", 
-  "/Nationalcake-12.jpg",
-  "/Nationalcake-22.jpg",
-  "/Nationalcake-25.jpg",
-  "/Nationalcake-14.jpg",
-  "/Nationalcake-29.jpg",
-  "/Nationalcake-30.jpg"
+  "/DSC21.jpg",
+  "/DSC11.jpg", 
+  "/DSC12.jpg",
+  "/DSC22.jpg",
+  "/DSC25.jpg",
+  "/DSC14.jpg",
+  "/DSC29.jpg",
+  "/DSC30.jpg"
 ];
 
 export default function GalleryHero() {
@@ -74,11 +74,11 @@ export default function GalleryHero() {
           </motion.div>
         </AnimatePresence>
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-black/20" />
       </div>
       
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-tr from-green-600/80 via-black/50 to-black/20 -z-10" />
+      <div className="absolute inset-0 bg-gradient-to-tr from-green-600/60 via-black/50 to-black/20 -z-10" />
       
       {/* Content Container */}
       <div className="container px-6 py-24 md:py-32 flex items-start h-full">
@@ -88,7 +88,7 @@ export default function GalleryHero() {
             Visual Journey
           </span>
 
-          <h1 className="section-title lg:text-7xl lg:tracking-tighter lg:leading-tight text-white mb-8">
+          <h1 className="section-title lg:text-7xl lg:tracking-tighter lg:leading-tighter text-white mb-8">
             Discover National Cake Through Our <span className="text-custom-primary">Gallery</span>
           </h1>
 

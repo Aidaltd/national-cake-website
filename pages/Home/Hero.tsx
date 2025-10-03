@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import CountUp from "@/components/Animations/count-up";
 import Link from "next/link";
-const HERO_IMAGE = "/Nationalcake-11.jpg";
+import HERO_IMAGE from "@/public/DSC129.jpg";
 
 // Temporary hero image – place a suitable image at public/hero.jpg or replace the src with your own URL
 // const HERO_IMAGE = "/hero.jpg";
@@ -38,13 +38,13 @@ const HERO_IMAGE = "/Nationalcake-11.jpg";
           priority
         />
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/70" />
+        <div className="absolute inset-0 bg-black/60" />
       </div>
 
       {/* Content wrapper */}
       <div className="container relative mx-auto flex flex-col items-start gap-8 px-4 py-16 sm:py-24 md:py-32 lg:px-10">
-        <h1 className="max-w-4xl lg:text-7xl lg:leading-tight section-title text-white">
-          If Nigeria Were a Game,
+        <h1 className="max-w-4xl lg:text-7xl lg:leading-tighter section-title text-white">
+          If <span className="text-custom-primary">Nigeria</span> Were a Game,
           <br className="hidden sm:block" /> Would You Win?
         </h1>
         <p className="max-w-lg text-sm sm:max-w-xl sm:text-lg text-white/90">

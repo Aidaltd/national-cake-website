@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-const communityHero = "/Nationalcake-22.jpg";
+import communityHero from "@/public/DSC155.jpg";
 
 interface CardItem {
   title: string;

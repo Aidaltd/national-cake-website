@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-const HERO_IMAGE = "/Nationalcake-4.jpg";
+import HERO_IMAGE from "@/public/DSC157.jpg";
 import Link from "next/link";
 
 export default function HeroDelivery() {
@@ -21,7 +21,7 @@ export default function HeroDelivery() {
                priority
              />
              {/* Dark overlay */}
-             <div className="absolute inset-0 bg-black/50" />
+             <div className="absolute inset-0 bg-black/30" />
            </div>
       {/* Dark → light gradient overlay for better text legibility */}
       <div className="absolute inset-0 bg-gradient-to-tr from-black/70 via-black/40 to-black/10 -z-10" />
@@ -34,8 +34,8 @@ export default function HeroDelivery() {
           The National Renaissance
           </span>
 
-          <h1 className="section-title lg:text-7xl lg:tracking-tight lg:leading-16 text-white max-w-3xl">
-          Building the Nation One Story at a Time. 
+          <h1 className="section-title lg:text-7xl lg:tracking-tighter lg:leading-tighter text-white max-w-3xl">
+         <span className="text-custom-primary">Building</span> the <span className="text-custom-primary">Nation</span> One Story at a Time. 
           </h1>
 
           <p className="text-sm md:text-sm text-gray-200 max-w-xl">

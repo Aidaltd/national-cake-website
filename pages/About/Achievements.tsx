@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-const bottomImage = "/Nationalcake-2.jpg";
+import  bottomImage from "@/public/DSC108.jpg";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 interface Award {
