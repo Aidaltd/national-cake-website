@@ -62,7 +62,7 @@ const AVATARS = ["/avatar-4.png", "/avatar-7.png", "/avatar-6.png"];
       {/* Header block */}
       <div className="grid items-start gap-8 md:grid-cols-[1fr_auto]">
         {/* Heading & description */}
-        <div className="space-y-6 w-full md:max-w-3xl">
+        <div className="space-y-6 w-full md:max-w-4xl">
           <h2 className="section-title w-full">
             Insights, Into the <span className="text-custom-primary">National Cake's</span>{" "}
             Developing Community
@@ -79,7 +79,7 @@ const AVATARS = ["/avatar-4.png", "/avatar-7.png", "/avatar-6.png"];
             {/* <h3 className="lg:text-5xl text-3xl font-bold">
               <CountUp from={0} to={500} duration={1.2} separator="," className="inline-block " />+
             </h3> */}
-            <h2 className="text-center font-semibold text-5xl text-custom-primary">
+            <h2 className="text-center font-semibold text-4xl text-custom-primary">
              Coming Soon 
             </h2>
               
@@ -103,14 +103,14 @@ const AVATARS = ["/avatar-4.png", "/avatar-7.png", "/avatar-6.png"];
               Connect With Your People
             </span>
           </div>
-          <a
+          {/* <a
                 href="https://forms.gle/o61VpSp7zPo8cWqB6"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline text-md md:text-xl text-custom-primary"
               >
                 Join the Community Waitlist
-              </a>
+              </a> */}
         </div>
       </div>
 

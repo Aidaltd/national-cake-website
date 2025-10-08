@@ -9,15 +9,17 @@ import { motion, AnimatePresence } from "framer-motion";
 
 // Gallery images for the slider - using Nationalcake series images
 const GALLERY_IMAGES = [
-  "/DSC21.jpg",
-  "/DSC11.jpg", 
-  "/DSC12.jpg",
-  "/DSC22.jpg",
-  "/DSC25.jpg",
-  "/DSC14.jpg",
-  "/DSC29.jpg",
-  "/DSC30.jpg"
+  "/NCLU12.jpg",
+  "/NCLU11.jpg", 
+  "/DSC90.jpg",
+  "/DSC130.jpg",
+  "/DSC95.jpg",
+  "/DSC96.jpg",
+  "/DSC101.jpg",
+  "/DSC109.jpg",
+  "/DSC125.jpg",
 ];
+
 
 export default function GalleryHero() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -74,7 +76,7 @@ export default function GalleryHero() {
           </motion.div>
         </AnimatePresence>
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0 bg-black/40" />
       </div>
       
       {/* Gradient overlay */}

@@ -27,9 +27,9 @@ export default function Header() {
   const navItems = [
     { name: "Home", link: "/" },
     { name: "About", link: "/about" },
-    // { name: "Features", link: "/#features" },
     { name: "Gallery", link: "/gallery" },
     { name: "Agents", link: "/become-an-agent" },
+    { name: "Activities", link: "/activities" },
     { name: "Order", link: "/order" },
   ];
   
@@ -91,30 +91,15 @@ const MobileNavLink = ({
               <Image src={Logo} alt="National-cake Logo" className="w-48" />
             </Link>
             <nav className="hidden md:flex gap-6 text-sm text-white/80 items-center">
-              <a href="/" className="transition-all duration-300 hover:underline">
-                Home
-              </a>
-              <a href="/about" className="transition-all duration-300 hover:underline">
-                About
-              </a>
-              {/* <a href="/#features" className="transition-all duration-300 hover:underline">
-                Features
-              </a> */}
-              <a href="/gallery" className="transition-all duration-300 hover:underline">
-                Gallery
-              </a>
-              <a href="/become-an-agent" className="transition-all duration-300 hover:underline">
-                Agents
-              </a>
-              <a href="/order" className="transition-all duration-300 hover:underline">
-                Order
-              </a>
-              {/* <a href="/testimonials" className="transition-all duration-300 hover:underline">
-                Testiomonials
-              </a>
-              <a href="/blog" className="transition-all duration-300 hover:underline">
-                Blog
-              </a> */}
+              {navItems.map((item, idx) => (
+                <a
+                  key={`nav-link-${idx}`}
+                  href={item.link}
+                  className="transition-all duration-300 hover:underline"
+                >
+                  {item.name}
+                </a>
+              ))}
               <a href="/community">
                 <Button className="text-custom-primary/80 bg-white hover:bg-white/90 hover:text-custom-primary px-8">
                   Join our community

@@ -88,10 +88,11 @@ const footerLinks: FooterLinksData = {
         title: "Company",
         links: [
             { name: "About", href: "/about" },
-            // { name: "Blog", href: "/#blog" },
+            // { name: "Activities", href: "/#blog" },
             { name: "Community", href: "/community" },
             { name: "Agents", href: "/become-an-agent" },
             // { name: "Contact", href: "#contact" },
+            { name: "Activities", href: "/activities" },
         ],
     },
     contact: {

@@ -9,75 +9,87 @@ export default function ImageCarousel() {
     // from 1-9
     {
       title: "Teaching about Nigeria",
-      src: "DSC1.jpg",
+      src: "NCLU12.jpg",
     },
     {
       title: "Practice Citizenship",
-      src: "DSC2.jpg",
+      src: "DSC92.jpg",
     },
     {
       title: "Learn History",
-      src: "DSC3.jpg",
+      src: "DSC95.jpg",
     },
     {
       title: "Learning about Nigeria",
-      src: "DSC24.jpg",
+      src: "DSC98.jpg",
     },
     {
       title: "Learn History",
-      src: "DSC5.jpg",
+      src: "DSC101.jpg",
     },
     {
       title: "Practice Citizenship",
-      src: "DSC6.jpg",
+      src: "DSC102.jpg",
     },
     {
       title: "Learn History",
-      src: "DSC7.jpg",
+      src: "DSC103.jpg",
     },
     {
       title: "Practice Citizenship",
-      src: "DSC8.jpg",
+      src: "DSC104.jpg",
     },
     {
       title: "Practice Citizenship",
-      src: "DSC9.jpg",
+      src: "DSC106.jpg",
     },
     {
       title: "Learn History",
-      src: "DSC11.jpg",
+      src: "DSC107.jpg",
     },
     {
       title: "Practice Citizenship",
-      src: "DSC12.jpg",
+      src: "DSC112.jpg",
     },
     {
       title: "Build a Nation",
-      src: "DSC21.jpg",
+      src: "DSC111.jpg",
     },
     {
       title: "Get Ready to Play National Cake",
-      src: "DSC14.jpg",
+      src: "DSC110.jpg",
     },
     {
-      title: "Play with Friends",
-      src: "DSC22.jpg",
+      title: "Deep Discussions",
+      src: "DSC114.jpg",
     },
     {
       title: "Learn from the Past",
-      src: "DSC20.jpg",
+      src: "DSC115.jpg",
     },
     {
       title: "Build a Brighter Future",
-      src: "DSC26.jpg",
+      src: "DSC119.jpg",
     },
     {
       title: "Bring People Together",
-      src: "DSC27.jpg",
+      src: "DSC123.jpg",
+    },
+    {
+      title: "Understanding Nigeria",
+      src: "DSC125.jpg",
+    },
+    {
+      title: "Knowing the Stories",
+      src: "DSC128.jpg",
+    },
+    {
+      title: "Having Fun",
+      src: "DSC130.jpg",
     },
   ];
   return (
-    <div className="relative overflow-hidden align-center justify-center w-full h-full pt-10 pb-36">
+    <div className="relative overflow-hidden align-center justify-center w-full h-full pt-10 md:pb-60 pb-36">
       <Carousel slides={slideData} />
     </div>
   );

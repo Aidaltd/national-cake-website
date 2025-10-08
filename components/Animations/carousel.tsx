@@ -14,7 +14,7 @@ interface SlideProps {
   handleSlideClick: (index: number) => void;
 }
 
- const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
+const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
   const slideRef = useRef<HTMLLIElement>(null);
 
   const xRef = useRef(0);
@@ -67,7 +67,7 @@ interface SlideProps {
     <div className="[perspective:1200px] [transform-style:preserve-3d]">
       <li
         ref={slideRef}
-        className="flex flex-1 flex-col items-start justify-start relative text-center text-white opacity-100 transition-all duration-300 ease-in-out w-[70vmin] h-[70vmin] mx-[4vmin] z-10 "
+        className="flex flex-1 flex-col items-start justify-start relative text-left text-white opacity-100 transition-all duration-300 ease-in-out w-[70vmin] h-[70vmin] mx-[4vmin] z-10 "
         onClick={() => handleSlideClick(index)}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
@@ -76,8 +76,9 @@ interface SlideProps {
             current !== index
               ? "scale(0.98) rotateX(8deg)"
               : "scale(1) rotateX(0deg)",
-          transition: "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
+          transition: "transform 0.7s cubic-bezier(0.4, 0, 0.2, 1)",
           transformOrigin: "bottom",
+          cursor: current === index ? "default" : "pointer",
         }}
       >
         <div
@@ -113,11 +114,6 @@ interface SlideProps {
           <h2 className="text-lg md:text-2xl lg:text-4xl font-semibold  relative">
             {title}
           </h2>
-          {/* <div className="flex justify-center">
-            <button className="mt-6  px-4 py-2 w-fit mx-auto sm:text-sm text-black bg-white h-12 border border-transparent text-xs flex justify-center items-center rounded-2xl hover:shadow-lg transition duration-200 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]">
-              {button}
-            </button>
-          </div> */}
         </article>
       </li>
     </div>
@@ -128,20 +124,23 @@ interface CarouselControlProps {
   type: string;
   title: string;
   handleClick: () => void;
+  disabled?: boolean;
 }
 
 const CarouselControl = ({
   type,
   title,
   handleClick,
+  disabled,
 }: CarouselControlProps) => {
   return (
     <button
-      className={`w-10 h-10 flex items-center mx-2 justify-center bg-neutral-200 dark:bg-neutral-800 border-3 border-transparent rounded-full focus:border-[#6D64F7] focus:outline-none hover:-translate-y-0.5 active:translate-y-0.5 transition duration-200 ${
+      className={`p-5 mt-10 flex items-center mx-2 justify-center bg-neutral-200 dark:bg-neutral-800 border-3 border-transparent rounded-full focus:border-[#2d912d] focus:outline-none hover:-translate-y-0.5 active:translate-y-0.5 transition duration-200 ${
         type === "previous" ? "rotate-180" : ""
-      }`}
+      } ${disabled ? "opacity-50 pointer-events-none" : ""}`}
       title={title}
       onClick={handleClick}
+      disabled={disabled}
     >
       <ArrowRight className="text-neutral-600 dark:text-neutral-200" />
     </button>
@@ -154,21 +153,28 @@ interface CarouselProps {
 
 export function Carousel({ slides }: CarouselProps) {
   const [current, setCurrent] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Smooth transition for navigation
+  const goToSlide = (target: number) => {
+    if (isAnimating || target === current) return;
+    setIsAnimating(true);
+    setCurrent(target);
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => setIsAnimating(false), 700); // match transition duration
+  };
 
   const handlePreviousClick = () => {
-    const previous = current - 1;
-    setCurrent(previous < 0 ? slides.length - 1 : previous);
+    goToSlide(current - 1 < 0 ? slides.length - 1 : current - 1);
   };
 
   const handleNextClick = () => {
-    const next = current + 1;
-    setCurrent(next === slides.length ? 0 : next);
+    goToSlide((current + 1) % slides.length);
   };
 
   const handleSlideClick = (index: number) => {
-    if (current !== index) {
-      setCurrent(index);
-    }
+    goToSlide(index);
   };
 
   const id = useId();
@@ -179,7 +185,7 @@ export function Carousel({ slides }: CarouselProps) {
       aria-labelledby={`carousel-heading-${id}`}
     >
       <ul
-        className="absolute flex mx-[-4vmin] transition-transform duration-1000 ease-in-out"
+        className="absolute flex mx-[-4vmin] transition-transform duration-700 ease-in-out"
         style={{
           transform: `translateX(-${current * (100 / slides.length)}%)`,
         }}
@@ -200,12 +206,14 @@ export function Carousel({ slides }: CarouselProps) {
           type="previous"
           title="Go to previous slide"
           handleClick={handlePreviousClick}
+          disabled={isAnimating}
         />
 
         <CarouselControl
           type="next"
           title="Go to next slide"
           handleClick={handleNextClick}
+          disabled={isAnimating}
         />
       </div>
     </div>

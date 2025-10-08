@@ -72,7 +72,7 @@ import HERO_IMAGE from "@/public/DSC129.jpg";
         {/* Stats */}
         <div className="mt-12 grid w-full gap-y-10 gap-x-8 grid-cols-2 lg:grid-cols-4">
           {stats.map(({ value, suffix, prefix, description }, i) => (
-            <div key={i} className="space-y-2">
+            <div key={i} className="space-y-2 w-full flex-shrink-0">
               <h3 className="text-3xl font-bold">
                 {prefix}
                 <CountUp
@@ -85,7 +85,7 @@ import HERO_IMAGE from "@/public/DSC129.jpg";
                 />
                 {suffix}
               </h3>
-              <p className="text-sm md:text-base leading-snug text-white/80 max-w-[14ch] sm:max-w-none">
+              <p className="text-sm w-full md:text-base leading-snug text-white/80">
                 {description}
               </p>
             </div>

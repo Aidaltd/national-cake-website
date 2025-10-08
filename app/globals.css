@@ -153,6 +153,9 @@
   .card{
       @apply p-10 border border-[#222222]/10 rounded-lg shadow-[0_7px_14px_#EAEAEA] max-w-xs w-full;
   }
+  .flip{
+    @apply inline-block scale-x-[-1];
+  }
 }
 
 @keyframes gradient {
