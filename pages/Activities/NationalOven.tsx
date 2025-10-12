@@ -2,8 +2,8 @@
 
 import React from "react";
 import { Users, Trophy, Star, Globe, ListChecks, CheckCircle2, CheckCircle } from "lucide-react";
-import Image from "next/image";
-import IMAGE_NATIONAL_OVEN from "@/public/DSC104.jpg";
+import { CldImage } from 'next-cloudinary';
+import { getCloudinaryImage } from '@/lib/cloudinary';
 
 
 const features = [
@@ -18,6 +18,7 @@ const features = [
 ];
 
 export default function NationalOven() {
+  const nationalOvenCloud = getCloudinaryImage('DSC104');
   return (
     <section className="w-full pb-24 h-full bg-custom-primary/5">
       <div className="grid grid-cols-1 md:grid-cols-2 bg-custom-primary/5">
@@ -51,7 +52,15 @@ export default function NationalOven() {
         </div>
         {/* left side */}
         <div className="w-full h-full">
-          <Image src={IMAGE_NATIONAL_OVEN} alt="National Oven" className="w-full h-full object-cover" />
+          {nationalOvenCloud ? (
+            <CldImage 
+              src={nationalOvenCloud.publicId} 
+              alt="National Oven" 
+              width={nationalOvenCloud.width || 800}
+              height={nationalOvenCloud.height || 600}
+              className="w-full h-full object-cover" 
+            />
+          ) : null}
         </div>
       </div>
     </section>

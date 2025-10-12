@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import HERO_IMAGE from "@/public/DSC83.jpg";
+import HERO_IMAGE from "@/public/_backup_migrated/DSC83.jpg";
 import Link from "next/link";
 
 export default function OrderHero() {

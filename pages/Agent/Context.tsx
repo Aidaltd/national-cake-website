@@ -3,8 +3,8 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
-import communityHero from "@/public/DSC155.jpg";
+import { CldImage } from 'next-cloudinary';
+import { getCloudinaryImage } from '@/lib/cloudinary';
 
 interface CardItem {
   title: string;
@@ -40,6 +40,7 @@ const cards: CardItem[] = [
 ];
 
 export default function Context() {
+  const communityHeroCloud = getCloudinaryImage('DSC155');
   return (
     <section className="relative overflow-hidden py-20 md:py-28 bg-neutral-950 text-white">
       <div className="container mx-auto px-6 md:px-10 space-y-10">
@@ -57,11 +58,15 @@ export default function Context() {
 
         {/* Hero image */}
         <div className="mt-10">
-          <Image
-            src={communityHero}
-            alt="National Cake"
-            className="w-full rounded-lg object-cover object-center h-64 sm:h-80 lg:h-[450px] border border-gray-400"
-          />
+          {communityHeroCloud ? (
+            <CldImage
+              src={communityHeroCloud.url}
+              alt="National Cake"
+              width={1200}
+              height={450}
+              className="w-full rounded-lg object-cover object-center h-64 sm:h-80 lg:h-[450px] border border-gray-400"
+            />
+          ) : null}
         </div>
 
         {/* Cards title */}

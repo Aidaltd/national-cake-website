@@ -1,28 +1,23 @@
 "use client";
 
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Camera, Users, BookOpen } from "lucide-react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { CldImage } from 'next-cloudinary';
+import { getCloudinaryImage } from '@/lib/cloudinary';
 
 // Gallery images for the slider - using Nationalcake series images
 const GALLERY_IMAGES = [
-  "/NCLU12.jpg",
-  "/NCLU11.jpg", 
-  "/DSC90.jpg",
-  "/DSC130.jpg",
-  "/DSC95.jpg",
-  "/DSC96.jpg",
-  "/DSC101.jpg",
-  "/DSC109.jpg",
-  "/DSC125.jpg",
+  'NCLU12', 'NCLU11', 'DSC90', 'DSC130', 'DSC95', 'DSC96', 'DSC101', 'DSC109', 'DSC125',
 ];
 
 
 export default function GalleryHero() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const galleryCloud = getCloudinaryImage(GALLERY_IMAGES[currentImageIndex]);
 
   // Auto-slide functionality
   useEffect(() => {
@@ -66,13 +61,16 @@ export default function GalleryHero() {
             // transition={{ duration: 1.5, ease: "easeInOut" }}
             className="h-full w-full"
           >
-            <Image
-              src={GALLERY_IMAGES[currentImageIndex]}
-              alt="National Cake Gallery"
-              fill
-              className="object-cover object-center"
-              priority
-            />
+            {galleryCloud ? (
+              <CldImage
+                src={galleryCloud.publicId}
+                alt="National Cake Gallery"
+                width={galleryCloud.width || 1920}
+                height={galleryCloud.height || 1080}
+                className="object-cover object-center w-full h-full"
+                priority
+              />
+            ) : null}
           </motion.div>
         </AnimatePresence>
         {/* Dark overlay */}

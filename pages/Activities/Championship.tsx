@@ -2,8 +2,9 @@
 
 import React from "react";
 import { CheckCircle } from "lucide-react";
-import Image from "next/image";
-import IMAGE_CHAMPIONSHIP from "@/public/NCLU10.jpg";
+import { CldImage } from 'next-cloudinary';
+import { getCloudinaryImage } from '@/lib/cloudinary';
+
 const impacts = [
   "Triggers healthy and well informed debates",
   "Sparks healthy competition.",
@@ -13,6 +14,7 @@ const impacts = [
 ];
 
 export default function Championship() {
+  const championshipCloud = getCloudinaryImage('NCLU10');
   return (
     <section className="bg-white w-full h-full">
       <div className="grid grid-cols-1 md:grid-cols-2">
@@ -54,7 +56,15 @@ export default function Championship() {
         </div>
         {/* left side */}
         <div className="w-full h-full">
-        <Image src={IMAGE_CHAMPIONSHIP} alt="National Cake Championship" className="w-full h-full object-cover" />
+          {championshipCloud ? (
+            <CldImage 
+              src={championshipCloud.publicId} 
+              alt="National Cake Championship" 
+              width={championshipCloud.width || 800}
+              height={championshipCloud.height || 600}
+              className="w-full h-full object-cover" 
+            />
+          ) : null}
         </div>
       </div>
     </section>

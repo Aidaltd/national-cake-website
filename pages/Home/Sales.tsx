@@ -1,15 +1,14 @@
 "use client";
 
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
-
-// Static images stored in the `public` folder
-const imageMarket = "/Nationalcake-30.jpg" as const;
-const imageOrder = "/Nationalcake-29.jpg" as const;
+import { CldImage } from 'next-cloudinary';
+import { getCloudinaryImage } from '@/lib/cloudinary';
 import { Check, CheckCircle } from "lucide-react";
 import Link from "next/link";
 
  export default function Sales() {
+  const imageMarketCloud = getCloudinaryImage('Nationalcake-30');
+  const imageOrderCloud = getCloudinaryImage('Nationalcake-29');
   const firstBullets = [
    <span> <span className="font-bold text-custom-primary">₦30,000</span> per box </span>,
     <span className="font-medium">A real purpose: Educate. Connect. Inspire.</span>,
@@ -29,14 +28,16 @@ import Link from "next/link";
       {/* Block 1 */}
       <div className="grid items-center md:justify-between gap-10 lg:grid-cols-2">
         {/* Image */}
-        <Image
-          src={imageMarket}
-          alt="Market scene"
-          width={1920}
-          height={1280}
-          className="rounded-lg w-full object-cover object-top h-80 sm:h-80 lg:h-[35rem]"
-          priority
-        />
+        {imageMarketCloud ? (
+          <CldImage
+            src={imageMarketCloud.publicId}
+            alt="Market scene"
+            width={1920}
+            height={1280}
+            className="rounded-lg w-full object-cover object-top h-80 sm:h-80 lg:h-[35rem]"
+            priority
+          />
+        ) : null}
 
         {/* Content */}
         <div className="space-y-6 max-w-lg lg:ml-auto">
@@ -53,8 +54,8 @@ import Link from "next/link";
           </p>
 
           <ul className="space-y-3">
-            {firstBullets.map((txt) => (
-              <li key={txt.toString()} className="flex items-start gap-3 text-sm sm:text-base">
+            {firstBullets.map((txt, i) => (
+              <li key={i} className="flex items-start gap-3 text-sm sm:text-base">
                 <CheckCircle className="min-w-4 h-5 w-5 text-custom-primary mt-1" />
                 <span>{txt}</span>
               </li>
@@ -92,8 +93,8 @@ Delivery begins after 30th September 2025
           </p>
 
           <ul className="space-y-3">
-            {secondBullets.map((txt) => (
-              <li key={txt.toString()} className="flex items-start gap-3 text-sm sm:text-base">
+            {secondBullets.map((txt, i) => (
+              <li key={i} className="flex items-start gap-3 text-sm sm:text-base">
                 <CheckCircle className="min-w-4 h-5 w-5 text-custom-primary mt-1" />
                 <span>{txt}</span>
               </li>
@@ -108,13 +109,15 @@ Delivery begins after 30th September 2025
         </div>
 
         {/* Image */} 
-        <Image
-          src={imageOrder}
-          alt="Happy customer with bags"
-          width={800}
-          height={600}
-          className="rounded-lg w-full md:w-[50%] object-cover h-80 sm:h-80 lg:h-[33rem] lg:order-first"
-        />
+        {imageOrderCloud ? (
+          <CldImage
+            src={imageOrderCloud.publicId}
+            alt="Happy customer with bags"
+            width={800}
+            height={600}
+            className="rounded-lg w-full md:w-[50%] object-cover h-80 sm:h-80 lg:h-[33rem] lg:order-first"
+          />
+        ) : null}
       </div>
     </section>
   );

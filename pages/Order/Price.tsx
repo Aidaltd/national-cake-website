@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import React from "react";
-import productImage from "@/public/Nationalcake-28.jpg";
+import productImage from "@/public/_backup_migrated/Nationalcake-28.jpg";
 import Image from "next/image";
 import Head from "next/head";
 
@@ -91,7 +91,7 @@ export default function Price() {
     rating: 5,
     date: "13 JUL 2025",
     comment: "Every student must have to play this National Cake to pass their exams because it is very strategic. We are learning other people’s history, not our own. I like the idea; I have even benefitted by sitting here. I don’t pay attention to history that much but just going through the timeline, already it is impacting my curiosity.",
-    avatar: "/DR. HYELADI HARUNA.jpg" 
+    avatar: "/DR-HYELADI-HARUNA.jpg" 
   };
 
   const productJsonLd = {

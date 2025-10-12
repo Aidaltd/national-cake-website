@@ -9,21 +9,25 @@ import {
   Send,
   ArrowRight,
 } from "lucide-react";
-import creator from "@/public/creator.jpeg";
+import { CldImage } from 'next-cloudinary';
+import { getCloudinaryImage } from '@/lib/cloudinary';
 
 export default function Creator() {
+  const creatorCloud = getCloudinaryImage('creator');
   return (
     <section className="container mx-auto px-6 py-20 lg:py-16  border-y border-gray-200">
       <div className="grid gap-12 lg:grid-cols-2 items-center">
         {/* Portrait */}
         <div className="w-full max-w-lg h-full md:h-[35rem] lg:max-w-none mx-auto lg:mx-0">
-          <Image
-            src={creator} // TODO: replace with actual asset path
-            alt="National-cake - Victor Prince Dickson"
-            width={800}
-            height={800}
-            className="rounded-lg w-full h-full object-top object-cover"
-          />
+          {creatorCloud ? (
+            <CldImage
+              src={creatorCloud.publicId}
+              alt="National-cake - Victor Prince Dickson"
+              width={800}
+              height={800}
+              className="rounded-lg w-full h-full object-top object-cover"
+            />
+          ) : null}
         </div>
 
         {/* Content */}

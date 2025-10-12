@@ -1,22 +1,27 @@
 "use client";
 
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import HERO_IMAGE from "@/public/DSC150.jpg";
+import { CldImage } from 'next-cloudinary';
+import { getCloudinaryImage } from '@/lib/cloudinary';
 import Link from "next/link";
 
 export default function AgentHero() {
+  const heroCloud = getCloudinaryImage('DSC150');
   return (
     <section className="relative h-full w-full overflow-hidden isolate">
       {/* Background image */}
       <div className="absolute inset-0 -z-10">
-        <Image
-          src={HERO_IMAGE}
-          alt="National Cake Board Game"
-          className="h-full w-full object-cover object-center"
-          priority
-        />
+        {heroCloud ? (
+          <CldImage
+            src={heroCloud.url}
+            alt="National Cake Board Game"
+            width={1920}
+            height={1080}
+            className="h-full w-full object-cover object-center"
+            priority
+          />
+        ) : null}
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/50" />
       </div>

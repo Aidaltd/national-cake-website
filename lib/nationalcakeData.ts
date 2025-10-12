@@ -1580,12 +1580,11 @@ export const galleryData = [
     category: "Education"
   },
 
-  // NCLU series images (National Cake Learning Units)
   {
     id: 171,
     title: "Historical Foundation",
     description: "First Learning Unit on Nigeria's historical foundation and early development.",
-    image: "/NCLU1.JPG",
+    image: "/NCLU1.jpg",
     tags: ["Learning Unit", "History", "Foundation", "Education"],
     category: "Education"
   },
@@ -1593,7 +1592,7 @@ export const galleryData = [
     id: 172,
     title: "Colonial Era",
     description: "Educational content covering Nigeria's colonial period and its impact on modern development.",
-    image: "/NCLU2.JPG",
+    image: "/NCLU2.jpg",
     tags: ["Learning Unit", "Colonial Era", "History", "Education"],
     category: "Education"
   },
@@ -1601,7 +1600,7 @@ export const galleryData = [
     id: 173,
     title: "Independence Movement",
     description: "Learning materials about Nigeria's independence movement and key historical figures.",
-    image: "/NCLU3.JPG",
+    image: "/NCLU3.jpg",
     tags: ["Learning Unit", "Independence", "Movement", "Historical Figures"],
     category: "Education"
   },
@@ -1609,7 +1608,7 @@ export const galleryData = [
     id: 174,
     title: "Post-Independence",
     description: "Educational content covering Nigeria's development after independence and nation-building efforts.",
-    image: "/NCLU4.JPG",
+    image: "/NCLU4.jpg",
     tags: ["Learning Unit", "Post-Independence", "Development", "Nation Building"],
     category: "Education"
   },
@@ -1617,7 +1616,7 @@ export const galleryData = [
     id: 175,
     title: "Cultural Heritage",
     description: "Learning materials focusing on Nigeria's rich cultural heritage and diverse traditions.",
-    image: "/NCLU5.JPG",
+    image: "/NCLU5.jpg",
     tags: ["Learning Unit", "Cultural Heritage", "Traditions", "Diversity"],
     category: "Education"
   },
@@ -1625,7 +1624,7 @@ export const galleryData = [
     id: 176,
     title: "conomic Development",
     description: "Educational content about Nigeria's economic development and key economic milestones.",
-    image: "/NCLU6.JPG",
+    image: "/NCLU6.jpg",
     tags: ["Learning Unit", "Economic Development", "Milestones", "Progress"],
     category: "Education"
   },
@@ -1633,7 +1632,7 @@ export const galleryData = [
     id: 177,
     title: "olitical Evolution",
     description: "Learning materials covering Nigeria's political evolution and democratic development.",
-    image: "/NCLU7.JPG",
+    image: "/NCLU7.jpg",
     tags: ["Learning Unit", "Political Evolution", "Democracy", "Governance"],
     category: "Education"
   },
@@ -1641,7 +1640,7 @@ export const galleryData = [
     id: 178,
     title: "Social Development",
     description: "Educational content about Nigeria's social development and community building initiatives.",
-    image: "/NCLU8.JPG",
+    image: "/NCLU8.jpg",
     tags: ["Learning Unit", "Social Development", "Community", "Initiatives"],
     category: "Education"
   },
@@ -1649,7 +1648,7 @@ export const galleryData = [
     id: 179,
     title: "Youth Empowerment",
     description: "Learning materials focusing on youth empowerment and the role of young people in nation-building.",
-    image: "/NCLU9.JPG",
+    image: "/NCLU9.jpg",
     tags: ["Learning Unit", "Youth Empowerment", "Nation Building", "Future"],
     category: "Education"
   },
@@ -1657,7 +1656,7 @@ export const galleryData = [
     id: 180,
     title: "Leadership Development",
     description: "Educational content about leadership development and civic responsibility in Nigeria.",
-    image: "/NCLU10.JPG",
+    image: "/NCLU10.jpg",
     tags: ["Learning Unit", "Leadership", "Development", "Civic Responsibility"],
     category: "Education"
   },
@@ -1665,7 +1664,7 @@ export const galleryData = [
     id: 181,
     title: "National Unity",
     description: "Learning materials promoting national unity and understanding among Nigeria's diverse communities.",
-    image: "/NCLU11.JPG",
+    image: "/NCLU11.jpg",
     tags: ["Learning Unit", "National Unity", "Diversity", "Understanding"],
     category: "Community"
   },
@@ -1673,7 +1672,7 @@ export const galleryData = [
     id: 182,
     title: "Civic Engagement",
     description: "Educational content about civic engagement and active participation in democratic processes.",
-    image: "/NCLU12.JPG",
+    image: "/NCLU12.jpg",
     tags: ["Learning Unit", "Civic Engagement", "Democracy", "Participation"],
     category: "Community"
   },
@@ -1681,7 +1680,7 @@ export const galleryData = [
     id: 183,
     title: "Environmental Awareness",
     description: "Learning materials about environmental awareness and sustainable development in Nigeria.",
-    image: "/NCLU13.JPG",
+    image: "/NCLU13.jpg",
     tags: ["Learning Unit", "Environmental Awareness", "Sustainability", "Development"],
     category: "Education"
   },
@@ -1689,7 +1688,7 @@ export const galleryData = [
     id: 184,
     title: "Technology & Innovation",
     description: "Educational content covering Nigeria's technological advancement and innovation landscape.",
-    image: "/NCLU14.JPG",
+    image: "/NCLU14.jpg",
     tags: ["Learning Unit", "Technology", "Innovation", "Advancement"],
     category: "Education"
   },
@@ -1697,7 +1696,7 @@ export const galleryData = [
     id: 185,
     title: "International Relations",
     description: "Learning materials about Nigeria's role in international relations and global partnerships.",
-    image: "/NCLU15.JPG",
+    image: "/NCLU15.jpg",
     tags: ["Learning Unit", "International Relations", "Global Partnerships", "Diplomacy"],
     category: "Education"
   },
@@ -1705,7 +1704,7 @@ export const galleryData = [
     id: 186,
     title: "Women in Development",
     description: "Educational content highlighting the role of women in Nigeria's development and progress.",
-    image: "/NCLU16.JPG",
+    image: "/NCLU16.jpg",
     tags: ["Learning Unit", "Women", "Development", "Progress"],
     category: "Education"
   },
@@ -1713,7 +1712,7 @@ export const galleryData = [
     id: 187,
     title: "Education System",
     description: "Learning materials about Nigeria's education system and its evolution over time.",
-    image: "/NCLU17.JPG",
+    image: "/NCLU17.jpg",
     tags: ["Learning Unit", "Education System", "Evolution", "Development"],
     category: "Education"
   },
@@ -1721,7 +1720,7 @@ export const galleryData = [
     id: 188,
     title: "Healthcare Development",
     description: "Educational content about Nigeria's healthcare development and public health initiatives.",
-    image: "/NCLU18.JPG",
+    image: "/NCLU18.jpg",
     tags: ["Learning Unit", "Healthcare", "Public Health", "Development"],
     category: "Education"
   },
@@ -1729,7 +1728,7 @@ export const galleryData = [
     id: 189,
     title: "Infrastructure Development",
     description: "Learning materials covering Nigeria's infrastructure development and modernization efforts.",
-    image: "/NCLU19.JPG",
+    image: "/NCLU19.jpg",
     tags: ["Learning Unit", "Infrastructure", "Development", "Modernization"],
     category: "Education"
   },

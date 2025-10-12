@@ -4,7 +4,9 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import CountUp from "@/components/Animations/count-up";
 import Link from "next/link";
-import HERO_IMAGE from "@/public/DSC129.jpg";
+import { CldImage } from 'next-cloudinary';
+import { getCloudinaryImage } from '@/lib/cloudinary';
+import cloudinaryMapping from '@/lib/cloudinary-mapping.json';
 
 // Temporary hero image – place a suitable image at public/hero.jpg or replace the src with your own URL
 // const HERO_IMAGE = "/hero.jpg";
@@ -24,19 +26,22 @@ import HERO_IMAGE from "@/public/DSC129.jpg";
   ]
   ;
 
+  const heroCloud = getCloudinaryImage('DSC129');
+
   return (
     <section className="relative isolate overflow-hidden text-white">
       {/* Background image */}
       <div className="absolute inset-0 -z-10">
-        {/* Use native img tag to avoid Next remote config hassle */}
-        <Image
-          src={HERO_IMAGE}  
-          alt="Chess hero"
-          width={1920}
-          height={1080}
-          className="h-full w-full object-cover object-center"
-          priority
-        />
+        {heroCloud ? (
+          <CldImage
+            src={heroCloud.publicId}
+            alt="Chess hero"
+            width={1920}
+            height={1080}
+            className="h-full w-full object-cover object-center"
+            priority
+          />
+        ) : null}
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/60" />
       </div>

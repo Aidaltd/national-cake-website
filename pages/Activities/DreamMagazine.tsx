@@ -2,17 +2,26 @@
 
 import React from "react";
 import { BookOpen } from "lucide-react";
-import Image from "next/image";
-import IMAGE_DREAM_MAGAZINE from "@/public/DSC102.jpg";
+import { CldImage } from 'next-cloudinary';
+import { getCloudinaryImage } from '@/lib/cloudinary';
 
 export default function DreamMagazine() {
+  const dreamMagazineCloud = getCloudinaryImage('DSC102');
   return (
     <section className="bg-white w-full h-full">
       
       <div className="grid grid-cols-1 md:grid-cols-2">
           {/* left side */}
           <div className="w-full hidden md:block h-full">
-          <Image src={IMAGE_DREAM_MAGAZINE} alt="Dream Magazine" className="w-full h-full object-cover" />
+            {dreamMagazineCloud ? (
+              <CldImage 
+                src={dreamMagazineCloud.publicId} 
+                alt="Dream Magazine" 
+                width={dreamMagazineCloud.width || 800}
+                height={dreamMagazineCloud.height || 600}
+                className="w-full h-full object-cover" 
+              />
+            ) : null}
         </div>
         {/* right side */}
         <div className="bg-white p-4 py-10 md:p-12 flex flex-col gap-6 border border-green-200">
@@ -40,7 +49,15 @@ export default function DreamMagazine() {
         </div>
         {/* left side */}
         <div className="w-full block md:hidden h-full">
-          <Image src={IMAGE_DREAM_MAGAZINE} alt="Dream Magazine" className="w-full h-full object-cover" />
+          {dreamMagazineCloud ? (
+            <CldImage 
+              src={dreamMagazineCloud.publicId} 
+              alt="Dream Magazine" 
+              width={dreamMagazineCloud.width || 800}
+              height={dreamMagazineCloud.height || 600}
+              className="w-full h-full object-cover" 
+            />
+          ) : null}
         </div>
       </div>
     </section>

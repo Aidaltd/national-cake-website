@@ -1,6 +1,8 @@
 "use client";
 
 import { Carousel } from "@/components/Animations/carousel";
+import { CldImage } from 'next-cloudinary';
+import { getCloudinaryImage } from '@/lib/cloudinary';
 
 
 export default function ImageCarousel() {
@@ -9,88 +11,95 @@ export default function ImageCarousel() {
     // from 1-9
     {
       title: "Teaching about Nigeria",
-      src: "NCLU12.jpg",
+      src: "NCLU12",
     },
     {
       title: "Practice Citizenship",
-      src: "DSC92.jpg",
+      src: "DSC92",
     },
     {
       title: "Learn History",
-      src: "DSC95.jpg",
+      src: "DSC95",
     },
     {
       title: "Learning about Nigeria",
-      src: "DSC98.jpg",
+      src: "DSC98",
     },
     {
       title: "Learn History",
-      src: "DSC101.jpg",
+      src: "DSC101",
     },
     {
       title: "Practice Citizenship",
-      src: "DSC102.jpg",
+      src: "DSC102",
     },
     {
       title: "Learn History",
-      src: "DSC103.jpg",
+      src: "DSC103",
     },
     {
       title: "Practice Citizenship",
-      src: "DSC104.jpg",
+      src: "DSC104",
     },
     {
       title: "Practice Citizenship",
-      src: "DSC106.jpg",
+      src: "DSC106",
     },
     {
       title: "Learn History",
-      src: "DSC107.jpg",
+      src: "DSC107",
     },
     {
       title: "Practice Citizenship",
-      src: "DSC112.jpg",
+      src: "DSC112",
     },
     {
       title: "Build a Nation",
-      src: "DSC111.jpg",
+      src: "DSC111",
     },
     {
       title: "Get Ready to Play National Cake",
-      src: "DSC110.jpg",
+      src: "DSC110",
     },
     {
       title: "Deep Discussions",
-      src: "DSC114.jpg",
+      src: "DSC114",
     },
     {
       title: "Learn from the Past",
-      src: "DSC115.jpg",
+      src: "DSC115",
     },
     {
       title: "Build a Brighter Future",
-      src: "DSC119.jpg",
+      src: "DSC119",
     },
     {
       title: "Bring People Together",
-      src: "DSC123.jpg",
+      src: "DSC123",
     },
     {
       title: "Understanding Nigeria",
-      src: "DSC125.jpg",
+      src: "DSC125",
     },
     {
       title: "Knowing the Stories",
-      src: "DSC128.jpg",
+      src: "DSC128",
     },
     {
       title: "Having Fun",
-      src: "DSC130.jpg",
+      src: "DSC130",
     },
   ];
+  const slides = slideData.map((slide) => {
+    const imgData = getCloudinaryImage(slide.src);
+    return {
+      title: slide.title,
+      src: imgData?.url || `/${slide.src}.jpg`, // Use Cloudinary URL or fallback to local
+    };
+  });
   return (
     <div className="relative overflow-hidden align-center justify-center w-full h-full pt-10 md:pb-60 pb-36">
-      <Carousel slides={slideData} />
+      <Carousel slides={slides} />
     </div>
   );
 }

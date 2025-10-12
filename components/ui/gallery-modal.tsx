@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useEffect, useCallback } from "react";
-import Image from "next/image";
+import { CldImage } from 'next-cloudinary';
+import { getCloudinaryImage } from '@/lib/cloudinary';
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight, Download, Share2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -31,6 +32,7 @@ export default function GalleryModal({
   onNavigate,
 }: GalleryModalProps) {
   const currentImage = images[currentIndex];
+  const currentImageCloud = currentImage ? getCloudinaryImage(currentImage.image) : null;
 
   // Keyboard navigation
   const handleKeyDown = useCallback(
@@ -145,14 +147,16 @@ export default function GalleryModal({
             {/* Image Container */}
             <div className="relative flex items-center justify-center min-h-[60vh] bg-gray-100">
               <div className="relative w-full  h-[60vh] max-h-[70vh]">
-                  <Image
-                    src={currentImage.image}
+                {currentImageCloud && (
+                  <CldImage
+                    src={currentImageCloud.publicId}
                     alt={currentImage.title}
-                   fill
-                   className="object-cover"
-                  priority
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 80vw"
-                />
+                    width={currentImageCloud.width || 1920}
+                    height={currentImageCloud.height || 1080}
+                    className="object-cover w-full h-full"
+                    priority
+                  />
+                )}
               </div>
 
               {/* Navigation Arrows */}
@@ -202,7 +206,9 @@ export default function GalleryModal({
             {images.length > 1 && (
               <div className="p-4 bg-gray-50 border-t">
                 <div className="flex gap-2 overflow-x-auto scrollbar-1 scrollbar-thumb-custom-primary scrollbar-track-custom-primary">
-                  {images.map((image, index) => (
+                  {images.map((image, index) => {
+                    const thumbnailCloud = getCloudinaryImage(image.image);
+                    return (
                     <button
                       key={image.id}
                       onClick={() => onNavigate(index)}
@@ -212,15 +218,17 @@ export default function GalleryModal({
                           : "border-gray-200 hover:border-gray-300"
                       }`}
                     >
-                      <Image
-                        src={image.image}
-                        alt={image.title}
-                        fill
-                        className="object-cover"
-                        sizes="64px"
-                      />
+                      {thumbnailCloud && (
+                        <CldImage
+                          src={thumbnailCloud.publicId}
+                          alt={image.title}
+                          width={64}
+                          height={64}
+                          className="object-cover w-full h-full"
+                        />
+                      )}
                     </button>
-                  ))}
+                  )})}
                 </div>
               </div>
             )}

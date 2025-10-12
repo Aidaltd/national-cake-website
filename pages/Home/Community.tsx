@@ -3,17 +3,15 @@
 import Image from "next/image";
 import CountUp from "@/components/Animations/count-up";
 import { Check, CheckCircle, Users, Heart, Target, Gift } from "lucide-react";
-import  COMMUNITY_HERO from  '@/public/DSC147.jpg';
-import  YOUTH from  '@/public/DSC6.jpg'; 
-import  LEADER from  '@/public/DSC8.jpg';
-import  FAITH from  '@/public/DSC125.jpg';
-import  DONOR from  '@/public/DSC17.jpg'; 
+import { CldImage } from 'next-cloudinary';
+import { getCloudinaryImage } from '@/lib/cloudinary';
 import { color } from "framer-motion";
 
 // temporary assets – replace with real paths later
 const AVATARS = ["/avatar-4.png", "/avatar-7.png", "/avatar-6.png"];
 
  export default function Community() {
+  const heroCloud = getCloudinaryImage('DSC147');
   const bullets = [
     {
       title: "For the Youth",
@@ -23,7 +21,7 @@ const AVATARS = ["/avatar-4.png", "/avatar-7.png", "/avatar-6.png"];
       icon: <CheckCircle className="w-5 h-5" />,
       badge: "18-35",   
       category: "Years",
-      image: YOUTH // Replace with actual image path
+      imageKey: 'DSC6' // Cloudinary mapping key
     },
     {
       title: "For Leaders & Elders",
@@ -33,7 +31,7 @@ const AVATARS = ["/avatar-4.png", "/avatar-7.png", "/avatar-6.png"];
       icon: <CheckCircle className="w-5 h-5" />,
       badge: "35+",
       category: "Years",
-      image:  LEADER // Replace with actual image path
+      imageKey:  'DSC8' // Cloudinary mapping key
     },
     {
       title: "Business Executives",
@@ -43,7 +41,7 @@ const AVATARS = ["/avatar-4.png", "/avatar-7.png", "/avatar-6.png"];
       icon: <CheckCircle className="w-5 h-5" />,
       badge: "All Ages",
       category: "Ministry",
-      image: FAITH // Replace with actual image path
+      imageKey: 'DSC125' // Cloudinary mapping key
     },
     {
       title: "For Civil Society Organizations (CSOs)",
@@ -53,7 +51,7 @@ const AVATARS = ["/avatar-4.png", "/avatar-7.png", "/avatar-6.png"];
       icon: <CheckCircle className="w-5 h-5" />,
       badge: "Impact",
       category: "Driven",
-      image: DONOR // Replace with actual image path
+      imageKey: 'DSC17' // Cloudinary mapping key
     },
   ];
 
@@ -116,13 +114,15 @@ const AVATARS = ["/avatar-4.png", "/avatar-7.png", "/avatar-6.png"];
 
       {/* Hero image */}
       <div className="mt-10">
-        <Image
-          src={COMMUNITY_HERO}
-          alt="National--Community"
-          width={1200}
-          height={600}
-          className="w-full rounded-lg object-cover h-64 sm:h-80 lg:h-[380px] border border-gray-400"
-        />
+        {heroCloud ? (
+          <CldImage
+            src={heroCloud.publicId}
+            alt="National--Community"
+            width={1200}
+            height={600}
+            className="w-full rounded-lg object-cover h-64 sm:h-80 lg:h-[380px] border border-gray-400"
+          />
+        ) : null}
       </div>
 
       {/* Program Cards Grid */}
@@ -163,13 +163,19 @@ const AVATARS = ["/avatar-4.png", "/avatar-7.png", "/avatar-6.png"];
 
             {/* Person Image at Bottom */}
             <div className="h-56 rounded-t-lg relative">
-              <Image
-                src={item.image}
-                alt={`Person representing ${item.title}`}
-                fill
-                className="object-cover rounded-t-lg object-center"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-              />
+              {(() => {
+                const imgData = getCloudinaryImage(item.imageKey);
+                if (!imgData) return null;
+                return (
+                  <CldImage
+                    src={imgData.publicId}
+                    alt={`Person representing ${item.title}`}
+                    fill
+                    className="object-cover rounded-t-lg object-center"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                  />
+                );
+              })()}
               {/* Overlay gradient for better text readability if needed */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
             </div>

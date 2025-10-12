@@ -1,25 +1,28 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import HERO_IMAGE from "@/public/NCLU11.jpg";
-import Image from "next/image";
+import { CldImage } from 'next-cloudinary';
+import { getCloudinaryImage } from '@/lib/cloudinary';
 import Link from "next/link";
 import React from "react";
 
 export default function ActivitiesHero() {
+  const heroCloud = getCloudinaryImage('NCLU11');
   return (
     <section className="relative h-full w-full overflow-hidden isolate">
       {/* Background image */}
       <div className="absolute inset-0 -z-10">
         {/* Use native img tag to avoid Next remote config hassle */}
-        <Image
-          src={HERO_IMAGE}
-          alt="National-cake hero"
-          width={1920}
-          height={1080}
-          className="h-full w-full object-cover object-bottom"
-          priority
-        />
+        {heroCloud ? (
+          <CldImage
+            src={heroCloud.publicId}
+            alt="National-cake hero"
+            width={1920}
+            height={1080}
+            className="h-full w-full object-cover object-bottom"
+            priority
+          />
+        ) : null}
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/50" />
       </div>

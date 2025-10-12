@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
-import Image from "next/image";
+import { CldImage } from 'next-cloudinary';
+import { getCloudinaryImage } from '@/lib/cloudinary';
 import { galleryData } from "@/lib/nationalcakeData";
 import { Search, Filter, X, Tag, Calendar, Users, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -240,7 +241,9 @@ export default function GalleryTable() {
         {/* Gallery Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
           <AnimatePresence>
-            {paginatedData.map((item: GalleryItem, index) => (
+            {paginatedData.map((item: GalleryItem, index) => {
+              const imageCloud = getCloudinaryImage(item.image);
+              return (
               <motion.div
                 key={item.id}
                 initial={{ opacity: 0, y: 20 }}
@@ -254,12 +257,15 @@ export default function GalleryTable() {
                   className="relative h-48 overflow-hidden cursor-pointer"
                   onClick={() => openModal(index)}
                 >
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
+                  {imageCloud && (
+                    <CldImage
+                      src={imageCloud.publicId}
+                      alt={item.title}
+                      width={imageCloud.width || 400}
+                      height={imageCloud.height || 300}
+                      className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                    />
+                  )}
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
                   
                   {/* Hover overlay with view text */}
@@ -304,7 +310,7 @@ export default function GalleryTable() {
                   </div>
                 </div>
               </motion.div>
-            ))}
+            )})}
           </AnimatePresence>
         </div>
 

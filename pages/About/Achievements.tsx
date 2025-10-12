@@ -1,10 +1,10 @@
 "use client";
-
-import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import  bottomImage from "@/public/DSC132.jpg";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { CldImage } from 'next-cloudinary';
+import { getCloudinaryImage } from '@/lib/cloudinary';
+
 interface Award {
   year: number;
   title: string;
@@ -18,6 +18,7 @@ const AWARDS: Award[] = [
 ]
 
 export default function Achievements() {
+  const bottomCloud = getCloudinaryImage('DSC132');
   return (
     <section className="container mx-auto px-6 py-16 lg:py-24 space-y-12">
       {/* Heading & description */}
@@ -54,13 +55,15 @@ export default function Achievements() {
         </div>
 
       {/* Photo */}
-      <Image
-        src={ bottomImage  }
-        alt="National-cake - People celebrating"
-        width={1200}
-        height={800}
-        className="rounded-lg w-full h-[22rem] md:h-[30rem] object-cover object-center"
-      />
+      {bottomCloud ? (
+        <CldImage
+          src={bottomCloud.publicId}
+          alt="National-cake - People celebrating"
+          width={1200}
+          height={800}
+          className="rounded-lg w-full h-[22rem] md:h-[30rem] object-cover object-center"
+        />
+      ) : null}
     </section>
   );
 };

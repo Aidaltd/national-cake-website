@@ -3,23 +3,26 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import HERO_IMAGE from "@/public/DSC157.jpg";
+import { CldImage } from 'next-cloudinary';
+import { getCloudinaryImage } from '@/lib/cloudinary';
 import Link from "next/link";
 
 export default function HeroDelivery() {
+  const heroCloud = getCloudinaryImage('DSC157');
   return (
     <section className="relative h-full w-full overflow-hidden isolate">
       {/* Background image */}
            <div className="absolute inset-0 -z-10">
-             {/* Use native img tag to avoid Next remote config hassle */}
-             <Image
-               src={HERO_IMAGE}  
-               alt="National-cake hero"
-               width={1920}
-               height={1080}
-               className="h-full w-full object-cover object-center"
-               priority
-             />
+            {heroCloud ? (
+              <CldImage
+                src={heroCloud.publicId}
+                alt="National-cake hero"
+                width={1920}
+                height={1080}
+                className="h-full w-full object-cover object-center"
+                priority
+              />
+            ) : null}
              {/* Dark overlay */}
              <div className="absolute inset-0 bg-black/30" />
            </div>
