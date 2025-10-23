@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { CldImage } from 'next-cloudinary';
 import { getCloudinaryImage } from '@/lib/cloudinary';
+import { getBlurDataURL } from '@/lib/cloudinary-utils';
 
 export default function Creator() {
   const creatorCloud = getCloudinaryImage('creator');
@@ -26,6 +27,15 @@ export default function Creator() {
               width={800}
               height={800}
               className="rounded-lg w-full h-full object-top object-cover"
+              quality="auto:good"
+              format="auto"
+              crop="fill"
+              gravity="face"
+              dpr="auto"
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 800px"
+              placeholder="blur"
+              blurDataURL={getBlurDataURL(creatorCloud.publicId)}
             />
           ) : null}
         </div>

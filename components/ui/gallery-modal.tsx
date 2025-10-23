@@ -3,6 +3,7 @@
 import React, { useEffect, useCallback } from "react";
 import { CldImage } from 'next-cloudinary';
 import { getCloudinaryImage } from '@/lib/cloudinary';
+import { getBlurDataURL } from '@/lib/cloudinary-utils';
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight, Download, Share2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -100,7 +101,7 @@ export default function GalleryModal({
             animate={{ scale: 0.8, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="relative max-w-7xl max-h-[100vh] w-full mx-4 bg-white rounded-lg overflow-hidden shadow-2xl"
+            className="relative max-w-5xl max-h-[100vh] w-full mx-4 bg-white rounded-lg overflow-hidden shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
@@ -151,10 +152,19 @@ export default function GalleryModal({
                   <CldImage
                     src={currentImageCloud.publicId}
                     alt={currentImage.title}
-                    width={currentImageCloud.width || 1920}
-                    height={currentImageCloud.height || 1080}
+                    width={1200}
+                    height={800}
                     className="object-cover w-full h-full"
                     priority
+                    quality="auto:good"
+                    format="auto"
+                    crop="limit"
+                    gravity="auto"
+                    dpr="auto"
+                    loading="eager"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 80vw"
+                    placeholder="blur"
+                    blurDataURL={getBlurDataURL(currentImageCloud.publicId)}
                   />
                 )}
               </div>

@@ -4,13 +4,15 @@ import React from "react";
 import { CheckCircle } from "lucide-react";
 import { CldImage } from 'next-cloudinary';
 import { getCloudinaryImage } from '@/lib/cloudinary';
+import { getBlurDataURL } from '@/lib/cloudinary-utils';
 
 const impacts = [
-  "Triggers healthy and well informed debates",
-  "Sparks healthy competition.",
-  "Plants patriotism in the process of play.",
-  "Drives study and further research on Nigeria.",
-  "Unites generations."
+  "Promote healthy and well-informed national debates",
+  "Plants patriotism during play",
+  "Drives study & research on Nigeria for clarity and direction.",
+  "Unites 3 generations, old, young and the unborn.",
+  "Foster Peer based education",
+  "Mindset Re-orientation."
 ];
 
 export default function Championship() {
@@ -32,7 +34,6 @@ export default function Championship() {
             From schools and communities, special themes, campus challenges across universities, regional, national and diaspora competitions.
           </p>
           <div className="mb-4">
-            <h3 className="font-semibold text-base mb-2 text-gray-900">Impact:</h3>
             <ul className="space-y-2">
               {impacts.map((item) => (
                 <li key={item} className="flex items-start gap-2 text-gray-800">
@@ -60,9 +61,18 @@ export default function Championship() {
             <CldImage 
               src={championshipCloud.publicId} 
               alt="National Cake Championship" 
-              width={championshipCloud.width || 800}
-              height={championshipCloud.height || 600}
-              className="w-full h-full object-cover" 
+              width={800}
+              height={600}
+              className="w-full h-full object-cover"
+              quality="auto:good"
+              format="auto"
+              crop="fill"
+              gravity="auto"
+              dpr="auto"
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              placeholder="blur"
+              blurDataURL={getBlurDataURL(championshipCloud.publicId)}
             />
           ) : null}
         </div>

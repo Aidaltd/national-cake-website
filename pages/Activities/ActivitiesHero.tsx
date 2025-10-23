@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { CldImage } from 'next-cloudinary';
 import { getCloudinaryImage } from '@/lib/cloudinary';
+import { getBlurDataURL } from '@/lib/cloudinary-utils';
 import Link from "next/link";
 import React from "react";
 
@@ -21,6 +22,16 @@ export default function ActivitiesHero() {
             height={1080}
             className="h-full w-full object-cover object-bottom"
             priority
+            quality="auto:good"
+            format="auto"
+            crop="fill"
+            gravity="auto"
+            dpr="auto"
+            loading="eager"
+            fetchPriority="high"
+            sizes="100vw"
+            placeholder="blur"
+            blurDataURL={getBlurDataURL(heroCloud.publicId)}
           />
         ) : null}
         {/* Dark overlay */}
@@ -42,7 +53,7 @@ export default function ActivitiesHero() {
           </h1>
 
           <p className="text-base md:text-lg text-gray-200 max-w-xl">
-            Explore our tournaments, creative magazine, and digital hub—where history, play, and community unite to shape Nigeria’s future.
+            Explore our upcoming tournaments, competitions and the flagship National Cake Championship (NCC).
           </p>
 
           {/* Action buttons */}

@@ -4,6 +4,7 @@ import React from "react";
 import { Users, Trophy, Star, Globe, ListChecks, CheckCircle2, CheckCircle } from "lucide-react";
 import { CldImage } from 'next-cloudinary';
 import { getCloudinaryImage } from '@/lib/cloudinary';
+import { getBlurDataURL } from '@/lib/cloudinary-utils';
 
 
 const features = [
@@ -56,9 +57,18 @@ export default function NationalOven() {
             <CldImage 
               src={nationalOvenCloud.publicId} 
               alt="National Oven" 
-              width={nationalOvenCloud.width || 800}
-              height={nationalOvenCloud.height || 600}
-              className="w-full h-full object-cover" 
+              width={800}
+              height={600}
+              className="w-full h-full object-cover"
+              quality="auto:good"
+              format="auto"
+              crop="fill"
+              gravity="auto"
+              dpr="auto"
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              placeholder="blur"
+              blurDataURL={getBlurDataURL(nationalOvenCloud.publicId)}
             />
           ) : null}
         </div>

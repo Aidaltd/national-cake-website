@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { CldImage } from 'next-cloudinary';
 import { getCloudinaryImage } from '@/lib/cloudinary';
+import { getBlurDataURL } from '@/lib/cloudinary-utils';
 
 interface Award {
   year: number;
@@ -62,6 +63,15 @@ export default function Achievements() {
           width={1200}
           height={800}
           className="rounded-lg w-full h-[22rem] md:h-[30rem] object-cover object-center"
+          quality="auto:good"
+          format="auto"
+          crop="fill"
+          gravity="auto"
+          dpr="auto"
+          loading="lazy"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
+          placeholder="blur"
+          blurDataURL={getBlurDataURL(bottomCloud.publicId)}
         />
       ) : null}
     </section>

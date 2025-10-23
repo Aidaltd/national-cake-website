@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CldImage } from 'next-cloudinary';
 import { getCloudinaryImage } from '@/lib/cloudinary';
+import { getBlurDataURL } from '@/lib/cloudinary-utils';
 
 // Gallery images for the slider - using Nationalcake series images
 const GALLERY_IMAGES = [
@@ -65,10 +66,20 @@ export default function GalleryHero() {
               <CldImage
                 src={galleryCloud.publicId}
                 alt="National Cake Gallery"
-                width={galleryCloud.width || 1920}
-                height={galleryCloud.height || 1080}
+                width={1920}
+                height={1080}
                 className="object-cover object-center w-full h-full"
                 priority
+                quality="auto:good"
+                format="auto"
+                crop="fill"
+                gravity="auto"
+                dpr="auto"
+                loading="eager"
+                fetchPriority="high"
+                sizes="100vw"
+                placeholder="blur"
+                blurDataURL={getBlurDataURL(galleryCloud.publicId)}
               />
             ) : null}
           </motion.div>

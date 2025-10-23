@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { CldImage } from 'next-cloudinary';
 import { getCloudinaryImage } from '@/lib/cloudinary';
+import { getBlurDataURL } from '@/lib/cloudinary-utils';
 import Link from "next/link";
 
 export default function AgentHero() {
@@ -14,12 +15,22 @@ export default function AgentHero() {
       <div className="absolute inset-0 -z-10">
         {heroCloud ? (
           <CldImage
-            src={heroCloud.url}
+            src={heroCloud.publicId}
             alt="National Cake Board Game"
             width={1920}
             height={1080}
             className="h-full w-full object-cover object-center"
             priority
+            quality="auto:good"
+            format="auto"
+            crop="fill"
+            gravity="auto"
+            dpr="auto"
+            loading="eager"
+            fetchPriority="high"
+            sizes="100vw"
+            placeholder="blur"
+            blurDataURL={getBlurDataURL(heroCloud.publicId)}
           />
         ) : null}
         {/* Dark overlay */}

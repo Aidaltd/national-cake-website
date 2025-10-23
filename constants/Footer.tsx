@@ -92,7 +92,7 @@ const footerLinks: FooterLinksData = {
             { name: "Community", href: "/community" },
             { name: "Agents", href: "/become-an-agent" },
             // { name: "Contact", href: "#contact" },
-            { name: "Activities", href: "/activities" },
+            { name: "Championship", href: "/championship" },
         ],
     },
     contact: {

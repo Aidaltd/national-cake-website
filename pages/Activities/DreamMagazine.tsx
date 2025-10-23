@@ -4,6 +4,7 @@ import React from "react";
 import { BookOpen } from "lucide-react";
 import { CldImage } from 'next-cloudinary';
 import { getCloudinaryImage } from '@/lib/cloudinary';
+import { getBlurDataURL } from '@/lib/cloudinary-utils';
 
 export default function DreamMagazine() {
   const dreamMagazineCloud = getCloudinaryImage('DSC102');
@@ -17,9 +18,18 @@ export default function DreamMagazine() {
               <CldImage 
                 src={dreamMagazineCloud.publicId} 
                 alt="Dream Magazine" 
-                width={dreamMagazineCloud.width || 800}
-                height={dreamMagazineCloud.height || 600}
-                className="w-full h-full object-cover" 
+                width={800}
+                height={600}
+                className="w-full h-full object-cover"
+                quality="auto:good"
+                format="auto"
+                crop="fill"
+                gravity="auto"
+                dpr="auto"
+                loading="lazy"
+                sizes="(max-width: 768px) 0px, 50vw"
+                placeholder="blur"
+                blurDataURL={getBlurDataURL(dreamMagazineCloud.publicId)}
               />
             ) : null}
         </div>
@@ -53,9 +63,18 @@ export default function DreamMagazine() {
             <CldImage 
               src={dreamMagazineCloud.publicId} 
               alt="Dream Magazine" 
-              width={dreamMagazineCloud.width || 800}
-              height={dreamMagazineCloud.height || 600}
-              className="w-full h-full object-cover" 
+              width={800}
+              height={600}
+              className="w-full h-full object-cover"
+              quality="auto:good"
+              format="auto"
+              crop="fill"
+              gravity="auto"
+              dpr="auto"
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, 0px"
+              placeholder="blur"
+              blurDataURL={getBlurDataURL(dreamMagazineCloud.publicId)}
             />
           ) : null}
         </div>

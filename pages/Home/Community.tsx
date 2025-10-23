@@ -5,6 +5,7 @@ import CountUp from "@/components/Animations/count-up";
 import { Check, CheckCircle, Users, Heart, Target, Gift } from "lucide-react";
 import { CldImage } from 'next-cloudinary';
 import { getCloudinaryImage } from '@/lib/cloudinary';
+import { getBlurDataURL } from '@/lib/cloudinary-utils';
 import { color } from "framer-motion";
 
 // temporary assets – replace with real paths later
@@ -121,6 +122,15 @@ const AVATARS = ["/avatar-4.png", "/avatar-7.png", "/avatar-6.png"];
             width={1200}
             height={600}
             className="w-full rounded-lg object-cover h-64 sm:h-80 lg:h-[380px] border border-gray-400"
+            quality="auto:good"
+            format="auto"
+            crop="fill"
+            gravity="auto"
+            dpr="auto"
+            loading="lazy"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
+            placeholder="blur"
+            blurDataURL={getBlurDataURL(heroCloud.publicId)}
           />
         ) : null}
       </div>
@@ -172,7 +182,15 @@ const AVATARS = ["/avatar-4.png", "/avatar-7.png", "/avatar-6.png"];
                     alt={`Person representing ${item.title}`}
                     fill
                     className="object-cover rounded-t-lg object-center"
+                    quality="auto:low"
+                    format="auto"
+                    crop="fill"
+                    gravity="auto"
+                    dpr="auto"
+                    loading="lazy"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    placeholder="blur"
+                    blurDataURL={getBlurDataURL(imgData.publicId)}
                   />
                 );
               })()}

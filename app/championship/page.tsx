@@ -4,15 +4,14 @@ import UpcomingEvents from "@/pages/Activities/UpcomingEvents";
 import DreamMagazine from "@/pages/Activities/DreamMagazine";
 import NationalOven from "@/pages/Activities/NationalOven";
 
+
 export default function ActivitiesPage() {
   return (
     <>
-      <ActivitiesHero />
+      <ActivitiesHero />  
+        <Championship />
       <UpcomingEvents />
-      <Championship />
-      <DreamMagazine />
-      <NationalOven />
+     
     </>
   );
 }
-

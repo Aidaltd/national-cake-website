@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { CldImage } from 'next-cloudinary';
 import { getCloudinaryImage } from '@/lib/cloudinary';
+import { getBlurDataURL } from '@/lib/cloudinary-utils';
 
 type MentionItem = {
   id: number;
@@ -63,9 +64,18 @@ export default function Mentions() {
                   <CldImage
                     src={mentionCloud.publicId}
                     alt={mention.alt}
-                    width={mentionCloud.width || 200}
-                    height={mentionCloud.height || 100}
+                    width={200}
+                    height={100}
                     className="object-contain p-2"
+                    quality="auto:low"
+                    format="auto"
+                    crop="limit"
+                    gravity="center"
+                    dpr="auto"
+                    loading="lazy"
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                    placeholder="blur"
+                    blurDataURL={getBlurDataURL(mentionCloud.publicId)}
                   />
                 )}
               </div> 

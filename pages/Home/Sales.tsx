@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { CldImage } from 'next-cloudinary';
 import { getCloudinaryImage } from '@/lib/cloudinary';
+import { getBlurDataURL } from '@/lib/cloudinary-utils';
 import { Check, CheckCircle } from "lucide-react";
 import Link from "next/link";
 
@@ -14,12 +15,11 @@ import Link from "next/link";
     <span className="font-medium">A real purpose: Educate. Connect. Inspire.</span>,
     <span className="font-medium">A real legacy: Bring history home</span>,
     <span className="font-medium">A real fulfillment; reignite the Nigerian fire.</span>,
-    <span className="font-medium">Join 1,000+ agents already rewriting the Nigerian story.</span>,
     <span className="font-medium">Register Now: We will Train and Equip You</span>,
   ];
 
   const secondBullets = [
-   <span> <span className="font-bold text-custom-primary">₦30,000</span> per unit Available for 4 weeks only.</span>,
+   <span> <span className="font-bold text-custom-primary">₦30x``,000</span> per unit Available for 4 weeks only.</span>,
     <span className="font-medium">Be a part of the movement that rewrites the story in classrooms, hearts and history.</span>,
   ];
 
@@ -36,6 +36,16 @@ import Link from "next/link";
             height={1280}
             className="rounded-lg w-full object-cover object-top h-80 sm:h-80 lg:h-[35rem]"
             priority
+            quality="auto:good"
+            format="auto"
+            crop="fill"
+            gravity="auto"
+            dpr="auto"
+            loading="eager"
+            fetchPriority="high"
+            sizes="(max-width: 768px) 100vw, 50vw"
+            placeholder="blur"
+            blurDataURL={getBlurDataURL(imageMarketCloud.publicId)}
           />
         ) : null}
 
@@ -79,18 +89,18 @@ import Link from "next/link";
           If you know your history, your future will not be a mystery…
             <br />
             <br />
-            <span className="font-bold text-xl tracking-tight leading-tight text-custom-primary">
+            <span className="font-semibold text-2xl tracking-tighter leading-tighter text-custom-primary">
               Join the Pioneers of National Cake, enter the land of promise before others!
             </span>
           </p>
-          <p className="section-description text-gray-700 leading-relaxed">
+          {/* <p className="section-description text-gray-700 leading-relaxed">
           (Delivery only within Abuja)
 
 Available for 4 weeks only from 1st to 28th September 2025
 
 Delivery begins after 30th September 2025 
 
-          </p>
+          </p> */}
 
           <ul className="space-y-3">
             {secondBullets.map((txt, i) => (
@@ -116,6 +126,15 @@ Delivery begins after 30th September 2025
             width={800}
             height={600}
             className="rounded-lg w-full md:w-[50%] object-cover h-80 sm:h-80 lg:h-[33rem] lg:order-first"
+            quality="auto:good"
+            format="auto"
+            crop="fill"
+            gravity="auto"
+            dpr="auto"
+            loading="lazy"
+            sizes="(max-width: 768px) 100vw, 50vw"
+            placeholder="blur"
+            blurDataURL={getBlurDataURL(imageOrderCloud.publicId)}
           />
         ) : null}
       </div>

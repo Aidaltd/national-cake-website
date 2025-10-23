@@ -6,12 +6,9 @@ import CountUp from "@/components/Animations/count-up";
 import Link from "next/link";
 import { CldImage } from 'next-cloudinary';
 import { getCloudinaryImage } from '@/lib/cloudinary';
-import cloudinaryMapping from '@/lib/cloudinary-mapping.json';
+import { buildCloudinaryUrl, getBlurDataURL } from '@/lib/cloudinary-utils';
 
-// Temporary hero image – place a suitable image at public/hero.jpg or replace the src with your own URL
-// const HERO_IMAGE = "/hero.jpg";
-
-  export default function Hero() {
+export default function Hero() {
   // Statistics data (value, suffix, description)
   const stats: Array<{
     value: number;
@@ -23,8 +20,7 @@ import cloudinaryMapping from '@/lib/cloudinary-mapping.json';
     { value: 200, suffix: "", description: "Events that defines Nigeria" },
     { value: 89, suffix: "%", description: "Commitment, Forgiveness, Apology & Retraction" },
     { value: 3, suffix: "", description: "Bridges for Personal, Community & Political Transformation" },
-  ]
-  ;
+  ];
 
   const heroCloud = getCloudinaryImage('DSC129');
 
@@ -35,11 +31,21 @@ import cloudinaryMapping from '@/lib/cloudinary-mapping.json';
         {heroCloud ? (
           <CldImage
             src={heroCloud.publicId}
-            alt="Chess hero"
+            alt="National Cake hero"
             width={1920}
             height={1080}
             className="h-full w-full object-cover object-center"
             priority
+            quality="auto:low"
+            format="auto"
+            crop="fill"
+            gravity="auto"
+            dpr="auto"
+            loading="eager"
+            fetchPriority="high"
+            sizes="100vw"
+            placeholder="blur"
+            blurDataURL={getBlurDataURL(heroCloud.publicId)}
           />
         ) : null}
         {/* Dark overlay */}
@@ -49,12 +55,11 @@ import cloudinaryMapping from '@/lib/cloudinary-mapping.json';
       {/* Content wrapper */}
       <div className="container relative mx-auto flex flex-col items-start gap-8 px-4 py-16 sm:py-24 md:py-32 lg:px-10">
         <h1 className="max-w-4xl lg:text-7xl lg:leading-tighter section-title text-white">
-          If <span className="text-custom-primary">Nigeria</span> Were a Game,
-          <br className="hidden sm:block" /> Would You Win?
+        Rediscover <span className="text-custom-primary">Nigeria</span>
+          <br className="hidden sm:block" />One Box at a Time
         </h1>
         <p className="max-w-lg text-sm sm:max-w-xl sm:text-lg text-white/90">
-        Discover the one oasis board game that reveals Nigeria’s true story, the events and how it shapes you.
-        </p>
+        Ignite your real identity with the board game that reveals Nigeria’s true story, the events and how it shapes you        </p>
         <p className="text-green-500 bg-white/20 backdrop-blur-[2px] rounded-lg p-3 font-bold text-base md:text-xl">
        This is nation building in a box.
         </p>

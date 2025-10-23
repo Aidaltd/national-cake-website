@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { CldImage } from 'next-cloudinary';
 import { getCloudinaryImage } from '@/lib/cloudinary';
+import { getBlurDataURL } from '@/lib/cloudinary-utils';
 import Link from "next/link";
 
 export default function HeroDelivery() {
@@ -21,6 +22,16 @@ export default function HeroDelivery() {
                 height={1080}
                 className="h-full w-full object-cover object-center"
                 priority
+                quality="auto:good"
+                format="auto"
+                crop="fill"
+                gravity="auto"
+                dpr="auto"
+                loading="eager"
+                fetchPriority="high"
+                sizes="100vw"
+                placeholder="blur"
+                blurDataURL={getBlurDataURL(heroCloud.publicId)}
               />
             ) : null}
              {/* Dark overlay */}

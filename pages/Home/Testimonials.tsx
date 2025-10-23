@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Quote, ChevronLeft, ChevronRight } from "lucide-react";
 import { CldImage } from 'next-cloudinary';
 import { getCloudinaryImage } from '@/lib/cloudinary';
+import { getBlurDataURL } from '@/lib/cloudinary-utils';
 
 const test1 = "/BEM PEVER.jpeg";
 const test2 = "/PRINCESS BUNMI PUKAT.jpeg";
@@ -148,6 +149,15 @@ export default function Testimonials() {
                   width={600}
                   height={500}
                   className="rounded-lg w-full object-cover object-top h-80 sm:h-80 lg:h-[450px]"
+                  quality="auto:good"
+                  format="auto"
+                  crop="fill"
+                  gravity="face"
+                  dpr="auto"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 60vw, 600px"
+                  placeholder="blur"
+                  blurDataURL={getBlurDataURL(imgData.publicId)}
                 />
               );
             }

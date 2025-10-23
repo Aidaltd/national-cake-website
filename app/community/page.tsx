@@ -1,8 +1,13 @@
-
+"use client";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import GridDistortion from "@/components/Animations/grid-distortion";
+import { getCloudinaryImage } from '@/lib/cloudinary';
+import { getBlurDataURL } from '@/lib/cloudinary-utils';
+import { CldImage } from "next-cloudinary";
 
+
+const heroCloud = getCloudinaryImage('DSC97');
 
 export default function GetStarted() {
     return (
@@ -10,14 +15,24 @@ export default function GetStarted() {
             {/* Background image */} 
              <div className="absolute inset-0 -z-10">  
                  <div style={{ width: '100%', height: '100%', position: 'relative', zIndex: -1 }}>
-                <GridDistortion
-                    imageSrc="/DSC97.jpg"
-                    grid={12}
-                    mouse={0.1}
-                    strength={0.15}
-                    relaxation={0.9}
-                    className="custom-class"
-                />
+               <CldImage
+                src={heroCloud.publicId}
+                alt="National Cake hero"
+                width={1920}
+                height={1080}
+                className="h-full w-full object-cover object-center"
+                priority
+                quality="auto:low"
+                format="auto"
+                crop="fill"
+                gravity="auto"
+                dpr="auto"
+                loading="eager"
+                fetchPriority="high"
+                sizes="100vw"
+                placeholder="blur"
+                blurDataURL={getBlurDataURL(heroCloud.publicId)}
+              />
                 </div>
           
                 <div className="absolute inset-0 bg-black/70" />

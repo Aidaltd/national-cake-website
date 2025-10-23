@@ -5,11 +5,14 @@ import React from "react";
 import productImage from "@/public/_backup_migrated/Nationalcake-28.jpg";
 import Image from "next/image";
 import Head from "next/head";
-
+import { CldImage } from 'next-cloudinary';
+import { getCloudinaryImage } from '@/lib/cloudinary';
+import { getBlurDataURL } from '@/lib/cloudinary-utils';
 interface FeatureListProps {
   features: string[];
 }
 
+const testimonialImage = getCloudinaryImage('DR-HYELADI-HARUNA');
 const FeatureList: React.FC<FeatureListProps> = ({ features }) => (
   <ul className="space-y-2 text-sm font-semibold text-custom-primary">
     {features.map((feature) => (
@@ -147,9 +150,9 @@ export default function Price() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
       />
     </Head>
-    <section className="py-16 sm:py-24">
+    <section className="pb-16 sm:pb-24">
       <div className="mx-auto max-w-8xl md:px-4">
-        <div className="bg-white md:rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+        <div className="bg-white md:rounded-b-lg shadow-sm border border-gray-200 overflow-hidden">
           <div className="flex flex-col lg:flex-row">
             {/* Product Image */}
             <div className="w-full lg:w-1/2 bg-gray-100 flex justify-center items-center">
@@ -171,7 +174,7 @@ export default function Price() {
               {/* Price */}
               <div className="mb-6">
                 <div className="flex items-center gap-3 mb-2">
-                  <span className="text-3xl font-bold tracking-tighter text-custom-primary">₦30,000</span>
+                  <span className="text-3xl font-bold tracking-tighter text-custom-primary">Price: &nbsp; &nbsp; ₦30,000</span>
                 </div>
               </div>
 
@@ -320,12 +323,20 @@ export default function Price() {
               <div className="bg-gray-50 rounded-lg p-6">
                 <div className="flex items-start gap-4 mb-4">
                   <div className="w-10 h-10 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
-                    <Image 
-                      src={testimonial.avatar} 
+                    <CldImage
+                      src={testimonialImage.publicId}
                       alt={`National-cake - ${testimonial.name}`}
                       width={40}
                       height={40}
                       className="w-full h-full object-cover"
+                      quality="auto:low"
+                      format="auto"
+                      crop="fill"
+                      gravity="face"
+                      dpr="auto"
+                      loading="lazy"
+                      placeholder="blur"
+                      blurDataURL={getBlurDataURL(testimonialImage.publicId)}
                     />
                   </div>
                   <div className="flex-1">

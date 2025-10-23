@@ -5,6 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CldImage } from 'next-cloudinary';
 import { getCloudinaryImage } from '@/lib/cloudinary';
+import { getBlurDataURL } from '@/lib/cloudinary-utils';
 
 interface CardItem {
   title: string;
@@ -60,11 +61,20 @@ export default function Context() {
         <div className="mt-10">
           {communityHeroCloud ? (
             <CldImage
-              src={communityHeroCloud.url}
+              src={communityHeroCloud.publicId}
               alt="National Cake"
               width={1200}
               height={450}
               className="w-full rounded-lg object-cover object-center h-64 sm:h-80 lg:h-[450px] border border-gray-400"
+              quality="auto:good"
+              format="auto"
+              crop="fill"
+              gravity="auto"
+              dpr="auto"
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
+              placeholder="blur"
+              blurDataURL={getBlurDataURL(communityHeroCloud.publicId)}
             />
           ) : null}
         </div>

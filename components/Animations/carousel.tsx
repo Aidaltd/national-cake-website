@@ -154,7 +154,9 @@ interface CarouselProps {
 export function Carousel({ slides }: CarouselProps) {
   const [current, setCurrent] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const autoScrollRef = useRef<NodeJS.Timeout | null>(null);
 
   // Smooth transition for navigation
   const goToSlide = (target: number) => {
@@ -177,12 +179,29 @@ export function Carousel({ slides }: CarouselProps) {
     goToSlide(index);
   };
 
+  // Auto-scroll effect
+  useEffect(() => {
+    if (isPaused) return;
+
+    autoScrollRef.current = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 1000); // Auto-scroll every 4 seconds
+
+    return () => {
+      if (autoScrollRef.current) {
+        clearInterval(autoScrollRef.current);
+      }
+    };
+  }, [isPaused, slides.length]);
+
   const id = useId();
 
   return (
     <div
       className="relative w-[70vmin] h-[70vmin] mx-auto"
       aria-labelledby={`carousel-heading-${id}`}
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
     >
       <ul
         className="absolute flex mx-[-4vmin] transition-transform duration-700 ease-in-out"
