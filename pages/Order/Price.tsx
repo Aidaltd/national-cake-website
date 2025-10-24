@@ -2,8 +2,6 @@
 
 import { Button } from "@/components/ui/button";
 import React from "react";
-import productImage from "@/public/_backup_migrated/Nationalcake-28.jpg";
-import Image from "next/image";
 import Head from "next/head";
 import { CldImage } from 'next-cloudinary';
 import { getCloudinaryImage } from '@/lib/cloudinary';
@@ -13,6 +11,7 @@ interface FeatureListProps {
 }
 
 const testimonialImage = getCloudinaryImage('DR-HYELADI-HARUNA');
+const productImage = getCloudinaryImage('Nationalcake-28');
 const FeatureList: React.FC<FeatureListProps> = ({ features }) => (
   <ul className="space-y-2 text-sm font-semibold text-custom-primary">
     {features.map((feature) => (
@@ -157,7 +156,24 @@ export default function Price() {
             {/* Product Image */}
             <div className="w-full lg:w-1/2 bg-gray-100 flex justify-center items-center">
               <div className="w-full h-full">
-                <Image src={productImage} alt="National-cake Board Game" className="w-full h-full object-cover" />
+                {productImage ? (
+                  <CldImage 
+                    src={productImage.publicId}
+                    alt="National-cake Board Game" 
+                    width={800}
+                    height={800}
+                    className="w-full h-full object-cover"
+                    quality="auto:good"
+                    format="auto"
+                    crop="fill"
+                    gravity="auto"
+                    dpr="auto"
+                    loading="eager"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    placeholder="blur"
+                    blurDataURL={getBlurDataURL(productImage.publicId)}
+                  />
+                ) : null}
               </div>
             </div>
 
