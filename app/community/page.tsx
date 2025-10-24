@@ -45,7 +45,7 @@ export default function GetStarted() {
                     <br className="hidden sm:block" /> Coming Soon
                 </h1>
 
-                <p className="max-w-md text-base sm:max-w-md text-center sm:text-base text-white/90">
+                <p className="max-w-md text-base text-center text-white/90">
                     Join the National Cake Community and be part of the movement to heal Nigeria through play.
                 </p>
 
