@@ -1,7 +1,8 @@
 import { getCloudinaryImage } from './cloudinary';
 
 /**
- * Build optimized Cloudinary URL with transformations for low network performance
+ * Build optimized Cloudinary URL with transformations for static deployment
+ * This version works purely client-side without any server dependencies
  */
 export function buildCloudinaryUrl(
   publicId: string,
@@ -56,7 +57,9 @@ export function buildCloudinaryUrl(
   // Enable lossy compression for PNG
   transformations.push('fl_lossy');
 
-  const baseUrl = 'https://res.cloudinary.com/dlb69oufx/image/upload';
+  // Use the cloud name from environment or fallback
+  const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME || 'dlb69oufx';
+  const baseUrl = `https://res.cloudinary.com/${cloudName}/image/upload`;
   const transformString = transformations.join(',');
   
   return `${baseUrl}/${transformString}/${publicId}`;

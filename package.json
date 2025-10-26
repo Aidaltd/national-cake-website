@@ -6,8 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "setup-cloudinary": "node scripts/upload-to-cloudinary.js"
+    "lint": "next lint"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.1.1",
@@ -19,10 +18,8 @@
     "@react-three/fiber": "^9.2.0",
     "@studio-freight/lenis": "^1.0.42",
     "class-variance-authority": "^0.7.1",
-    "cloudinary": "^2.7.0",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
-    "dotenv": "^17.2.3",
     "framer-motion": "^12.23.3",
     "gsap": "^3.13.0",
     "lucide-react": "^0.511.0",

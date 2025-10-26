@@ -1,8 +1,8 @@
-import { CldImage, CldImageProps } from 'next-cloudinary';
+import Image from 'next/image';
 import { getCloudinaryImage } from '@/lib/cloudinary';
-import { getBlurDataURL } from '@/lib/cloudinary-utils';
+import { buildCloudinaryUrl, getBlurDataURL } from '@/lib/cloudinary-utils';
 
-interface OptimizedCloudinaryImageProps extends Partial<CldImageProps> {
+interface OptimizedCloudinaryImageProps {
   /** Filename to lookup in cloudinary mapping */
   filename: string;
   /** Alt text for the image */
@@ -88,25 +88,28 @@ export default function OptimizedCloudinaryImage({
     return '(max-width: 768px) 50vw, 25vw';
   })();
 
+  // Build the optimized Cloudinary URL
+  const imageUrl = buildCloudinaryUrl(imageData.publicId, {
+    width: imageWidth,
+    height: imageHeight,
+    quality,
+    format: 'auto',
+    crop,
+    gravity,
+  });
+
   return (
-    <CldImage
-      src={imageData.publicId}
+    <Image
+      src={imageUrl}
       alt={alt}
       width={imageWidth}
       height={imageHeight}
-      quality={quality}
-      format="auto"
-      crop={crop}
-      gravity={gravity}
-      dpr="auto"
       loading={priority ? 'eager' : 'lazy'}
       priority={priority}
-      fetchPriority={priority ? 'high' : undefined}
       sizes={responsiveSizes}
       placeholder="blur"
       blurDataURL={getBlurDataURL(imageData.publicId)}
       className={className}
-      {...restProps}
     />
   );
 }
