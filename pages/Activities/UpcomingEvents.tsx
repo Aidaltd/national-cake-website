@@ -66,7 +66,7 @@ export default function UpcomingEvents() {
           {events.map((event, index) => (
             <div
               key={index}
-              className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-custom-primary/30"
+              className="group bg-white rounded shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-custom-primary/30"
             >
               {/* Card Header */}
               <div className="bg-gradient-to-r from-custom-primary/10 to-custom-primary/5 p-6 border-b border-gray-100">
