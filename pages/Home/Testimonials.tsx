@@ -6,16 +6,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { gsap } from "gsap";
 import { Button } from "@/components/ui/button";
 import { Quote, ChevronLeft, ChevronRight } from "lucide-react";
-import { CldImage } from 'next-cloudinary';
-import { getCloudinaryImage } from '@/lib/cloudinary';
-import { getBlurDataURL } from '@/lib/cloudinary-utils';
 
-const test1 = "/BEM PEVER.jpeg";
-const test2 = "/PRINCESS BUNMI PUKAT.jpeg";
-const test3 = "/COACH RALPH.jpeg";
-const test4 = "/DR HYELADI HARUNA.jpg";
-const test5 = "/NANCY OBLETE.jpg";
-const test6 = "/OBINNA CHUKWUEZIE.jpg";
+const test1 = "/BEM-PEVER.jpeg";
+const test2 = "/PRINCESS-BUNMI-PUKAT.jpeg";
+const test3 = "/COACH-RALPH.jpeg";
+const test4 = "/DR-HYELADI-HARUNA.jpg";
+const test5 = "/NANCY-OBLETE.jpg";
+const test6 = "/OBINNA-CHUKWUEZIE.jpg";
 
 
 
@@ -91,28 +88,6 @@ export default function Testimonials() {
 
   const testimonial = TESTIMONIALS[idx];
 
-  function toMappingKey(path: string) {
-    // remove leading slash, strip extension, replace spaces with hyphens, strip periods, collapse multiple hyphens
-    const base = path
-      .replace(/^\/+|\.[^/.]+$/g, '')
-      .replace(/\s+/g, '-')
-      .replace(/\./g, '-')
-      .replace(/-+/g, '-');
-    return base;
-  }
-
-  function findCloudinary(path: string) {
-    const key = toMappingKey(path);
-    let img = getCloudinaryImage(key);
-    if (!img) {
-      // try lowercase fallback
-      img = getCloudinaryImage(key.toLowerCase());
-    }
-    return img;
-  }
-
-  const hasCloudinary = !!process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
-
   return (
     <section className="px-6 py-16 lg:py-0 container mx-auto">
       {/* Header */}
@@ -139,39 +114,15 @@ export default function Testimonials() {
           className="grid gap-8 lg:grid-cols-2 items-center"
         >
           {/* Image */}
-          {(() => {
-            const imgData = findCloudinary(testimonial.image);
-            if (hasCloudinary && imgData) {
-              return (
-                <CldImage
-                  src={imgData.publicId}
-                  alt={`National-cake - ${testimonial.name}`}
-                  width={600}
-                  height={500}
-                  className="rounded-lg w-full object-cover object-top h-80 sm:h-80 lg:h-[450px]"
-                  quality="auto:good"
-                  format="auto"
-                  crop="fill"
-                  gravity="face"
-                  dpr="auto"
-                  loading="lazy"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 60vw, 600px"
-                  placeholder="blur"
-                  blurDataURL={getBlurDataURL(imgData.publicId)}
-                />
-              );
-            }
-            const localSrc = encodeURI(testimonial.image);
-            return (
-              <Image
-                src={localSrc}
-                alt={`National-cake - ${testimonial.name}`}
-                width={600}
-                height={500}
-                className="rounded-lg w-full object-cover object-top h-80 sm:h-80 lg:h-[450px]"
-              />
-            );
-          })()}
+          <Image
+            src={testimonial.image}
+            alt={`National-cake - ${testimonial.name}`}
+            width={600}
+            height={500}
+            className="rounded-lg w-full object-cover object-top h-80 sm:h-80 lg:h-[450px]"
+            loading="lazy"
+            quality={85}
+          />
 
           {/* Quote block */}
           <div className="space-y-6" ref={quoteRef}>

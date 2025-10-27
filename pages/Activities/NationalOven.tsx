@@ -1,11 +1,8 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { Users, Trophy, Star, Globe, ListChecks, CheckCircle2, CheckCircle } from "lucide-react";
-import { CldImage } from 'next-cloudinary';
-import { getCloudinaryImage } from '@/lib/cloudinary';
-import { getBlurDataURL } from '@/lib/cloudinary-utils';
-
 
 const features = [
   "Leader boards",
@@ -19,7 +16,6 @@ const features = [
 ];
 
 export default function NationalOven() {
-  const nationalOvenCloud = getCloudinaryImage('DSC104');
   return (
     <section className="w-full pb-24 h-full bg-custom-primary/5">
       <div className="grid grid-cols-1 md:grid-cols-2 bg-custom-primary/5">
@@ -53,24 +49,16 @@ export default function NationalOven() {
         </div>
         {/* left side */}
         <div className="w-full h-full">
-          {nationalOvenCloud ? (
-            <CldImage 
-              src={nationalOvenCloud.publicId} 
-              alt="National Oven" 
-              width={800}
-              height={600}
-              className="w-full h-full object-cover"
-              quality="auto:good"
-              format="auto"
-              crop="fill"
-              gravity="auto"
-              dpr="auto"
-              loading="lazy"
-              sizes="(max-width: 768px) 100vw, 50vw"
-              placeholder="blur"
-              blurDataURL={getBlurDataURL(nationalOvenCloud.publicId)}
-            />
-          ) : null}
+          <Image 
+            src="/DSC104.jpg" 
+            alt="National Oven" 
+            width={800}
+            height={600}
+            className="w-full h-full object-cover"
+            quality={85}
+            loading="lazy"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
         </div>
       </div>
     </section>

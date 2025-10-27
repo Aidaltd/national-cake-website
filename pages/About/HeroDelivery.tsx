@@ -3,37 +3,23 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { CldImage } from 'next-cloudinary';
-import { getCloudinaryImage } from '@/lib/cloudinary';
-import { getBlurDataURL } from '@/lib/cloudinary-utils';
 import Link from "next/link";
 
 export default function HeroDelivery() {
-  const heroCloud = getCloudinaryImage('DSC157');
   return (
     <section className="relative h-full w-full overflow-hidden isolate">
       {/* Background image */}
            <div className="absolute inset-0 -z-10">
-            {heroCloud ? (
-              <CldImage
-                src={heroCloud.publicId}
-                alt="National-cake hero"
-                width={1920}
-                height={1080}
-                className="h-full w-full object-cover object-center"
-                priority
-                quality="auto:good"
-                format="auto"
-                crop="fill"
-                gravity="auto"
-                dpr="auto"
-                loading="eager"
-                fetchPriority="high"
-                sizes="100vw"
-                placeholder="blur"
-                blurDataURL={getBlurDataURL(heroCloud.publicId)}
-              />
-            ) : null}
+            <Image
+              src="/DSC157.jpg"
+              alt="National-cake hero"
+              width={1920}
+              height={1080}
+              className="h-full w-full object-cover object-center"
+              priority
+              quality={85}
+              sizes="100vw"
+            />
              {/* Dark overlay */}
              <div className="absolute inset-0 bg-black/30" />
            </div>

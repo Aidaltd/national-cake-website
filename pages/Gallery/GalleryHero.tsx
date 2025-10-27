@@ -1,24 +1,19 @@
 "use client";
 
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Camera, Users, BookOpen } from "lucide-react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { CldImage } from 'next-cloudinary';
-import { getCloudinaryImage } from '@/lib/cloudinary';
-import { getBlurDataURL } from '@/lib/cloudinary-utils';
 
 // Gallery images for the slider - using Nationalcake series images
 const GALLERY_IMAGES = [
   'NCLU12', 'NCLU11', 'DSC90', 'DSC130', 'DSC95', 'DSC96', 'DSC101', 'DSC109', 'DSC125',
 ];
 
-
 export default function GalleryHero() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  const galleryCloud = getCloudinaryImage(GALLERY_IMAGES[currentImageIndex]);
 
   // Auto-slide functionality
   useEffect(() => {
@@ -56,32 +51,18 @@ export default function GalleryHero() {
         <AnimatePresence mode="wait">
           <motion.div
             key={currentImageIndex}
-            // initial={{ opacity: 0, scale: 1.1 }}
-            // animate={{ opacity: 1, scale: 1 }}
-            // exit={{ opacity: 0, scale: 0.9 }}
-            // transition={{ duration: 1.5, ease: "easeInOut" }}
             className="h-full w-full"
           >
-            {galleryCloud ? (
-              <CldImage
-                src={galleryCloud.publicId}
-                alt="National Cake Gallery"
-                width={1920}
-                height={1080}
-                className="object-cover object-center w-full h-full"
-                priority
-                quality="auto:good"
-                format="auto"
-                crop="fill"
-                gravity="auto"
-                dpr="auto"
-                loading="eager"
-                fetchPriority="high"
-                sizes="100vw"
-                placeholder="blur"
-                blurDataURL={getBlurDataURL(galleryCloud.publicId)}
-              />
-            ) : null}
+            <Image
+              src={`/${GALLERY_IMAGES[currentImageIndex]}.jpg`}
+              alt="National Cake Gallery"
+              width={1920}
+              height={1080}
+              className="object-cover object-center w-full h-full"
+              priority
+              quality={85}
+              sizes="100vw"
+            />
           </motion.div>
         </AnimatePresence>
         {/* Dark overlay */}

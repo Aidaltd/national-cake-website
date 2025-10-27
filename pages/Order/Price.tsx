@@ -1,17 +1,13 @@
 "use client";
 
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import React from "react";
 import Head from "next/head";
-import { CldImage } from 'next-cloudinary';
-import { getCloudinaryImage } from '@/lib/cloudinary';
-import { getBlurDataURL } from '@/lib/cloudinary-utils';
+
 interface FeatureListProps {
   features: string[];
 }
-
-const testimonialImage = getCloudinaryImage('DR-HYELADI-HARUNA');
-const productImage = getCloudinaryImage('Nationalcake-28');
 const FeatureList: React.FC<FeatureListProps> = ({ features }) => (
   <ul className="space-y-2 text-sm font-semibold text-custom-primary">
     {features.map((feature) => (
@@ -156,24 +152,16 @@ export default function Price() {
             {/* Product Image */}
             <div className="w-full lg:w-1/2 bg-gray-100 flex justify-center items-center">
               <div className="w-full h-full">
-                {productImage ? (
-                  <CldImage 
-                    src={productImage.publicId}
-                    alt="National-cake Board Game" 
-                    width={800}
-                    height={800}
-                    className="w-full h-full object-cover"
-                    quality="auto:good"
-                    format="auto"
-                    crop="fill"
-                    gravity="auto"
-                    dpr="auto"
-                    loading="eager"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    placeholder="blur"
-                    blurDataURL={getBlurDataURL(productImage.publicId)}
-                  />
-                ) : null}
+                <Image 
+                  src="/Nationalcake-28.jpg"
+                  alt="National-cake Board Game" 
+                  width={800}
+                  height={800}
+                  className="w-full h-full object-cover"
+                  quality={85}
+                  loading="eager"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
               </div>
             </div>
 
@@ -339,20 +327,14 @@ export default function Price() {
               <div className="bg-gray-50 rounded-lg p-6">
                 <div className="flex items-start gap-4 mb-4">
                   <div className="w-10 h-10 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
-                    <CldImage
-                      src={testimonialImage.publicId}
+                    <Image
+                      src="/DR-HYELADI-HARUNA.jpg"
                       alt={`National-cake - ${testimonial.name}`}
                       width={40}
                       height={40}
                       className="w-full h-full object-cover"
-                      quality="auto:low"
-                      format="auto"
-                      crop="fill"
-                      gravity="face"
-                      dpr="auto"
+                      quality={75}
                       loading="lazy"
-                      placeholder="blur"
-                      blurDataURL={getBlurDataURL(testimonialImage.publicId)}
                     />
                   </div>
                   <div className="flex-1">

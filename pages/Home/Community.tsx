@@ -3,16 +3,11 @@
 import Image from "next/image";
 import CountUp from "@/components/Animations/count-up";
 import { Check, CheckCircle, Users, Heart, Target, Gift } from "lucide-react";
-import { CldImage } from 'next-cloudinary';
-import { getCloudinaryImage } from '@/lib/cloudinary';
-import { getBlurDataURL } from '@/lib/cloudinary-utils';
-import { color } from "framer-motion";
 
 // temporary assets – replace with real paths later
 const AVATARS = ["/avatar-4.png", "/avatar-7.png", "/avatar-6.png"];
 
  export default function Community() {
-  const heroCloud = getCloudinaryImage('DSC147');
   const bullets = [
     {
       title: "For the Youth",
@@ -115,24 +110,16 @@ const AVATARS = ["/avatar-4.png", "/avatar-7.png", "/avatar-6.png"];
 
       {/* Hero image */}
       <div className="mt-10">
-        {heroCloud ? (
-          <CldImage
-            src={heroCloud.publicId}
-            alt="National--Community"
-            width={1200}
-            height={600}
-            className="w-full rounded-lg object-cover h-64 sm:h-80 lg:h-[380px] border border-gray-400"
-            quality="auto:good"
-            format="auto"
-            crop="fill"
-            gravity="auto"
-            dpr="auto"
-            loading="lazy"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
-            placeholder="blur"
-            blurDataURL={getBlurDataURL(heroCloud.publicId)}
-          />
-        ) : null}
+        <Image
+          src="/DSC147.jpg"
+          alt="National--Community"
+          width={1200}
+          height={600}
+          className="w-full rounded-lg object-cover h-64 sm:h-80 lg:h-[380px] border border-gray-400"
+          quality={85}
+          loading="lazy"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
+        />
       </div>
 
       {/* Program Cards Grid */}
@@ -173,27 +160,15 @@ const AVATARS = ["/avatar-4.png", "/avatar-7.png", "/avatar-6.png"];
 
             {/* Person Image at Bottom */}
             <div className="h-56 rounded-t-lg relative">
-              {(() => {
-                const imgData = getCloudinaryImage(item.imageKey);
-                if (!imgData) return null;
-                return (
-                  <CldImage
-                    src={imgData.publicId}
-                    alt={`Person representing ${item.title}`}
-                    fill
-                    className="object-cover rounded-t-lg object-center"
-                    quality="auto:low"
-                    format="auto"
-                    crop="fill"
-                    gravity="auto"
-                    dpr="auto"
-                    loading="lazy"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                    placeholder="blur"
-                    blurDataURL={getBlurDataURL(imgData.publicId)}
-                  />
-                );
-              })()}
+              <Image
+                src={`/${item.imageKey}.jpg`}
+                alt={`Person representing ${item.title}`}
+                fill
+                className="object-cover rounded-t-lg object-center"
+                quality={75}
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+              />
               {/* Overlay gradient for better text readability if needed */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
             </div>

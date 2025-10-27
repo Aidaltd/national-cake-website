@@ -1,10 +1,8 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { CheckCircle } from "lucide-react";
-import { CldImage } from 'next-cloudinary';
-import { getCloudinaryImage } from '@/lib/cloudinary';
-import { getBlurDataURL } from '@/lib/cloudinary-utils';
 
 const impacts = [
   "Promote healthy and well-informed national debates",
@@ -16,7 +14,6 @@ const impacts = [
 ];
 
 export default function Championship() {
-  const championshipCloud = getCloudinaryImage('NCLU10');
   return (
     <section className="bg-white w-full h-full">
       <div className="grid grid-cols-1 md:grid-cols-2">
@@ -57,24 +54,16 @@ export default function Championship() {
         </div>
         {/* left side */}
         <div className="w-full h-full">
-          {championshipCloud ? (
-            <CldImage 
-              src={championshipCloud.publicId} 
-              alt="National Cake Championship" 
-              width={800}
-              height={600}
-              className="w-full h-full object-cover"
-              quality="auto:good"
-              format="auto"
-              crop="fill"
-              gravity="auto"
-              dpr="auto"
-              loading="lazy"
-              sizes="(max-width: 768px) 100vw, 50vw"
-              placeholder="blur"
-              blurDataURL={getBlurDataURL(championshipCloud.publicId)}
-            />
-          ) : null}
+          <Image 
+            src="/NCLU10.jpg" 
+            alt="National Cake Championship" 
+            width={800}
+            height={600}
+            className="w-full h-full object-cover"
+            quality={85}
+            loading="lazy"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
         </div>
       </div>
     </section>

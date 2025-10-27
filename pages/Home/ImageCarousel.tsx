@@ -1,10 +1,6 @@
 "use client";
 
 import { Carousel } from "@/components/Animations/carousel";
-import { CldImage } from 'next-cloudinary';
-import { getCloudinaryImage } from '@/lib/cloudinary';
-import { buildCloudinaryUrl } from '@/lib/cloudinary-utils';
-
 
 export default function ImageCarousel() {
   const slideData = [
@@ -92,17 +88,9 @@ export default function ImageCarousel() {
     },
   ];
   const slides = slideData.map((slide) => {
-    const imgData = getCloudinaryImage(slide.src);
     return {
       title: slide.title,
-      // Use optimized Cloudinary URL with low quality for carousel
-      src: imgData 
-        ? buildCloudinaryUrl(imgData.publicId, { 
-            width: 800, 
-            quality: 'auto',
-            format: 'auto'
-          })
-        : `/${slide.src}.jpg`, // Fallback to local
+      src: `/${slide.src}.jpg`,
     };
   });
   return (

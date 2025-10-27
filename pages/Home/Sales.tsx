@@ -1,15 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { CldImage } from 'next-cloudinary';
-import { getCloudinaryImage } from '@/lib/cloudinary';
-import { getBlurDataURL } from '@/lib/cloudinary-utils';
 import { Check, CheckCircle } from "lucide-react";
 import Link from "next/link";
 
  export default function Sales() {
-  const imageMarketCloud = getCloudinaryImage('Nationalcake-30');
-  const imageOrderCloud = getCloudinaryImage('Nationalcake-29');
   const firstBullets = [
    <span> <span className="font-bold text-custom-primary">₦30,000</span> per box </span>,
     <span className="font-medium">A real purpose: Educate. Connect. Inspire.</span>,
@@ -28,26 +24,17 @@ import Link from "next/link";
       {/* Block 1 */}
       <div className="grid items-center md:justify-between gap-10 lg:grid-cols-2">
         {/* Image */}
-        {imageMarketCloud ? (
-          <CldImage
-            src={imageMarketCloud.publicId}
-            alt="Market scene"
-            width={1920}
-            height={1280}
-            className="rounded-lg w-full object-cover object-top h-80 sm:h-80 lg:h-[35rem]"
-            priority
-            quality="auto:good"
-            format="auto"
-            crop="fill"
-            gravity="auto"
-            dpr="auto"
-            loading="eager"
-            fetchPriority="high"
-            sizes="(max-width: 768px) 100vw, 50vw"
-            placeholder="blur"
-            blurDataURL={getBlurDataURL(imageMarketCloud.publicId)}
-          />
-        ) : null}
+        <Image
+          src="/Nationalcake-30.jpg"
+          alt="Market scene"
+          width={1920}
+          height={1280}
+          className="rounded-lg w-full object-cover object-top h-80 sm:h-80 lg:h-[35rem]"
+          priority
+          quality={85}
+          loading="eager"
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
 
         {/* Content */}
         <div className="space-y-6 max-w-lg lg:ml-auto">
@@ -119,24 +106,16 @@ Delivery begins after 30th September 2025
         </div>
 
         {/* Image */} 
-        {imageOrderCloud ? (
-          <CldImage
-            src={imageOrderCloud.publicId}
-            alt="Happy customer with bags"
-            width={800}
-            height={600}
-            className="rounded-lg w-full md:w-[50%] object-cover h-80 sm:h-80 lg:h-[33rem] lg:order-first"
-            quality="auto:good"
-            format="auto"
-            crop="fill"
-            gravity="auto"
-            dpr="auto"
-            loading="lazy"
-            sizes="(max-width: 768px) 100vw, 50vw"
-            placeholder="blur"
-            blurDataURL={getBlurDataURL(imageOrderCloud.publicId)}
-          />
-        ) : null}
+        <Image
+          src="/Nationalcake-29.jpg"
+          alt="Happy customer with bags"
+          width={800}
+          height={600}
+          className="rounded-lg w-full md:w-[50%] object-cover h-80 sm:h-80 lg:h-[33rem] lg:order-first"
+          quality={85}
+          loading="lazy"
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
       </div>
     </section>
   );

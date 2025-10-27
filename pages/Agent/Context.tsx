@@ -1,11 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { CldImage } from 'next-cloudinary';
-import { getCloudinaryImage } from '@/lib/cloudinary';
-import { getBlurDataURL } from '@/lib/cloudinary-utils';
 
 interface CardItem {
   title: string;
@@ -41,7 +39,6 @@ const cards: CardItem[] = [
 ];
 
 export default function Context() {
-  const communityHeroCloud = getCloudinaryImage('DSC155');
   return (
     <section className="relative overflow-hidden py-20 md:py-28 bg-neutral-950 text-white">
       <div className="container mx-auto px-6 md:px-10 space-y-10">
@@ -59,24 +56,16 @@ export default function Context() {
 
         {/* Hero image */}
         <div className="mt-10">
-          {communityHeroCloud ? (
-            <CldImage
-              src={communityHeroCloud.publicId}
-              alt="National Cake"
-              width={1200}
-              height={450}
-              className="w-full rounded-lg object-cover object-center h-64 sm:h-80 lg:h-[450px] border border-gray-400"
-              quality="auto:good"
-              format="auto"
-              crop="fill"
-              gravity="auto"
-              dpr="auto"
-              loading="lazy"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
-              placeholder="blur"
-              blurDataURL={getBlurDataURL(communityHeroCloud.publicId)}
-            />
-          ) : null}
+          <Image
+            src="/DSC155.jpg"
+            alt="National Cake"
+            width={1200}
+            height={450}
+            className="w-full rounded-lg object-cover object-center h-64 sm:h-80 lg:h-[450px] border border-gray-400"
+            quality={85}
+            loading="lazy"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
+          />
         </div>
 
         {/* Cards title */}

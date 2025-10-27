@@ -9,35 +9,23 @@ import {
   Send,
   ArrowRight,
 } from "lucide-react";
-import { CldImage } from 'next-cloudinary';
-import { getCloudinaryImage } from '@/lib/cloudinary';
-import { getBlurDataURL } from '@/lib/cloudinary-utils';
 
 export default function Creator() {
-  const creatorCloud = getCloudinaryImage('creator');
   return (
     <section className="container mx-auto px-6 py-20 lg:py-16  border-y border-gray-200">
       <div className="grid gap-12 lg:grid-cols-2 items-center">
         {/* Portrait */}
         <div className="w-full max-w-lg h-full md:h-[35rem] lg:max-w-none mx-auto lg:mx-0">
-          {creatorCloud ? (
-            <CldImage
-              src={creatorCloud.publicId}
-              alt="National-cake - Victor Prince Dickson"
-              width={800}
-              height={800}
-              className="rounded-lg w-full h-full object-top object-cover"
-              quality="auto:good"
-              format="auto"
-              crop="fill"
-              gravity="face"
-              dpr="auto"
-              loading="lazy"
-              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 800px"
-              placeholder="blur"
-              blurDataURL={getBlurDataURL(creatorCloud.publicId)}
-            />
-          ) : null}
+          <Image
+            src="/creator.jpeg"
+            alt="National-cake - Victor Prince Dickson"
+            width={800}
+            height={800}
+            className="rounded-lg w-full h-full object-top object-cover"
+            quality={85}
+            loading="lazy"
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 800px"
+          />
         </div>
 
         {/* Content */}

@@ -1,9 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { CldImage } from 'next-cloudinary';
-import { getCloudinaryImage } from '@/lib/cloudinary';
-import { getBlurDataURL } from '@/lib/cloudinary-utils';
+import Image from "next/image";
 import { galleryData } from "@/lib/nationalcakeData";
 import { motion } from "framer-motion";
 import GalleryModal from "@/components/ui/gallery-modal";
@@ -51,7 +49,6 @@ export default function GalleryTable() {
         {/* Gallery Grid - Modern Card Layout */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {galleryData.map((item: GalleryItem, index) => {
-            const imageCloud = getCloudinaryImage(item.image);
             return (
             <motion.div
               key={item.id}
@@ -63,27 +60,19 @@ export default function GalleryTable() {
             >
               {/* Image Container */}
               <div className="relative h-72 overflow-hidden">
-                {imageCloud && (
-                  <CldImage
-                    src={imageCloud.publicId}
-                    alt={item.title}
-                    width={400}
-                    height={300}
-                    className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500"
-                    quality="auto:low"
-                    format="auto"
-                    crop="fill"
-                    gravity="auto"
-                    dpr="auto"
-                    loading="lazy"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
-                    placeholder="blur"
-                    blurDataURL={getBlurDataURL(imageCloud.publicId)}
-                  />
-                )}
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  width={400}
+                  height={300}
+                  className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
+                  quality={75}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                />
                 
                 {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300 z-10" />
                 
                 {/* Category Badge */}
                 <div className="absolute top-4 right-4 z-10">
