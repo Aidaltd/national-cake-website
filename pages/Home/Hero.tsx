@@ -39,7 +39,7 @@ export default function Hero() {
       <div className="container relative mx-auto flex flex-col items-start gap-8 px-4 py-16 sm:py-24 md:py-32 lg:px-10">
         <h1 className="max-w-4xl lg:text-7xl lg:leading-tighter section-title text-white">
           Rediscover <span className="text-custom-primary">Nigeria</span>
-          <br className="hidden sm:block" /> &nbs; One Box at a Time
+          <br className="hidden sm:block" /> &nbsp; One Box at a Time
         </h1>
         <p className="max-w-lg text-sm sm:max-w-xl sm:text-lg text-white/90">
           Ignite your real identity with the board game that reveals Nigeria’s true story, the events and how it shapes you        </p>
