@@ -1,7 +1,6 @@
 "use client";
 
-import Image from "next/image";
-import CountUp from "@/components/Animations/count-up";
+import OptimizedImage from "@/components/OptimizedImage";
 import { Check, CheckCircle, Users, Heart, Target, Gift } from "lucide-react";
 
 // temporary assets – replace with real paths later
@@ -83,13 +82,14 @@ const AVATARS = ["/avatar-4.png", "/avatar-7.png", "/avatar-6.png"];
           <div className="flex items-center gap-3">
             <div className="flex -space-x-2">
               {AVATARS.map((src, idx) => (
-                <Image
+                <OptimizedImage
                   key={idx}
                   src={src}
                   alt="avatar"
                   width={32}
                   height={32}
                   className="rounded-full border-2 border-white"
+                  cloudinary={{ width: 64, quality: "auto" }}
                 />
               ))}
             </div>
@@ -110,15 +110,15 @@ const AVATARS = ["/avatar-4.png", "/avatar-7.png", "/avatar-6.png"];
 
       {/* Hero image */}
       <div className="mt-10">
-        <Image
+        <OptimizedImage
           src="/DSC147.jpg"
           alt="National--Community"
           width={1200}
           height={600}
           className="w-full rounded-lg object-cover h-64 sm:h-80 lg:h-[380px] border border-gray-400"
-          quality={85}
           loading="lazy"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
+          cloudinary={{ width: 1200, quality: "auto" }}
         />
       </div>
 
@@ -160,14 +160,14 @@ const AVATARS = ["/avatar-4.png", "/avatar-7.png", "/avatar-6.png"];
 
             {/* Person Image at Bottom */}
             <div className="h-56 rounded-t-lg relative">
-              <Image
+              <OptimizedImage
                 src={`/${item.imageKey}.jpg`}
                 alt={`Person representing ${item.title}`}
                 fill
                 className="object-cover rounded-t-lg object-center"
-                quality={75}
                 loading="lazy"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                cloudinary={{ width: 500, quality: "auto" }}
               />
               {/* Overlay gradient for better text readability if needed */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>

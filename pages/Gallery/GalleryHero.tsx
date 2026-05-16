@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import OptimizedImage from "@/components/OptimizedImage";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Camera, Users, BookOpen } from "lucide-react";
 import Link from "next/link";
@@ -29,12 +29,12 @@ export default function GalleryHero() {
   const stats = [
     {
       icon: <Camera className="w-6 h-6" />,
-      number: "38",
+      number: "37",
       label: "Gallery Images"
     },
     {
       icon: <Users className="w-6 h-6" />,
-      number: "4",
+      number: "5",
       label: "Categories"
     },
     {
@@ -53,15 +53,15 @@ export default function GalleryHero() {
             key={currentImageIndex}
             className="h-full w-full"
           >
-            <Image
+            <OptimizedImage
               src={`/${GALLERY_IMAGES[currentImageIndex]}.jpg`}
               alt="National Cake Gallery"
               width={1920}
               height={1080}
               className="object-cover object-center w-full h-full"
               priority
-              quality={85}
               sizes="100vw"
+              cloudinary={{ width: 1920, quality: "auto" }}
             />
           </motion.div>
         </AnimatePresence>

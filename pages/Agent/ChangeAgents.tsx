@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useRef } from 'react';
+import { resolveImageUrl } from "@/lib/cloudinary";
 import { ArrowRight, Target, Users, TrendingUp, BarChart3, ChevronLeft, ChevronRight } from 'lucide-react';
 
 
@@ -190,7 +191,7 @@ Register Now!
                         <div
                           className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110"
                           style={{
-                            backgroundImage: `url(${member.image})`
+                            backgroundImage: `url(${resolveImageUrl(member.image, { width: 400, quality: "auto" })})`
                           }}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />

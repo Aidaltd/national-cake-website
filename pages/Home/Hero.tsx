@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import OptimizedImage from "@/components/OptimizedImage";
 import { Button } from "@/components/ui/button";
 import CountUp from "@/components/Animations/count-up";
 import Link from "next/link";
@@ -22,7 +22,7 @@ export default function Hero() {
     <section className="relative isolate overflow-hidden text-white">
       {/* Background image */}
       <div className="absolute inset-0 -z-10">
-        <Image
+        <OptimizedImage
           src="/DSC129.jpg"
           alt="National Cake hero"
           width={1920}
@@ -30,6 +30,7 @@ export default function Hero() {
           className="h-full w-full object-cover object-center"
           priority
           sizes="100vw"
+          cloudinary={{ width: 1920, quality: "auto" }}
         />
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/60" />

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import Image from "next/image";
+import OptimizedImage from "@/components/OptimizedImage";
 import { motion, AnimatePresence } from "framer-motion";
 import { gsap } from "gsap";
 import { Button } from "@/components/ui/button";
@@ -114,14 +114,14 @@ export default function Testimonials() {
           className="grid gap-8 lg:grid-cols-2 items-center"
         >
           {/* Image */}
-          <Image
+          <OptimizedImage
             src={testimonial.image}
             alt={`National-cake - ${testimonial.name}`}
             width={600}
             height={500}
             className="rounded-lg w-full object-cover object-top h-80 sm:h-80 lg:h-[450px]"
             loading="lazy"
-            quality={85}
+            cloudinary={{ width: 700, quality: "auto" }}
           />
 
           {/* Quote block */}

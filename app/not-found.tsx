@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+import OptimizedImage from "@/components/OptimizedImage";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
@@ -11,14 +11,15 @@ export default function NotFound() {
       <span className="absolute inset-x-0 bottom-0 h-[2px] bg-custom-primary" />
 
       <div className="w-full max-w-lg text-center space-y-6">
-        <Image
+        <OptimizedImage
           src="/404.png"
           alt="National-cake 404 graphic"
           width={300}
           height={200}
           priority
           className="mx-auto w-40 sm:w-56 md:w-64 h-auto"
-        />
+          cloudinary={{ width: 1920, quality: "auto" }}
+                />
 
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900">
           Page Not Found

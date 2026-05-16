@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
+import OptimizedImage from "@/components/OptimizedImage";
 
 type MentionItem = {
   id: number;
@@ -13,31 +13,35 @@ type MentionItem = {
 const mentions: MentionItem[] = [
   {
     id: 1,
-    url:"https://punchng.com/coach-launches-board-game-to-spark-civic-rebirth/",
-    imageSrc:"punch.png",
-    alt:"Punch News",
-    },
-    {
-      id: 2,
-      url:"https://www.thisdaylive.com/2025/08/05/victor-prince-dickson-to-launch-national-cake-nigerias-civic-board-game-designed-to-heal-the-nation/",
-      imageSrc:"thisday.jpeg",
-      alt:"This Day News",
-      },
+    url: "https://punchng.com/coach-launches-board-game-to-spark-civic-rebirth/",
+    imageSrc: "punch",
+    alt: "Punch News",
+  },
+  {
+    id: 2,
+    url: "https://www.thisdaylive.com/2025/08/05/victor-prince-dickson-to-launch-national-cake-nigerias-civic-board-game-designed-to-heal-the-nation/",
+    imageSrc: "thisday",
+    alt: "This Day News",
+  },
   {
     id: 3,
     url: "https://nigeriatimes.ng/dickson-to-launch-national-cake-nigerias-civic-board-game/",
-    imageSrc: "nigerian-times.jpg",
-    alt: "Nigeria Times"
+    imageSrc: "nigerian-times",
+    alt: "Nigeria Times",
   },
-  { 
+  {
     id: 4,
     url: "https://dailytimesnigeria.com.ng/dickson-to-launch-national-cake-nigerias-civic-board-game/",
-    imageSrc: "daily-times.jpg",
-    alt: "Daily Times Nigeria"
+    imageSrc: "daily-times",
+    alt: "Daily Times Nigeria",
   },
-  
+  {
+    id: 5,
+    url: "https://nga.gov.ng/gallery/#:~:text=The%20Guest%20Creative%20(in%20Brown)%2C,explanation%20on%20what%20the%20National",
+    imageSrc: "NGA-Logo",
+    alt: "National Gallery of Art",
+  },
 ];
-
 
 export default function Mentions() {
   return (
@@ -46,31 +50,32 @@ export default function Mentions() {
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">
           As Seen and Mentioned On
         </h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 px-10 md:gap-12 items-center justify-items-center">
-          {mentions.map((mention) => {
-            return (
-            <Link 
-              key={mention.id} 
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 px-6 md:gap-10 items-center justify-items-center">
+          {mentions.map((mention) => (
+            <Link
+              key={mention.id}
               href={mention.url}
               target="_blank"
               rel="noopener noreferrer"
               className="group w-full h-24 flex flex-col items-center justify-center p-4 hover:shadow-lg rounded-lg transition-all duration-300 transform hover:-translate-y-1"
             >
               <div className="relative w-full h-full">
-                <Image
-                  src={`/${mention.imageSrc}`}
+                <OptimizedImage
+                  src={mention.imageSrc}
                   alt={mention.alt}
                   width={200}
                   height={100}
                   className="object-contain p-2"
-                  quality={75}
                   loading="lazy"
-                  sizes="(max-width: 768px) 50vw, 25vw"
+                  sizes="(max-width: 768px) 50vw, 20vw"
+                  cloudinary={{ width: 200, quality: "auto" }}
                 />
-              </div> 
-                <p className="text-sm md:text-base font-semibold">{mention.alt}</p>
+              </div>
+              <p className="text-sm md:text-base font-semibold text-center mt-2">
+                {mention.alt}
+              </p>
             </Link>
-          )})}
+          ))}
         </div>
       </div>
     </section>

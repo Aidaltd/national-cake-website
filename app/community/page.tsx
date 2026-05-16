@@ -1,8 +1,7 @@
 "use client";
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import GridDistortion from "@/components/Animations/grid-distortion";
+import OptimizedImage from "@/components/OptimizedImage";
 
 export default function GetStarted() {
     return (
@@ -10,15 +9,15 @@ export default function GetStarted() {
             {/* Background image */} 
              <div className="absolute inset-0 -z-10">  
                  <div style={{ width: '100%', height: '100%', position: 'relative', zIndex: -1 }}>
-               <Image
+               <OptimizedImage
                 src="/DSC97.jpg"
                 alt="National Cake hero"
                 width={1920}
                 height={1080}
                 className="h-full w-full object-cover object-center"
                 priority
-                quality={75}
                 sizes="100vw"
+                cloudinary={{ width: 1920, quality: "auto" }}
               />
                 </div>
           

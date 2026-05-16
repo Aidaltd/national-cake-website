@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
+import OptimizedImage from "@/components/OptimizedImage";
 import { BookOpen } from "lucide-react";
 
 export default function DreamMagazine() {
@@ -11,7 +11,7 @@ export default function DreamMagazine() {
       <div className="grid grid-cols-1 md:grid-cols-2">
           {/* left side */}
           <div className="w-full hidden md:block h-full">
-            <Image 
+            <OptimizedImage 
               src="/DSC102.jpg" 
               alt="Dream Magazine" 
               width={800}
@@ -20,7 +20,8 @@ export default function DreamMagazine() {
               loading="lazy"
               quality={85}
               sizes="(max-width: 768px) 0px, 50vw"
-            />
+          cloudinary={{ width: 1920, quality: "auto" }}
+                    />
         </div>
         {/* right side */}
         <div className="bg-white p-4 py-10 md:p-12 flex flex-col gap-6 border border-green-200">
@@ -48,7 +49,7 @@ export default function DreamMagazine() {
         </div>
         {/* left side */}
         <div className="w-full block md:hidden h-full">
-          <Image 
+          <OptimizedImage 
             src="/DSC102.jpg" 
             alt="Dream Magazine" 
             width={800}
@@ -57,7 +58,8 @@ export default function DreamMagazine() {
             loading="lazy"
             quality={85}
             sizes="(max-width: 768px) 100vw, 0px"
-          />
+          cloudinary={{ width: 1920, quality: "auto" }}
+                  />
         </div>
       </div>
     </section>

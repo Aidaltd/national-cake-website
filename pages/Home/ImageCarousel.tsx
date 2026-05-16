@@ -1,6 +1,7 @@
 "use client";
 
 import { Carousel } from "@/components/Animations/carousel";
+import { resolveImageUrl } from "@/lib/cloudinary";
 
 export default function ImageCarousel() {
   const slideData = [
@@ -90,7 +91,7 @@ export default function ImageCarousel() {
   const slides = slideData.map((slide) => {
     return {
       title: slide.title,
-      src: `/${slide.src}.jpg`,
+      src: resolveImageUrl(`/${slide.src}.jpg`, { width: 800, quality: "auto" }),
     };
   });
   return (

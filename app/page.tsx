@@ -12,6 +12,7 @@ import Prototype from "@/constants/Prototype";
 import ImageCarousel from "@/pages/Home/ImageCarousel";
 import DreamMagazine from "@/pages/Activities/DreamMagazine";
 import NationalOven from "@/pages/Activities/NationalOven";
+import { cloudinaryUrl } from "@/lib/cloudinary";
 
 
 export const metadata = {
@@ -26,14 +27,14 @@ export const metadata = {
     description:
       "Discover National-cake, Nigeria’s first civic board game. Learn history, citizenship, and nation-building through play.",
     url: "/",
-    images: [{ url: "/og-default.jpg", width: 1200, height: 630 }],
+    images: [{ url: cloudinaryUrl("logo1", { width: 1200 }), width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "National-cake – Civic Board Game for Nigeria",
     description:
       "Nigeria’s first civic board game. Learn while you play.",
-    images: ["/og-default.jpg"],
+    images: [cloudinaryUrl("logo1", { width: 1200 })],
   },
 } as const;
 export default function Home() {

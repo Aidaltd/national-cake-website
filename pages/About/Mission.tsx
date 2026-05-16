@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import OptimizedImage from "@/components/OptimizedImage";
 
 // Static image located in the `public` folder
 const missionImage = "/Nationalcake-11.jpg" as const;
@@ -49,14 +49,15 @@ export default function Mission() {
         </div>
 
         {/* Image */}
-        <Image
+        <OptimizedImage
           src={missionImage}
           alt="National-cake mission"
           width={1920}
           height={1280}
           className="rounded-lg w-full object-cover h-64 sm:h-96 lg:h-[45rem]"
           priority
-        />
+          cloudinary={{ width: 1920, quality: "auto" }}
+                />
       </div>
     </section>
   );

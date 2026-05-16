@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
+import OptimizedImage from "@/components/OptimizedImage";
 import { CheckCircle } from "lucide-react";
 
 const impacts = [
@@ -54,7 +54,7 @@ export default function Championship() {
         </div>
         {/* left side */}
         <div className="w-full h-full">
-          <Image 
+          <OptimizedImage 
             src="/NCLU10.jpg" 
             alt="National Cake Championship" 
             width={800}
@@ -63,7 +63,8 @@ export default function Championship() {
             quality={85}
             loading="lazy"
             sizes="(max-width: 768px) 100vw, 50vw"
-          />
+          cloudinary={{ width: 1920, quality: "auto" }}
+                  />
         </div>
       </div>
     </section>

@@ -2,7 +2,6 @@
 
 import { usePathname } from "next/navigation";
 
-import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
@@ -16,8 +15,7 @@ import {
     Linkedin,
 } from "lucide-react";
 
-import Logo from "@/public/logo-4.png";
-import Silk from "@/components/Animations/silk";
+import OptimizedImage from "@/components/OptimizedImage";
 
 /**
  * Footer component – replicates the design shown in the provided mock-up.
@@ -134,15 +132,7 @@ export default function Footer() {
         <footer className=" relative h-full w-full text-white">
             {/** 1. Newsletter section */}
             <section className="relative mx-auto overflow-hidden bg-gradient-to-br from-custom-primary via-custom-primary to-custom-primary">
-                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black to-transparent">
-                    <Silk
-                        speed={5}
-                        scale={0.9}
-                        color="#228B22"
-                        noiseIntensity={1.5}
-                        rotation={0}
-                    />
-                </div>
+                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/30 to-transparent" />
                 {/* blurred radial glow */}
                 <div className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/60 blur-[120px] md:blur-[160px] h-80 w-80" />
 
@@ -186,10 +176,12 @@ export default function Footer() {
                     <div className=" space-y-6 w-full">
                         <Link href="/">
                             <div className="flex items-center space-x-2">
-                                <Image
-                                    src={Logo}
+                                <OptimizedImage
+                                    src="logo-4"
                                     alt="National-cake Logo"
-                                    className="md:w-40 w-32"
+                                    width={160}
+                                    height={64}
+                                    className="md:w-40 w-32 h-auto"
                                 />
                             </div>
                         </Link>

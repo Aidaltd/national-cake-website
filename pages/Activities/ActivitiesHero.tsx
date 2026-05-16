@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import OptimizedImage from "@/components/OptimizedImage";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import React from "react";
@@ -10,7 +10,7 @@ export default function ActivitiesHero() {
     <section className="relative h-full w-full overflow-hidden isolate">
       {/* Background image */}
       <div className="absolute inset-0 -z-10">
-        <Image
+        <OptimizedImage
           src="/NCLU11.jpg"
           alt="National-cake hero"
           width={1920}
@@ -19,7 +19,8 @@ export default function ActivitiesHero() {
           priority
           quality={85}
           sizes="100vw"
-        />
+          cloudinary={{ width: 1920, quality: "auto" }}
+                />
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/50" />
       </div>

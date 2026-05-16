@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import OptimizedImage from "@/components/OptimizedImage";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -10,7 +10,7 @@ export default function HeroDelivery() {
     <section className="relative h-full w-full overflow-hidden isolate">
       {/* Background image */}
            <div className="absolute inset-0 -z-10">
-            <Image
+            <OptimizedImage
               src="/DSC157.jpg"
               alt="National-cake hero"
               width={1920}
@@ -19,7 +19,8 @@ export default function HeroDelivery() {
               priority
               quality={85}
               sizes="100vw"
-            />
+          cloudinary={{ width: 1920, quality: "auto" }}
+                    />
              {/* Dark overlay */}
              <div className="absolute inset-0 bg-black/30" />
            </div>

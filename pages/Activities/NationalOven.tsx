@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
+import OptimizedImage from "@/components/OptimizedImage";
 import { Users, Trophy, Star, Globe, ListChecks, CheckCircle2, CheckCircle } from "lucide-react";
 
 const features = [
@@ -49,7 +49,7 @@ export default function NationalOven() {
         </div>
         {/* left side */}
         <div className="w-full h-full">
-          <Image 
+          <OptimizedImage 
             src="/DSC104.jpg" 
             alt="National Oven" 
             width={800}
@@ -58,7 +58,8 @@ export default function NationalOven() {
             quality={85}
             loading="lazy"
             sizes="(max-width: 768px) 100vw, 50vw"
-          />
+          cloudinary={{ width: 1920, quality: "auto" }}
+                  />
         </div>
       </div>
     </section>

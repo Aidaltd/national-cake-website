@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import OptimizedImage from "@/components/OptimizedImage";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -56,7 +56,7 @@ export default function Context() {
 
         {/* Hero image */}
         <div className="mt-10">
-          <Image
+          <OptimizedImage
             src="/DSC155.jpg"
             alt="National Cake"
             width={1200}
@@ -65,7 +65,8 @@ export default function Context() {
             quality={85}
             loading="lazy"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
-          />
+          cloudinary={{ width: 1920, quality: "auto" }}
+                  />
         </div>
 
         {/* Cards title */}

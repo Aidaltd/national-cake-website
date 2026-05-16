@@ -3,14 +3,12 @@
 
 import { usePathname } from "next/navigation";
 
-import Logo from "@/public/logo-4.png";
-import Logo2 from "@/public/logo-5.png";
+import OptimizedImage from "@/components/OptimizedImage";
 import { Menu, ArrowUpRight } from "lucide-react";
 
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -88,7 +86,7 @@ const MobileNavLink = ({
         <div className="md:px-10 px-5 h-16 w-full">
           <div className="flex w-full h-full items-center justify-between">
             <Link href="/">
-              <Image src={Logo} alt="National-cake Logo" className="w-48" />
+              <OptimizedImage src="logo-4" alt="National-cake Logo" width={192} height={64} className="w-48 h-auto" />
             </Link>
             <nav className="hidden md:flex gap-6 text-sm text-white/80 items-center">
               {navItems.map((item, idx) => (
@@ -101,7 +99,7 @@ const MobileNavLink = ({
                 </a>
               ))}
               <a href="/community">
-                <Button className="text-custom-primary/80 bg-white hover:bg-white/90 hover:text-custom-primary px-8">
+                <Button className="text-custom-primary/80 bg-white hover:bg-white/90 hover:text-custom-primary">
                   Join our community
                 </Button>
               </a>
@@ -130,7 +128,7 @@ const MobileNavLink = ({
               >
                 <div className="">
                   <Link href="/" className="flex items-start justify-start mb-6 mt-3">
-                    <Image src={Logo2} alt="National-cake Logo" className="w-52" />
+                    <OptimizedImage src="logo-5" alt="National-cake Logo" width={208} height={64} className="w-52 h-auto" />
                   </Link>
                 </div>
 

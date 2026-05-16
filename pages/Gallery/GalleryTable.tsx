@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
 import { galleryData } from "@/lib/nationalcakeData";
+import OptimizedImage from "@/components/OptimizedImage";
+import { resolveImageUrl } from "@/lib/cloudinary";
 import { motion } from "framer-motion";
 import GalleryModal from "@/components/ui/gallery-modal";
 
@@ -54,21 +55,21 @@ export default function GalleryTable() {
               key={item.id}
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.3, delay: index * 0.05 }}
+              transition={{ duration: 0.25, delay: Math.min(index * 0.03, 0.3) }}
               className="group relative bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer"
               onClick={() => openModal(index)}
             >
               {/* Image Container */}
               <div className="relative h-72 overflow-hidden">
-                <Image
+                <OptimizedImage
                   src={item.image}
                   alt={item.title}
                   width={400}
                   height={300}
                   className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500"
                   loading="lazy"
-                  quality={75}
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                  cloudinary={{ width: 600, quality: "auto" }}
                 />
                 
                 {/* Gradient Overlay */}
@@ -125,7 +126,10 @@ export default function GalleryTable() {
         <GalleryModal
           isOpen={isModalOpen}
           onClose={closeModal}
-          images={galleryData}
+          images={galleryData.map((item) => ({
+            ...item,
+            image: resolveImageUrl(item.image, { width: 1200, quality: "auto" }),
+          }))}
           currentIndex={currentImageIndex}
           onNavigate={navigateModal}
         />

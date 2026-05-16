@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+import OptimizedImage from "@/components/OptimizedImage";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -53,7 +53,7 @@ export default function Achievements() {
         </div>
 
       {/* Photo */}
-      <Image
+      <OptimizedImage
         src="/DSC132.jpg"
         alt="National-cake - People celebrating"
         width={1200}
@@ -62,7 +62,8 @@ export default function Achievements() {
         quality={85}
         loading="lazy"
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
-      />
+          cloudinary={{ width: 1920, quality: "auto" }}
+              />
     </section>
   );
 };

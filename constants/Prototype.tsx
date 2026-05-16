@@ -3,6 +3,7 @@
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { useRef, useMemo, useState, useEffect } from "react";
 import * as THREE from "three";
+import { cloudinaryUrl } from "@/lib/cloudinary";
 
 /**
  * Prototype – interactive 3-D product box
@@ -69,12 +70,12 @@ function BoxWithLid() {
     texS3,
     texS4,
   ] = useLoader(THREE.TextureLoader, [
-    "/FRONT.jpg",
-    "/BACK.jpg",
-    "/S1.jpg",
-    "/S2.jpg",
-    "/S3.jpg",
-    "/S4.jpg",
+    cloudinaryUrl("/FRONT.jpg", { width: 1024 }),
+    cloudinaryUrl("/BACK.jpg", { width: 1024 }),
+    cloudinaryUrl("/S1.jpg", { width: 1024 }),
+    cloudinaryUrl("/S2.jpg", { width: 1024 }),
+    cloudinaryUrl("/S3.jpg", { width: 1024 }),
+    cloudinaryUrl("/S4.jpg", { width: 1024 }),
   ]);
 
   const materials = useMemo(

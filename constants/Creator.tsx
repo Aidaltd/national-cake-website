@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import OptimizedImage from "@/components/OptimizedImage";
 import Link from "next/link";
 import {
   Facebook,
@@ -16,15 +16,15 @@ export default function Creator() {
       <div className="grid gap-12 lg:grid-cols-2 items-center">
         {/* Portrait */}
         <div className="w-full max-w-lg h-full md:h-[35rem] lg:max-w-none mx-auto lg:mx-0">
-          <Image
+          <OptimizedImage
             src="/creator.jpeg"
             alt="National-cake - Victor Prince Dickson"
             width={800}
             height={800}
             className="rounded-lg w-full h-full object-top object-cover"
-            quality={85}
             loading="lazy"
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 800px"
+            cloudinary={{ width: 800, quality: "auto" }}
           />
         </div>
 

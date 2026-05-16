@@ -1,6 +1,7 @@
 "use client";
 
-import Image from "next/image";
+import OptimizedImage from "@/components/OptimizedImage";
+import { cloudinaryUrl } from "@/lib/cloudinary";
 import { Button } from "@/components/ui/button";
 import React from "react";
 import Head from "next/head";
@@ -98,7 +99,7 @@ export default function Price() {
     name: "National-cake Board Game",
     description:
       "Nigeria’s first civic board game that teaches history, citizenship, and nation-building.",
-    image: [`${siteUrl}/Nationalcake-2.jpg`],
+    image: [cloudinaryUrl("Nationalcake-28", { width: 1200 })],
     brand: {
       "@type": "Brand",
       name: "National-cake",
@@ -132,12 +133,12 @@ export default function Price() {
       <meta property="og:url" content={pageUrl} />
       <meta property="og:title" content="Order National-cake Board Game" />
       <meta property="og:description" content="Nigeria's first civic board game. Limited edition." />
-      <meta property="og:image" content={`${siteUrl}/logo1.png`} />
+      <meta property="og:image" content={cloudinaryUrl("logo1", { width: 1200 })} />
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="Order National-cake Board Game" />
       <meta name="twitter:description" content="Nigeria's first civic board game. Limited edition." />
-      <meta name="twitter:image" content={`${siteUrl}/logo1.png`} />
+      <meta name="twitter:image" content={cloudinaryUrl("logo1", { width: 1200 })} />
       {/* Product JSON-LD */}
       <script
         type="application/ld+json"
@@ -152,15 +153,15 @@ export default function Price() {
             {/* Product Image */}
             <div className="w-full lg:w-1/2 bg-gray-100 flex justify-center items-center">
               <div className="w-full h-full">
-                <Image 
+                <OptimizedImage
                   src="/Nationalcake-28.jpg"
-                  alt="National-cake Board Game" 
+                  alt="National-cake Board Game"
                   width={800}
                   height={800}
                   className="w-full h-full object-cover"
-                  quality={85}
                   loading="eager"
                   sizes="(max-width: 1024px) 100vw, 50vw"
+                  cloudinary={{ width: 900, quality: "auto" }}
                 />
               </div>
             </div>
@@ -178,7 +179,7 @@ export default function Price() {
               {/* Price */}
               <div className="mb-6">
                 <div className="flex items-center gap-3 mb-2">
-                  <span className="text-3xl font-bold tracking-tighter text-custom-primary">Price: &nbsp; &nbsp; ₦30,000</span>
+                  <span className="text-3xl font-bold tracking-tighter text-custom-primary">Price: &nbsp; &nbsp; ₦50,000</span>
                 </div>
               </div>
 
@@ -235,7 +236,7 @@ export default function Price() {
                   <div className="flex flex-col sm:flex-row gap-4 mb-6">
                     <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 flex-1">
                       <div className="text-sm text-white/70 mb-1">Regular Price</div>
-                      <div className="text-2xl font-bold line-through text-white/60">₦30,000</div>
+                      <div className="text-2xl font-bold line-through text-white/60">₦50,000</div>
                     </div>
                     
                     <div className="bg-white text-custom-primary rounded-xl p-4 flex-1 relative shadow-lg">
@@ -243,7 +244,7 @@ export default function Price() {
                         SAVE ₦5,000
                       </div>
                       <div className="text-sm font-semibold mb-1 text-custom-primary">Bulk Price (50+)</div>
-                      <div className="text-2xl font-bold text-custom-primary">₦25,000</div>
+                      <div className="text-2xl font-bold text-custom-primary">₦50,000</div>
                     </div>
                   </div>
 
@@ -258,7 +259,7 @@ export default function Price() {
                     {/* Main Badge */}
                     <div className="bg-white text-custom-primary rounded-2xl p-8 shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-300">
                       <div className="text-center">
-                        <div className="text-4xl font-bold mb-2 text-custom-primary">₦25,000</div>
+                        <div className="text-4xl font-bold mb-2 text-custom-primary">₦50,000</div>
                         <div className="text-sm font-semibold mb-1 text-custom-primary">BULK PRICE</div>
                         <div className="text-xs opacity-80 text-custom-primary">50+ copies</div>
                       </div>
@@ -327,14 +328,14 @@ export default function Price() {
               <div className="bg-gray-50 rounded-lg p-6">
                 <div className="flex items-start gap-4 mb-4">
                   <div className="w-10 h-10 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
-                    <Image
+                    <OptimizedImage
                       src="/DR-HYELADI-HARUNA.jpg"
                       alt={`National-cake - ${testimonial.name}`}
                       width={40}
                       height={40}
                       className="w-full h-full object-cover"
-                      quality={75}
                       loading="lazy"
+                      cloudinary={{ width: 80, quality: "auto" }}
                     />
                   </div>
                   <div className="flex-1">

@@ -27,7 +27,7 @@ export const faqdata = [
     id: 5,
     question: "How much does a unit of National Cake cost?",
     answer:
-      "The standard retail price is ₦30,000 per unit. Special bulk pricing is available for schools, NGOs, government partners and agents.",
+      "The standard retail price is ₦50,000 per unit. Special bulk pricing is available for schools, NGOs, government partners and agents.",
   },
   {
     id: 6,
@@ -344,6 +344,166 @@ export const galleryData = [
     description: "Players from different backgrounds come together, learning that Nigeria's strength lies in its diversity. The game board becomes common ground for understanding and unity.",
     image: "/DSC123.jpg",
     tags: ["Unity", "Diversity", "Understanding", "Community"],
+    category: "Community"
+  },
+  {
+    id: 17,
+    title: "National Cake at AB CON",
+    description: "Showcasing National Cake at a gaming convention, connecting with publishers and enthusiasts passionate about civic board games.",
+    image: "/NCUPDATE-1.jpg",
+    tags: ["Convention", "Showcase", "Publisher", "Events"],
+    category: "Events"
+  },
+  {
+    id: 18,
+    title: "Teaching the Next Generation",
+    description: "A National Cake ambassador guides young players through the board, turning gameplay into a hands-on lesson in history and citizenship.",
+    image: "/NCUPDATE-2.jpeg",
+    tags: ["Youth", "Education", "Gameplay", "Community"],
+    category: "Education"
+  },
+  {
+    id: 19,
+    title: "Community Gameplay Session",
+    description: "Players gather around the National Cake board for an engaging session that sparks dialogue about Nigeria's story and shared future.",
+    image: "/NCUPDATE-3.jpeg",
+    tags: ["Community", "Gameplay", "Engagement", "Unity"],
+    category: "Community"
+  },
+  {
+    id: 20,
+    title: "National Cake in Action",
+    description: "Participants experience the game's immersive path through Nigeria's journey, learning while they play.",
+    image: "/NCUPDATE-4.jpeg",
+    tags: ["Gameplay", "Learning", "Events", "Impact"],
+    category: "Gameplay"
+  },
+  {
+    id: 21,
+    title: "Spreading the Movement",
+    description: "National Cake ambassadors share the game at a public event, inviting more Nigerians to join the civic reawakening.",
+    image: "/NCUPDATE-5.jpeg",
+    tags: ["Outreach", "Events", "Brand", "Community"],
+    category: "Events"
+  },
+  {
+    id: 22,
+    title: "Interactive Learning",
+    description: "The game board becomes a classroom as players explore historical milestones and civic responsibility together.",
+    image: "/NCUPDATE-6.jpeg",
+    tags: ["Education", "History", "Interactive", "Learning"],
+    category: "Education"
+  },
+  {
+    id: 23,
+    title: "Building Connections",
+    description: "National Cake brings people together across ages and backgrounds for meaningful conversations about nation-building.",
+    image: "/NCUPDATE-7.jpeg",
+    tags: ["Unity", "Dialogue", "Community", "Nation Building"],
+    category: "Community"
+  },
+  {
+    id: 24,
+    title: "Event Showcase",
+    description: "A vibrant display of National Cake at a community gathering, drawing interest from families and institutions.",
+    image: "/NCUPDATE-8.jpeg",
+    tags: ["Showcase", "Events", "Families", "Outreach"],
+    category: "Events"
+  },
+  {
+    id: 25,
+    title: "Hands-On Civic Education",
+    description: "Participants engage directly with game mechanics that mirror real governance and citizenship challenges.",
+    image: "/NCUPDATE-9.jpeg",
+    tags: ["Civic Education", "Participation", "Learning", "Engagement"],
+    category: "Education"
+  },
+  {
+    id: 26,
+    title: "National Cake Workshop",
+    description: "A workshop setting where facilitators introduce National Cake as a tool for healing and national consciousness.",
+    image: "/NCUPDATE-10.jpeg",
+    tags: ["Workshop", "Facilitation", "Education", "Impact"],
+    category: "Education"
+  },
+  {
+    id: 27,
+    title: "Growing the Community",
+    description: "New players discover National Cake and join a growing network committed to baking a better Nigeria.",
+    image: "/NCUPDATE-11.jpeg",
+    tags: ["Community", "Growth", "Discovery", "Movement"],
+    category: "Community"
+  },
+  {
+    id: 28,
+    title: "Game Night Energy",
+    description: "The excitement of a National Cake game night, where strategy meets storytelling and patriotism.",
+    image: "/NCUPDATE-12.jpeg",
+    tags: ["Game Night", "Fun", "Strategy", "Patriotism"],
+    category: "Gameplay"
+  },
+  {
+    id: 29,
+    title: "Institutional Engagement",
+    description: "Organizations explore National Cake as a civic learning resource for staff, students, and stakeholders.",
+    image: "/NCUPDATE-13.jpeg",
+    tags: ["Institutions", "Partnership", "Education", "Impact"],
+    category: "Education"
+  },
+  {
+    id: 30,
+    title: "Live Demonstration",
+    description: "A live demo captures attention as onlookers see how National Cake makes history and citizenship tangible.",
+    image: "/NCUPDATE-14.jpeg",
+    tags: ["Demo", "Events", "Awareness", "Engagement"],
+    category: "Events"
+  },
+  {
+    id: 31,
+    title: "Youth Leadership",
+    description: "Young Nigerians take the lead in gameplay, practicing the critical thinking needed for tomorrow's nation-builders.",
+    image: "/NCUPDATE-15.jpeg",
+    tags: ["Youth", "Leadership", "Critical Thinking", "Future"],
+    category: "Community"
+  },
+  {
+    id: 32,
+    title: "National Cake Outreach",
+    description: "Outreach teams introduce the game to new audiences, expanding the reach of Nigeria's civic board game movement.",
+    image: "/NCUPDATE-16.jpeg",
+    tags: ["Outreach", "Expansion", "Movement", "Events"],
+    category: "Events"
+  },
+  {
+    id: 33,
+    title: "Collaborative Play",
+    description: "Teams collaborate around the board, debating decisions that reflect the complexity of building a nation.",
+    image: "/NCUPDATE-17.jpeg",
+    tags: ["Teamwork", "Collaboration", "Debate", "Governance"],
+    category: "Gameplay"
+  },
+  {
+    id: 34,
+    title: "Cultural Celebration",
+    description: "National Cake features at a cultural event, celebrating Nigerian heritage through interactive play.",
+    image: "/NCUPDATE-18.jpeg",
+    tags: ["Culture", "Heritage", "Celebration", "Identity"],
+    category: "Community"
+  },
+  {
+    id: 35,
+    title: "School Engagement",
+    description: "Students engage with National Cake in an educational setting, connecting classroom learning to real civic lessons.",
+    image: "/NCUPDATE-19.jpeg",
+    tags: ["Schools", "Students", "Education", "Civic Learning"],
+    category: "Education"
+  },
+  {
+    id: 37,
+    title: "Inspiring New Players",
+    description: "First-time players experience the joy and depth of National Cake, leaving inspired to share the movement.",
+    image: "/NCUPDATE-21.jpeg",
+    tags: ["Inspiration", "New Players", "Joy", "Movement"],
     category: "Community"
   }
 ];

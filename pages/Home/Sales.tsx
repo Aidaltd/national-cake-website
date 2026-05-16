@@ -1,13 +1,13 @@
 "use client";
 
-import Image from "next/image";
+import OptimizedImage from "@/components/OptimizedImage";
 import { Button } from "@/components/ui/button";
 import { Check, CheckCircle } from "lucide-react";
 import Link from "next/link";
 
  export default function Sales() {
   const firstBullets = [
-   <span> <span className="font-bold text-custom-primary">₦30,000</span> per box </span>,
+   <span> <span className="font-bold text-custom-primary">₦50,000</span> per box </span>,
     <span className="font-medium">A real purpose: Educate. Connect. Inspire.</span>,
     <span className="font-medium">A real legacy: Bring history home</span>,
     <span className="font-medium">A real fulfillment; reignite the Nigerian fire.</span>,
@@ -24,16 +24,16 @@ import Link from "next/link";
       {/* Block 1 */}
       <div className="grid items-center md:justify-between gap-10 lg:grid-cols-2">
         {/* Image */}
-        <Image
+        <OptimizedImage
           src="/Nationalcake-30.jpg"
           alt="Market scene"
           width={1920}
           height={1280}
           className="rounded-lg w-full object-cover object-top h-80 sm:h-80 lg:h-[35rem]"
           priority
-          quality={85}
           loading="eager"
           sizes="(max-width: 768px) 100vw, 50vw"
+          cloudinary={{ width: 1200, quality: "auto" }}
         />
 
         {/* Content */}
@@ -106,15 +106,15 @@ Delivery begins after 30th September 2025
         </div>
 
         {/* Image */} 
-        <Image
+        <OptimizedImage
           src="/Nationalcake-29.jpg"
           alt="Happy customer with bags"
           width={800}
           height={600}
           className="rounded-lg w-full md:w-[50%] object-cover h-80 sm:h-80 lg:h-[33rem] lg:order-first"
-          quality={85}
           loading="lazy"
           sizes="(max-width: 768px) 100vw, 50vw"
+          cloudinary={{ width: 1000, quality: "auto" }}
         />
       </div>
     </section>

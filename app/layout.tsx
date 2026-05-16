@@ -2,8 +2,8 @@ import "./globals.css";
 import { ReactNode } from "react";
 import Script from "next/script";
 import HeaderBar from "@/constants/HeaderBar";
-import ClickSpark from "@/components/Animations/click-spark";
 import Header from "@/constants/Header";
+import { cloudinaryUrl } from "@/lib/cloudinary";
 import Footer from "@/constants/Footer";
 import LenisProvider from "@/components/LenisProvider";
 
@@ -27,7 +27,7 @@ export const metadata = {
       "Join National-cake's community and take part in baking a better nation. The game that builds a nation.",
     images: [
       {
-        url: "/logo1.png",
+        url: cloudinaryUrl("logo1", { width: 1200 }),
         width: 1200,
         height: 630,
         alt: "National-cake – Civic Board Game",
@@ -39,7 +39,7 @@ export const metadata = {
     title: "National-cake – Nigeria's First Civic Board Game",
     description:
       "Join National-cake's community and take part in baking a better nation.",
-    images: ["/logo1.png"],
+    images: [cloudinaryUrl("logo1", { width: 1200 })],
   },
   authors: [
     {
@@ -65,18 +65,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body className="bg-white antialiased font-sans">
         <LenisProvider>
-          <ClickSpark 
-            sparkColor='green'
-            sparkSize={20}
-            sparkRadius={35}
-            sparkCount={14}
-            duration={400}
-          >   
-            <HeaderBar />
-            <Header />
-            {children}
-            <Footer />
-          </ClickSpark>
+          <HeaderBar />
+          <Header />
+          {children}
+          <Footer />
         </LenisProvider>
       </body>
     </html>
