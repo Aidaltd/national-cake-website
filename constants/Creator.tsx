@@ -9,26 +9,28 @@ import {
   Send,
   ArrowRight,
 } from "lucide-react";
-import creator from "@/public/creator.jpeg";
 
-export const Creator = () => {
+export default function Creator() {
   return (
     <section className="container mx-auto px-6 py-20 lg:py-16  border-y border-gray-200">
       <div className="grid gap-12 lg:grid-cols-2 items-center">
         {/* Portrait */}
         <div className="w-full max-w-lg h-full md:h-[35rem] lg:max-w-none mx-auto lg:mx-0">
           <Image
-            src={creator} // TODO: replace with actual asset path
-            alt="Victor Prince Dickson"
+            src="/creator.jpeg"
+            alt="National-cake - Victor Prince Dickson"
             width={800}
             height={800}
-            className="rounded-lg w-full h-full object-center object-cover"
+            className="rounded-lg w-full h-full object-top object-cover"
+            quality={85}
+            loading="lazy"
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 800px"
           />
         </div>
 
         {/* Content */}
         <div className="space-y-6 max-w-xl lg:ml-auto">
-          <h2 className="text-3xl sm:text-4xl font-semibold">About Creator</h2>
+          <h2 className="section-title">About Creator</h2>
           <p className="text-base leading-relaxed text-gray-700">
             <span className="font-semibold text-custom-primary">
               Victor Prince Dickson f. hcd
@@ -45,13 +47,13 @@ export const Creator = () => {
 
           {/* Social Icons */}
           <div className="flex gap-6 pt-2">
-            <Link href="#" aria-label="Facebook" className="hover:text-custom-primary transition">
+            <Link href="https://web.facebook.com/alphakulture.ng" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-custom-primary transition">
               <Facebook className="h-5 w-5" />
             </Link>
-            <Link href="#" aria-label="YouTube" className="hover:text-custom-primary transition">
+            <Link href="https://www.youtube.com/@alphakulture" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="hover:text-custom-primary transition">
               <Youtube className="h-5 w-5" />
             </Link>
-            <Link href="#" aria-label="Instagram" className="hover:text-custom-primary transition">
+            <Link href="https://www.instagram.com/alphakulture.ng" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-custom-primary transition">
               <Instagram className="h-5 w-5" />
             </Link>
             <Link href="#" aria-label="Telegram" className="hover:text-custom-primary transition">
@@ -61,7 +63,7 @@ export const Creator = () => {
 
           {/* Know more link */}
           <Link
-            href="/about"
+            href="https://www.victorprincedickson.com"
             className="inline-flex items-center gap-2 text-custom-primary font-medium pt-4 hover:underline underline-offset-4"
           >
             Know more <ArrowRight className="h-4 w-4" />
@@ -70,4 +72,4 @@ export const Creator = () => {
       </div>
     </section>
   );
-};
+}

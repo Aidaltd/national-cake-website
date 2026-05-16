@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { AnimatePresence, motion } from "motion/react";
 
-export const Faq = () => {
+export default function Faq() {
   // Using null instead of an index to indicate no FAQ is open initially
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [showAll, setShowAll] = useState(false);
@@ -22,7 +22,7 @@ export const Faq = () => {
   };
 
   return (
-    <section className="w-full py-24 mb-28 px-4 md:px-10 lg:px-20" id="faq">
+    <section className="w-full py-24 mb-14 px-4 md:px-10 lg:px-20" id="faq">
       <div className="mx-auto">
         {/* FAQ Header */}
         <div className="mb-20 flex flex-col items-start gap-8">
@@ -33,7 +33,7 @@ export const Faq = () => {
             <h2 className="font-semibold section-title">
               Do you have Questions? <br /> Don&apos;t worry we have answers!
             </h2>
-            <p className="md:text-sm text-xs md:max-w-2xl w-full text-gray-600">
+            <p className="md:text-base text-xs md:max-w-3xl w-full text-gray-600">
               Here are some of the most frequently asked questions we get,along with some answers to help you get started. If you can't find what you're looking for here, feel free to reach out to us!             
             </p>
           </div>
@@ -76,7 +76,7 @@ export const Faq = () => {
                     className="overflow-hidden"
                   >
                     <p className="text-black/90 font-light">{faq.answer}</p>
-                    {faq.list && (
+                    {/* {faq.list && (
                       <ul className="mt-4 space-y-2">
                         {faq.list.map((item, index) => (
                           <li key={index} className="flex items-center gap-3">
@@ -85,7 +85,7 @@ export const Faq = () => {
                           </li>
                         ))}
                       </ul>
-                    )}
+                    )} */}
                   </motion.div>
                 )}
               </AnimatePresence>

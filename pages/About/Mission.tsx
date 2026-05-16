@@ -1,21 +1,24 @@
 "use client";
 
 import Image from "next/image";
+
+// Static image located in the `public` folder
+const missionImage = "/Nationalcake-11.jpg" as const;
 import { Eye, Target, Download } from "lucide-react";
 
-export const Mission = () => {
+export default function Mission() {
   const items = [
     {
       title: "Vision",
       desc:
-        "Our vision is to use the transformative power of play to reconnect Nigeria to its people and its people to their purpose. We envision a future where every Nigerian, young and old, understands their history, embraces their identity, and is empowered to build a unified and purposeful nation.National Cake is more than a board game — it’s a mirror of Nigeria’s soul and a tool for civic rebirth. Through it, we aim to restore cultural pride, promote historical awareness, and spark a nationwide renaissance in values, leadership, and belonging.",
-      icon: <Eye className="h-5 w-5 text-custom-primary" />,
+"To reimagine the metaphor, not as a feast to fight over, but as a shared duty to serve. This is a mission to re-culture mindsets, reframe perspectives, and rebuild Nigeria, one story, one player, one promise at a time." ,
+     icon: <Eye className="h-5 w-5 text-custom-primary" />,
     },
     {
       title: "Mission",
       desc:
-        "Our mission is to spark national re-orientation through an engaging, inclusive, and emotionally resonant educational game. We aim to bridge the disconnection between Nigerians and Nigeria by using play to create a safe, interactive space for storytelling, reflection, dialogue, and civic education.Built on neuroscience and emotional intelligence, the game breaks learning resistance, simplifies civic knowledge, and fosters unity without attacking religion or culture. National Cake invites every player to feel, investigate, act, and believe — turning ordinary game nights into extraordinary journeys of rediscovery and healing.",
-      icon: <Target className="h-5 w-5 text-custom-primary" />,
+"There are many models for learning, but none as effective or inclusive as games. Games lower defenses. They evoke laughter, curiosity, and bonding. They are non-threatening, experiential, and deeply human."   , 
+  icon: <Target className="h-5 w-5 text-custom-primary" />,
     }
   ];
 
@@ -48,12 +51,13 @@ export const Mission = () => {
         {/* Image */}
         <Image
           src={missionImage}
-          alt="national cake mission"
+          alt="National-cake mission"
+          width={1920}
+          height={1280}
           className="rounded-lg w-full object-cover h-64 sm:h-96 lg:h-[45rem]"
+          priority
         />
       </div>
     </section>
   );
 };
-
-export default Mission;

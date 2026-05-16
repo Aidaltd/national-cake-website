@@ -1,15 +1,15 @@
 "use client"
-import acmeLogo from "@/assets/logo-acme.png";
-import quantumLogo from "@/assets/logo-quantum.png";
-import echoLogo from "@/assets/logo-echo.png";
-import celestialLogo from "@/assets/logo-celestial.png";
-import pulseLogo from "@/assets/logo-pulse.png";
-import apexLogo from "@/assets/logo-apex.png";
+const Partner1 = "/partner1.png";
+const Partner2 = "/partner2.png";
+const Partner3 = "/partner3.png";
+const Partner4 = "/partner4.png";
+const Partner5 = "/partner5.png";
+const Partner6 = "/partner6.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
 
- const LogoTicker = () => {
+ export default function LogoTicker() {
   return (
     <div className="py-8 bg-custom-primary">
       <div className="container">
@@ -23,70 +23,70 @@ import { motion } from "framer-motion";
               duration: 20,
               repeat: Infinity,
               ease: "linear",
-              repeatType: "loop",
+              repeatType: "loop", 
             }}
           >
             <Image
-              src={acmeLogo}
+              src={Partner1}
               alt="Acme Logo"
               className="logo-ticker-image"
             />
             <Image
-              src={quantumLogo}
+              src={Partner2}
               alt="Quantum Logo"
               className="logo-ticker-image"
             />
             <Image
-              src={echoLogo}
+              src={Partner3}
               alt="Echo Logo"
               className="logo-ticker-image"
             />
-            <Image
-              src={celestialLogo}
+            {/* <Image
+              src={Partner4}
               alt="Celestial Logo"
               className="logo-ticker-image"
             />
             <Image
-              src={pulseLogo}
+              src={Partner5}
               alt="Pulse Logo"
               className="logo-ticker-image"
             />
             <Image
-              src={apexLogo}
+              src={Partner6}
               alt="Apex Logo"
               className="logo-ticker-image"
-            />
+            /> */}
             {/* Second setof logos for animation */}
             <Image
-              src={acmeLogo}
+              src={Partner1}
               alt="Acme Logo"
               className="logo-ticker-image"
             />
             <Image
-              src={quantumLogo}
-              alt="Quantum Logo"
+              src={Partner2}
+              alt="Quantum Logo"  
               className="logo-ticker-image"
             />
             <Image
-              src={echoLogo}
+              src={Partner3}
               alt="Echo Logo"
               className="logo-ticker-image"
             />
-            <Image
-              src={celestialLogo}
+            {/* <Image
+              src={Partner4}
               alt="Celestial Logo"
               className="logo-ticker-image"
             />
             <Image
-              src={pulseLogo}
-              alt="Pulse Logo"
+              src={Partner5}
+              alt="Pulse Logo"  
               className="logo-ticker-image"
             />
             <Image
-              src={apexLogo}
-              alt="Apex Logo"
+              src={Partner6}
+              alt="Apex Logo" 
               className="logo-ticker-image"
-            /> 
+            />  */}
           </motion.div>
         </div>
       </div>
@@ -94,4 +94,3 @@ import { motion } from "framer-motion";
   );
 };
 
-export default LogoTicker;

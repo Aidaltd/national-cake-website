@@ -136,22 +136,25 @@
       @apply text-black bg-transparent;
   }
   .logo-ticker-image{
-      @apply h-6 text-white w-auto;
+      @apply size-16 text-white w-auto;
   }
   .tag{
       @apply text-xs bg-custom-primary/5 text-custom-primary inline-flex border border-custom-primary/20 py-2 px-4 rounded-lg tracking-tight;
   }
   .section-title{
-   @apply text-4xl md:text-[54px] md:leading-[60px] font-semibold tracking-tighter text-black;
+   @apply text-5xl md:text-[58px] md:leading-[60px] font-semibold tracking-tighter text-black;
   }
   .section-description{
-      @apply text-sm  tracking-tight text-gray-600 ;
+      @apply text-base md:text-base tracking-tight text-gray-600 ;
   }
   .section-heading{
       @apply  max-w-[540px] mx-auto;
   }
   .card{
       @apply p-10 border border-[#222222]/10 rounded-lg shadow-[0_7px_14px_#EAEAEA] max-w-xs w-full;
+  }
+  .flip{
+    @apply inline-block scale-x-[-1];
   }
 }
 

@@ -3,39 +3,45 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Check, CheckCircle } from "lucide-react";
+import Link from "next/link";
 
-export const Sales = () => {
+ export default function Sales() {
   const firstBullets = [
-    "A real income: ₦2,500 per box",
-    "A real purpose: Educate. Connect. Inspire.",
-    "A real legacy: Bring history home",
-    "A real fulfillment; reignite the Nigerian fire.",
-    "Join 1,000+ agents already rewriting the Nigerian story.",
-    "Register Now: We will Train and Equip You",
+   <span> <span className="font-bold text-custom-primary">₦30,000</span> per box </span>,
+    <span className="font-medium">A real purpose: Educate. Connect. Inspire.</span>,
+    <span className="font-medium">A real legacy: Bring history home</span>,
+    <span className="font-medium">A real fulfillment; reignite the Nigerian fire.</span>,
+    <span className="font-medium">Register Now: We will Train and Equip You</span>,
   ];
 
   const secondBullets = [
-    "₦25,000 per unit Available for 4 weeks only.",
-    "Be a part of the movement that rewrites the story in classrooms, hearts and history.",
+   <span> <span className="font-bold text-custom-primary">₦30x``,000</span> per unit Available for 4 weeks only.</span>,
+    <span className="font-medium">Be a part of the movement that rewrites the story in classrooms, hearts and history.</span>,
   ];
 
   return (
     <section className="container mx-auto px-6 py-16 lg:py-24 space-y-24">
       {/* Block 1 */}
-      <div className="grid items-center gap-10 lg:grid-cols-2">
+      <div className="grid items-center md:justify-between gap-10 lg:grid-cols-2">
         {/* Image */}
         <Image
-          src={imageMarket} // TODO: replace with real asset
+          src="/Nationalcake-30.jpg"
           alt="Market scene"
-          className="rounded-lg w-full object-cover h-full sm:h-80 lg:h-[35rem]"
+          width={1920}
+          height={1280}
+          className="rounded-lg w-full object-cover object-top h-80 sm:h-80 lg:h-[35rem]"
+          priority
+          quality={85}
+          loading="eager"
+          sizes="(max-width: 768px) 100vw, 50vw"
         />
 
         {/* Content */}
         <div className="space-y-6 max-w-lg lg:ml-auto">
-          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-semibold">
-            Sell Something That Changes Lives
+          <h3 className="section-title">
+            <span className="text-custom-primary">Sell</span> Something That Changes <span className="text-custom-primary">Lives</span>
           </h3>
-          <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+          <p className="section-description text-gray-700 leading-relaxed">
             Bake Tomorrow … Earn Today. This is nation-building for profit. Whether you are an
             entrepreneur, teacher, trainer, coach, faith-based leader, youth leader, side-hustler,
             changemaker or public servant.
@@ -45,58 +51,70 @@ export const Sales = () => {
           </p>
 
           <ul className="space-y-3">
-            {firstBullets.map((txt) => (
-              <li key={txt} className="flex items-start gap-3 text-sm sm:text-base">
+            {firstBullets.map((txt, i) => (
+              <li key={i} className="flex items-start gap-3 text-sm sm:text-base">
                 <CheckCircle className="min-w-4 h-5 w-5 text-custom-primary mt-1" />
                 <span>{txt}</span>
               </li>
             ))}
           </ul>
 
+          <Link href="/become-an-agent">
           <Button className="mt-4 w-max">Become an agent Today</Button>
+          </Link>
         </div>
       </div>
 
       {/* Block 2 */}
-      <div className="flex items-center flex-row-reverse gap-10 lg:grid-cols-2">
+      <div className="flex items-center flex-col-reverse md:justify-between md:flex-row-reverse gap-10 lg:grid-cols-2">
         {/* Content */}
-        <div className="space-y-6 max-w-lg">
-          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-semibold">
-            Pre-Order Now and Bake the Future With Us
+        <div className="space-y-4 max-w-lg">
+          <h3 className="section-title">
+          <span className="text-custom-primary">Order</span> Now and Bake the <span className="text-custom-primary">Future</span> With Us
           </h3>
-          <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-            You are not just buying a board game but giving yourself leverage, your students’ insights
-            and your family in Nigeria. This is history funified, education simplified, and patriotism
-            verified. Triggers critical thinking and civic values. Unites families through laughter and
-            discovery.
+          <p className="section-description text-gray-700 leading-relaxed">
+          If you know your history, your future will not be a mystery…
             <br />
             <br />
-            <span className="font-medium text-custom-primary">
+            <span className="font-semibold text-2xl tracking-tighter leading-tighter text-custom-primary">
               Join the Pioneers of National Cake, enter the land of promise before others!
             </span>
           </p>
+          {/* <p className="section-description text-gray-700 leading-relaxed">
+          (Delivery only within Abuja)
+
+Available for 4 weeks only from 1st to 28th September 2025
+
+Delivery begins after 30th September 2025 
+
+          </p> */}
 
           <ul className="space-y-3">
-            {secondBullets.map((txt) => (
-              <li key={txt} className="flex items-start gap-3 text-sm sm:text-base">
+            {secondBullets.map((txt, i) => (
+              <li key={i} className="flex items-start gap-3 text-sm sm:text-base">
                 <CheckCircle className="min-w-4 h-5 w-5 text-custom-primary mt-1" />
                 <span>{txt}</span>
               </li>
             ))}
           </ul>
 
+          <Link href="/order">
           <Button className="mt-4 w-max" variant="default">
-            Click Here to Pre-Order Now 
+            Click Here to Order Now 
           </Button>
+          </Link>
         </div>
 
         {/* Image */} 
         <Image
-          src={imagePreOrder}// TODO: replace with real asset
+          src="/Nationalcake-29.jpg"
           alt="Happy customer with bags"
           width={800}
           height={600}
-          className="rounded-lg w-full object-cover h-64 sm:h-80 lg:h-[33rem] lg:order-first"
+          className="rounded-lg w-full md:w-[50%] object-cover h-80 sm:h-80 lg:h-[33rem] lg:order-first"
+          quality={85}
+          loading="lazy"
+          sizes="(max-width: 768px) 100vw, 50vw"
         />
       </div>
     </section>
@@ -104,4 +122,3 @@ export const Sales = () => {
 };
 
 
-export default Sales;

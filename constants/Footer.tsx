@@ -64,12 +64,12 @@ const socialLinks: SocialLink[] = [
     },
     {
         name: "LinkedIn",
-        href: "https://www.linkedin.com/showcase/kommon-sense-masters/",
+        href: "https://www.linkedin.com/company/alphakulture",
         icon: <Linkedin />,
     },
     {
         name: "Facebook",
-        href: "https://www.facebook.com/share/1FBCfef5d2/",
+        href: "https://web.facebook.com/alphakulture.ng",
         icon: <Facebook />,
     },
 ];
@@ -81,17 +81,18 @@ const footerLinks: FooterLinksData = {
         links: [
             { name: "Features", href: "/#features" },
             { name: "Prototype", href: "/#prototype" },
-            { name: "Pricing", href: "/pre-order" },
+            { name: "Pricing", href: "/order" },
         ],
     },
     company: {
         title: "Company",
         links: [
             { name: "About", href: "/about" },
-            { name: "Blog", href: "#blog" },
-            { name: "Community", href: "/national-cake/get-started" },
+            // { name: "Activities", href: "/#blog" },
+            { name: "Community", href: "/community" },
             { name: "Agents", href: "/become-an-agent" },
             // { name: "Contact", href: "#contact" },
+            { name: "Championship", href: "/championship" },
         ],
     },
     contact: {
@@ -116,11 +117,11 @@ const footerLinks: FooterLinksData = {
     //   ],
     // },
 };
-export const Footer = () => {
-    const pathname = usePathname();
-    if (pathname?.startsWith("/get-started") || pathname?.startsWith("national-cake/get-started" )|| pathname?.startsWith("not-found")) {
-        return null;
-    }
+export default function Footer() {
+    // const pathname = usePathname();
+    // if (pathname?.startsWith("/get-started") || pathname?.startsWith("national-cake/get-started" )|| pathname?.startsWith("not-found")) {
+    //     return null;
+    // }
     const year = new Date().getFullYear();
 
     const scrollToTop = () => {
@@ -146,7 +147,7 @@ export const Footer = () => {
                 <div className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/60 blur-[120px] md:blur-[160px] h-80 w-80" />
 
                 <div className="container relative z-20 mx-auto flex flex-col items-center gap-6 py-16 text-center">
-                    <h2 className="mx-auto max-w-md md:max-w-xl bg-gradient-to-b from-white to-neutral-500 bg-clip-text py-8 text-4xl md:text-5xl font-bold text-transparent">
+                    <h2 className="mx-auto max-w-md md:max-w-xl text-white py-8 text-4xl md:text-5xl font-bold">
                         Join our newsletter to get the latest guides!
                     </h2>
 
@@ -187,14 +188,13 @@ export const Footer = () => {
                             <div className="flex items-center space-x-2">
                                 <Image
                                     src={Logo}
-                                    alt="nationalcake Logo"
+                                    alt="National-cake Logo"
                                     className="md:w-40 w-32"
                                 />
                             </div>
                         </Link>
                         <p className="text-gray-400 max-w-sm mt-1 text-sm">
-                           National Cake is a transformational board game and civic tool designed to reconnect Nigerians with their history, identity, and purpose. Built for homes, schools, churches, and communities, it turns storytelling into nation-building. Together, let’s bake a better Nigeria — one game at a time.
-                        </p>
+                        National Cake is the one oasis board game that reveals Nigeria’s true story, the events and how it shapes you. Built for homes, schools, churches, and communities, it turns storytelling into nation-building. Together, let’s bake a better Nigeria, one game at a time.                        </p>
                         {/* Social Icons */}
                         <div className="flex space-x-5 mt-6">
                             {socialLinks.map((social) => (

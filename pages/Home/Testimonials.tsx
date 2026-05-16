@@ -1,17 +1,18 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { gsap } from "gsap";
 import { Button } from "@/components/ui/button";
 import { Quote, ChevronLeft, ChevronRight } from "lucide-react";
-import test1 from "@/public/BEM PEVER.jpeg";
-import test2 from "@/public/dummy.png";
-import test3 from "@/public/COACH RALPH.jpeg";
-import test4 from "@/public/DR. HYELADI HARUNA.jpg"; 
-import test5 from "@/public/NANCY OBLETE.jpg";
-import test6 from "@/public/OBINNA CHUKWUEZIE.jpg";
+
+const test1 = "/BEM-PEVER.jpeg";
+const test2 = "/PRINCESS-BUNMI-PUKAT.jpeg";
+const test3 = "/COACH-RALPH.jpeg";
+const test4 = "/DR-HYELADI-HARUNA.jpg";
+const test5 = "/NANCY-OBLETE.jpg";
+const test6 = "/OBINNA-CHUKWUEZIE.jpg";
 
 
 
@@ -19,7 +20,7 @@ interface Testimonial {
   name: string;
   role: string;
   quote: string;
-  image: StaticImageData;
+  image: string;
 }
 
 const TESTIMONIALS: Testimonial[] = [
@@ -31,10 +32,10 @@ const TESTIMONIALS: Testimonial[] = [
     image:test1,  
   },
   {
-    name: "Mrs. Oluwatobiloba Ojediran",
-    role: "Financial Expert",
+    name: "Princess Bunmi Pukat",
+    role: "Queen Mother of Nigerian Youths",
     quote:
-      "Well-done this is actually a very good initiative and concept. I like the game part. I like the thought process of solving a problem in a very unique way.",
+      "National Cake is an unusual and educative game. It took me back to the old habit of studying in the library. Honestly, this is a laudable project. We are supposed to take it to picnics, buy it for our offices, have it in lounges, have it in homes for our children because it is doesn’t need 100% supervision. This is the kind of gift that you give during birthdays and gift days, when it is unwrapped, the receiver will know that he/she has been gifted what it takes to be a “Green–blooded Nigerian",
     image: test2,
   },
   {
@@ -68,7 +69,7 @@ const TESTIMONIALS: Testimonial[] = [
   
 ];
 
-const Testimonials = () => {
+export default function Testimonials() {
   const [idx, setIdx] = useState(0);
   const quoteRef = useRef<HTMLDivElement>(null);
 
@@ -88,17 +89,17 @@ const Testimonials = () => {
   const testimonial = TESTIMONIALS[idx];
 
   return (
-    <section className="px-6 py-16 lg:py-24 container mx-auto">
+    <section className="px-6 py-16 lg:py-0 container mx-auto">
       {/* Header */}
       <div className="mb-10 space-y-2 max-w-3xl">
-        <span className="tag">
+        {/* <span className="tag">
           Testimonials
-        </span>
-        <h2 className="section-title">
-          Word From The Educators & Facilitators
+        </span> */}
+        <h2 className="section-title max-w-2xl mb-8">
+        What <span className="text-custom-primary">Experts</span> are <span className="text-custom-primary">Saying</span>
         </h2>
-        <p className="text-sm sm:text-base text-gray-600">
-          Discover the inspiration behind our travel blog, where we share captivating stories and hidden gems from around the globe.
+        <p className="text-sm sm:text-base max-w-xl text-gray-600">
+          Hear what experts and thought leaders are saying about National Cake, the innovative way to bake a better nation.
         </p>
       </div>
 
@@ -115,20 +116,22 @@ const Testimonials = () => {
           {/* Image */}
           <Image
             src={testimonial.image}
-            alt={testimonial.name}
+            alt={`National-cake - ${testimonial.name}`}
             width={600}
             height={500}
-            className="rounded-lg w-full object-cover h-64 sm:h-80 lg:h-[400px]"
+            className="rounded-lg w-full object-cover object-top h-80 sm:h-80 lg:h-[450px]"
+            loading="lazy"
+            quality={85}
           />
 
           {/* Quote block */}
           <div className="space-y-6" ref={quoteRef}>
-            <Quote className="h-10 w-10 text-custom-primary" />
-            <p className="text-lg sm:text-xl lg:text-2xl font-medium leading-relaxed">
-              “{testimonial.quote}”
+            <Quote className="h-12 w-12 text-custom-primary" />
+            <p className="text-lg sm:text-xl lg:text-3xl font-medium leading-tighter tracking-tighter">
+              {testimonial.quote}
             </p>
-            <div>
-              <h4 className="font-semibold">{testimonial.name}</h4>
+            <div> 
+              <h3 className="font-semibold max-w-xl">{testimonial.name}</h3>
               <p className="text-sm text-gray-600">{testimonial.role}</p>
             </div>
           </div>
@@ -153,14 +156,8 @@ const Testimonials = () => {
             <ChevronRight className="h-5 w-5" />
           </button>
         </div>
-
-        <Button variant="secondary" className="bg-custom-primary text-white px-6 sm:px-8">
-          View More Testimonials
-        </Button>
       </div>
     </section>
   );
 };
 
-
-export default Testimonials;

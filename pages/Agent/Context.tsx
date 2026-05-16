@@ -1,11 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-// import { AgentStepperDialog } from "./AgentStepperDialog";
-import Image from "next/image";
-import communityHero from "@/public/Nationalcake-22.jpg";
 
 interface CardItem {
   title: string;
@@ -45,12 +43,12 @@ export default function Context() {
     <section className="relative overflow-hidden py-20 md:py-28 bg-neutral-950 text-white">
       <div className="container mx-auto px-6 md:px-10 space-y-10">
         {/* Heading */}
-        <div className="max-w-3xl space-y-6">
-          <h2 className="section-title text-white max-w-xl">
+        <div className="max-w-4xl space-y-6">
+          <h2 className="section-title text-white ">
             Sell Something That Changes Lives, Bake Tomorrow ... Earn
             Today.
           </h2>
-          <p className="text-gray-300 text-xs max-w-xl md:text-sm">
+          <p className="section-description text-base text-gray-200 max-w-xl md:text-sm">
             This is nation-building for profit. Whether you are an entrepreneur, teacher, trainer, coach,
             faith-based leader, youth leader, side-hustler, changemaker or public servant.
           </p>
@@ -59,15 +57,20 @@ export default function Context() {
         {/* Hero image */}
         <div className="mt-10">
           <Image
-            src={communityHero}
+            src="/DSC155.jpg"
             alt="National Cake"
+            width={1200}
+            height={450}
             className="w-full rounded-lg object-cover object-center h-64 sm:h-80 lg:h-[450px] border border-gray-400"
+            quality={85}
+            loading="lazy"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
           />
         </div>
 
         {/* Cards title */}
         <div className="space-y-10">
-          <h3 className="text-2xl sm:text-3xl font-semibold text-white">
+          <h3 className="text-3xl font-semibold text-white">
             National Cake offers you something rare:
           </h3>
 
@@ -86,10 +89,10 @@ export default function Context() {
                 <span className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-black text-white">
                   <ArrowUpRight className="h-4 w-4" />
                 </span>
-                <h4 className="text-lg font-semibold mb-2">
+                <h4 className="text-lg font-bold mb-2">
                   {card.title}
                 </h4>
-                <p className="text-sm leading-relaxed">
+                <p className="text-sm md:text-base leading-relaxed">
                   {card.description}
                 </p>
               </motion.div>
@@ -100,9 +103,9 @@ export default function Context() {
         {/* CTA */}
         <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ delay: 0.6, duration: 0.6, ease: "easeOut" }} layout className="pt-8 flex justify-center">
 
-          <Button asChild size="lg" className="px-10 py-6 text-base rounded-full">
+          <Button asChild size="lg" className="px-10 py-6 text-base rounded-xl">
             <a href="https://paystack.shop/pay/macro-agent" target="_blank" rel="noopener noreferrer">
-            Join 1,000+ agents today
+            Become an AGENT TODAY
           </a>
           </Button>
 

@@ -15,24 +15,25 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-export const Header = () => {
+export default function Header() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Hide global header on Get Started flow
-  if (pathname?.startsWith("/get-started") || pathname?.startsWith("national-cake/get-started" )|| pathname?.startsWith("not-found")) {
+  if (pathname?.startsWith("/community") || pathname?.startsWith("community" )|| pathname?.startsWith("not-found")) {
     return null;
   }
 
   const navItems = [
     { name: "Home", link: "/" },
     { name: "About", link: "/about" },
-    // { name: "Features", link: "/#features" },
+    { name: "Gallery", link: "/gallery" },
     { name: "Agents", link: "/become-an-agent" },
-    { name: "Pre-Order", link: "/pre-order" },
+    { name: "Championship", link: "/championship" },
+    { name: "Order", link: "/order" },
   ];
   
-  if (pathname?.startsWith("/get-started") || pathname?.startsWith("national-cake/get-started" )|| pathname?.startsWith("not-found")) {
+  if (pathname?.startsWith("/community") || pathname?.startsWith("community" )|| pathname?.startsWith("not-found")) {
     return null;
   }
 
@@ -86,30 +87,20 @@ const MobileNavLink = ({
     <header className="sticky top-0 z-50 bg-custom-primary/95 backdrop-blur-md">
         <div className="md:px-10 px-5 h-16 w-full">
           <div className="flex w-full h-full items-center justify-between">
-            <Image src={Logo} alt="Sass Logo" className="w-48" />
+            <Link href="/">
+              <Image src={Logo} alt="National-cake Logo" className="w-48" />
+            </Link>
             <nav className="hidden md:flex gap-6 text-sm text-white/80 items-center">
-              <a href="/" className="transition-all duration-300 hover:underline">
-                Home
-              </a>
-              <a href="/about" className="transition-all duration-300 hover:underline">
-                About
-              </a>
-              {/* <a href="/#features" className="transition-all duration-300 hover:underline">
-                Features
-              </a> */}
-              <a href="/become-an-agent" className="transition-all duration-300 hover:underline">
-                Agents
-              </a>
-              <a href="/pre-order" className="transition-all duration-300 hover:underline">
-                Pre-Order
-              </a>
-              {/* <a href="/testimonials" className="transition-all duration-300 hover:underline">
-                Testiomonials
-              </a>
-              <a href="/blog" className="transition-all duration-300 hover:underline">
-                Blog
-              </a> */}
-              <a href="/national-cake/get-started">
+              {navItems.map((item, idx) => (
+                <a
+                  key={`nav-link-${idx}`}
+                  href={item.link}
+                  className="transition-all duration-300 hover:underline"
+                >
+                  {item.name}
+                </a>
+              ))}
+              <a href="/community">
                 <Button className="text-custom-primary/80 bg-white hover:bg-white/90 hover:text-custom-primary px-8">
                   Join our community
                 </Button>
@@ -138,9 +129,9 @@ const MobileNavLink = ({
                 exit="exit"
               >
                 <div className="">
-                  <div className="flex items-start justify-start mb-6 mt-3">
-                    <Image src={Logo2} alt="Buki Logo" className="w-52" />
-                  </div>
+                  <Link href="/" className="flex items-start justify-start mb-6 mt-3">
+                    <Image src={Logo2} alt="National-cake Logo" className="w-52" />
+                  </Link>
                 </div>
 
                 {navItems.map((item, idx) => (
@@ -160,7 +151,7 @@ const MobileNavLink = ({
 
                 <motion.div variants={itemVariants} className="mt-4">
                   <a
-                    href="/get-started"
+                    href="/community"
                     onClick={() => setIsMenuOpen(false)}
                     className="mt-8 bg-custom-primary text-white w-full py-3 text-base px-4 rounded-md font-bold block text-center hover:-translate-y-0.5 transition duration-200"
                   >

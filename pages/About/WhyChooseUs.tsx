@@ -1,8 +1,9 @@
+"use client";
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowRight, Users, Eye, Heart, TrendingUp } from 'lucide-react';
 
-const MarketingHeroSection = () => {
+export default function MarketingHeroSection() {
   const stats = [
     {
       number: "70%",
@@ -60,41 +61,41 @@ const MarketingHeroSection = () => {
   
 
   return (
-    <section className="bg-black text-white min-h-screen p-4 md:p-8 lg:p-12">
+    <section className="bg-black text-white min-h-screen px-4 md:px-8 lg:px-12 py-16 md:py-24 lg:py-32 ">
       <div className="max-w-7xl mx-auto">
 
         {/* Hero Title */}
         <div className="mb-16">
-          <h1 className="section-title text-white">
-            Nation building is an art<br />
-            and we're artists
+          <h1 className="section-title max-w-4xl text-white">
+          Nation-building is an Art, and we are all artists. Let's build a Nation the World will stand still for. 
+
           </h1>
         </div>
 
         {/* Stats Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {stats.map((stat, index) => (
             <div key={index} className="text-left">
-              <div className="text-xs text-gray-400 mb-1">
+              <div className="text-sm md:text-base text-gray-400 mb-1">
                 {index === 0 && "We understand how Modern achieve our share our thoughts about marketing future and creativity in the field."}
                 {index === 1 && "Interviews for Harvard Business Review with Modern founder Abi Davies about our agency, industry, and himself."}
                 {index === 2 && "We published a case study with the project that we did for a famous IT company this quarter. Spoke it's awesome!"}
                 {index === 3 && "Our agency Twitter vibrant we share in facts about industry and our projects as well as warm moment from the agency life."}
               </div>
               <div className="text-xl font-semibold mb-2">{stat.number} {stat.description}</div>
-              <button className="text-xs text-gray-400 hover:text-white transition-colors underline">
+              <button className="text-sm text-gray-400 hover:text-white transition-colors underline">
                 {stat.link}
               </button>
             </div>
           ))}
-        </div>
+        </div> */}
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
           {services.map((service) => (
             <Card 
               key={service.id} 
-              className={`${service.bgColor} border-0 h-64 relative overflow-hidden group hover:scale-105 transition-transform duration-300 cursor-pointer`}
+              className={`${service.bgColor} border-0 h-64 relative overflow-hidden group hover:scale-105 pt-0 transition-transform duration-300 cursor-pointer`}
             >
               <CardContent className="p-6 h-full flex flex-col justify-between">
                 <div className="flex justify-between items-start">
@@ -105,23 +106,23 @@ const MarketingHeroSection = () => {
                 </div>
                 
                 <div className="flex-1 flex flex-col justify-center">
-                  <h3 className="text-black font-bold text-lg mb-2">
+                  <h3 className="text-black font-bold text-xl mb-2">
                     {service.title}
                   </h3>
                   {service.description && (
-                    <p className="text-black text-sm leading-relaxed">
+                    <p className="text-black text-sm md:text-base leading-relaxed">
                       {service.description}
                     </p>
                   )}
                 </div>
 
-                {service.hasArrow && (
+                {/* {service.hasArrow && (
                   <div className="flex justify-end">
                     <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center">
                       <ArrowRight className="w-4 h-4 text-white" />
                     </div>
                   </div>
-                )}
+                )} */}
               </CardContent>
             </Card>
           ))}
@@ -131,4 +132,3 @@ const MarketingHeroSection = () => {
   );
 };
 
-export default MarketingHeroSection;

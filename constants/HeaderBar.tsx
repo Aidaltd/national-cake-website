@@ -31,7 +31,7 @@ export default function   HeaderBar() {
       className={`sticky top-0 left-0 z-50 w-full transform transition-all duration-300 ${visible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}`}
     >
       <div className="flex w-full justify-between items-center gap-4 md:px-10 px-4 py-3 bg-black text-white text-xs">
-        <div className="flex items-center gap-2">
+        <div className="flex font-semibold text-base items-center gap-2">
           <p className="text-white/60 hover:text-white">Mail:</p>
           <a
             href="mailto:info@nationalcake.ng"
@@ -40,11 +40,11 @@ export default function   HeaderBar() {
             info@nationalcake.ng
           </a>
         </div>
-        <div className="flex items-center gap-10">
+        <div className="flex font-semibold text-base items-center gap-10">
           <div className=" hidden md:flex items-center gap-2">
             <p className="text-white/60 hover:text-white">Follow us:</p>
             <a
-              href="https://twitter.com/nationalcake"
+              href="https://x.com/AlphaKultureNG"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/60 hover:text-white"
@@ -52,7 +52,7 @@ export default function   HeaderBar() {
               <TwitterIcon className="h-3 w-3" />
             </a>
             <a
-              href="https://www.facebook.com/share/1FBCfef5d2/"
+              href="https://web.facebook.com/alphakulture.ng"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/60 hover:text-white"
@@ -60,7 +60,7 @@ export default function   HeaderBar() {
               <FacebookIcon className="h-3 w-3" />
             </a>
             <a
-              href="https://www.instagram.com/nationalcake"
+              href="https://www.instagram.com/alphakulture.ng"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/60 hover:text-white"
@@ -68,7 +68,7 @@ export default function   HeaderBar() {
               <InstagramIcon className="h-3 w-3" />
             </a>
             <a
-              href="https://www.linkedin.com/showcase/kommon-sense-masters/"
+              href="https://www.linkedin.com/company/alphakulture"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/60 hover:text-white"
