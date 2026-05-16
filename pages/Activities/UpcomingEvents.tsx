@@ -66,15 +66,15 @@ export default function UpcomingEvents() {
           {events.map((event, index) => (
             <div
               key={index}
-              className="group bg-white rounded shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-custom-primary/30"
+              className="group bg-white  shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-custom-primary/30"
             >
               {/* Card Header */}
               <div className="bg-gradient-to-r from-custom-primary/10 to-custom-primary/5 p-6 border-b border-gray-100">
                 <div className="flex items-start justify-between mb-3">
-                  <div className="p-3 bg-white rounded-lg shadow-sm">
+                  <div className="p-3 bg-white  shadow-sm">
                     {event.icon}
                   </div>
-                  <span className="px-3 py-1 bg-custom-primary/20 text-custom-primary text-xs font-semibold rounded-full">
+                  <span className="px-3 py-1 bg-custom-primary/20 text-custom-primary text-xs font-semibold ">
                     {event.tag}
                   </span>
                 </div>
@@ -94,7 +94,7 @@ export default function UpcomingEvents() {
                   href={event.registrationLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full text-center px-6 py-3 bg-custom-primary text-white rounded-lg font-semibold hover:bg-custom-primary/90 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                  className="block w-full text-center px-6 py-3 bg-custom-primary text-white  font-semibold hover:bg-custom-primary/90 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
                 >
                   {event.buttonText} →
                 </a>

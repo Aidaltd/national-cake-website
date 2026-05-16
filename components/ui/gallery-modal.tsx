@@ -98,17 +98,17 @@ export default function GalleryModal({
             animate={{ scale: 0.8, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="relative max-w-5xl max-h-[100vh] w-full mx-4 bg-white rounded-lg overflow-hidden shadow-2xl"
+            className="relative max-w-5xl max-h-[100vh] w-full mx-4 bg-white  overflow-hidden shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
             <div className="absolute top-0 left-0 right-0 z-10 bg-gradient-to-b from-black/50 to-transparent p-4">
               <div className="flex items-center justify-between text-white">
                 <div className="flex items-center gap-4">
-                  <span className="text-sm bg-white/20 px-2 py-1 rounded-full">
+                  <span className="text-sm bg-white/20 px-2 py-1 ">
                     {currentIndex + 1} of {images.length}
                   </span>
-                  <span className="bg-custom-primary px-2 py-1 rounded-full text-xs font-medium">
+                  <span className="bg-custom-primary px-2 py-1  text-xs font-medium">
                     {currentImage.category}
                   </span>
                 </div>
@@ -164,7 +164,7 @@ export default function GalleryModal({
                   <Button
                     variant="ghost"
                     size="lg"
-                    className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-white border-0 rounded-full w-12 h-12 p-0"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-white border-0  w-12 h-12 p-0"
                     onClick={goToPrevious}
                   >
                     <ChevronLeft className="w-6 h-6" />
@@ -172,7 +172,7 @@ export default function GalleryModal({
                   <Button
                     variant="ghost"
                     size="lg"
-                    className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-white border-0 rounded-full w-12 h-12 p-0"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-white border-0  w-12 h-12 p-0"
                     onClick={goToNext}
                   >
                     <ChevronRight className="w-6 h-6" />
@@ -187,13 +187,13 @@ export default function GalleryModal({
                 {currentImage.title}
               </h2>
               <p className="text-gray-600 mb-4">{currentImage.description}</p>
-              
+
               {/* Tags */}
               <div className="flex flex-wrap gap-2">
                 {currentImage.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-sm"
+                    className="bg-gray-100 text-gray-600 px-3 py-1  text-sm"
                   >
                     {tag}
                   </span>
@@ -207,24 +207,24 @@ export default function GalleryModal({
                 <div className="flex gap-2 overflow-x-auto scrollbar-1 scrollbar-thumb-custom-primary scrollbar-track-custom-primary">
                   {images.map((image, index) => {
                     return (
-                    <button
-                      key={image.id}
-                      onClick={() => onNavigate(index)}
-                      className={`relative flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-all ${
-                        index === currentIndex
+                      <button
+                        key={image.id}
+                        onClick={() => onNavigate(index)}
+                        className={`relative flex-shrink-0 w-16 h-16  overflow-hidden border-2 transition-all ${index === currentIndex
                           ? "border-custom-primary ring-2 ring-custom-primary/20"
                           : "border-gray-200 hover:border-gray-300"
-                      }`}
-                    >
-                      <Image
-                        src={image.image}
-                        alt={image.title}
-                        width={64}
-                        height={64}
-                        className="object-cover w-full h-full"
-                      />
-                    </button>
-                  )})}
+                          }`}
+                      >
+                        <Image
+                          src={image.image}
+                          alt={image.title}
+                          width={64}
+                          height={64}
+                          className="object-cover w-full h-full"
+                        />
+                      </button>
+                    )
+                  })}
                 </div>
               </div>
             )}

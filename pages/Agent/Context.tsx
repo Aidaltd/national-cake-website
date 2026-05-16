@@ -61,12 +61,12 @@ export default function Context() {
             alt="National Cake"
             width={1200}
             height={450}
-            className="w-full rounded-lg object-cover object-center h-64 sm:h-80 lg:h-[450px] border border-gray-400"
+            className="w-full  object-cover object-center h-64 sm:h-80 lg:h-[450px] border border-gray-400"
             quality={85}
             loading="lazy"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
-          cloudinary={{ width: 1920, quality: "auto" }}
-                  />
+            cloudinary={{ width: 1920, quality: "auto" }}
+          />
         </div>
 
         {/* Cards title */}
@@ -84,10 +84,10 @@ export default function Context() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ delay: i * 0.1, duration: 0.6, ease: "easeOut" }}
-                className={`${card.color} relative overflow-hidden rounded-2xl p-6 py-10 text-gray-900 shadow-lg`}
+                className={`${card.color} relative overflow-hidden  p-6 py-10 text-gray-900 shadow-lg`}
               >
                 {/* Arrow icon */}
-                <span className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-black text-white">
+                <span className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center  bg-black text-white">
                   <ArrowUpRight className="h-4 w-4" />
                 </span>
                 <h4 className="text-lg font-bold mb-2">
@@ -104,10 +104,10 @@ export default function Context() {
         {/* CTA */}
         <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ delay: 0.6, duration: 0.6, ease: "easeOut" }} layout className="pt-8 flex justify-center">
 
-          <Button asChild size="lg" className="px-10 py-6 text-base rounded-xl">
+          <Button asChild size="lg" className="px-10 py-6 text-base ">
             <a href="https://paystack.shop/pay/macro-agent" target="_blank" rel="noopener noreferrer">
-            Become an AGENT TODAY
-          </a>
+              Become an AGENT TODAY
+            </a>
           </Button>
 
         </motion.div>

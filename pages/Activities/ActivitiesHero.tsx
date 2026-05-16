@@ -20,7 +20,7 @@ export default function ActivitiesHero() {
           quality={85}
           sizes="100vw"
           cloudinary={{ width: 1920, quality: "auto" }}
-                />
+        />
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/50" />
       </div>
@@ -31,7 +31,7 @@ export default function ActivitiesHero() {
         {/* Left column – hero copy */}
         <div className="space-y-8 max-w-4xl  text-white">
           {/* Pill tag */}
-          <span className="inline-block bg-white/20 border border-white/30 backdrop-blur-[2px] px-4 py-1 rounded-full text-xs uppercase tracking-wide text-white/90 mb-3">
+          <span className="inline-block bg-white/20 border border-white/30 backdrop-blur-[2px] px-4 py-1  text-xs uppercase tracking-wide text-white/90 mb-3">
             Activities & Community
           </span>
 

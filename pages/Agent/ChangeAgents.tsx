@@ -128,8 +128,8 @@ export default function ChangeAgents() {
           {/* Left Content */}
           <div className="space-y-8 flex md:flex-row flex-col w-full items-start md:justify-between">
             <h1 className="section-title max-w-2xl">
-            Become an Agent of National Rebirth. Bake a Better Nigeria!
-Register Now!
+              Become an Agent of National Rebirth. Bake a Better Nigeria!
+              Register Now!
 
             </h1>
             <div className="flex md:items-end items-start justify-start gap-10 flex-col space-x-4">
@@ -138,7 +138,7 @@ Register Now!
                 As an agent, you’re not selling a product, you’re igniting patriotism,
                 restoring civic identity, and inspiring a generation to remember who they are.
               </p>
-              <a href="https://paystack.shop/pay/macro-agent" target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-3 bg-custom-primary text-white px-6 py-2 rounded-lg font-semibold hover:bg-custom-primary/90 transition-all duration-300 transform hover:scale-105">
+              <a href="https://paystack.shop/pay/macro-agent" target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-3 bg-custom-primary text-white px-6 py-2  font-semibold hover:bg-custom-primary/90 transition-all duration-300 transform hover:scale-105">
                 <span>Get Started Today</span>
                 <ArrowRight className="w-5 h-5" />
               </a>
@@ -154,31 +154,29 @@ Register Now!
                 <button
                   onClick={scrollLeft}
                   disabled={!canScrollLeft}
-                  className={`w-10 h-10 rounded-full border flex items-center justify-center transition-all duration-300 ${
-                    canScrollLeft 
-                      ? 'bg-custom-primary shadow-lg hover:shadow-xl text-white' 
-                      : 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                  }`}
+                  className={`w-10 h-10  border flex items-center justify-center transition-all duration-300 ${canScrollLeft
+                    ? 'bg-custom-primary shadow-lg hover:shadow-xl text-white'
+                    : 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                    }`}
                 >
                   <ChevronLeft className="w-6 h-6" />
                 </button>
                 <button
                   onClick={scrollRight}
                   disabled={!canScrollRight}
-                  className={`w-10 h-10 rounded-full border flex items-center justify-center transition-all duration-300 ${
-                    canScrollRight 
-                      ? 'bg-custom-primary shadow-lg hover:shadow-xl text-white' 
-                      : 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                  }`}
+                  className={`w-10 h-10  border flex items-center justify-center transition-all duration-300 ${canScrollRight
+                    ? 'bg-custom-primary shadow-lg hover:shadow-xl text-white'
+                    : 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                    }`}
                 >
                   <ChevronRight className="w-6 h-6" />
                 </button>
               </div>
               <p className="text-gray-700  md:text-base text-xs uppercase tracking-wider mt-10 mb-5 font-semibold">
-              Meet Our Extraordinary Agents of Change
-            </p>
-               {/* Scrollable Carousel */}
-               <div 
+                Meet Our Extraordinary Agents of Change
+              </p>
+              {/* Scrollable Carousel */}
+              <div
                 ref={scrollContainerRef}
                 className="flex gap-4 sm:gap-6 overflow-x-auto scrollbar-hide md:py-4 py-2"
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
@@ -187,7 +185,7 @@ Register Now!
                 {teamMembers.map((member) => (
                   <div key={member.id} className="flex-shrink-0 w-full sm:w-80">
                     <div className="relative group cursor-pointer">
-                      <div className={`${member.bgColor} rounded-2xl h-80 md:h-96 overflow-hidden transition-all duration-300 group-hover:scale-95 md:group-hover:scale-105 group-hover:shadow-lg relative`}>
+                      <div className={`${member.bgColor}  h-80 md:h-96 overflow-hidden transition-all duration-300 group-hover:scale-95 md:group-hover:scale-105 group-hover:shadow-lg relative`}>
                         <div
                           className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110"
                           style={{
@@ -212,7 +210,7 @@ Register Now!
         {/* <div className="grid grid-cols-2 w-full justify-center md:justify-start items-center md:grid-cols-2 lg:grid-cols-4 gap-8 border-t border-gray-200 pt-16">
           {services.map((service, index) => (
             <div key={index} className="group">
-              <div className="w-14 h-14 bg-orange-200 rounded-2xl flex items-center justify-center text-orange-600 mb-6 group-hover:bg-orange-300 transition-colors duration-300">
+              <div className="w-14 h-14 bg-orange-200  flex items-center justify-center text-orange-600 mb-6 group-hover:bg-orange-300 transition-colors duration-300">
                 {service.icon}
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>

@@ -11,14 +11,14 @@ export default function Mission() {
     {
       title: "Vision",
       desc:
-"To reimagine the metaphor, not as a feast to fight over, but as a shared duty to serve. This is a mission to re-culture mindsets, reframe perspectives, and rebuild Nigeria, one story, one player, one promise at a time." ,
-     icon: <Eye className="h-5 w-5 text-custom-primary" />,
+        "To reimagine the metaphor, not as a feast to fight over, but as a shared duty to serve. This is a mission to re-culture mindsets, reframe perspectives, and rebuild Nigeria, one story, one player, one promise at a time.",
+      icon: <Eye className="h-5 w-5 text-custom-primary" />,
     },
     {
       title: "Mission",
       desc:
-"There are many models for learning, but none as effective or inclusive as games. Games lower defenses. They evoke laughter, curiosity, and bonding. They are non-threatening, experiential, and deeply human."   , 
-  icon: <Target className="h-5 w-5 text-custom-primary" />,
+        "There are many models for learning, but none as effective or inclusive as games. Games lower defenses. They evoke laughter, curiosity, and bonding. They are non-threatening, experiential, and deeply human.",
+      icon: <Target className="h-5 w-5 text-custom-primary" />,
     }
   ];
 
@@ -54,10 +54,10 @@ export default function Mission() {
           alt="National-cake mission"
           width={1920}
           height={1280}
-          className="rounded-lg w-full object-cover h-64 sm:h-96 lg:h-[45rem]"
+          className=" w-full object-cover h-64 sm:h-96 lg:h-[45rem]"
           priority
           cloudinary={{ width: 1920, quality: "auto" }}
-                />
+        />
       </div>
     </section>
   );

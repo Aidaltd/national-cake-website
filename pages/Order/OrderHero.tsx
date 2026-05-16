@@ -20,25 +20,25 @@ export default function OrderHero() {
           quality={85}
           sizes="100vw"
           cloudinary={{ width: 1920, quality: "auto" }}
-                />
+        />
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/50" />
       </div>
-      
+
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-tr from-black/70 via-black/40 to-black/10 -z-10" />
-      
+
       {/* Content Container */}
       <div className="container mx-auto px-6 py-24 md:py-32 flex items-center h-full">
         {/* Left column - hero copy */}
         <div className="space-y-8 max-w-3xl text-white">
           {/* Pill tag */}
-          <span className="inline-block bg-white/20 border border-white/30 backdrop-blur-[2px] px-4 py-1 rounded-full text-xs uppercase tracking-wide text-white/90 mb-10">
+          <span className="inline-block bg-white/20 border border-white/30 backdrop-blur-[2px] px-4 py-1  text-xs uppercase tracking-wide text-white/90 mb-10">
             Order Now Available
           </span>
 
           <h1 className="section-title lg:text-7xl lg:tracking-tighter lg:leading-tighter text-white max-w-4xl md:max-w-3xl">
-          This is <span className="text-custom-primary">History</span> Funified, <span className="text-custom-primary">Education</span> simplified, Patriotism <span className="text-custom-primary">verified</span>.
+            This is <span className="text-custom-primary">History</span> Funified, <span className="text-custom-primary">Education</span> simplified, Patriotism <span className="text-custom-primary">verified</span>.
           </h1>
 
           {/* <p className="text-sm md:text-base text-white max-w-xl">
@@ -60,8 +60,8 @@ export default function OrderHero() {
               </Button>
             </a>
             <Link href="/community" className="mt-2 sm:mt-0 text-base font-semibold underline underline-offset-2 hover:text-white">
-            Join Our Community
-          </Link>
+              Join Our Community
+            </Link>
           </div>
         </div>
       </div>

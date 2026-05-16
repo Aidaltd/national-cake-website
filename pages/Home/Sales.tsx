@@ -5,9 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Check, CheckCircle } from "lucide-react";
 import Link from "next/link";
 
- export default function Sales() {
+export default function Sales() {
   const firstBullets = [
-   <span> <span className="font-bold text-custom-primary">₦50,000</span> per box </span>,
+    <span> <span className="font-bold text-custom-primary">₦50,000</span> per box </span>,
     <span className="font-medium">A real purpose: Educate. Connect. Inspire.</span>,
     <span className="font-medium">A real legacy: Bring history home</span>,
     <span className="font-medium">A real fulfillment; reignite the Nigerian fire.</span>,
@@ -15,7 +15,7 @@ import Link from "next/link";
   ];
 
   const secondBullets = [
-   <span> <span className="font-bold text-custom-primary">₦30x``,000</span> per unit Available for 4 weeks only.</span>,
+    <span> <span className="font-bold text-custom-primary">₦30x``,000</span> per unit Available for 4 weeks only.</span>,
     <span className="font-medium">Be a part of the movement that rewrites the story in classrooms, hearts and history.</span>,
   ];
 
@@ -29,7 +29,7 @@ import Link from "next/link";
           alt="Market scene"
           width={1920}
           height={1280}
-          className="rounded-lg w-full object-cover object-top h-80 sm:h-80 lg:h-[35rem]"
+          className=" w-full object-cover object-top h-80 sm:h-80 lg:h-[35rem]"
           priority
           loading="eager"
           sizes="(max-width: 768px) 100vw, 50vw"
@@ -60,7 +60,7 @@ import Link from "next/link";
           </ul>
 
           <Link href="/become-an-agent">
-          <Button className="mt-4 w-max">Become an agent Today</Button>
+            <Button className="mt-4 w-max">Become an agent Today</Button>
           </Link>
         </div>
       </div>
@@ -70,10 +70,10 @@ import Link from "next/link";
         {/* Content */}
         <div className="space-y-4 max-w-lg">
           <h3 className="section-title">
-          <span className="text-custom-primary">Order</span> Now and Bake the <span className="text-custom-primary">Future</span> With Us
+            <span className="text-custom-primary">Order</span> Now and Bake the <span className="text-custom-primary">Future</span> With Us
           </h3>
           <p className="section-description text-gray-700 leading-relaxed">
-          If you know your history, your future will not be a mystery…
+            If you know your history, your future will not be a mystery…
             <br />
             <br />
             <span className="font-semibold text-2xl tracking-tighter leading-tighter text-custom-primary">
@@ -99,19 +99,19 @@ Delivery begins after 30th September 2025
           </ul>
 
           <Link href="/order">
-          <Button className="mt-4 w-max" variant="default">
-            Click Here to Order Now 
-          </Button>
+            <Button className="mt-4 w-max" variant="default">
+              Click Here to Order Now
+            </Button>
           </Link>
         </div>
 
-        {/* Image */} 
+        {/* Image */}
         <OptimizedImage
           src="/Nationalcake-29.jpg"
           alt="Happy customer with bags"
           width={800}
           height={600}
-          className="rounded-lg w-full md:w-[50%] object-cover h-80 sm:h-80 lg:h-[33rem] lg:order-first"
+          className=" w-full md:w-[50%] object-cover h-80 sm:h-80 lg:h-[33rem] lg:order-first"
           loading="lazy"
           sizes="(max-width: 768px) 100vw, 50vw"
           cloudinary={{ width: 1000, quality: "auto" }}

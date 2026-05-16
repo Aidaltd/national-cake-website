@@ -1,11 +1,17 @@
 import "./globals.css";
 import { ReactNode } from "react";
 import Script from "next/script";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import HeaderBar from "@/constants/HeaderBar";
 import Header from "@/constants/Header";
 import { cloudinaryUrl } from "@/lib/cloudinary";
 import Footer from "@/constants/Footer";
 import LenisProvider from "@/components/LenisProvider";
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-plus-jakarta-sans",
+});
 
 export const metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://nationalcake.ng"),
@@ -51,7 +57,7 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={plusJakartaSans.variable}>
       <head>
         <Script id="org-jsonld" type="application/ld+json">
           {JSON.stringify({

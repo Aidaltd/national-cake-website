@@ -17,7 +17,7 @@ const features = [
 
 export default function NationalOven() {
   return (
-    <section className="w-full pb-24 h-full bg-custom-primary/5">
+    <section className="w-full pb-16 h-full">
       <div className="grid grid-cols-1 md:grid-cols-2 bg-custom-primary/5">
         {/* right side */}
         <div className="bg-custom-primary/5 p-4 py-10 md:p-12 flex flex-col gap-6">
@@ -42,24 +42,24 @@ export default function NationalOven() {
             href="https://forms.gle/o61VpSp7zPo8cWqB6"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full md:w-fit mt-2 px-6 py-3 bg-custom-primary text-white rounded-lg font-semibold hover:bg-custom-primary/90 transition"
+            className="w-full md:w-fit mt-2 px-6 py-3 bg-custom-primary text-white  font-semibold hover:bg-custom-primary/90 transition"
           >
             Join the Digital Hub &nbsp; &nbsp; 🌍 🌍 🌍
           </a>
         </div>
         {/* left side */}
         <div className="w-full h-full">
-          <OptimizedImage 
-            src="/DSC104.jpg" 
-            alt="National Oven" 
+          <OptimizedImage
+            src="/DSC104.jpg"
+            alt="National Oven"
             width={800}
             height={600}
             className="w-full h-full object-cover"
             quality={85}
             loading="lazy"
             sizes="(max-width: 768px) 100vw, 50vw"
-          cloudinary={{ width: 1920, quality: "auto" }}
-                  />
+            cloudinary={{ width: 1920, quality: "auto" }}
+          />
         </div>
       </div>
     </section>

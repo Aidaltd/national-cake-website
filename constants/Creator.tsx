@@ -21,7 +21,7 @@ export default function Creator() {
             alt="National-cake - Victor Prince Dickson"
             width={800}
             height={800}
-            className="rounded-lg w-full h-full object-top object-cover"
+            className=" w-full h-full object-top object-cover"
             loading="lazy"
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 800px"
             cloudinary={{ width: 800, quality: "auto" }}
@@ -42,7 +42,7 @@ export default function Creator() {
           </p>
           <p className="text-base leading-relaxed text-gray-700">
             For more on Victor, please visit: <br />
-             <a href="https://www.victorprincedickson.com" target="_blank" rel="noopener noreferrer" className="text-custom-primary hover:underline">www.victorprincedickson.com</a>
+            <a href="https://www.victorprincedickson.com" target="_blank" rel="noopener noreferrer" className="text-custom-primary hover:underline">www.victorprincedickson.com</a>
           </p>
 
           {/* Social Icons */}

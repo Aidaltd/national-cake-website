@@ -12,6 +12,7 @@ import Prototype from "@/constants/Prototype";
 import ImageCarousel from "@/pages/Home/ImageCarousel";
 import DreamMagazine from "@/pages/Activities/DreamMagazine";
 import NationalOven from "@/pages/Activities/NationalOven";
+import PlayBook from "@/pages/Home/PlayBook";
 import { cloudinaryUrl } from "@/lib/cloudinary";
 
 
@@ -45,6 +46,7 @@ export default function Home() {
       {/* <LogoTicker />   */}
       <AboutGame />
       <Prototype size="60vw" mobileSize="90vw" />
+      <PlayBook />
       <ImageCarousel />
       <Testimonials />
       <Sales />

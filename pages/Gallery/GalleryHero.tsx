@@ -18,7 +18,7 @@ export default function GalleryHero() {
   // Auto-slide functionality
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => 
+      setCurrentImageIndex((prevIndex) =>
         (prevIndex + 1) % GALLERY_IMAGES.length
       );
     }, 4000); // Change image every 4 seconds
@@ -68,15 +68,15 @@ export default function GalleryHero() {
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/40" />
       </div>
-      
+
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-tr from-green-600/60 via-black/50 to-black/20 -z-10" />
-      
+
       {/* Content Container */}
       <div className="container px-6 py-24 md:py-32 flex items-start h-full">
         <div className="max-w-4xl md:px-14 md:px-16 text-left">
           {/* Pill tag */}
-          <span className="inline-block bg-white/20 border border-white/30 backdrop-blur-[2px] px-4 py-1 rounded-full text-xs uppercase tracking-wide text-white/90 mb-6">
+          <span className="inline-block bg-white/20 border border-white/30 backdrop-blur-[2px] px-4 py-1  text-xs uppercase tracking-wide text-white/90 mb-6">
             Visual Journey
           </span>
 
@@ -85,7 +85,7 @@ export default function GalleryHero() {
           </h1>
 
           <p className="text-xl text-gray-200 max-w-3xl leading-relaxed mb-12">
-            Explore our visual collection showcasing National Cake in action. From classroom sessions to community events, 
+            Explore our visual collection showcasing National Cake in action. From classroom sessions to community events,
             see how our game is transforming civic education across Nigeria.
           </p>
 

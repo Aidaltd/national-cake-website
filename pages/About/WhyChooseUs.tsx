@@ -58,7 +58,7 @@ export default function MarketingHeroSection() {
       description: "Respecting diversity while rekindling a shared sense of belonging in every home, school, and street."
     }
   ];
-  
+
 
   return (
     <section className="bg-black text-white min-h-screen px-4 md:px-8 lg:px-12 py-16 md:py-24 lg:py-32 ">
@@ -67,7 +67,7 @@ export default function MarketingHeroSection() {
         {/* Hero Title */}
         <div className="mb-16">
           <h1 className="section-title max-w-4xl text-white">
-          Nation-building is an Art, and we are all artists. Let's build a Nation the World will stand still for. 
+            Nation-building is an Art, and we are all artists. Let's build a Nation the World will stand still for.
 
           </h1>
         </div>
@@ -93,8 +93,8 @@ export default function MarketingHeroSection() {
         {/* Services Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
           {services.map((service) => (
-            <Card 
-              key={service.id} 
+            <Card
+              key={service.id}
               className={`${service.bgColor} border-0 h-64 relative overflow-hidden group hover:scale-105 pt-0 transition-transform duration-300 cursor-pointer`}
             >
               <CardContent className="p-6 h-full flex flex-col justify-between">
@@ -104,7 +104,7 @@ export default function MarketingHeroSection() {
                     {service.icon}
                   </div>
                 </div>
-                
+
                 <div className="flex-1 flex flex-col justify-center">
                   <h3 className="text-black font-bold text-xl mb-2">
                     {service.title}
@@ -118,7 +118,7 @@ export default function MarketingHeroSection() {
 
                 {/* {service.hasArrow && (
                   <div className="flex justify-end">
-                    <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center">
+                    <div className="w-8 h-8 bg-black  flex items-center justify-center">
                       <ArrowRight className="w-4 h-4 text-white" />
                     </div>
                   </div>

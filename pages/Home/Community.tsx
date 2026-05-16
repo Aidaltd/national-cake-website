@@ -6,7 +6,7 @@ import { Check, CheckCircle, Users, Heart, Target, Gift } from "lucide-react";
 // temporary assets – replace with real paths later
 const AVATARS = ["/avatar-4.png", "/avatar-7.png", "/avatar-6.png"];
 
- export default function Community() {
+export default function Community() {
   const bullets = [
     {
       title: "For the Youth",
@@ -14,7 +14,7 @@ const AVATARS = ["/avatar-4.png", "/avatar-7.png", "/avatar-6.png"];
       color: "bg-green-300",
       textColor: "text-black",
       icon: <CheckCircle className="w-5 h-5" />,
-      badge: "18-35",   
+      badge: "18-35",
       category: "Years",
       imageKey: 'DSC6' // Cloudinary mapping key
     },
@@ -26,7 +26,7 @@ const AVATARS = ["/avatar-4.png", "/avatar-7.png", "/avatar-6.png"];
       icon: <CheckCircle className="w-5 h-5" />,
       badge: "35+",
       category: "Years",
-      imageKey:  'DSC8' // Cloudinary mapping key
+      imageKey: 'DSC8' // Cloudinary mapping key
     },
     {
       title: "Business Executives",
@@ -73,9 +73,9 @@ const AVATARS = ["/avatar-4.png", "/avatar-7.png", "/avatar-6.png"];
               <CountUp from={0} to={500} duration={1.2} separator="," className="inline-block " />+
             </h3> */}
             <h2 className="text-center font-semibold text-4xl text-custom-primary">
-             Coming Soon 
+              Coming Soon
             </h2>
-              
+
           </div>
 
           {/* Avatar group */}
@@ -88,7 +88,7 @@ const AVATARS = ["/avatar-4.png", "/avatar-7.png", "/avatar-6.png"];
                   alt="avatar"
                   width={32}
                   height={32}
-                  className="rounded-full border-2 border-white"
+                  className=" border-2 border-white"
                   cloudinary={{ width: 64, quality: "auto" }}
                 />
               ))}
@@ -115,7 +115,7 @@ const AVATARS = ["/avatar-4.png", "/avatar-7.png", "/avatar-6.png"];
           alt="National--Community"
           width={1200}
           height={600}
-          className="w-full rounded-lg object-cover h-64 sm:h-80 lg:h-[380px] border border-gray-400"
+          className="w-full  object-cover h-64 sm:h-80 lg:h-[380px] border border-gray-400"
           loading="lazy"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
           cloudinary={{ width: 1200, quality: "auto" }}
@@ -125,15 +125,15 @@ const AVATARS = ["/avatar-4.png", "/avatar-7.png", "/avatar-6.png"];
       {/* Program Cards Grid */}
       <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {bullets.map((item, index) => (
-          <div 
-            key={item.title} 
-            className={`${item.color} ${item.textColor} rounded-2xl relative overflow-hidden group hover:scale-105 transition-all duration-300 cursor-pointer shadow-lg h-[400px] flex flex-col`}
+          <div
+            key={item.title}
+            className={`${item.color} ${item.textColor}  relative overflow-hidden group hover:scale-105 transition-all duration-300 cursor-pointer shadow-lg h-[400px] flex flex-col`}
           >
             {/* Top Content Section */}
             <div className="p-4 flex-1 flex flex-col">
               {/* Badge */}
               <div className="flex justify-between items-start mb-4">
-                <div className="bg-white/20 backdrop-blur-sm rounded-full px-3 py-1 text-xs font-semibold">
+                <div className="bg-white/20 backdrop-blur-sm  px-3 py-1 text-xs font-semibold">
                   {item.badge}
                 </div>
                 <div className="text-xs opacity-70">
@@ -142,7 +142,7 @@ const AVATARS = ["/avatar-4.png", "/avatar-7.png", "/avatar-6.png"];
               </div>
 
               {/* Icon */}
-              <div className="mb-2 rounded-full w-fit bg-white/50 p-2">
+              <div className="mb-2  w-fit bg-white/50 p-2">
                 {item.icon}
               </div>
 
@@ -159,12 +159,12 @@ const AVATARS = ["/avatar-4.png", "/avatar-7.png", "/avatar-6.png"];
             </div>
 
             {/* Person Image at Bottom */}
-            <div className="h-56 rounded-t-lg relative">
+            <div className="h-56  relative">
               <OptimizedImage
                 src={`/${item.imageKey}.jpg`}
                 alt={`Person representing ${item.title}`}
                 fill
-                className="object-cover rounded-t-lg object-center"
+                className="object-cover  object-center"
                 loading="lazy"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                 cloudinary={{ width: 500, quality: "auto" }}
@@ -174,7 +174,7 @@ const AVATARS = ["/avatar-4.png", "/avatar-7.png", "/avatar-6.png"];
             </div>
 
             {/* Decorative circle */}
-            <div className="absolute -top-10 -right-10 w-20 h-20 bg-white/10 rounded-full"></div>
+            <div className="absolute -top-10 -right-10 w-20 h-20 bg-white/10 "></div>
           </div>
         ))}
       </div>

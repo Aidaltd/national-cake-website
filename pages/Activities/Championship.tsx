@@ -47,24 +47,24 @@ export default function Championship() {
             href="https://forms.gle/o61VpSp7zPo8cWqB6"
             target="_blank"
             rel="noopener noreferrer"
-            className="md:w-fit w-full mt-2 md:px-6 px-4 py-3 bg-custom-primary text-white rounded-lg font-semibold hover:bg-custom-primary/90 transition"
+            className="md:w-fit w-full mt-2 md:px-6 px-4 py-3 bg-custom-primary text-white  font-semibold hover:bg-custom-primary/90 transition"
           >
             Track Tournaments & Subscribe &nbsp; &nbsp;<span className="flip">🪽</span> 🏆🪽
           </a>
         </div>
         {/* left side */}
         <div className="w-full h-full">
-          <OptimizedImage 
-            src="/NCLU10.jpg" 
-            alt="National Cake Championship" 
+          <OptimizedImage
+            src="/NCLU10.jpg"
+            alt="National Cake Championship"
             width={800}
             height={600}
             className="w-full h-full object-cover"
             quality={85}
             loading="lazy"
             sizes="(max-width: 768px) 100vw, 50vw"
-          cloudinary={{ width: 1920, quality: "auto" }}
-                  />
+            cloudinary={{ width: 1920, quality: "auto" }}
+          />
         </div>
       </div>
     </section>

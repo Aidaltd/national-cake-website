@@ -6,7 +6,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-plus-jakarta-sans);
   --font-mono: var(--font-geist-mono);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -126,6 +126,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -133,27 +134,34 @@
 
 @layer components {
   .btn-text {
-      @apply text-black bg-transparent;
+    @apply text-black bg-transparent;
   }
-  .logo-ticker-image{
-      @apply size-16 text-white w-auto;
+
+  .logo-ticker-image {
+    @apply size-16 text-white w-auto;
   }
-  .tag{
-      @apply text-xs bg-custom-primary/5 text-custom-primary inline-flex border border-custom-primary/20 py-2 px-4 rounded-lg tracking-tight;
+
+  .tag {
+    @apply text-xs bg-custom-primary/5 text-custom-primary inline-flex border border-custom-primary/20 py-2 px-4 tracking-tight;
   }
-  .section-title{
-   @apply text-5xl md:text-[58px] md:leading-[60px] font-semibold tracking-tighter text-black;
+
+  .section-title {
+    @apply text-5xl md:text-[58px] md:leading-[60px] font-semibold tracking-tighter text-black;
   }
-  .section-description{
-      @apply text-base md:text-base tracking-tight text-gray-600 ;
+
+  .section-description {
+    @apply text-base md:text-base tracking-tight text-gray-600;
   }
-  .section-heading{
-      @apply  max-w-[540px] mx-auto;
+
+  .section-heading {
+    @apply max-w-[540px] mx-auto;
   }
-  .card{
-      @apply p-10 border border-[#222222]/10 rounded-lg shadow-[0_7px_14px_#EAEAEA] max-w-xs w-full;
+
+  .card {
+    @apply p-10 border border-[#222222]/10 shadow-[0_7px_14px_#EAEAEA] max-w-xs w-full;
   }
-  .flip{
+
+  .flip {
     @apply inline-block scale-x-[-1];
   }
 }
@@ -162,12 +170,14 @@
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
-  } 
+  }
 }
 
 @layer utilities {

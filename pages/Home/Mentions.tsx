@@ -57,7 +57,7 @@ export default function Mentions() {
               href={mention.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group w-full h-24 flex flex-col items-center justify-center p-4 hover:shadow-lg rounded-lg transition-all duration-300 transform hover:-translate-y-1"
+              className="group w-full gap-5 flex flex-col items-center justify-center p-4 transition-all duration-300 transform hover:-translate-y-1"
             >
               <div className="relative w-full h-full">
                 <OptimizedImage
@@ -65,13 +65,13 @@ export default function Mentions() {
                   alt={mention.alt}
                   width={200}
                   height={100}
-                  className="object-contain p-2"
+                  className="object-contain"
                   loading="lazy"
                   sizes="(max-width: 768px) 50vw, 20vw"
                   cloudinary={{ width: 200, quality: "auto" }}
                 />
               </div>
-              <p className="text-sm md:text-base font-semibold text-center mt-2">
+              <p className="text-sm md:text-base font-semibold text-center">
                 {mention.alt}
               </p>
             </Link>

@@ -29,7 +29,7 @@ const TESTIMONIALS: Testimonial[] = [
     role: "Creative Producer and Communication Expert",
     quote:
       "The layout is very impressive. It should be incorporated into film festivals and supplied to every university.",
-    image:test1,  
+    image: test1,
   },
   {
     name: "Princess Bunmi Pukat",
@@ -45,7 +45,7 @@ const TESTIMONIALS: Testimonial[] = [
       "This is a brilliant idea that the Federal Ministry of Education should adopt. It can educate young people about Nigeria’s history, help reduce smartphone addiction, and promote meaningful engagement. A companion dictionary of Nigerian history is also recommended, and the game should be present in every Nigerian household.",
     image: test3,
   },
-  { 
+  {
     name: "Dr. Hyeladi Haruna",
     role: "Founder: Heladi Holdings",
     quote:
@@ -66,7 +66,7 @@ const TESTIMONIALS: Testimonial[] = [
       "This is sophisticated. This is a massive concept. I love the “Experience Spot” because we cannot shy away from the bad experiences. I like the fact that it doesn’t just end in the game but goes on to the National Oven.",
     image: test5,
   },
-  
+
 ];
 
 export default function Testimonials() {
@@ -96,7 +96,7 @@ export default function Testimonials() {
           Testimonials
         </span> */}
         <h2 className="section-title max-w-2xl mb-8">
-        What <span className="text-custom-primary">Experts</span> are <span className="text-custom-primary">Saying</span>
+          What <span className="text-custom-primary">Experts</span> are <span className="text-custom-primary">Saying</span>
         </h2>
         <p className="text-sm sm:text-base max-w-xl text-gray-600">
           Hear what experts and thought leaders are saying about National Cake, the innovative way to bake a better nation.
@@ -119,7 +119,7 @@ export default function Testimonials() {
             alt={`National-cake - ${testimonial.name}`}
             width={600}
             height={500}
-            className="rounded-lg w-full object-cover object-top h-80 sm:h-80 lg:h-[450px]"
+            className=" w-full object-cover object-top h-80 sm:h-80 lg:h-[450px]"
             loading="lazy"
             cloudinary={{ width: 700, quality: "auto" }}
           />
@@ -130,7 +130,7 @@ export default function Testimonials() {
             <p className="text-lg sm:text-xl lg:text-3xl font-medium leading-tighter tracking-tighter">
               {testimonial.quote}
             </p>
-            <div> 
+            <div>
               <h3 className="font-semibold max-w-xl">{testimonial.name}</h3>
               <p className="text-sm text-gray-600">{testimonial.role}</p>
             </div>
@@ -144,14 +144,14 @@ export default function Testimonials() {
           <button
             aria-label="Previous"
             onClick={prev}
-            className="size-9 flex items-center justify-center rounded-md border border-gray-300 hover:bg-gray-50 transition"
+            className="size-9 flex items-center justify-center  border border-gray-300 hover:bg-gray-50 transition"
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
           <button
             aria-label="Next"
             onClick={next}
-            className="size-9 flex items-center justify-center rounded-md bg-custom-primary text-white hover:bg-green-600 transition"
+            className="size-9 flex items-center justify-center  bg-custom-primary text-white hover:bg-green-600 transition"
           >
             <ChevronRight className="h-5 w-5" />
           </button>

@@ -134,7 +134,7 @@ export default function Footer() {
             <section className="relative mx-auto overflow-hidden bg-gradient-to-br from-custom-primary via-custom-primary to-custom-primary">
                 <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/30 to-transparent" />
                 {/* blurred radial glow */}
-                <div className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/60 blur-[120px] md:blur-[160px] h-80 w-80" />
+                <div className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2  bg-white/60 blur-[120px] md:blur-[160px] h-80 w-80" />
 
                 <div className="container relative z-20 mx-auto flex flex-col items-center gap-6 py-16 text-center">
                     <h2 className="mx-auto max-w-md md:max-w-xl text-white py-8 text-4xl md:text-5xl font-bold">
@@ -144,14 +144,14 @@ export default function Footer() {
                     {/* subscribe form */}
                     <form
                         onSubmit={(e) => e.preventDefault()}
-                        className="flex max-w-md overflow-hidden items-center rounded-md bg-white p-1 shadow-lg"
+                        className="flex max-w-md overflow-hidden items-center  bg-white p-1 shadow-lg"
                     >
                         <input
                             type="email"
                             placeholder="Enter your email"
                             className="flex-1 px-4 py-2 text-sm text-black outline-none placeholder:text-gray-500"
                         />
-                        <Button type="submit" size="sm" className="rounded-md">
+                        <Button type="submit" size="sm" className="">
                             Subscribe
                         </Button>
                     </form>
@@ -164,7 +164,7 @@ export default function Footer() {
                 size="icon"
                 variant="secondary"
                 onClick={scrollToTop}
-                className="absolute z-40 md:size-12 size-10 left-1/2 border-3 border-custom-primary -translate-x-1/2 -translate-y-1/2 rounded-full bg-white text-black shadow-lg transition-colors hover:bg-gray-100"
+                className="absolute z-40 md:size-12 size-10 left-1/2 border-3 border-custom-primary -translate-x-1/2 -translate-y-1/2  bg-white text-black shadow-lg transition-colors hover:bg-gray-100"
             >
                 <ChevronUp className="h-5 w-5" />
             </Button>
@@ -186,7 +186,7 @@ export default function Footer() {
                             </div>
                         </Link>
                         <p className="text-gray-400 max-w-sm mt-1 text-sm">
-                        National Cake is the one oasis board game that reveals Nigeria’s true story, the events and how it shapes you. Built for homes, schools, churches, and communities, it turns storytelling into nation-building. Together, let’s bake a better Nigeria, one game at a time.                        </p>
+                            National Cake is the one oasis board game that reveals Nigeria’s true story, the events and how it shapes you. Built for homes, schools, churches, and communities, it turns storytelling into nation-building. Together, let’s bake a better Nigeria, one game at a time.                        </p>
                         {/* Social Icons */}
                         <div className="flex space-x-5 mt-6">
                             {socialLinks.map((social) => (

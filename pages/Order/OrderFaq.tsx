@@ -34,16 +34,16 @@ export default function OrderFaq() {
               Do you have Questions? <br /> Don&apos;t worry we have answers!
             </h2>
             <p className="md:text-base text-xs md:max-w-3xl w-full text-gray-600">
-              Here are some of the most frequently asked questions we get,along with some answers to help you get started. If you can't find what you're looking for here, feel free to reach out to us!             
+              Here are some of the most frequently asked questions we get,along with some answers to help you get started. If you can't find what you're looking for here, feel free to reach out to us!
             </p>
           </div>
         </div>
         {/* Questions */}
         <motion.div layout className="max-w-4xl mx-auto mt-12 flex flex-col gap-6">
-          { preorderfaqdata.filter((_, idx) => showAll || idx < 6).map((faq, faqIndex) => (
+          {preorderfaqdata.filter((_, idx) => showAll || idx < 6).map((faq, faqIndex) => (
             <div
               key={faq.id}
-              className="bg-custom-primary/5 rounded-2xl border border-custom-primary/20 p-6"
+              className="bg-custom-primary/5  border border-custom-primary/20 p-6"
             >
               <div
                 className="flex justify-between items-center cursor-pointer"
@@ -96,7 +96,7 @@ export default function OrderFaq() {
             <div className="text-center mt-8">
               <button
                 onClick={() => setShowAll(!showAll)}
-                className="px-4 w-full md:w-auto py-2 border border-custom-primary text-custom-primary rounded-lg hover:bg-custom-primary hover:text-white transition"
+                className="px-4 w-full md:w-auto py-2 border border-custom-primary text-custom-primary  hover:bg-custom-primary hover:text-white transition"
               >
                 {showAll ? "View Less" : "View More"}
               </button>
