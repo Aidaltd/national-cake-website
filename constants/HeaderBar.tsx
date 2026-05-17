@@ -30,8 +30,8 @@ export default function   HeaderBar() {
     <div
       className={`sticky top-0 left-0 z-50 w-full transform transition-all duration-300 ${visible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}`}
     >
-      <div className="flex w-full justify-between items-center gap-4 md:px-10 px-4 py-3 bg-black text-white text-xs">
-        <div className="flex text-sm items-center gap-2">
+      <div className="flex w-full justify-between items-center gap-4 md:px-10 px-3 py-3 bg-black text-white text-xs">
+        <div className="flex text-sm items-center">
           <p className="text-white/60 hover:text-white">Mail:</p>
           <a
             href="mailto:info@nationalcake.ng"
@@ -41,7 +41,7 @@ export default function   HeaderBar() {
           </a>
         </div>
         <div className="flex text-sm items-center gap-10">
-          <div className=" hidden md:flex items-center gap-2">
+          <div className=" hidden md:flex items-center">
             <p className="text-white/60 hover:text-white">Follow us:</p>
             <a
               href="https://x.com/AlphaKultureNG"
@@ -80,7 +80,7 @@ export default function   HeaderBar() {
             href="tel:+2348168378999"
             className="text-white/60 hover:text-white"
           >
-            Contact: +234 816 837 8999 <span className="text-white/60 hidden md:inline">/ +234 803 612 6128</span>
+            Contact:+2348168378999 <span className="text-white/60 hidden md:inline">/+2348036126128</span>
           </a>
         </div>
       </div>

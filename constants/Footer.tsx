@@ -144,7 +144,7 @@ export default function Footer() {
                     {/* subscribe form */}
                     <form
                         onSubmit={(e) => e.preventDefault()}
-                        className="flex max-w-md overflow-hidden items-center  bg-white p-1 shadow-lg"
+                        className="flex max-w-2xl overflow-hidden items-center  bg-white p-1 shadow-lg"
                     >
                         <input
                             type="email"

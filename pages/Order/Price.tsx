@@ -69,6 +69,7 @@ export default function Price() {
     'Weight — 20 kg',
     'Components:',
     '1 Board',
+    '1 National Cake PlayBook',
     '4 Personal Spin Pads',
     '8 Race Counters (2 Blue, 2 Red, 2 Green & 2 Yellow)',
     '40 Bridge Tokens (20 white & 20 green)',
@@ -185,7 +186,7 @@ export default function Price() {
 
                 {/* Product Description */}
                 <div className="mb-8">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Description & Fit</h3>
+                  <h3 className="text-lg font-semibold mb-4">Description & Fit</h3>
                   <p className="text-base text-gray-600 mb-4">
                     If we do not teach ourselves who we are, the world will tell us who we are not. If we do not guide the children through the crossroads, they may lose the road entirely.
                   </p>
@@ -244,7 +245,7 @@ export default function Price() {
                           SAVE ₦5,000
                         </div>
                         <div className="text-sm font-semibold mb-1 text-custom-primary">Bulk Price (50+)</div>
-                        <div className="text-2xl font-bold text-custom-primary">₦50,000</div>
+                        <div className="text-2xl font-bold text-custom-primary">₦45,000</div>
                       </div>
                     </div>
 
@@ -259,7 +260,7 @@ export default function Price() {
                       {/* Main Badge */}
                       <div className="bg-white text-custom-primary  p-8 shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-300">
                         <div className="text-center">
-                          <div className="text-4xl font-bold mb-2 text-custom-primary">₦50,000</div>
+                          <div className="text-4xl font-bold mb-2 text-custom-primary">₦45,000</div>
                           <div className="text-sm font-semibold mb-1 text-custom-primary">BULK PRICE</div>
                           <div className="text-xs opacity-80 text-custom-primary">50+ copies</div>
                         </div>
@@ -280,7 +281,7 @@ export default function Price() {
 
             {/* Content Section */}
             <div className="p-4 lg:p-12 bg-gray-50">
-              <h2 className="text-3xl font-bold tracking-tighter text-gray-900 mb-8">
+              <h2 className="text-3xl font-bold tracking-tighter mb-8">
                 So, we ask you:
               </h2>
               <ul className="list-disc pl-8 space-y-4 mb-8">
@@ -292,17 +293,17 @@ export default function Price() {
               </ul>
             </div>
 
-            <h1 className="lg:text-8xl md:text-6xl text-3xl text-center font-bold tracking-tighter text-gray-900 my-8">DELIVERY ONLY IN <span className="text-custom-primary">ABUJA</span> </h1>
+            <h1 className="lg:text-8xl md:text-6xl text-3xl text-center font-bold tracking-tighter my-8">DELIVERY ONLY IN <span className="text-custom-primary">ABUJA</span> </h1>
 
             {/* Rating & Reviews Section */}
             <div className="border-t border-gray-200 p-4 lg:p-12">
-              <h2 className="text-3xl font-bold tracking-tighter text-gray-900 mb-8">Rating & Reviews</h2>
+              <h2 className="text-3xl font-bold tracking-tighter mb-8">Rating & Reviews</h2>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 {/* Rating Summary */}
                 <div>
                   <div className="flex items-end gap-4 mb-6">
-                    <div className="text-6xl tracking-tighter font-bold text-gray-900">
+                    <div className="text-6xl tracking-tighter font-bold">
                       {averageRating}
                     </div>
                     <div className="pb-2">
@@ -340,7 +341,7 @@ export default function Price() {
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-2">
-                        <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
+                        <h4 className="font-semibold">{testimonial.name}</h4>
                         <span className="text-sm text-gray-500">{testimonial.date}</span>
                       </div>
                       <StarRating rating={testimonial.rating} />

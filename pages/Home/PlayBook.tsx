@@ -9,7 +9,7 @@ export default function PlayBook() {
         <section className="bg-white w-full h-full">
             <div className="flex flex-col md:flex-row w-full md:h-[100vh] px-4 md:px-10 py-12">
                 {/* left side - image */}
-                <div className="bg-white border border-green-200 w-full md:w-1/2 h-full p-10">
+                <div className="bg-custom-primary/20 border border-green-200 w-full md:w-1/2 h-full p-10">
                     <OptimizedImage
                         src="/NCUPDATE-20.jpeg"
                         alt="National Cake PlayBook"
