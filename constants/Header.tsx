@@ -25,10 +25,12 @@ export default function Header() {
   const navItems = [
     { name: "Home", link: "/" },
     { name: "About", link: "/about" },
-    { name: "Gallery", link: "/gallery" },
-    { name: "Agents", link: "/become-an-agent" },
+    // { name: "Donate to Schools", link: "/donate-to-schools" },
     { name: "Championship", link: "/championship" },
+    { name: "Agent", link: "/become-an-agent" },
+    { name: "Gallery", link: "/gallery" },
     { name: "Order", link: "/order" },
+
   ];
 
   if (pathname?.startsWith("/community") || pathname?.startsWith("community") || pathname?.startsWith("not-found")) {
@@ -102,7 +104,7 @@ export default function Header() {
           <Link href="/">
             <OptimizedImage src="logo-4" alt="National-cake Logo" width={192} height={64} className="w-48 h-auto" />
           </Link>
-          <nav className="hidden md:flex gap-4 text-sm text-white/80 items-center">
+          <nav className="hidden md:flex gap-2 text-sm text-white/80 items-center">
             {navItems.map((item, idx) => {
               const isActive = isActiveLink(item.link);
               return (
@@ -120,9 +122,9 @@ export default function Header() {
                 </a>
               );
             })}
-            <a href="/community">
+            <a href="/donate-to-schools">
               <Button className="text-custom-primary/80 bg-white hover:bg-white/90 hover:text-custom-primary">
-                Join our community
+                Donate to Schools
               </Button>
             </a>
           </nav>
@@ -171,11 +173,11 @@ export default function Header() {
 
                   <motion.div variants={itemVariants} className="mt-4">
                     <a
-                      href="/community"
+                      href="/donate-to-schools"
                       onClick={() => setIsMenuOpen(false)}
                       className="mt-8 bg-custom-primary text-white w-full py-3 text-base px-4  font-bold block text-center hover:-translate-y-0.5 transition duration-200"
                     >
-                      Join our community
+                      Donate to Schools
                     </a>
                   </motion.div>
                 </motion.div>

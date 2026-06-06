@@ -9,8 +9,8 @@ import GalleryModal from "@/components/ui/gallery-modal";
 
 interface GalleryItem {
   id: number;
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
   image: string;
   tags: string[];
   category: string;
@@ -36,7 +36,7 @@ export default function GalleryTable() {
 
   return (
     <section className="py-16 bg-gradient-to-br from-gray-50 via-white to-gray-50" id="gallery">
-      <div className="container mx-auto px-6">
+      <div className="mx-auto px-4 md:px-12">
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="section-title mb-4">
@@ -48,7 +48,7 @@ export default function GalleryTable() {
         </div>
 
         {/* Gallery Grid - Modern Card Layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mx-auto">
           {galleryData.map((item: GalleryItem, index) => {
             return (
               <motion.div
@@ -60,54 +60,20 @@ export default function GalleryTable() {
                 onClick={() => openModal(index)}
               >
                 {/* Image Container */}
-                <div className="relative h-72 overflow-hidden">
+                <div className="relative h-[400px] overflow-hidden">
                   <OptimizedImage
                     src={item.image}
-                    alt={item.title}
-                    width={400}
-                    height={300}
+                    alt={item.title || "Gallery image"}
+                    width={800}
+                    height={800}
                     className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500"
                     loading="lazy"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
-                    cloudinary={{ width: 600, quality: "auto" }}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    cloudinary={{ width: 800, quality: "auto" }}
                   />
 
                   {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300 z-10" />
-
-                  {/* Category Badge */}
-                  <div className="absolute top-4 right-4 z-10">
-                    <span className="bg-white/90 backdrop-blur-sm text-custom-primary px-3 py-1  text-xs font-bold shadow-lg">
-                      {item.category}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Content Overlay - Positioned at Bottom */}
-                <div className="absolute bottom-0 left-0 right-0 p-5 text-white z-10">
-                  <h3 className="text-lg font-bold mb-2 line-clamp-2 drop-shadow-lg">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-gray-200 mb-3 line-clamp-2 drop-shadow-md">
-                    {item.description}
-                  </p>
-
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2">
-                    {item.tags.slice(0, 2).map((tag) => (
-                      <span
-                        key={tag}
-                        className="bg-white/20 backdrop-blur-sm text-white px-2 py-1  text-xs font-medium border border-white/30"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                    {item.tags.length > 2 && (
-                      <span className="bg-white/20 backdrop-blur-sm text-white px-2 py-1  text-xs font-medium border border-white/30">
-                        +{item.tags.length - 2}
-                      </span>
-                    )}
-                  </div>
+                  <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors duration-300 z-10" />
                 </div>
 
                 {/* Hover Icon */}

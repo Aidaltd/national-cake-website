@@ -22,7 +22,7 @@ export default function AgentFaq() {
   };
 
   return (
-    <section className="w-full py-24 mb-14 px-4 md:px-10 lg:px-20" id="faq">
+    <section className="w-full py-24 mb-14 px-4 md:px-12" id="faq">
       <div className="mx-auto">
         {/* FAQ Header */}
         <div className="mb-20 flex flex-col items-start gap-8">
@@ -34,12 +34,12 @@ export default function AgentFaq() {
               Do you have Questions? <br /> Don&apos;t worry we have answers!
             </h2>
             <p className="md:text-base text-xs md:max-w-3xl w-full text-gray-600">
-              Here are some of the most frequently asked questions we get,along with some answers to help you get started. If you can't find what you're looking for here, feel free to reach out to us!
+              Here are some of the most frequently asked questions we get, along with some answers to help you get started. If you can&apos;t find what you&apos;re looking for here, feel free to reach out to us!
             </p>
           </div>
         </div>
         {/* Questions */}
-        <motion.div layout className="max-w-4xl mx-auto mt-12 flex flex-col gap-6">
+        <motion.div layout className="max-w-7xl mx-auto mt-12 flex flex-col gap-6">
           {agentFaqData.filter((_, idx) => showAll || idx < 6).map((faq, faqIndex) => (
             <div
               key={faq.id}

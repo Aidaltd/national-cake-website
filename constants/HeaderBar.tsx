@@ -41,7 +41,7 @@ export default function   HeaderBar() {
           </a>
         </div>
         <div className="flex text-sm items-center gap-10">
-          <div className=" hidden md:flex items-center">
+          <div className=" hidden md:flex items-center gap-1">
             <p className="text-white/60 hover:text-white">Follow us:</p>
             <a
               href="https://x.com/AlphaKultureNG"

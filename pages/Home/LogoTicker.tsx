@@ -1,10 +1,7 @@
 "use client"
-const Partner1 = "/partner1.png";
-const Partner2 = "/partner2.png";
-const Partner3 = "/partner3.png";
-const Partner4 = "/partner4.png";
-const Partner5 = "/partner5.png";
-const Partner6 = "/partner6.png";
+import Partner1 from '@/assets/11.jpg'
+import Partner2 from '@/assets/12.jpg'
+import Partner3 from '@/assets/13.jpg'
 import Image from "next/image";
 import { motion } from "framer-motion";
 

@@ -1,31 +1,20 @@
 "use client";
 import OptimizedImage from "@/components/OptimizedImage";
-import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
-interface Award {
-  year: number;
-  title: string;
-}
 
-const AWARDS: Award[] = [
-  { year: 2018, title: "Research Excellence in Psychology" },
-  { year: 2019, title: "Best Practice in Counseling Award" },
-  { year: 2020, title: "Wellness and Self-Care Advocate" },
-  { year: 2021, title: "Contributions to Positive Psychology Award" },
-]
 
 export default function Achievements() {
   return (
-    <section className="container mx-auto px-6 py-16 lg:py-24 space-y-12">
+    <section className="mx-auto px-4 md:px-12 py-16 lg:py-24 space-y-12">
       {/* Heading & description */}
-      <div className="max-w-4xl space-y-4">
+      <div className="space-y-4">
         <h2 className="section-title max-w-4xl ">
           Not Just a Game, this is National Rebirth…Join the Movement!
         </h2>
 
-        <p className="text-gray-700 text-sm md:text-base max-w-4xl mt-10 mb-12">
+        <p className="text-gray-700 text-sm md:text-base max-w-7xl mt-10 mb-12">
           National Cake is more than a board game — it is a transformational movement.
           Built to reconnect Nigerians to their roots, restore civic pride, and reawaken national identity,
           this game serves as both a mirror and a classroom. Through powerful storytelling, emotional connection,
@@ -47,14 +36,14 @@ export default function Achievements() {
             Become an Agent
           </Button>
         </Link>
-        <Link href="/community" className="mt-2 sm:mt-0 text-base font-semibold underline underline-offset-2 hover:text-gray-950">
-          Join Our Community
+        <Link href="/donate-to-schools" className="mt-2 sm:mt-0 text-base font-semibold underline underline-offset-2 hover:text-gray-950">
+          Donate to Schools
         </Link>
       </div>
 
       {/* Photo */}
       <OptimizedImage
-        src="/DSC132.jpg"
+        src="/NATIONAL_CAKE_CHAMPIONSHIP_1_.jpg"
         alt="National-cake - People celebrating"
         width={1200}
         height={800}

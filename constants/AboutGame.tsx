@@ -12,7 +12,7 @@ export default function AboutGame() {
     ];
 
     return (
-        <section className="container mx-auto px-6 py-16 lg:pt-24 lg:pb-0 lg:px-12" id="about">
+        <section className="mx-auto px-4 py-16 md:pt-24 md:pb-0 md:px-12" id="about">
             {/* Intro */}
             <div className=" mx-auto flex flex-col items-start justify-start space-y-6 lg:space-y-10">
                 <h1 className="section-title">

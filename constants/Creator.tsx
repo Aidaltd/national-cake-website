@@ -12,7 +12,7 @@ import {
 
 export default function Creator() {
   return (
-    <section className="container mx-auto px-6 py-20 lg:py-16  border-y border-gray-200">
+    <section className="mx-auto px-4 md:px-12 py-20 lg:py-16  border-y border-gray-200">
       <div className="grid gap-12 lg:grid-cols-2 items-center">
         {/* Portrait */}
         <div className="w-full max-w-lg h-full md:h-[35rem] lg:max-w-none mx-auto lg:mx-0">

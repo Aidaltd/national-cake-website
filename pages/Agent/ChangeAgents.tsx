@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useRef } from 'react';
 import { resolveImageUrl } from "@/lib/cloudinary";
-import { ArrowRight, Target, Users, TrendingUp, BarChart3, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 
 
 interface TeamMember {
@@ -12,11 +12,6 @@ interface TeamMember {
   bgColor: string;
 }
 
-interface Service {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-}
 
 const teamMembers: TeamMember[] = [
   {
@@ -64,29 +59,6 @@ const teamMembers: TeamMember[] = [
 ];
 
 
-const services: Service[] = [
-  {
-    icon: <Target className="w-6 h-6" />,
-    title: 'Brand Strategy',
-    description: 'Build a strong identity with expert positioning and messaging.'
-  },
-  {
-    icon: <Users className="w-6 h-6" />,
-    title: 'Targeted Advertising',
-    description: 'Maximize ROI with AI-driven ad campaigns.'
-  },
-  {
-    icon: <TrendingUp className="w-6 h-6" />,
-    title: 'Social Media Management',
-    description: 'Engage and grow your audience with impactful content.'
-  },
-  {
-    icon: <BarChart3 className="w-6 h-6" />,
-    title: 'Analytics & Reporting',
-    description: 'Gain insights with real-time performance tracking.'
-  }
-];
-
 export default function ChangeAgents() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -128,15 +100,13 @@ export default function ChangeAgents() {
           {/* Left Content */}
           <div className="space-y-8 flex md:flex-row flex-col w-full items-start md:justify-between">
             <h1 className="section-title max-w-2xl">
-              Become an Agent of National Rebirth. Bake a Better Nigeria!
-              Register Now!
-
+              Change Lives, Bake Tomorrow... Earn Today.
             </h1>
             <div className="flex md:items-end items-start justify-start gap-10 flex-col space-x-4">
               <p className="section-description text-base text-gray-800 leading-relaxed max-w-xs md:max-w-md">
-                National Cake is not just a game — it's a tool for transformation.
+                National Cake is not just a game — it&apos;s a tool for transformation.
                 As an agent, you’re not selling a product, you’re igniting patriotism,
-                restoring civic identity, and inspiring a generation to remember who they are.
+                This is a call to take the story of Nigeria&apos;s past and the blueprints of her future to the streets, the schools, the homes, and the communities.
               </p>
               <a href="https://paystack.shop/pay/macro-agent" target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-3 bg-custom-primary text-white px-6 py-2  font-semibold hover:bg-custom-primary/90 transition-all duration-300 transform hover:scale-105">
                 <span>Get Started Today</span>

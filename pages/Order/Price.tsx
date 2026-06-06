@@ -63,16 +63,18 @@ export default function Price() {
   const pageUrl = `${siteUrl}${pagePath}`;
 
   const features = [
-    'Box — 14" x 14" x 3"',
-    'Board — 25.5" x 26"',
-    'Spin pads — 5" x 5"',
-    'Weight — 20 kg',
+    'Box - 14" x 14" x 3"',
+    'Board - 25.5" x 26"',
+    'Weight- 20kg to 1.2kg',
     'Components:',
+    '1 Box',
     '1 Board',
-    '1 National Cake PlayBook',
-    '4 Personal Spin Pads',
+    '1 Playbook (A Companion Guide, provides the story for each tile of history in the Board Game)',
+    '4 Spin pads',
     '8 Race Counters (2 Blue, 2 Red, 2 Green & 2 Yellow)',
     '40 Bridge Tokens (20 white & 20 green)',
+    ' Game Rules Pamphlet to the list of components.',
+    'Nigerian Emotional Map (NEM) Brochure (A Summary of the Emotional Blueprint off how the History of Nigeria is influencing the mindset of Nigerians)'
   ];
 
   // Mock data for ratings and reviews
@@ -143,7 +145,7 @@ export default function Price() {
         {/* Product JSON-LD */}
         <script
           type="application/ld+json"
-          // eslint-disable-next-line react/no-danger
+           
           dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
         />
       </Head>
@@ -174,7 +176,7 @@ export default function Price() {
 
                 {/* Product Title */}
                 <h1 className="text-3xl lg:text-4xl tracking-tighter font-bold text-custom-primary mb-4">
-                  National Cake Board Game (limited Edition)
+                  National Cake Renaissance Edition
                 </h1>
 
                 {/* Price */}
@@ -216,8 +218,8 @@ export default function Price() {
                 </div>
               </div>
 
-              <div className="relative max-w-6xl mx-auto">
-                <div className="grid lg:grid-cols-2 gap-8 items-center">
+              <div className="relative px-4 md:px-12 mx-auto">
+                <div className="grid lg:grid-cols-2 justify-between items-center">
                   {/* Left Content */}
                   <div className="text-center lg:text-left">
                     <div className="inline-block bg-white/20 backdrop-blur-sm text-white px-3 py-1  text-xs font-bold mb-4 tracking-wider border border-white/30">
@@ -348,7 +350,7 @@ export default function Price() {
                     </div>
                   </div>
                   <p className="text-sm text-gray-700 leading-relaxed">
-                    "{testimonial.comment}"
+                    &ldquo;{testimonial.comment}&rdquo;
                   </p>
                 </div>
               </div>

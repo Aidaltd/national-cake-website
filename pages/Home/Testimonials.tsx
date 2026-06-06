@@ -4,7 +4,7 @@ import React, { useState, useRef, useEffect } from "react";
 import OptimizedImage from "@/components/OptimizedImage";
 import { motion, AnimatePresence } from "framer-motion";
 import { gsap } from "gsap";
-import { Button } from "@/components/ui/button";
+
 import { Quote, ChevronLeft, ChevronRight } from "lucide-react";
 
 const test1 = "/BEM-PEVER.jpeg";
@@ -89,7 +89,7 @@ export default function Testimonials() {
   const testimonial = TESTIMONIALS[idx];
 
   return (
-    <section className="px-6 py-16 lg:py-0 container mx-auto">
+    <section className="px-4 md:px-12 py-16 md:py-0 mx-auto">
       {/* Header */}
       <div className="mb-10 space-y-2 max-w-3xl">
         {/* <span className="tag">
@@ -144,14 +144,14 @@ export default function Testimonials() {
           <button
             aria-label="Previous"
             onClick={prev}
-            className="size-9 flex items-center justify-center  border border-gray-300 hover:bg-gray-50 transition"
+            className="size-14 flex items-center justify-center  border border-gray-300 hover:bg-gray-50 transition"
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
           <button
             aria-label="Next"
             onClick={next}
-            className="size-9 flex items-center justify-center  bg-custom-primary text-white hover:bg-green-600 transition"
+            className="size-14 flex items-center justify-center  bg-custom-primary text-white hover:bg-green-600 transition"
           >
             <ChevronRight className="h-5 w-5" />
           </button>

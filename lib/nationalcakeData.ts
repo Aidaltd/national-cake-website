@@ -45,7 +45,7 @@ export const faqdata = [
     id: 8,
     question: "Is there a fee to become an agent?",
     answer:
-      "Yes. Each agent level has a non-refundable fee of N50, 000 and starter order. Details are provided during onboarding.",
+      "Yes. Each agent level has a non-refundable fee of N5,000 and starter order. Details are provided during onboarding.",
   },
   {
     id: 9,
@@ -98,7 +98,7 @@ export const agentFaqData = [
     question: "What are the requirements to join?",
     answer: "Each distribution tier requires a non-refundable registration fee and an initial investment as follows",
     list: [
-        "₦50,000 one-time yearly registration",
+        "₦5,000 one-time yearly registration",
         "Initial inventory order of at least 10–100 units",
         "Monthly target commitment",
         "Pre-boarding training completion",
@@ -219,291 +219,284 @@ export const preorderfaqdata = [
 
 export const galleryData = [
   {
-    id: 1,
-    title: "Teaching Nigeria's History",
-    description: "Young students deeply engaged as their teacher guides them through Nigeria's historical timeline using National Cake. The game board becomes a bridge connecting past and present.",
-    image: "/NCLU12.jpg",
+    id: 1,    image: "/NCLU12.jpg",
     tags: ["Teaching", "Students", "History", "Education"],
     category: "Education"
   },
   {
-    id: 2,
-    title: "Citizenship in Action",
-    description: "Players practice civic responsibility through gameplay, making decisions that mirror real-life governance challenges. Every move sparks thoughtful discussions about national identity.",
-    image: "/DSC92.jpg",
+    id: 2,    image: "/DSC92.jpg",
     tags: ["Citizenship", "Civic Education", "Responsibility", "Learning"],
     category: "Education"
   },
   {
-    id: 3,
-    title: "Learning Our Past",
-    description: "A group of participants exploring Nigeria's rich history through interactive gameplay. Faces light up as they discover stories of resilience, struggle, and triumph.",
-    image: "/DSC95.jpg",
+    id: 3,    image: "/DSC95.jpg",
     tags: ["History", "Learning", "Discovery", "Heritage"],
     category: "Education"
   },
   {
-    id: 4,
-    title: "Understanding Nigeria Together",
-    description: "Friends and family members gather around the National Cake board, sharing perspectives and learning from each other about their nation's journey.",
-    image: "/DSC98.jpg",
+    id: 4,    image: "/DSC98.jpg",
     tags: ["Family", "Unity", "Learning", "Bonding"],
     category: "Community"
   },
   {
-    id: 5,
-    title: "Moments of Discovery",
-    description: "The excitement of uncovering historical facts brings smiles and animated conversations as players navigate through Nigeria's five decades of independence.",
-    image: "/DSC101.jpg",
+    id: 5,    image: "/DSC101.jpg",
     tags: ["Discovery", "Excitement", "History", "Engagement"],
     category: "Gameplay"
   },
   {
-    id: 6,
-    title: "Active Participation",
-    description: "Players lean in, fully immersed in the game. Hands reach for tokens, spin pads rotate, and every decision becomes a lesson in patriotism and critical thinking.",
-    image: "/DSC102.jpg",
+    id: 6,    image: "/DSC102.jpg",
     tags: ["Participation", "Engagement", "Interactive", "Learning"],
     category: "Gameplay"
   },
   {
-    id: 7,
-    title: "Building National Pride",
-    description: "Young Nigerians connecting with their roots through gameplay. Each card drawn, each question answered, plants seeds of patriotism and national consciousness.",
-    image: "/DSC103.jpg",
+    id: 7,    image: "/DSC103.jpg",
     tags: ["Pride", "Youth", "Patriotism", "Identity"],
     category: "Community"
   },
   {
-    id: 8,
-    title: "Collaborative Learning",
-    description: "Students work together, debating historical events and sharing insights. National Cake transforms education into a collaborative journey of discovery.",
-    image: "/DSC104.jpg",
+    id: 8,    image: "/DSC104.jpg",
     tags: ["Collaboration", "Teamwork", "Students", "Education"],
     category: "Education"
   },
   {
-    id: 9,
-    title: "Focused Engagement",
-    description: "The room falls silent as players contemplate their next moves. National Cake challenges minds while teaching the complexity of nation-building.",
-    image: "/DSC106.jpg",
+    id: 9,    image: "/DSC106.jpg",
     tags: ["Focus", "Strategy", "Thinking", "Learning"],
     category: "Gameplay"
   },
   {
-    id: 10,
-    title: "Bridging Generations",
-    description: "Elders share stories with youth as the game becomes a conversation starter. National Cake unites three generations in dialogue about Nigeria's past and future.",
-    image: "/DSC107.jpg",
+    id: 10,    image: "/DSC107.jpg",
     tags: ["Generations", "Stories", "Unity", "Heritage"],
     category: "Community"
   },
   {
-    id: 11,
-    title: "Ready to Play",
-    description: "Participants gather eagerly around a freshly set up National Cake board. The anticipation is palpable as they prepare to embark on an educational journey through time.",
-    image: "/DSC110.jpg",
+    id: 11,    image: "/DSC110.jpg",
     tags: ["Setup", "Excitement", "Preparation", "Anticipation"],
     category: "Game Setup"
   },
   {
-    id: 12,
-    title: "Building Tomorrow Together",
-    description: "Young players strategize and collaborate, learning that building a nation requires teamwork, empathy, and understanding of shared history.",
-    image: "/DSC111.jpg",
+    id: 12,    image: "/DSC111.jpg",
     tags: ["Strategy", "Future", "Teamwork", "Nation Building"],
     category: "Community"
   },
   {
-    id: 13,
-    title: "Deep Conversations",
-    description: "National Cake sparks profound discussions about governance, leadership, and citizenship. Players don't just play—they think, debate, and grow.",
-    image: "/DSC114.jpg",
+    id: 13,    image: "/DSC114.jpg",
     tags: ["Discussion", "Leadership", "Governance", "Critical Thinking"],
     category: "Education"
   },
   {
-    id: 14,
-    title: "Learning from History",
-    description: "Participants reflect on Nigeria's journey, connecting historical events to present-day realities. The game becomes a mirror reflecting both triumphs and challenges.",
-    image: "/DSC115.jpg",
+    id: 14,    image: "/DSC115.jpg",
     tags: ["History", "Reflection", "Learning", "Awareness"],
     category: "Education"
   },
   {
-    id: 15,
-    title: "Dreaming of a Better Nigeria",
-    description: "Inspired by lessons from the past, players envision and discuss solutions for Nigeria's future. National Cake doesn't just teach history—it inspires action.",
-    image: "/DSC119.jpg",
+    id: 15,    image: "/DSC119.jpg",
     tags: ["Future", "Vision", "Hope", "Solutions"],
     category: "Community"
   },
   {
-    id: 16,
-    title: "Unity in Diversity",
-    description: "Players from different backgrounds come together, learning that Nigeria's strength lies in its diversity. The game board becomes common ground for understanding and unity.",
-    image: "/DSC123.jpg",
+    id: 16,    image: "/DSC123.jpg",
     tags: ["Unity", "Diversity", "Understanding", "Community"],
     category: "Community"
   },
   {
-    id: 17,
-    title: "National Cake at AB CON",
-    description: "Showcasing National Cake at a gaming convention, connecting with publishers and enthusiasts passionate about civic board games.",
-    image: "/NCUPDATE-1.jpg",
-    tags: ["Convention", "Showcase", "Publisher", "Events"],
+    id: 17,    image: "/NATIONAL_CAKE_CHAMPIONSHIP_4_.jpg",
+    tags: ["Championship", "Tournament", "Competition", "Events"],
     category: "Events"
   },
   {
-    id: 18,
-    title: "Teaching the Next Generation",
-    description: "A National Cake ambassador guides young players through the board, turning gameplay into a hands-on lesson in history and citizenship.",
-    image: "/NCUPDATE-2.jpeg",
+    id: 18,    image: "/NCUPDATE-2.jpeg",
     tags: ["Youth", "Education", "Gameplay", "Community"],
     category: "Education"
   },
   {
-    id: 19,
-    title: "Community Gameplay Session",
-    description: "Players gather around the National Cake board for an engaging session that sparks dialogue about Nigeria's story and shared future.",
-    image: "/NCUPDATE-3.jpeg",
+    id: 19,    image: "/NCUPDATE-3.jpeg",
     tags: ["Community", "Gameplay", "Engagement", "Unity"],
     category: "Community"
   },
   {
-    id: 20,
-    title: "National Cake in Action",
-    description: "Participants experience the game's immersive path through Nigeria's journey, learning while they play.",
-    image: "/NCUPDATE-4.jpeg",
+    id: 20,    image: "/NCUPDATE-4.jpeg",
     tags: ["Gameplay", "Learning", "Events", "Impact"],
     category: "Gameplay"
   },
   {
-    id: 21,
-    title: "Spreading the Movement",
-    description: "National Cake ambassadors share the game at a public event, inviting more Nigerians to join the civic reawakening.",
-    image: "/NCUPDATE-5.jpeg",
+    id: 21,    image: "/NCUPDATE-5.jpeg",
     tags: ["Outreach", "Events", "Brand", "Community"],
     category: "Events"
   },
   {
-    id: 22,
-    title: "Interactive Learning",
-    description: "The game board becomes a classroom as players explore historical milestones and civic responsibility together.",
-    image: "/NCUPDATE-6.jpeg",
+    id: 22,    image: "/NCUPDATE-6.jpeg",
     tags: ["Education", "History", "Interactive", "Learning"],
     category: "Education"
   },
   {
-    id: 23,
-    title: "Building Connections",
-    description: "National Cake brings people together across ages and backgrounds for meaningful conversations about nation-building.",
-    image: "/NCUPDATE-7.jpeg",
+    id: 23,    image: "/NCUPDATE-7.jpeg",
     tags: ["Unity", "Dialogue", "Community", "Nation Building"],
     category: "Community"
   },
   {
-    id: 24,
-    title: "Event Showcase",
-    description: "A vibrant display of National Cake at a community gathering, drawing interest from families and institutions.",
-    image: "/NCUPDATE-8.jpeg",
+    id: 24,    image: "/NCUPDATE-8.jpeg",
     tags: ["Showcase", "Events", "Families", "Outreach"],
     category: "Events"
   },
   {
-    id: 25,
-    title: "Hands-On Civic Education",
-    description: "Participants engage directly with game mechanics that mirror real governance and citizenship challenges.",
-    image: "/NCUPDATE-9.jpeg",
+    id: 25,    image: "/NCUPDATE-9.jpeg",
     tags: ["Civic Education", "Participation", "Learning", "Engagement"],
     category: "Education"
   },
   {
-    id: 26,
-    title: "National Cake Workshop",
-    description: "A workshop setting where facilitators introduce National Cake as a tool for healing and national consciousness.",
-    image: "/NCUPDATE-10.jpeg",
+    id: 26,    image: "/NCUPDATE-10.jpeg",
     tags: ["Workshop", "Facilitation", "Education", "Impact"],
     category: "Education"
   },
   {
-    id: 27,
-    title: "Growing the Community",
-    description: "New players discover National Cake and join a growing network committed to baking a better Nigeria.",
-    image: "/NCUPDATE-11.jpeg",
+    id: 27,    image: "/NCUPDATE-11.jpeg",
     tags: ["Community", "Growth", "Discovery", "Movement"],
     category: "Community"
   },
   {
-    id: 28,
-    title: "Game Night Energy",
-    description: "The excitement of a National Cake game night, where strategy meets storytelling and patriotism.",
-    image: "/NCUPDATE-12.jpeg",
+    id: 28,    image: "/NCUPDATE-12.jpeg",
     tags: ["Game Night", "Fun", "Strategy", "Patriotism"],
     category: "Gameplay"
   },
   {
-    id: 29,
-    title: "Institutional Engagement",
-    description: "Organizations explore National Cake as a civic learning resource for staff, students, and stakeholders.",
-    image: "/NCUPDATE-13.jpeg",
+    id: 29,    image: "/NCUPDATE-13.jpeg",
     tags: ["Institutions", "Partnership", "Education", "Impact"],
     category: "Education"
   },
   {
-    id: 30,
-    title: "Live Demonstration",
-    description: "A live demo captures attention as onlookers see how National Cake makes history and citizenship tangible.",
-    image: "/NCUPDATE-14.jpeg",
+    id: 30,    image: "/NCUPDATE-14.jpeg",
     tags: ["Demo", "Events", "Awareness", "Engagement"],
     category: "Events"
   },
   {
-    id: 31,
-    title: "Youth Leadership",
-    description: "Young Nigerians take the lead in gameplay, practicing the critical thinking needed for tomorrow's nation-builders.",
-    image: "/NCUPDATE-15.jpeg",
+    id: 31,    image: "/NCUPDATE-15.jpeg",
     tags: ["Youth", "Leadership", "Critical Thinking", "Future"],
     category: "Community"
   },
   {
-    id: 32,
-    title: "National Cake Outreach",
-    description: "Outreach teams introduce the game to new audiences, expanding the reach of Nigeria's civic board game movement.",
-    image: "/NCUPDATE-16.jpeg",
+    id: 32,    image: "/NCUPDATE-16.jpeg",
     tags: ["Outreach", "Expansion", "Movement", "Events"],
     category: "Events"
   },
   {
-    id: 33,
-    title: "Collaborative Play",
-    description: "Teams collaborate around the board, debating decisions that reflect the complexity of building a nation.",
-    image: "/NCUPDATE-17.jpeg",
+    id: 33,    image: "/NCUPDATE-17.jpeg",
     tags: ["Teamwork", "Collaboration", "Debate", "Governance"],
     category: "Gameplay"
   },
   {
-    id: 34,
-    title: "Cultural Celebration",
-    description: "National Cake features at a cultural event, celebrating Nigerian heritage through interactive play.",
-    image: "/NCUPDATE-18.jpeg",
+    id: 34,    image: "/NCUPDATE-18.jpeg",
     tags: ["Culture", "Heritage", "Celebration", "Identity"],
     category: "Community"
   },
   {
-    id: 35,
-    title: "School Engagement",
-    description: "Students engage with National Cake in an educational setting, connecting classroom learning to real civic lessons.",
-    image: "/NCUPDATE-19.jpeg",
+    id: 35,    image: "/NCUPDATE-19.jpeg",
     tags: ["Schools", "Students", "Education", "Civic Learning"],
     category: "Education"
   },
   {
-    id: 37,
-    title: "Inspiring New Players",
-    description: "First-time players experience the joy and depth of National Cake, leaving inspired to share the movement.",
-    image: "/NCUPDATE-21.jpeg",
+    id: 37,    image: "/NCUPDATE-21.jpeg",
     tags: ["Inspiration", "New Players", "Joy", "Movement"],
     category: "Community"
-  }
+  },
+  {
+    id: 38,    image: "/NATIONAL_CAKE_PRESENTATION_TO_MAJ_GEN_JGK_MYAM_rtd_the_DG_of_NIGERIAN_ARMY_RESOURCE_CENTRE.jpg",
+    tags: ["Presentation", "Events", "Authority", "Partnership"],
+    category: "Events"
+  },
+  {
+    id: 39,    image: "/NATIONAL_CAKE_PRESENTATION_TO_H_E_BABATUNDE_RAJI_FASHOLA_CON_SAN.jpg",
+    tags: ["Presentation", "Events", "Authority", "Government"],
+    category: "Events"
+  },
+  {
+    id: 40,    image: "/NATIONAL_CAKE_PRESENTATION_TO_AISHA_AUGIE_DG_OF_CBAAC_and_PEV_ABEM_OF_TAKE_7_MEDIA_BEETA_ARTS_FESTIVAL.jpg",
+    tags: ["Presentation", "Events", "Festival", "Authority"],
+    category: "Events"
+  },
+  {
+    id: 41,    image: "/NATIONAL_CAKE_PRESENTATION_TO_ALI_BABA.jpg",
+    tags: ["Presentation", "Events", "Authority", "Culture"],
+    category: "Events"
+  },
+  {
+    id: 42,    image: "/NATIONAL_CAKE_PRESENTATION_TO_PASTOR_SAM_OYE_AB_CON_2025.jpg",
+    tags: ["Presentation", "Events", "Authority"],
+    category: "Events"
+  },
+  {
+    id: 43,    image: "/NATIONAL_CAKE_PRESENTATION_TO_THE_DEPUTY_SPEAKER_RT_HON_BENJAMIN_KALU_ENTERPRISE_NEXUS_SUMMIT.jpg",
+    tags: ["Presentation", "Events", "Government", "Authority"],
+    category: "Events"
+  },
+  {
+    id: 44,    image: "/NATIONAL_CAKE_CHAMPIONSHIP_1_.jpg",
+    tags: ["Championship", "Tournament", "Competition", "Events"],
+    category: "Events"
+  },
+  {
+    id: 45,    image: "/NATIONAL_CAKE_CHAMPIONSHIP_2_.jpg",
+    tags: ["Championship", "Tournament", "Competition", "Events"],
+    category: "Events"
+  },
+  {
+    id: 46,    image: "/NATIONAL_CAKE_CHAMPIONSHIP_3_.jpg",
+    tags: ["Championship", "Tournament", "Competition", "Events"],
+    category: "Events"
+  },
+  {
+    id: 47,    image: "/NATIONAL_CAKE_MINI_CHAMPIONSHIP_JABI_PARK_1_.jpg",
+    tags: ["Championship", "Tournament", "Community", "Events"],
+    category: "Events"
+  },
+  {
+    id: 48,    image: "/NATIONAL_CAKE_BEETA_ARTS_FESTIVAL_2_.jpg",
+    tags: ["Festival", "Culture", "Events", "Exhibition"],
+    category: "Events"
+  },
+  {
+    id: 49,    image: "/NATIONAL_CAKE_BEETA_ARTS_FESTIVAL_3_.jpg",
+    tags: ["Festival", "Culture", "Events", "Exhibition"],
+    category: "Events"
+  },
+  {
+    id: 50,    image: "PROJECT_GIANT_GOVERNMENT_SCIENCE_SECONDARY_SCHOOL_MAITAMA_2_rvlf54",
+    tags: ["Education", "Schools", "Events", "Community"],
+    category: "Events"
+  },
+  {
+    id: 51,    image: "PROJECT_GIANT_GOVERNMENT_SCIENCE_SECONDARY_SCHOOL_MAITAMA_1_aw9xqj",
+    tags: ["Education", "Schools", "Events", "Community"],
+    category: "Events"
+  },
+  {
+    id: 52,    image: "NATIONAL_CAKE_MINI_CHAMPIONSHIP_JABI_PARK_2_gcuks5",
+    tags: ["Education", "Schools", "Events", "Community"],
+    category: "Events"
+  },
+
+  {
+    id: 54,    image: "NATIONAL_CAKE_MINI_CHAMPIONSHIP_JABI_PARK_3_iijd3h",
+    tags: ["Education", "Schools", "Events", "Community"],
+    category: "Events"
+  },
+    { //new
+    id: 55,    image: "PROJECT_GIANT_2_toxmmw",
+    tags: ["Education", "Schools", "Events", "Community"],
+    category: "Events"
+  },
+    { //new
+    id: 56,    image: "PROJECT_GIANT_3_fllop1",
+    tags: ["Education", "Schools", "Events", "Community"],
+    category: "Events"
+  },
+    { //new
+    id: 57,    image: "PROJECT_GIANT_1_hbej7q",
+    tags: ["Education", "Schools", "Events", "Community"],
+    category: "Events"
+  },
+    { //new
+    id: 58,    image: "NCUPDATE-8.jpg",
+    tags: ["Education", "Schools", "Events", "Community"],
+    category: "Events"
+  },
 ];

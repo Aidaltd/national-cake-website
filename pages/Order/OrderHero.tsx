@@ -2,7 +2,6 @@
 
 import OptimizedImage from "@/components/OptimizedImage";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export default function OrderHero() {
@@ -11,7 +10,7 @@ export default function OrderHero() {
       {/* Background image */}
       <div className="absolute inset-0 -z-10">
         <OptimizedImage
-          src="/DSC83.jpg"
+          src="/PROJECT_GIANT_3_fllop1"
           alt="National Cake Board Game"
           width={1920}
           height={1080}
@@ -59,8 +58,8 @@ export default function OrderHero() {
                 Learn More
               </Button>
             </a>
-            <Link href="/community" className="mt-2 sm:mt-0 text-base font-semibold underline underline-offset-2 hover:text-white">
-              Join Our Community
+            <Link href="/donate-to-schools" className="mt-2 sm:mt-0 text-base font-semibold underline underline-offset-2 hover:text-white">
+              Donate to Schools
             </Link>
           </div>
         </div>

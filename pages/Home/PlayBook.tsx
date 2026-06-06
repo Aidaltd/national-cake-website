@@ -2,7 +2,9 @@
 
 import React from "react";
 import OptimizedImage from "@/components/OptimizedImage";
-import { BookOpen } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+
 
 export default function PlayBook() {
     return (
@@ -38,9 +40,10 @@ export default function PlayBook() {
                     </p>
 
                     <div className="flex flex-col gap-3">
-                        <p className="text-sm text-gray-600 font-semibold">
-                            Join the National Cake community and unlock the PlayBook.
-                        </p>
+                        <Link href="/donate-to-schools"></Link>
+                        <Button className="text-base font-semibold">
+                            Donate to Schools
+                        </Button>
                     </div>
                 </div>
 

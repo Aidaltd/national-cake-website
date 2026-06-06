@@ -2,7 +2,7 @@
 
 import React from "react";
 import OptimizedImage from "@/components/OptimizedImage";
-import { BookOpen } from "lucide-react";
+
 
 export default function DreamMagazine() {
   return (

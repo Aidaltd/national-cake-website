@@ -2,7 +2,7 @@
 
 import React from "react";
 import OptimizedImage from "@/components/OptimizedImage";
-import { Users, Trophy, Star, Globe, ListChecks, CheckCircle2, CheckCircle } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 
 const features = [
   "Leader boards",

@@ -22,7 +22,7 @@ export default function Faq() {
   };
 
   return (
-    <section className="w-full py-24 mb-14 px-4 md:px-10 lg:px-20" id="faq">
+    <section className="w-full py-24 mb-14 px-4 md:px-12" id="faq">
       <div className="mx-auto">
         {/* FAQ Header */}
         <div className="mb-20 flex flex-col items-start gap-8">
@@ -39,7 +39,7 @@ export default function Faq() {
           </div>
         </div>
         {/* Questions */}
-        <motion.div layout className="max-w-4xl mx-auto mt-12 flex flex-col gap-6">
+        <motion.div layout className="max-w-7xl mx-auto mt-12 flex flex-col gap-6">
           {faqdata.filter((_, idx) => showAll || idx < 6).map((faq, faqIndex) => (
             <div
               key={faq.id}

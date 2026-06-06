@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import OptimizedImage from "@/components/OptimizedImage";
 import { CheckCircle } from "lucide-react";
 
@@ -21,7 +20,7 @@ export default function Championship() {
         <div className="bg-custom-primary/15 p-4 py-10 md:p-12 flex flex-col gap-6">
           <h2 className="section-title text-custom-primary mb-2">National Cake Championship</h2>
           <p className="text-lg text-gray-800 font-medium mb-2">
-            Nigeria's first civic education tournament where:
+            Nigeria&apos;s first civic education tournament where:
             <br />
             <span className="font-semibold text-custom-primary">History meets sport</span>,
             <span className="ml-2 font-semibold text-custom-primary">Patriotism meets play</span>,
@@ -49,17 +48,16 @@ export default function Championship() {
             rel="noopener noreferrer"
             className="md:w-fit w-full mt-2 md:px-6 px-4 py-3 bg-custom-primary text-white  font-semibold hover:bg-custom-primary/90 transition"
           >
-            Track Tournaments & Subscribe &nbsp; &nbsp;<span className="flip">🪽</span> 🏆🪽
+            Track Tournaments &amp; Subscribe &nbsp; &nbsp;<span className="flip">🪽</span> 🏆🪽
           </a>
         </div>
         {/* left side */}
-        <div className="w-full h-full">
+        <div className="relative w-full h-full min-h-[300px] md:min-h-0">
           <OptimizedImage
-            src="/NCLU10.jpg"
+            src="/NATIONAL_CAKE_CHAMPIONSHIP_1_.jpg"
             alt="National Cake Championship"
-            width={800}
-            height={600}
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
             quality={85}
             loading="lazy"
             sizes="(max-width: 768px) 100vw, 50vw"

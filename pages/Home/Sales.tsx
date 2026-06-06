@@ -2,25 +2,25 @@
 
 import OptimizedImage from "@/components/OptimizedImage";
 import { Button } from "@/components/ui/button";
-import { Check, CheckCircle } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 import Link from "next/link";
 
 export default function Sales() {
   const firstBullets = [
-    <span> <span className="font-bold text-custom-primary">₦50,000</span> per box </span>,
-    <span className="font-medium">A real purpose: Educate. Connect. Inspire.</span>,
-    <span className="font-medium">A real legacy: Bring history home</span>,
-    <span className="font-medium">A real fulfillment; reignite the Nigerian fire.</span>,
-    <span className="font-medium">Register Now: We will Train and Equip You</span>,
+    <span key="fb1"> <span className="font-bold text-custom-primary">₦5,000</span> per box </span>,
+    <span key="fb2" className="font-medium">A real purpose: Educate. Connect. Inspire.</span>,
+    <span key="fb3" className="font-medium">A real legacy: Bring history home</span>,
+    <span key="fb4" className="font-medium">A real fulfillment; reignite the Nigerian fire.</span>,
+    <span key="fb5" className="font-medium">Register Now: We will Train and Equip You</span>,
   ];
 
   const secondBullets = [
-    <span> <span className="font-bold text-custom-primary">₦30x``,000</span> per unit Available for 4 weeks only.</span>,
-    <span className="font-medium">Be a part of the movement that rewrites the story in classrooms, hearts and history.</span>,
+    <span key="sb1"> <span className="font-bold text-custom-primary">₦50,000</span> per unit. Delivery Nationwide</span>,
+    <span key="sb2" className="font-medium">Be a part of the movement that rewrites the story in classrooms, hearts and history.</span>,
   ];
 
   return (
-    <section className="container mx-auto px-6 py-16 lg:py-24 space-y-24">
+    <section className="mx-auto px-4 md:px-12 py-16 md:py-24 space-y-24">
       {/* Block 1 */}
       <div className="grid items-center md:justify-between gap-10 lg:grid-cols-2">
         {/* Image */}
@@ -52,7 +52,7 @@ export default function Sales() {
 
           <ul className="space-y-3">
             {firstBullets.map((txt, i) => (
-              <li key={i} className="flex items-start gap-3 text-sm sm:text-base">
+              <li key={`first-${i}`} className="flex items-start gap-3 text-sm sm:text-base">
                 <CheckCircle className="min-w-4 h-5 w-5 text-custom-primary mt-1" />
                 <span>{txt}</span>
               </li>

@@ -13,25 +13,25 @@ interface CardItem {
 
 const cards: CardItem[] = [
   {
-    title: "A real income: ₦2,500 per box",
+    title: "Real income: ₦5,000 per box",
     description:
       "Earn a tangible commission on every National Cake box sold. Turn your network into steady, meaningful revenue.",
     color: "bg-red-100",
   },
   {
-    title: "A real purpose: Educate. Connect. Inspire.",
+    title: "Real purpose: Educate. Connect. Inspire.",
     description:
       "Share stories and spark conversations that celebrate unity, culture, and possibility. Your voice can ignite change.",
     color: "bg-green-100",
   },
   {
-    title: "A real legacy: Bring history home",
+    title: "Real legacy: Bring history home",
     description:
       "Deliver a piece of Nigerian heritage to families nationwide— preserving traditions for future generations.",
     color: "bg-yellow-100",
   },
   {
-    title: "A real fulfillment: Reignite the Nigerian fire.",
+    title: "Real fulfillment: Reignite the Nigerian fire.",
     description:
       "Play your part in rebuilding national pride and optimism, one delicious slice at a time.",
     color: "bg-blue-100",
@@ -41,7 +41,7 @@ const cards: CardItem[] = [
 export default function Context() {
   return (
     <section className="relative overflow-hidden py-20 md:py-28 bg-neutral-950 text-white">
-      <div className="container mx-auto px-6 md:px-10 space-y-10">
+      <div className="mx-auto px-4 md:px-12 space-y-10">
         {/* Heading */}
         <div className="max-w-4xl space-y-6">
           <h2 className="section-title text-white ">
@@ -57,7 +57,7 @@ export default function Context() {
         {/* Hero image */}
         <div className="mt-10">
           <OptimizedImage
-            src="/DSC155.jpg"
+            src="/NCUPDATE-8.jpeg"
             alt="National Cake"
             width={1200}
             height={450}

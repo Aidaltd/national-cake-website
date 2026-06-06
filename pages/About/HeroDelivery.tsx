@@ -2,7 +2,7 @@
 
 import OptimizedImage from "@/components/OptimizedImage";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+
 import Link from "next/link";
 
 export default function HeroDelivery() {
@@ -53,8 +53,8 @@ export default function HeroDelivery() {
                 Become an Agent
               </Button>
             </Link>
-            <Link href="/community" className="mt-2 sm:mt-0 text-base font-semibold underline underline-offset-2 hover:text-white">
-              Join Our Community
+            <Link href="/donate-to-schools" className="mt-2 sm:mt-0 text-base font-semibold underline underline-offset-2 hover:text-white">
+              Donate to Schools
             </Link>
           </div>
         </div>

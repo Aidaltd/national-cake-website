@@ -1,7 +1,7 @@
 "use client";
 
 import OptimizedImage from "@/components/OptimizedImage";
-import { Check, CheckCircle, Users, Heart, Target, Gift } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 // temporary assets – replace with real paths later
 const AVATARS = ["/avatar-4.png", "/avatar-7.png", "/avatar-6.png"];
@@ -13,7 +13,7 @@ export default function Community() {
       body: "This is where you turn curiosity into voice, story into strategy and play into power.",
       color: "bg-green-300",
       textColor: "text-black",
-      icon: <CheckCircle className="w-5 h-5" />,
+      icon: <ArrowRight className="w-5 h-5" />,
       badge: "18-35",
       category: "Years",
       imageKey: 'DSC6' // Cloudinary mapping key
@@ -23,7 +23,7 @@ export default function Community() {
       body: "This is your moment to plant seeds of unity, wisdom, and responsibility in the hearts of tomorrow’s nation-builders",
       color: "bg-purple-300",
       textColor: "text-black",
-      icon: <CheckCircle className="w-5 h-5" />,
+      icon: <ArrowRight className="w-5 h-5" />,
       badge: "35+",
       category: "Years",
       imageKey: 'DSC8' // Cloudinary mapping key
@@ -33,7 +33,7 @@ export default function Community() {
       body: "National Cake is your brand’s opportunity to align with purpose, culture, and civic transformation that resonates.",
       color: "bg-teal-300 ",
       textColor: "text-black",
-      icon: <CheckCircle className="w-5 h-5" />,
+      icon: <ArrowRight className="w-5 h-5" />,
       badge: "All Ages",
       category: "Ministry",
       imageKey: 'DSC125' // Cloudinary mapping key
@@ -43,7 +43,7 @@ export default function Community() {
       body: "Through National Cake, engagement is not just reported, it is played, seen, felt, and remembered.",
       color: "bg-blue-300",
       textColor: "text-black",
-      icon: <CheckCircle className="w-5 h-5" />,
+      icon: <ArrowRight className="w-5 h-5" />,
       badge: "Impact",
       category: "Driven",
       imageKey: 'DSC17' // Cloudinary mapping key
@@ -51,17 +51,19 @@ export default function Community() {
   ];
 
   return (
-    <section className="container mx-auto px-4 py-16 lg:px-12 lg:py-24">
+    <section className="mx-auto px-4 py-16 md:px-12 lg:py-24">
       {/* Header block */}
       <div className="grid items-start gap-8 md:grid-cols-[1fr_auto]">
         {/* Heading & description */}
         <div className="space-y-6 w-full md:max-w-4xl">
-          <h2 className="section-title w-full">
-            Insights, Into the <span className="text-custom-primary">National Cake's</span>{" "}
-            Developing Community
-          </h2>
-          <p className="section-description w-full md:max-w-2xl">
-            This is not just a network rather it is Nigeria's first civic revival, disguised as a game, a national oven where a new cake is in progress. This is the living, breathing extension of the game itself.
+          <h2 className="section-title text-custom-primary">Join the National Cake Community</h2>
+          <p className="text-lg text-gray-700 leading-relaxed font-semibold">
+            Become a part of Nigeria&apos;s most impactful civic community. We are building a network of patriots,
+            educators, families, and change-makers dedicated to preserving our history and shaping our future.
+          </p>
+          <p className="text-lg text-gray-700 leading-relaxed">
+            By joining, you&apos;ll be the first to know about new editions, community tournaments, school drives,
+            and exclusive nation-building conversations.
           </p>
         </div>
 
@@ -69,9 +71,6 @@ export default function Community() {
         <div className="flex flex-col sm:flex-row lg:flex-col gap-6 items-start lg:items-end">
           {/* Blog posts */}
           <div className="flex items-baseline flex-col gap-2">
-            {/* <h3 className="lg:text-5xl text-3xl font-bold">
-              <CountUp from={0} to={500} duration={1.2} separator="," className="inline-block " />+
-            </h3> */}
             <h2 className="text-center font-semibold text-4xl text-custom-primary">
               Coming Soon
             </h2>
@@ -81,9 +80,9 @@ export default function Community() {
           {/* Avatar group */}
           <div className="flex items-center gap-3">
             <div className="flex -space-x-2">
-              {AVATARS.map((src, idx) => (
+              {AVATARS.map((src) => (
                 <OptimizedImage
-                  key={idx}
+                  key={src}
                   src={src}
                   alt="avatar"
                   width={32}
@@ -97,25 +96,17 @@ export default function Community() {
               Connect With Your People
             </span>
           </div>
-          {/* <a
-                href="https://forms.gle/o61VpSp7zPo8cWqB6"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline text-md md:text-xl text-custom-primary"
-              >
-                Join the Community Waitlist
-              </a> */}
         </div>
       </div>
 
       {/* Hero image */}
       <div className="mt-10">
         <OptimizedImage
-          src="/DSC147.jpg"
+          src="/NCUPDATE-11.jpg"
           alt="National--Community"
           width={1200}
           height={600}
-          className="w-full  object-cover h-64 sm:h-80 lg:h-[380px] border border-gray-400"
+          className="w-full  object-cover object-top h-64 sm:h-80 lg:h-[580px] border border-gray-400"
           loading="lazy"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
           cloudinary={{ width: 1200, quality: "auto" }}
@@ -124,7 +115,7 @@ export default function Community() {
 
       {/* Program Cards Grid */}
       <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {bullets.map((item, index) => (
+        {bullets.map((item) => (
           <div
             key={item.title}
             className={`${item.color} ${item.textColor}  relative overflow-hidden group hover:scale-105 transition-all duration-300 cursor-pointer shadow-lg h-[400px] flex flex-col`}

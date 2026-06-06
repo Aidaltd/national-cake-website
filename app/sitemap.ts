@@ -23,7 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return routes.map(({ path, priority, changeFreq }) => ({
     url: `${siteUrl}${path}`,
     lastModified: now,
-    changeFrequency: changeFreq as any, // Type assertion needed for MetadataRoute
+    changeFrequency: changeFreq as "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never",
     priority,
   }))
 }

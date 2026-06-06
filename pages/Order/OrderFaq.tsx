@@ -34,7 +34,7 @@ export default function OrderFaq() {
               Do you have Questions? <br /> Don&apos;t worry we have answers!
             </h2>
             <p className="md:text-base text-xs md:max-w-3xl w-full text-gray-600">
-              Here are some of the most frequently asked questions we get,along with some answers to help you get started. If you can't find what you're looking for here, feel free to reach out to us!
+              Here are some of the most frequently asked questions we get, along with some answers to help you get started. If you can&apos;t find what you&apos;re looking for here, feel free to reach out to us!
             </p>
           </div>
         </div>

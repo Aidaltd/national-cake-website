@@ -11,7 +11,6 @@ import {
   Plane,
   ArrowRight,
   ArrowUpRight,
-  Clock,
   Users,
 } from "lucide-react";
 import Link from "next/link";
@@ -69,7 +68,7 @@ export default function Features() {
 
   return (
     <section className="bg-neutral-950 text-white py-16 px-6 lg:py-16 lg:pb-24" id="features">
-      <div className="container mx-auto space-y-12 lg:space-y-16">
+      <div className="px-4 md:px-12 mx-auto space-y-12 lg:space-y-16">
         {/* Heading row */}
         <div className="flex flex-col lg:flex-row items-start justify-between gap-8">
           <div>

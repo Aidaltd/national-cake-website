@@ -11,11 +11,11 @@ export default function ActivitiesHero() {
       {/* Background image */}
       <div className="absolute inset-0 -z-10">
         <OptimizedImage
-          src="/NCLU11.jpg"
+          src="/NCUPDATE-17.jpg"
           alt="National-cake hero"
           width={1920}
           height={1080}
-          className="h-full w-full object-cover object-bottom"
+          className="h-full w-full object-cover object-center"
           priority
           quality={85}
           sizes="100vw"
@@ -53,8 +53,8 @@ export default function ActivitiesHero() {
                 Become an Agent
               </Button>
             </Link>
-            <Link href="/community" className="mt-2 sm:mt-0 text-base font-semibold underline underline-offset-2 hover:text-white">
-              Join Our Community
+            <Link href="/donate-to-schools" className="mt-2 sm:mt-0 text-base font-semibold underline underline-offset-2 hover:text-white">
+              Donate to Schools
             </Link>
           </div>
         </div>

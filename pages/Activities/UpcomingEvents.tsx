@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Calendar, Trophy, Users, GraduationCap, MapPin } from "lucide-react";
+import { Users, GraduationCap, MapPin } from "lucide-react";
 
 interface Event {
   title: string;
@@ -13,14 +13,6 @@ interface Event {
 }
 
 const events: Event[] = [
-  {
-    title: "AB Con 2025",
-    description: "National Cake takes center stage in a historic tournament that will gather 36 elite players from across Nigeria competing not just for cash prizes and exclusive merch, but for a place in Africa's emerging story of civic rebirth. It promises to be a continental test of intellect, patriotism, and purpose.",
-    icon: <Trophy className="h-6 w-6 text-custom-primary" />,
-    registrationLink: "https://forms.gle/2QYTEpa28624d7Ho7",
-    buttonText: "Register Now",
-    tag: "Elite Tournament"
-  },
   {
     title: "National Cake Inter-College Competition",
     description: "This is where Nigeria's brightest young minds gather to test more than knowledge, they will test values, logic, and conscience. It promises to transform classrooms into arenas of critical thinking, teamwork, and patriotism. Every spin becomes a lesson in integrity. Every move, a decision about Nigeria's tomorrow.",
@@ -62,7 +54,7 @@ export default function UpcomingEvents() {
         </div>
 
         {/* Events Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
           {events.map((event, index) => (
             <div
               key={index}

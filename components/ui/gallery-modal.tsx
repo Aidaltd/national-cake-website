@@ -8,8 +8,8 @@ import { Button } from "@/components/ui/button";
 
 interface GalleryItem {
   id: number;
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
   image: string;
   tags: string[];
   category: string;
@@ -121,8 +121,8 @@ export default function GalleryModal({
                       // Share functionality can be implemented here
                       if (navigator.share) {
                         navigator.share({
-                          title: currentImage.title,
-                          text: currentImage.description,
+                          title: currentImage.title || "National Cake Gallery",
+                          text: currentImage.description || "",
                           url: window.location.href,
                         });
                       }
@@ -144,10 +144,10 @@ export default function GalleryModal({
 
             {/* Image Container */}
             <div className="relative flex items-center justify-center min-h-[60vh] bg-gray-100">
-              <div className="relative w-full  h-[60vh] max-h-[70vh]">
+              <div className="relative w-full  h-[80vh] max-h-[90vh]">
                 <Image
                   src={currentImage.image}
-                  alt={currentImage.title}
+                  alt={currentImage.title || "Gallery image"}
                   width={1200}
                   height={800}
                   className="object-cover w-full h-full"
@@ -183,11 +183,6 @@ export default function GalleryModal({
 
             {/* Image Info */}
             <div className="p-6 py-5 bg-white">
-              <h2 className="text-xl font-semibold text-gray-900 mb-2">
-                {currentImage.title}
-              </h2>
-              <p className="text-gray-600 mb-4">{currentImage.description}</p>
-
               {/* Tags */}
               <div className="flex flex-wrap gap-2">
                 {currentImage.tags.map((tag) => (
@@ -217,7 +212,7 @@ export default function GalleryModal({
                       >
                         <Image
                           src={image.image}
-                          alt={image.title}
+                          alt={image.title || "Gallery thumbnail"}
                           width={64}
                           height={64}
                           className="object-cover w-full h-full"

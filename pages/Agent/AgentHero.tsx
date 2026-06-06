@@ -2,7 +2,6 @@
 
 import OptimizedImage from "@/components/OptimizedImage";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export default function AgentHero() {
@@ -11,7 +10,7 @@ export default function AgentHero() {
       {/* Background image */}
       <div className="absolute inset-0 -z-10">
         <OptimizedImage
-          src="/DSC150.jpg"
+          src="/NCUPDATE-4.jpeg"
           alt="National Cake Board Game"
           width={1920}
           height={1080}
@@ -38,8 +37,7 @@ export default function AgentHero() {
           </span>
 
           <h1 className="section-title lg:text-6xl lg:tracking-tighter lg:leading-16 text-white max-w-3xl">
-            Become an Agent of National Rebirth. Bake a Better Nigeria!
-            Register Now!
+            Change Lives, Bake Tomorrow... Earn Today.
           </h1>
 
           <p className="text-sm md:text-base text-gray-200 max-w-xl">
@@ -59,8 +57,8 @@ export default function AgentHero() {
                 Join as Agent
               </Button>
             </Link>
-            <Link href="/community" className="mt-2 sm:mt-0 text-base font-semibold underline underline-offset-2 hover:text-white">
-              Join Our Community
+            <Link href="/donate-to-schools" className="mt-2 sm:mt-0 text-base font-semibold underline underline-offset-2 hover:text-white">
+              Donate to Schools
             </Link>
           </div>
         </div>

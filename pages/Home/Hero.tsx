@@ -57,8 +57,8 @@ export default function Hero() {
               Become an Agent
             </Button>
           </Link>
-          <Link href="/community" className="mt-2 sm:mt-0 text-base font-semibold underline underline-offset-2 hover:text-white">
-            Join Our Community
+          <Link href="/donate-to-schools" className="mt-2 sm:mt-0 text-base font-semibold underline underline-offset-2 hover:text-white">
+            Donate to Schools
           </Link>
         </div>
 
