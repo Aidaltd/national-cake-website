@@ -160,7 +160,7 @@ export default function Header() {
                     <motion.div
                       key={`mobile-link-${idx}`}
                       variants={itemVariants}
-                      className="border-b border-gray-100 pb-6 last:border-none"
+                      className="border-b border-gray-100 pb-2 last:border-none"
                     >
                       <MobileNavLink
                         href={item.link}
