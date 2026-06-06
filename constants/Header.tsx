@@ -99,12 +99,12 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-custom-primary/95 backdrop-blur-md">
-      <div className="md:px-10 px-5 h-16 w-full">
+      <div className="md:px-5 lg:px-10 px-5 h-16 w-full">
         <div className="flex w-full h-full items-center justify-between">
           <Link href="/">
             <OptimizedImage src="logo-4" alt="National-cake Logo" width={192} height={64} className="w-48 h-auto" />
           </Link>
-          <nav className="hidden md:flex gap-2 text-sm text-white/80 items-center">
+          <nav className="hidden md:flex gap-1 text-sm text-white/80 items-center">
             {navItems.map((item, idx) => {
               const isActive = isActiveLink(item.link);
               return (
@@ -112,7 +112,7 @@ export default function Header() {
                   key={`nav-link-${idx}`}
                   href={item.link}
                   className={cn(
-                    "px-3 py-2 transition-all duration-300",
+                    "px-3 py-3 transition-all duration-300",
                     isActive
                       ? "bg-white text-custom-primary font-semibold"
                       : "text-white/80 hover:bg-white hover:text-custom-primary hover:font-semibold transition-all duration-300"
@@ -122,8 +122,8 @@ export default function Header() {
                 </a>
               );
             })}
-            <a href="/donate-to-schools">
-              <Button className="text-custom-primary/80 bg-white hover:bg-white/90 hover:text-custom-primary">
+            <a href="/donate-to-schools" className="ml-3">
+              <Button className="text-custom-primary font-semibold bg-white hover:bg-white/90 hover:text-custom-primary">
                 Donate to Schools
               </Button>
             </a>

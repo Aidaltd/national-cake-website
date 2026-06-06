@@ -246,7 +246,7 @@ function DonationDetails() {
 
             <div className="h-px bg-gray-200 w-full"></div>
             <Link href="https://paystack.com/buy/project-giant" className="w-full">
-              <Button className="w-full">Donate Now</Button>
+              <Button className="w-full py-8 text-lg font-semibold mt-5">Donate Now</Button>
             </Link>
           </div>
         </div>

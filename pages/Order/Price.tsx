@@ -197,7 +197,7 @@ export default function Price() {
 
                 {/* Action Buttons */}
                 <a href="https://paystack.com/buy/national-cake" target="_blank" rel="noopener noreferrer">
-                  <Button className="flex-1 bg-custom-primary w-full hover:bg-custom-primary/90 text-white py-3">
+                  <Button className="flex-1 bg-custom-primary w-full hover:bg-custom-primary/90 text-white py-7">
                     Order Now
                   </Button>
                 </a>
@@ -295,7 +295,8 @@ export default function Price() {
               </ul>
             </div>
 
-            <h1 className="lg:text-8xl md:text-6xl text-3xl text-center font-bold tracking-tighter my-8">DELIVERY ONLY IN <span className="text-custom-primary">ABUJA</span> </h1>
+            <h1 className="lg:text-7xl md:text-6xl text-3xl text-center font-bold tracking-tighter mt-8">DELIVERY <span className="text-custom-primary">NATIONWIDE</span> </h1>
+            <h1 className="lg:text-7xl md:text-6xl text-3xl text-center font-bold tracking-tighter mb-8">AVAILABLE IN <span className="text-custom-primary">UK, US, CANADA</span> </h1>
 
             {/* Rating & Reviews Section */}
             <div className="border-t border-gray-200 p-4 lg:p-12">

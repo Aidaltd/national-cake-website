@@ -9,7 +9,7 @@ export default function ImageCarousel() {
     // from 1-9
     {
       title: "Teaching about Nigeria",
-      src: "NCUPDATE-2",
+      src: "NCUPDATE-15",
     },
     {
       title: "Practice Citizenship",

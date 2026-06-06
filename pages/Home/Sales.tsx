@@ -61,8 +61,8 @@ export default function Sales() {
             ))}
           </ul>
 
-          <Link href="/become-an-agent">
-            <Button className="mt-4 w-max">Become an agent Today</Button>
+          <Link href="/become-an-agent" className="w-full">
+            <Button className="mt-4 w-full">Become an agent Today</Button>
           </Link>
         </div>
       </div>
@@ -100,8 +100,8 @@ Delivery begins after 30th September 2025
             ))}
           </ul>
 
-          <Link href="/order">
-            <Button className="mt-4 w-max" variant="default">
+          <Link href="/order" className="w-full">
+            <Button className="mt-4 w-full" variant="default">
               Click Here to Order Now
             </Button>
           </Link>

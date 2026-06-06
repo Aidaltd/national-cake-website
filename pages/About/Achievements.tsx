@@ -37,7 +37,7 @@ export default function Achievements() {
           </Button>
         </Link>
         <Link href="/donate-to-schools" className="mt-2 sm:mt-0 text-base font-semibold underline underline-offset-2 hover:text-gray-950">
-          Donate to Schools
+        <Button className="px-8 text-white bg-custom-primary">Donate to Schools</Button>   
         </Link>
       </div>
 

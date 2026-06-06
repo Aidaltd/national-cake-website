@@ -9,9 +9,9 @@ import Link from "next/link";
 export default function PlayBook() {
     return (
         <section className="bg-white w-full h-full">
-            <div className="flex flex-col md:flex-row w-full h-full md:h-[70vh] px-4 md:px-10 py-12">
+            <div className="flex flex-col md:flex-row w-full h-full px-4 md:px-10 py-12">
                 {/* left side - image */}
-                <div className="bg-custom-primary/20 border border-green-200 w-full md:w-1/2 h-full p-2">
+                <div className="bg-custom-primary/20 border border-green-200 w-full md:w-1/2 h-[60vh] p-2">
                     <OptimizedImage
                         src="/NCUPDATE-20.jpeg"
                         alt="National Cake PlayBook"
@@ -26,7 +26,7 @@ export default function PlayBook() {
                 </div>
 
                 {/* right side - content */}
-                <div className="bg-white w-full md:w-1/2 p-4 h-full py-5 md:p-12 flex flex-col gap-6 border border-green-200">
+                <div className="bg-white w-full md:w-1/2 p-4 h-full py-5 md:p-13 flex flex-col gap-7 border border-green-200">
                     <div className="flex items-center gap-3 mb-2">
                         <h2 className="section-title text-custom-primary mb-0">National Cake PlayBook</h2>
                     </div>

@@ -58,7 +58,7 @@ export default function AgentHero() {
               </Button>
             </Link>
             <Link href="/donate-to-schools" className="mt-2 sm:mt-0 text-base font-semibold underline underline-offset-2 hover:text-white">
-              Donate to Schools
+            <Button className="px-8 text-white bg-custom-primary">Donate to Schools</Button>   
             </Link>
           </div>
         </div>

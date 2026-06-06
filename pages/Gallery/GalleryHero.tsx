@@ -30,7 +30,7 @@ export default function GalleryHero() {
 
       {/* Content Container */}
       <div className="container px-6 py-24 md:py-32 flex items-start h-full">
-        <div className="max-w-4xl md:px-14 md:px-16 text-left">
+        <div className="max-w-4xl md:px-14 text-left">
           {/* Pill tag */}
           <span className="inline-block bg-white/20 border border-white/30 backdrop-blur-[2px] px-4 py-1  text-xs uppercase tracking-wide text-white/90 mb-6">
             Visual Journey
@@ -48,14 +48,15 @@ export default function GalleryHero() {
           {/* Action buttons */}
           <div className="flex flex-col sm:flex-row sm:items-start gap-4 justify-start">
             <Link href="#gallery">
-              <Button className="px-8 text-white bg-custom-primary hover:bg-custom-primary/90">
+              <Button className="px-8 text-white bg-custom-primary">
                 View Gallery
               </Button>
             </Link>
             <Link href="/order">
-              <Button variant="outline" className="px-8 bg-white text-black border-transparent hover:bg-gray-100">
-                Order Now
-              </Button>
+              <Button className="px-8 text-custom-primary bg-white">Order Now</Button>
+            </Link>
+            <Link href="/donate-to-schools" className="mt-2 sm:mt-0 text-base font-semibold underline underline-offset-2 hover:text-white">
+              <Button className="px-8 text-white bg-custom-primary">Donate to Schools</Button> 
             </Link>
           </div>
         </div>
