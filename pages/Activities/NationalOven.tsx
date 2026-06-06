@@ -50,7 +50,7 @@ export default function NationalOven() {
         {/* left side */}
         <div className="w-full h-full">
           <OptimizedImage
-            src="/DSC104.jpg"
+            src="/NCUPDATE-18.jpg"
             alt="National Oven"
             width={800}
             height={600}

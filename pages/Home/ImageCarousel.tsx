@@ -9,51 +9,51 @@ export default function ImageCarousel() {
     // from 1-9
     {
       title: "Teaching about Nigeria",
-      src: "NCLU12",
+      src: "NCUPDATE-2",
     },
     {
       title: "Practice Citizenship",
-      src: "DSC92",
+      src: "NCUPDATE-3",
     },
     {
       title: "Learn History",
-      src: "DSC95",
+      src: "NCUPDATE-4",
     },
     {
       title: "Learning about Nigeria",
-      src: "DSC98",
+      src: "NCUPDATE-5",
     },
     {
       title: "Learn History",
-      src: "DSC101",
+      src: "NCUPDATE-6",
     },
     {
       title: "Practice Citizenship",
-      src: "DSC102",
+      src: "NCUPDATE-7",
     },
     {
       title: "Learn History",
-      src: "DSC103",
+      src: "NCUPDATE-8",
     },
     {
       title: "Practice Citizenship",
-      src: "DSC104",
+      src: "NCUPDATE-9",
     },
     {
       title: "Practice Citizenship",
-      src: "DSC106",
+      src: "NCUPDATE-10",
     },
     {
       title: "Learn History",
-      src: "DSC107",
+      src: "NCUPDATE-11",
     },
     {
       title: "Practice Citizenship",
-      src: "DSC112",
+      src: "NCUPDATE-12",
     },
     {
       title: "Build a Nation",
-      src: "DSC111",
+      src: "NCUPDATE-13",
     },
     {
       title: "Get Ready to Play National Cake",

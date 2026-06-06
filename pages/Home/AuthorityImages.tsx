@@ -34,8 +34,8 @@ export default function AuthorityImages() {
   }, [isPaused, next]);
 
   return (
-    <section className="md:px-12 mx-auto px-6 py-16">
-      <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">Endorsed By Authorities</h2>
+    <section className="md:px-12 mx-auto px-4 py-16">
+      <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">Rebuilding Nigeria in Progress!!!</h2>
 
       <div className="w-full items-center">
 

@@ -35,11 +35,11 @@ function ProjectGiantIntro() {
       <div className="relative group">
         <div className="absolute inset-0 bg-custom-primary/20  transform translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-300"></div>
         <OptimizedImage
-          src="/PROJECT_GIANT_GOVERNMENT_SCIENCE_SECONDARY_SCHOOL_MAITAMA_2_rvlf54"
+          src="/Donate-Banner_kf3cwy"
           alt="Project GIANT"
           width={800}
           height={600}
-          className="w-full h-[450px] object-cover  shadow-xl relative z-10"
+          className="w-full h-[550px] object-cover  shadow-xl relative z-10"
           cloudinary={{ width: 800, quality: "auto" }}
         />
       </div>
@@ -192,7 +192,7 @@ function DonationDetails() {
   return (
     <div className="relative overflow-hidden  my-16 shadow-2xl">
       <div className="absolute inset-0 bg-custom-primary"></div>
-      <div className="relative z-10 p-10 md:p-16 flex flex-col lg:flex-row gap-12 items-center justify-between">
+      <div className="relative z-10 p-5 md:p-16 flex flex-col lg:flex-row gap-12 items-center justify-between">
 
         <div className="text-white max-w-xl space-y-8">
           <h2 className="text-4xl md:text-5xl font-bold leading-tight">Help Nigeria Remember Who She Is</h2>
@@ -226,7 +226,6 @@ function DonationDetails() {
 
           <div className="space-y-4 bg-gray-50 p-6  border border-gray-100">
             <div>
-              <p className="text-sm text-gray-500 mb-1">Account Name</p>
               <p className="font-bold text-gray-900 text-lg">Project GIANT / National Cake Initiative</p>
             </div>
             <div className="h-px bg-gray-200 w-full"></div>

@@ -25,7 +25,7 @@ export default function Header() {
   const navItems = [
     { name: "Home", link: "/" },
     { name: "About", link: "/about" },
-    // { name: "Donate to Schools", link: "/donate-to-schools" },
+    { name: "Donate to Schools", link: "/donate-to-schools" },
     { name: "Championship", link: "/championship" },
     { name: "Agent", link: "/become-an-agent" },
     { name: "Gallery", link: "/gallery" },
@@ -140,7 +140,7 @@ export default function Header() {
             </SheetTrigger>
             <SheetContent
               side="right"
-              className="w-full h-full overflow-y-auto sm:max-w-full pb-5 bg-white"
+              className="w-full h-full overflow-y-auto sm:max-w-full bg-white"
             >
               <div className="w-full max-w-md mx-auto px-6">
                 <motion.div
@@ -156,22 +156,23 @@ export default function Header() {
                     </Link>
                   </div>
 
-                  {navItems.map((item, idx) => (
-                    <motion.div
-                      key={`mobile-link-${idx}`}
-                      variants={itemVariants}
-                      className="border-b border-gray-100 pb-2 last:border-none"
-                    >
-                      <MobileNavLink
-                        href={item.link}
-                        onClick={() => setIsMenuOpen(false)}
+                  <div className="flex flex-col gap-5">
+                    {navItems.map((item, idx) => (
+                      <motion.div
+                        key={`mobile-link-${idx}`}
+                        variants={itemVariants}
+                        className="border-b border-gray-100 pb-2 last:border-none"
                       >
-                        {item.name}
-                      </MobileNavLink>
-                    </motion.div>
-                  ))}
-
-                  <motion.div variants={itemVariants} className="mt-4">
+                        <MobileNavLink
+                          href={item.link}
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          {item.name}
+                        </MobileNavLink>
+                      </motion.div>
+                    ))}
+                  </div>
+                  <motion.div variants={itemVariants}>
                     <a
                       href="/donate-to-schools"
                       onClick={() => setIsMenuOpen(false)}

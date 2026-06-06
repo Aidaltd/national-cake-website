@@ -9,9 +9,9 @@ import Link from "next/link";
 export default function PlayBook() {
     return (
         <section className="bg-white w-full h-full">
-            <div className="flex flex-col md:flex-row w-full md:h-[100vh] px-4 md:px-10 py-12">
+            <div className="flex flex-col md:flex-row w-full h-full md:h-[70vh] px-4 md:px-10 py-12">
                 {/* left side - image */}
-                <div className="bg-custom-primary/20 border border-green-200 w-full md:w-1/2 h-full p-10">
+                <div className="bg-custom-primary/20 border border-green-200 w-full md:w-1/2 h-full p-2">
                     <OptimizedImage
                         src="/NCUPDATE-20.jpeg"
                         alt="National Cake PlayBook"
@@ -35,15 +35,15 @@ export default function PlayBook() {
                         Your guide to mastering the game and understanding Nigeria's civic landscape.
                     </p>
 
-                    <p className="text-gray-700 mb-2">
-                        The National Cake PlayBook is more than just a rulebook—it's your comprehensive companion to the game. Inside, you'll discover detailed explanations of every tile on the board, each representing crucial aspects of Nigerian history, government, culture, and society. From understanding constitutional frameworks to exploring historical milestones, from learning about economic systems to discovering cultural heritage, the PlayBook transforms complex civic concepts into engaging, playable knowledge.
-                    </p>
+                    <p className="text-custom-primary text-2xl md:text-3xl italic font-semibold mb-2">
+The Game shows the path. <br/> The Companion Guide reveals the stories                     </p>
 
                     <div className="flex flex-col gap-3">
-                        <Link href="/donate-to-schools"></Link>
-                        <Button className="text-base font-semibold">
+                        <Link href="/donate-to-schools" className="w-full">
+                        <Button className="text-base font-semibold w-full">
                             Donate to Schools
                         </Button>
+                        </Link>
                     </div>
                 </div>
 

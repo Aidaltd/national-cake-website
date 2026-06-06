@@ -12,7 +12,7 @@ export default function DreamMagazine() {
         {/* left side */}
         <div className="w-full hidden md:block h-full">
           <OptimizedImage
-            src="/DSC102.jpg"
+            src="/DSC104.jpg"
             alt="Dream Magazine"
             width={800}
             height={600}
@@ -50,7 +50,7 @@ export default function DreamMagazine() {
         {/* left side */}
         <div className="w-full block md:hidden h-full">
           <OptimizedImage
-            src="/DSC102.jpg"
+            src="/DSC104.jpg"
             alt="Dream Magazine"
             width={800}
             height={600}
