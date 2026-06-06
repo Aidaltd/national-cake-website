@@ -26,7 +26,7 @@ export default function PlayBook() {
                 </div>
 
                 {/* right side - content */}
-                <div className="bg-white w-full md:w-1/2 p-4 h-full py-5 md:p-13 flex flex-col gap-14">
+                <div className="bg-white w-full md:w-1/2 p-4 h-full py-5 md:p-13 flex flex-col gap-10 md:gap-14">
                     <div className="flex items-center gap-3 mb-2">
                         <h2 className="section-title text-custom-primary mb-0">National Cake PlayBook</h2>
                     </div>
