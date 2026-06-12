@@ -116,7 +116,7 @@ export default function AboutGame() {
                             asChild
                             className="px-8 text-white bg-custom-primary w-full sm:w-auto lg:w-auto"
                         >
-                            <a href="/NationalCakeVision.pdf" download>
+                            <a href="/National Cake Board Game. The Civic Intelligence Brochure pdf.pdf" download>
                                 Download PDF For More Info
                             </a>
                         </Button>
