@@ -5,10 +5,14 @@ import React, { useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { AnimatePresence, motion } from "motion/react";
 
-export default function Faq() {
+import { FaqItem } from "@/lib/supabase/types";
+
+export default function Faq({ items }: { items?: FaqItem[] }) {
   // Using null instead of an index to indicate no FAQ is open initially
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [showAll, setShowAll] = useState(false);
+
+  const displayFaqs = items && items.length > 0 ? items : faqdata;
 
   // Toggle function to open/close FAQs
   const toggleFaq = (index: number) => {
@@ -40,7 +44,7 @@ export default function Faq() {
         </div>
         {/* Questions */}
         <motion.div layout className="max-w-7xl mx-auto mt-12 flex flex-col gap-6">
-          {faqdata.filter((_, idx) => showAll || idx < 6).map((faq, faqIndex) => (
+          {displayFaqs.filter((_, idx) => showAll || idx < 6).map((faq, faqIndex) => (
             <div
               key={faq.id}
               className="bg-custom-primary/5  border border-custom-primary/20 p-6"

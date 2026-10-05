@@ -27,7 +27,7 @@ export const faqdata = [
     id: 5,
     question: "How much does a unit of National Cake cost?",
     answer:
-      "The standard retail price is ₦50,000 per unit. Special bulk pricing is available for schools, NGOs, government partners and agents.",
+      "The standard retail price is ₦55,000 per unit with free delivery within Nigeria. Bulk buying is ₦50,000 per unit with free delivery within Nigeria for schools, NGOs, government partners, and organizations.",
   },
   {
     id: 6,
@@ -182,26 +182,30 @@ export const preorderfaqdata = [
     id: 3,
     question: "What's included in each box?",
     answer:
-      "Each box contains:",
+      "Each Renaissance Edition box contains:",
     list: [
-        "1 game board",
-        "4 spin pads",
-        "8 race counters",
-        "40 bridge tokens",
-        "1 rulebook",
+        "1 The National Cake Book (Official Civic Intelligence Manual & Companion Guide)",
+        "1 Official History Board Game",
+        "1 Playbook & Storyteller Guide",
+        "4 Spin Pads",
+        "8 Race Counters (4 Colors)",
+        "40 Bridge Tokens (20 White & 20 Green)",
+        "1 Official Game Rulebook Pamphlet",
+        "1 Nigerian Emotional Map (NEM) Brochure",
+        "FREE Delivery within Nigeria included",
       ],
   },
   {
     id: 4,
     question: "How long does shipping take after I order?",
     answer:
-      "Orders are processed within 24–48 hours. Delivery takes 48 hours in Abuja ONLY for now.",
+      "Orders are processed within 24–48 hours. Free delivery within Nigeria (delivered within 48 hours in Abuja, and rapid nationwide express delivery).",
   },
   {
     id: 5,
     question: "Is the game available outside Nigeria?",
     answer:
-      "NOT YET! We are open for partnership for distribution and Agents. Please contact our team.",
+      "Yes, international orders and diaspora shipments (UK, US, Canada) are supported. For bulk international distribution, please contact our team.",
   },
   {
     id: 6,
@@ -213,7 +217,7 @@ export const preorderfaqdata = [
     id: 7,
     question: "Do I get a discount if I buy in bulk?",
     answer:
-      "Yes, that makes you a one-time strategic agent or a recurring agent. Early supporters enjoy special pricing and bonus gifts.",
+      "Yes! Bulk buying is ₦50,000 per box (saving ₦5,000 per box) with free delivery within Nigeria for schools, institutions, and community partners (50+ units).",
   },
 ];
 

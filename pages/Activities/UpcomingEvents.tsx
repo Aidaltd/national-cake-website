@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Users, GraduationCap, MapPin } from "lucide-react";
+import { EventItem } from "@/lib/supabase/types";
 
 interface Event {
   title: string;
@@ -39,7 +40,15 @@ const events: Event[] = [
   }
 ];
 
-export default function UpcomingEvents() {
+export default function UpcomingEvents({ items }: { items?: EventItem[] }) {
+  const displayEvents = items && items.length > 0 ? items : events;
+
+  const renderIcon = (iconName?: string) => {
+    if (iconName === "Users") return <Users className="h-6 w-6 text-custom-primary" />;
+    if (iconName === "MapPin") return <MapPin className="h-6 w-6 text-custom-primary" />;
+    return <GraduationCap className="h-6 w-6 text-custom-primary" />;
+  };
+
   return (
     <section className="bg-gradient-to-br from-white via-custom-primary/5 to-white w-full py-16 md:py-24">
       <div className="container mx-auto px-4 md:px-6">
@@ -55,7 +64,7 @@ export default function UpcomingEvents() {
 
         {/* Events Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
-          {events.map((event, index) => (
+          {displayEvents.map((event, index) => (
             <div
               key={index}
               className="group bg-white  shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-custom-primary/30"
@@ -64,7 +73,7 @@ export default function UpcomingEvents() {
               <div className="bg-gradient-to-r from-custom-primary/10 to-custom-primary/5 p-6 border-b border-gray-100">
                 <div className="flex items-start justify-between mb-3">
                   <div className="p-3 bg-white  shadow-sm">
-                    {event.icon}
+                    {typeof event.icon === "string" ? renderIcon(event.icon) : event.icon}
                   </div>
                   <span className="px-3 py-1 bg-custom-primary/20 text-custom-primary text-xs font-semibold ">
                     {event.tag}
@@ -83,12 +92,12 @@ export default function UpcomingEvents() {
 
                 {/* CTA Button */}
                 <a
-                  href={event.registrationLink}
+                  href={"registration_link" in event && event.registration_link ? event.registration_link : ("registrationLink" in event ? (event as { registrationLink: string }).registrationLink : "#")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full text-center px-6 py-3 bg-custom-primary text-white  font-semibold hover:bg-custom-primary/90 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
                 >
-                  {event.buttonText} →
+                  {"button_text" in event && event.button_text ? event.button_text : ("buttonText" in event ? (event as { buttonText: string }).buttonText : "Join Wait List")} →
                 </a>
               </div>
             </div>

@@ -7,8 +7,8 @@ import { TwitterIcon, FacebookIcon, InstagramIcon, Linkedin } from "lucide-react
 export default function   HeaderBar() {
   const pathname = usePathname();
 
-  // Do not render on Get Started pages
-  if (pathname?.startsWith("/get-started")) {
+  // Do not render on Admin or standalone pages
+  if (pathname?.startsWith("/admin") || pathname?.startsWith("/get-started")) {
     return null;
   }
 

@@ -16,11 +16,12 @@ interface GalleryItem {
   category: string;
 }
 
-export default function GalleryTable() {
+export default function GalleryTable({ items }: { items?: GalleryItem[] }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const reversedGalleryData = [...galleryData].reverse();
+  const activeItems = items && items.length > 0 ? items : galleryData;
+  const reversedGalleryData = [...activeItems].reverse();
 
   // Modal handlers
   const openModal = (imageIndex: number) => {

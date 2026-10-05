@@ -17,8 +17,8 @@ export default function Header() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Hide global header on Get Started flow
-  if (pathname?.startsWith("/community") || pathname?.startsWith("community") || pathname?.startsWith("not-found")) {
+  // Hide global header on Admin portal and standalone flows
+  if (pathname?.startsWith("/admin") || pathname?.startsWith("/community") || pathname?.startsWith("community") || pathname?.startsWith("not-found")) {
     return null;
   }
 

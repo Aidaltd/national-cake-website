@@ -217,11 +217,12 @@ function DonationDetails() {
 
         <div className="w-full lg:w-[450px] bg-white  p-8 shadow-xl transform hover:scale-[1.02] transition-transform">
           <div className="text-center mb-8">
-            <div className="inline-block bg-green-100 text-custom-primary font-bold px-4 py-1  text-sm mb-4">
-              DONATION DETAILS
+            <div className="inline-block bg-green-100 text-custom-primary font-bold px-4 py-1 text-sm mb-4">
+              DONATION / BULK DETAILS
             </div>
-            <div className="text-4xl font-extrabold text-gray-900">₦45,000</div>
-            <div className="text-gray-500 font-medium mt-1">Per History Box</div>
+            <div className="text-4xl font-extrabold text-gray-900">₦50,000</div>
+            <div className="text-custom-primary font-bold text-sm mt-1">✓ Free Delivery within Nigeria</div>
+            <div className="text-gray-500 font-medium text-xs mt-0.5">Per History Box &amp; Book Set</div>
           </div>
 
           <div className="space-y-4 bg-gray-50 p-6  border border-gray-100">

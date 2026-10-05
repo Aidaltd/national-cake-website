@@ -8,6 +8,11 @@ export default function LenisProvider({ children }: { children: React.ReactNode 
   const pathname = usePathname();
 
   useEffect(() => {
+    // Disable smooth scroll on admin dashboard
+    if (pathname?.startsWith('/admin')) {
+      return;
+    }
+
     // Initialize Lenis for smooth scrolling
     const lenis = new Lenis({
       duration: 1.2,

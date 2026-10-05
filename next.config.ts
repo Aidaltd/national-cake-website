@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  // Full-stack mode by default for Admin Panel & dynamic features. Set NEXT_EXPORT=true only for pure static export.
+  ...(process.env.NEXT_EXPORT === 'true' ? { output: 'export' } : {}),
   // trailingSlash: true,
   images: {
     unoptimized: true,
@@ -8,7 +9,12 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "res.cloudinary.com",
-        pathname: "/dlb69oufx/image/upload/**",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "*.supabase.co",
+        pathname: "/**",
       },
     ],
   },

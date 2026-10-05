@@ -57,24 +57,30 @@ const RatingBar: React.FC<{ rating: number; count: number; total: number }> = ({
   );
 };
 
-export default function Price() {
+import { SiteSettings } from "@/lib/supabase/types";
+
+export default function Price({ settings }: { settings?: SiteSettings }) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://nationalcake.ng";
   const pagePath = "/Order/Price";
   const pageUrl = `${siteUrl}${pagePath}`;
+
+  const currentPrice = settings?.product_price ? Number(settings.product_price).toLocaleString() : "55,000";
+  const paystackUrl = settings?.paystack_product_url || "https://paystack.com/buy/national-cake";
 
   const features = [
     'Box - 14" x 14" x 3"',
     'Board - 25.5" x 26"',
     'Weight- 20kg to 1.2kg',
-    'Components:',
-    '1 Box',
-    '1 Board',
-    '1 Playbook (A Companion Guide, provides the story for each tile of history in the Board Game)',
+    'FREE Delivery within Nigeria',
+    'Components Inside Each Box:',
+    '1 The National Cake Book (Official Civic Intelligence Manual & Companion Guide)',
+    '1 Official History Board Game',
+    '1 Playbook (Storyteller Companion Guide for each history tile)',
     '4 Spin pads',
     '8 Race Counters (2 Blue, 2 Red, 2 Green & 2 Yellow)',
     '40 Bridge Tokens (20 white & 20 green)',
-    ' Game Rules Pamphlet to the list of components.',
-    'Nigerian Emotional Map (NEM) Brochure (A Summary of the Emotional Blueprint off how the History of Nigeria is influencing the mindset of Nigerians)'
+    '1 Game Rules Pamphlet',
+    '1 Nigerian Emotional Map (NEM) Brochure (Emotional Blueprint of Nigerian history and civic mindset)'
   ];
 
   // Mock data for ratings and reviews
@@ -99,50 +105,63 @@ export default function Price() {
   const productJsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: "National-cake Board Game",
+    name: "National Cake Renaissance Edition Board Game",
     description:
-      "Nigeria’s first civic board game that teaches history, citizenship, and nation-building.",
+      "Nigeria's premier civic history board game and civic intelligence kit. Includes The National Cake Book, Playbook, Nigerian Emotional Map, and full components. Free delivery within Nigeria.",
     image: [cloudinaryUrl("Nationalcake-28", { width: 1200 })],
     brand: {
       "@type": "Brand",
-      name: "National-cake",
+      name: "National Cake",
     },
+    sku: "NC-BG-2025",
     offers: {
       "@type": "Offer",
       url: pageUrl,
       priceCurrency: "NGN",
-      price: "30000",
+      price: "55000",
+      priceValidUntil: "2027-12-31",
       availability: "https://schema.org/InStock",
       itemCondition: "https://schema.org/NewCondition",
+      shippingDetails: {
+        "@type": "OfferShippingDetails",
+        shippingRate: {
+          "@type": "MonetaryAmount",
+          value: "0",
+          currency: "NGN"
+        },
+        shippingDestination: {
+          "@type": "DefinedRegion",
+          addressCountry: "NG"
+        }
+      }
     },
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: 4.5,
-      reviewCount: 50,
+      ratingValue: 4.9,
+      reviewCount: 120,
     },
   } as const;
 
   return (
     <>
       <Head>
-        <title>Order National-cake Board Game | Price & Availability</title>
+        <title>Order National-cake Board Game | Price ₦55,000 (Free Delivery in Nigeria)</title>
         <meta
           name="description"
-          content="Order the National-cake Board Game. Nigeria's first civic board game for learning history, citizenship, and nation-building. Limited edition."
+          content="Order the National-cake Board Game with The National Cake Book. ₦55,000 with FREE Delivery within Nigeria. Bulk institutional orders ₦50,000."
         />
         <link rel="canonical" href={pageUrl} />
         {/* Open Graph */}
         <meta property="og:type" content="product" />
         <meta property="og:url" content={pageUrl} />
-        <meta property="og:title" content="Order National-cake Board Game" />
-        <meta property="og:description" content="Nigeria's first civic board game. Limited edition." />
+        <meta property="og:title" content="Order National-cake Board Game | ₦55,000 Free Delivery" />
+        <meta property="og:description" content="Nigeria's premier civic history board game. Includes The Book, Playbook, and free nationwide delivery in Nigeria." />
         <meta property="og:image" content={cloudinaryUrl("logo1", { width: 1200 })} />
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Order National-cake Board Game" />
-        <meta name="twitter:description" content="Nigeria's first civic board game. Limited edition." />
+        <meta name="twitter:title" content="Order National-cake Board Game | ₦55,000" />
+        <meta name="twitter:description" content="Nigeria's premier civic board game with The Book and free delivery within Nigeria." />
         <meta name="twitter:image" content={cloudinaryUrl("logo1", { width: 1200 })} />
-        {/* Product JSON-LD */}
         <script
           type="application/ld+json"
            
@@ -158,7 +177,7 @@ export default function Price() {
                 <div className="w-full h-full">
                   <OptimizedImage
                     src="/Nationalcake-28.jpg"
-                    alt="National-cake Board Game"
+                    alt="National-cake Board Game with The Book"
                     width={800}
                     height={800}
                     className="w-full h-full object-cover"
@@ -172,7 +191,7 @@ export default function Price() {
               {/* Product Details */}
               <div className="w-full lg:w-1/2 p-8 lg:p-12">
                 {/* Brand */}
-                <p className="text-sm text-gray-500 mb-2">Game</p>
+                <p className="text-sm text-gray-500 mb-2">Game &amp; Civic Book Kit</p>
 
                 {/* Product Title */}
                 <h1 className="text-3xl lg:text-4xl tracking-tighter font-bold text-custom-primary mb-4">
@@ -181,14 +200,17 @@ export default function Price() {
 
                 {/* Price */}
                 <div className="mb-6">
-                  <div className="flex items-center gap-3 mb-2">
-                    <span className="text-3xl font-bold tracking-tighter text-custom-primary">Price: &nbsp; &nbsp; ₦50,000</span>
+                  <div className="flex flex-wrap items-center gap-3 mb-2">
+                    <span className="text-3xl font-bold tracking-tighter text-custom-primary">Price: ₦{currentPrice}</span>
+                    <span className="inline-flex items-center px-3 py-1 bg-green-100 text-green-800 text-xs font-bold border border-green-300">
+                      ✓ Free Delivery Within Nigeria
+                    </span>
                   </div>
                 </div>
 
                 {/* Product Description */}
                 <div className="mb-8">
-                  <h3 className="text-lg font-semibold mb-4">Description & Fit</h3>
+                  <h3 className="text-lg font-semibold mb-4">Description &amp; Box Contents</h3>
                   <p className="text-base text-gray-600 mb-4">
                     If we do not teach ourselves who we are, the world will tell us who we are not. If we do not guide the children through the crossroads, they may lose the road entirely.
                   </p>
@@ -196,9 +218,9 @@ export default function Price() {
                 </div>
 
                 {/* Action Buttons */}
-                <a href="https://paystack.com/buy/national-cake" target="_blank" rel="noopener noreferrer">
-                  <Button className="flex-1 bg-custom-primary w-full hover:bg-custom-primary/90 text-white py-7">
-                    Order Now
+                <a href={paystackUrl} target="_blank" rel="noopener noreferrer">
+                  <Button className="flex-1 bg-custom-primary w-full hover:bg-custom-primary/90 text-white py-7 text-lg">
+                    Order Now – ₦{currentPrice} (Free Delivery)
                   </Button>
                 </a>
               </div>
@@ -227,32 +249,34 @@ export default function Price() {
                     </div>
 
                     <h2 className="text-3xl lg:text-4xl font-bold tracking-tight mb-4">
-                      Premium <span className="text-yellow-300">Bulk</span> Pricing
+                      Bulk Buying: <span className="text-yellow-300">₦50,000</span>
                     </h2>
 
                     <p className="text-lg text-white/90 mb-6 leading-relaxed">
-                      Perfect for schools, organizations, and institutions.
-                      <span className="text-yellow-300 font-semibold"> 50+ copies</span> at special rates.
+                      Perfect for schools, organizations, NGOs, and institutions.
+                      <span className="text-yellow-300 font-semibold"> 50+ copies</span> with <strong className="text-white">Free Delivery within Nigeria</strong>.
                     </p>
 
                     {/* Pricing Cards */}
                     <div className="flex flex-col sm:flex-row gap-4 mb-6">
                       <div className="bg-white/10 backdrop-blur-sm border border-white/20  p-4 flex-1">
-                        <div className="text-sm text-white/70 mb-1">Regular Price</div>
-                        <div className="text-2xl font-bold line-through text-white/60">₦50,000</div>
+                        <div className="text-sm text-white/70 mb-1">Standard Box Price</div>
+                        <div className="text-2xl font-bold line-through text-white/60">₦55,000</div>
+                        <div className="text-xs text-white/70 mt-1">Free Delivery within Nigeria</div>
                       </div>
 
                       <div className="bg-white text-custom-primary  p-4 flex-1 relative shadow-lg">
                         <div className="absolute -top-2 -right-2 bg-yellow-400 text-custom-primary text-xs px-2 py-1  font-bold">
-                          SAVE ₦5,000
+                          SAVE ₦5,000 / BOX
                         </div>
                         <div className="text-sm font-semibold mb-1 text-custom-primary">Bulk Price (50+)</div>
-                        <div className="text-2xl font-bold text-custom-primary">₦45,000</div>
+                        <div className="text-2xl font-bold text-custom-primary">₦50,000</div>
+                        <div className="text-xs text-green-700 font-semibold mt-1">✓ Free Delivery within Nigeria</div>
                       </div>
                     </div>
 
                     <div className="text-sm text-white/70">
-                      Contact us for bulk orders and custom pricing
+                      Contact us for bulk institutional orders and custom partnership packages
                     </div>
                   </div>
 
@@ -262,8 +286,9 @@ export default function Price() {
                       {/* Main Badge */}
                       <div className="bg-white text-custom-primary  p-8 shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-300">
                         <div className="text-center">
-                          <div className="text-4xl font-bold mb-2 text-custom-primary">₦45,000</div>
+                          <div className="text-4xl font-bold mb-1 text-custom-primary">₦50,000</div>
                           <div className="text-sm font-semibold mb-1 text-custom-primary">BULK PRICE</div>
+                          <div className="text-xs font-medium text-green-700 mb-1">Free Delivery within Nigeria</div>
                           <div className="text-xs opacity-80 text-custom-primary">50+ copies</div>
                         </div>
                       </div>

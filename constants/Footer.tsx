@@ -116,10 +116,10 @@ const footerLinks: FooterLinksData = {
     // },
 };
 export default function Footer() {
-    // const pathname = usePathname();
-    // if (pathname?.startsWith("/get-started") || pathname?.startsWith("national-cake/get-started" )|| pathname?.startsWith("not-found")) {
-    //     return null;
-    // }
+    const pathname = usePathname();
+    if (pathname?.startsWith("/admin")) {
+        return null;
+    }
     const year = new Date().getFullYear();
 
     const scrollToTop = () => {

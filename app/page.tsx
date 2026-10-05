@@ -13,31 +13,36 @@ import DreamMagazine from "@/pages/Activities/DreamMagazine";
 import NationalOven from "@/pages/Activities/NationalOven";
 import PlayBook from "@/pages/Home/PlayBook";
 import { cloudinaryUrl } from "@/lib/cloudinary";
+import { fetchFaqs } from "@/lib/supabase/data-service";
 
 
 export const metadata = {
-  title: "National-cake – Civic Board Game for Nigeria",
+  title: "National Cake – Nigeria's Premier Civic History Board Game & The Book (₦55,000 Free Delivery)",
   description:
-    "Discover National-cake, Nigeria’s first civic board game. Learn history, citizenship, and nation-building through play. Pre-order today.",
+    "Nigeria's premier civic history board game and book initiative by Victor Prince Dickson. Learn history, build civic intelligence, and unite in nation-building. ₦55,000 with FREE Delivery within Nigeria. Bulk institutional orders ₦50,000.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "National-cake – Civic Board Game for Nigeria",
+    title: "National Cake – Nigeria's Premier Civic History Board Game & Movement",
     description:
-      "Discover National-cake, Nigeria’s first civic board game. Learn history, citizenship, and nation-building through play.",
+      "Nigeria's premier civic history board game and educational book kit. ₦55,000 with free delivery within Nigeria. Order your box today.",
     url: "/",
     images: [{ url: cloudinaryUrl("logo1", { width: 1200 }), width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "National-cake – Civic Board Game for Nigeria",
+    title: "National Cake – Civic History Board Game & Movement",
     description:
-      "Nigeria’s first civic board game. Learn while you play.",
+      "Nigeria's premier civic board game and book kit. ₦55,000 with free delivery within Nigeria.",
     images: [cloudinaryUrl("logo1", { width: 1200 })],
   },
 } as const;
-export default function Home() {
+export const revalidate = 60;
+
+export default async function Home() {
+  const faqs = await fetchFaqs("general");
+
   return (
     <>
       <Hero />
@@ -54,7 +59,7 @@ export default function Home() {
       <DreamMagazine />
       <NationalOven />
       <Creator />
-      <Faq />
+      <Faq items={faqs} />
     </>
   );
 }

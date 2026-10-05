@@ -32,16 +32,33 @@ export function toPublicId(source: string): string {
     .replace(/\.(jpe?g|png|webp|gif|svg|avif)$/i, "");
 }
 
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
+
 /** True when the value is already a remote URL. */
 export function isRemoteImage(src: string): boolean {
   return /^https?:\/\//i.test(src);
 }
 
-/** Resolve any image source (local path or public_id) to a Cloudinary URL. */
+/** Resolve any image source (local path, public_id, or Supabase public URL) */
 export function resolveImageUrl(
   source: string,
   options?: CloudinaryTransformOptions
 ): string {
+  if (!source) return "/fallback-placeholder.jpg";
+  
+  // If it's already an absolute URL (e.g. Supabase Storage public URL or external)
   if (isRemoteImage(source)) return source;
+
+  // If it's a locally stored upload
+  if (source.startsWith("/uploads/")) return source;
+
+  // When Supabase Storage is configured, serve from your Supabase 'media' bucket
+  if (SUPABASE_URL && !SUPABASE_URL.includes("placeholder") && !SUPABASE_URL.includes("your-project")) {
+    const cleanId = toPublicId(source);
+    return `${SUPABASE_URL}/storage/v1/object/public/media/gallery/${cleanId}.jpg`;
+  }
+
+  // Fallback to Cloudinary if Supabase is not active
   return cloudinaryUrl(source, options);
 }
+

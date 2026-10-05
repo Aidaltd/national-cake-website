@@ -15,8 +15,8 @@ export default function Sales() {
   ];
 
   const secondBullets = [
-    <span key="sb1"> <span className="font-bold text-custom-primary">₦50,000</span> per unit.</span>,
-    <span key="sb2" className="font-medium">Delivery Nationwide</span>,
+    <span key="sb1"> <span className="font-bold text-custom-primary">₦55,000</span> per unit (Free Delivery within Nigeria).</span>,
+    <span key="sb2" className="font-medium">Free Delivery Nationwide</span>,
     <span key="sb3" className="font-medium">Available in UK, US, Canada </span>,
     <span key="sb4" className="font-medium">Be a part of the movement that rewrites the story in classrooms, hearts and history.</span>,
   ]
