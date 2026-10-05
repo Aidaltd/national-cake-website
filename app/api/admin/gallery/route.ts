@@ -7,7 +7,7 @@ export async function GET() {
   if (!isSupabaseConfigured()) {
     return NextResponse.json({
       success: true,
-      data: fallbackGallery.map((item, idx) => ({
+      data: [...fallbackGallery].reverse().map((item, idx) => ({
         ...item,
         display_order: idx + 1,
         is_active: true,
@@ -21,7 +21,7 @@ export async function GET() {
     const { data, error } = await supabase
       .from("gallery")
       .select("*")
-      .order("display_order", { ascending: true });
+      .order("created_at", { ascending: false });
 
     if (error) {
       return NextResponse.json({ success: false, error: error.message }, { status: 500 });

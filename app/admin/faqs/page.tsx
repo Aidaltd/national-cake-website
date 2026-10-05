@@ -112,7 +112,7 @@ export default function FaqsAdminPage() {
         const json = await res.json();
         if (json.success) {
           toast.success("FAQ added");
-          setFaqs((prev) => [...prev, json.data]);
+          setFaqs((prev) => [json.data, ...prev]);
           setIsModalOpen(false);
         } else {
           toast.error(json.error || "Creation failed");
@@ -282,8 +282,8 @@ export default function FaqsAdminPage() {
 
       {/* Add / Edit Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl space-y-5 animate-in fade-in zoom-in-95 duration-150">
+        <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-xs flex items-center justify-center p-3 sm:p-4">
+          <div className="bg-white rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto p-5 sm:p-6 shadow-2xl space-y-5 animate-in fade-in zoom-in-95 duration-150 border border-slate-100">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
               <h3 className="font-bold text-lg text-slate-900">
                 {editingFaq ? "Edit FAQ" : "Add New FAQ"} ({activeCategory.toUpperCase()})

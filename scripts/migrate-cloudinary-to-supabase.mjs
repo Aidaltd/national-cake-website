@@ -59,7 +59,11 @@ const IMAGES = [
   "PROJECT_GIANT_2_toxmmw", "PROJECT_GIANT_3_fllop1", "PROJECT_GIANT_1_hbej7q",
   "Nationalcake-28", "Donate-Banner_kf3cwy", "logo1",
   "BEM-PEVER", "PRINCESS-BUNMI-PUKAT", "COACH-RALPH", "DR-HYELADI-HARUNA",
-  "NANCY-OBLETE", "OBINNA-CHUKWUEZIE"
+  "NANCY-OBLETE", "OBINNA-CHUKWUEZIE",
+  "logo-4", "logo-5", "DSC129", "punch", "thisday", "nigerian-times",
+  "daily-times", "NGA-Logo", "NCUPDATE-20", "avatar-4", "avatar-7",
+  "avatar-6", "DSC6", "DSC8", "DSC125", "DSC17", "creator", "DSC157",
+  "Nationalcake-30", "Nationalcake-29", "DSC97", "404"
 ];
 
 async function main() {

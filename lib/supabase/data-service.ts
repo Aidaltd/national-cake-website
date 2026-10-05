@@ -255,7 +255,7 @@ const fallbackSiteSettings: SiteSettings = {
 
 export async function fetchGalleryItems(): Promise<GalleryItem[]> {
   if (!isSupabaseConfigured()) {
-    return fallbackGallery.map((item, idx) => ({
+    return [...fallbackGallery].reverse().map((item, idx) => ({
       ...item,
       display_order: idx + 1,
       is_active: true,
@@ -268,10 +268,10 @@ export async function fetchGalleryItems(): Promise<GalleryItem[]> {
       .from("gallery")
       .select("*")
       .eq("is_active", true)
-      .order("display_order", { ascending: true });
+      .order("created_at", { ascending: false });
 
     if (error || !data || data.length === 0) {
-      return fallbackGallery.map((item, idx) => ({
+      return [...fallbackGallery].reverse().map((item, idx) => ({
         ...item,
         display_order: idx + 1,
         is_active: true,
@@ -280,7 +280,7 @@ export async function fetchGalleryItems(): Promise<GalleryItem[]> {
 
     return data as GalleryItem[];
   } catch {
-    return fallbackGallery.map((item, idx) => ({
+    return [...fallbackGallery].reverse().map((item, idx) => ({
       ...item,
       display_order: idx + 1,
       is_active: true,
@@ -295,7 +295,7 @@ export async function fetchFaqs(category: "general" | "agent" | "order"): Promis
     order: fallbackOrderFaq,
   };
 
-  const fallback = localMap[category].map((item, idx) => ({
+  const fallback = [...localMap[category]].reverse().map((item, idx) => ({
     id: item.id,
     category,
     question: item.question,
@@ -316,7 +316,7 @@ export async function fetchFaqs(category: "general" | "agent" | "order"): Promis
       .select("*")
       .eq("category", category)
       .eq("is_active", true)
-      .order("display_order", { ascending: true });
+      .order("created_at", { ascending: false });
 
     if (error || !data || data.length === 0) {
       return fallback;
@@ -330,7 +330,7 @@ export async function fetchFaqs(category: "general" | "agent" | "order"): Promis
 
 export async function fetchEvents(): Promise<EventItem[]> {
   if (!isSupabaseConfigured()) {
-    return fallbackEvents;
+    return [...fallbackEvents].reverse();
   }
 
   try {
@@ -339,21 +339,21 @@ export async function fetchEvents(): Promise<EventItem[]> {
       .from("events")
       .select("*")
       .eq("is_active", true)
-      .order("display_order", { ascending: true });
+      .order("created_at", { ascending: false });
 
     if (error || !data || data.length === 0) {
-      return fallbackEvents;
+      return [...fallbackEvents].reverse();
     }
 
     return data as EventItem[];
   } catch {
-    return fallbackEvents;
+    return [...fallbackEvents].reverse();
   }
 }
 
 export async function fetchTestimonials(): Promise<TestimonialItem[]> {
   if (!isSupabaseConfigured()) {
-    return fallbackTestimonials;
+    return [...fallbackTestimonials].reverse();
   }
 
   try {
@@ -362,21 +362,21 @@ export async function fetchTestimonials(): Promise<TestimonialItem[]> {
       .from("testimonials")
       .select("*")
       .eq("is_active", true)
-      .order("display_order", { ascending: true });
+      .order("created_at", { ascending: false });
 
     if (error || !data || data.length === 0) {
-      return fallbackTestimonials;
+      return [...fallbackTestimonials].reverse();
     }
 
     return data as TestimonialItem[];
   } catch {
-    return fallbackTestimonials;
+    return [...fallbackTestimonials].reverse();
   }
 }
 
 export async function fetchAuthorityPresentations(): Promise<AuthorityPresentationItem[]> {
   if (!isSupabaseConfigured()) {
-    return fallbackAuthority;
+    return [...fallbackAuthority].reverse();
   }
 
   try {
@@ -385,21 +385,21 @@ export async function fetchAuthorityPresentations(): Promise<AuthorityPresentati
       .from("authority_presentations")
       .select("*")
       .eq("is_active", true)
-      .order("display_order", { ascending: true });
+      .order("created_at", { ascending: false });
 
     if (error || !data || data.length === 0) {
-      return fallbackAuthority;
+      return [...fallbackAuthority].reverse();
     }
 
     return data as AuthorityPresentationItem[];
   } catch {
-    return fallbackAuthority;
+    return [...fallbackAuthority].reverse();
   }
 }
 
 export async function fetchMentions(): Promise<MentionItem[]> {
   if (!isSupabaseConfigured()) {
-    return fallbackMentions;
+    return [...fallbackMentions].reverse();
   }
 
   try {
@@ -408,15 +408,15 @@ export async function fetchMentions(): Promise<MentionItem[]> {
       .from("mentions")
       .select("*")
       .eq("is_active", true)
-      .order("display_order", { ascending: true });
+      .order("created_at", { ascending: false });
 
     if (error || !data || data.length === 0) {
-      return fallbackMentions;
+      return [...fallbackMentions].reverse();
     }
 
     return data as MentionItem[];
   } catch {
-    return fallbackMentions;
+    return [...fallbackMentions].reverse();
   }
 }
 

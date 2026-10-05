@@ -20,7 +20,7 @@ export async function GET(req: NextRequest) {
     const list = map[category as keyof typeof map] || fallbackGeneral;
     return NextResponse.json({
       success: true,
-      data: list.map((item, idx) => ({
+      data: [...list].reverse().map((item, idx) => ({
         id: item.id,
         category,
         question: item.question,
@@ -39,7 +39,7 @@ export async function GET(req: NextRequest) {
       .from("faqs")
       .select("*")
       .eq("category", category)
-      .order("display_order", { ascending: true });
+      .order("created_at", { ascending: false });
 
     if (error) {
       return NextResponse.json({ success: false, error: error.message }, { status: 500 });

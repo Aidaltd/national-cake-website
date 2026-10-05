@@ -49,16 +49,10 @@ export function resolveImageUrl(
   // If it's already an absolute URL (e.g. Supabase Storage public URL or external)
   if (isRemoteImage(source)) return source;
 
-  // If it's a locally stored upload
-  if (source.startsWith("/uploads/")) return source;
+  // If it's a locally stored upload or local asset
+  if (source.startsWith("/uploads/") || source.startsWith("/backup-images/")) return source;
 
-  // When Supabase Storage is configured, serve from your Supabase 'media' bucket
-  if (SUPABASE_URL && !SUPABASE_URL.includes("placeholder") && !SUPABASE_URL.includes("your-project")) {
-    const cleanId = toPublicId(source);
-    return `${SUPABASE_URL}/storage/v1/object/public/media/gallery/${cleanId}.jpg`;
-  }
-
-  // Fallback to Cloudinary if Supabase is not active
+  // Primary: Cloudinary CDN (provides dynamic resizing, f_auto, q_auto across all images)
   return cloudinaryUrl(source, options);
 }
 
