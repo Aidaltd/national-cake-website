@@ -29,7 +29,6 @@ export default async function Order() {
     return (
         <>
      <OrderHero />
-     {/* <LogoTicker /> */}
       <Price settings={settings} />
       <Testimonials />
       <OrderFaq />

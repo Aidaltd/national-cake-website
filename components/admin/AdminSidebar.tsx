@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import OptimizedImage from "@/components/OptimizedImage";
 import {
   LayoutDashboard,
   Image as ImageIcon,
@@ -72,30 +73,36 @@ export default function AdminSidebar() {
 
       {/* Sidebar Container */}
       <aside
-        className={`fixed top-0 bottom-0 left-0 z-50 w-64 bg-slate-900 text-slate-100 flex flex-col border-r border-slate-800/90 shadow-2xl lg:shadow-none transition-transform duration-300 ease-in-out lg:static lg:translate-x-0 ${
+        className={`fixed top-0 bottom-0 left-0 z-50 w-64 h-screen bg-slate-900 text-slate-100 flex flex-col border-r border-slate-800 shadow-2xl lg:shadow-none transition-transform duration-300 ease-in-out lg:static lg:translate-x-0 shrink-0 ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
         {/* Brand Header */}
-        <div className="h-16 px-5 border-b border-slate-800/90 flex items-center justify-between shrink-0 bg-slate-950/40">
-          <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center font-black text-sm shadow-sm shadow-emerald-950">
-              NC
+        <div className="h-16 px-4 border-b border-slate-800 flex items-center justify-between shrink-0 bg-slate-950/60">
+          <Link href="/admin" onClick={closeNav} className="flex items-center gap-2.5">
+            <div className="h-10 w-auto px-1.5 py-1 bg-white/5 border border-slate-700/60 flex items-center justify-center">
+              <OptimizedImage
+                src="logo-4"
+                alt="National Cake Logo"
+                width={120}
+                height={32}
+                className="h-7 w-auto object-contain"
+              />
             </div>
             <div>
-              <span className="text-[10px] uppercase tracking-widest text-emerald-400 font-bold block leading-none">
+              <span className="text-[9px] uppercase tracking-widest text-emerald-400 font-extrabold block leading-none">
                 Admin Panel
               </span>
-              <h1 className="text-sm font-bold text-white tracking-tight mt-0.5">
+              <span className="text-xs font-bold text-white tracking-tight mt-0.5 block">
                 National Cake
-              </h1>
+              </span>
             </div>
-          </div>
+          </Link>
 
           {/* Close button for mobile */}
           <button
             onClick={closeNav}
-            className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 lg:hidden transition-colors cursor-pointer"
+            className="p-1.5 text-slate-400 hover:text-white hover:bg-slate-800 lg:hidden transition-colors cursor-pointer"
             aria-label="Close navigation"
           >
             <X className="w-5 h-5" />
@@ -103,7 +110,7 @@ export default function AdminSidebar() {
         </div>
 
         {/* Main Navigation */}
-        <nav className="flex-1 px-3 py-5 space-y-1 overflow-y-auto custom-scrollbar">
+        <nav className="flex-1 px-3 py-4 space-y-1 overflow-y-auto no-scrollbar">
           <div className="px-3 mb-2 text-[10px] font-bold uppercase tracking-wider text-slate-400">
             Content Management
           </div>
@@ -115,9 +122,9 @@ export default function AdminSidebar() {
                 key={item.href}
                 href={item.href}
                 onClick={closeNav}
-                className={`flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-semibold transition-all duration-150 ${
+                className={`flex items-center justify-between px-3 py-2.5 text-xs font-semibold transition-all duration-150 ${
                   isActive
-                    ? "bg-emerald-600 text-white shadow-md shadow-emerald-950/40 font-bold"
+                    ? "bg-emerald-600 text-white font-bold border-l-2 border-white"
                     : "text-slate-300 hover:bg-slate-800 hover:text-white"
                 }`}
               >
@@ -131,7 +138,7 @@ export default function AdminSidebar() {
                 </div>
                 {item.badge && (
                   <span
-                    className={`text-[10px] px-2 py-0.5 rounded-full font-bold ${
+                    className={`text-[10px] px-2 py-0.5 font-bold ${
                       isActive ? "bg-white/20 text-white" : "bg-slate-800 text-slate-400"
                     }`}
                   >
@@ -144,11 +151,11 @@ export default function AdminSidebar() {
         </nav>
 
         {/* Bottom Actions */}
-        <div className="p-3 border-t border-slate-800/90 space-y-1.5 bg-slate-950/40 shrink-0">
+        <div className="p-3 border-t border-slate-800 space-y-1 bg-slate-950/60 shrink-0">
           <Link
             href="/"
             target="_blank"
-            className="flex items-center justify-between w-full px-3 py-2 text-xs font-medium text-slate-300 rounded-lg hover:bg-slate-800 hover:text-white transition-colors"
+            className="flex items-center justify-between w-full px-3 py-2 text-xs font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-colors border border-transparent hover:border-slate-700"
           >
             <div className="flex items-center gap-2">
               <ArrowLeft className="w-3.5 h-3.5 text-slate-400" />
@@ -158,7 +165,7 @@ export default function AdminSidebar() {
           </Link>
           <button
             onClick={handleSignOut}
-            className="flex items-center gap-2 w-full px-3 py-2 text-xs font-semibold text-rose-400 rounded-lg hover:bg-rose-950/40 hover:text-rose-300 transition-colors cursor-pointer text-left"
+            className="flex items-center gap-2 w-full px-3 py-2 text-xs font-semibold text-rose-400 hover:bg-rose-950/50 hover:text-rose-300 transition-colors cursor-pointer text-left border border-transparent hover:border-rose-900"
           >
             <LogOut className="w-3.5 h-3.5" />
             <span>Sign Out of Admin</span>

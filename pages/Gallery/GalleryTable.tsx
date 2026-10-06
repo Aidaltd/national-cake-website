@@ -20,8 +20,8 @@ export default function GalleryTable({ items }: { items?: GalleryItem[] }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const activeItems = items && items.length > 0 ? items : galleryData;
-  const reversedGalleryData = [...activeItems].reverse();
+  // Ensure newly added images appear first
+  const displayGalleryData = items && items.length > 0 ? items : [...galleryData].reverse();
 
   // Modal handlers
   const openModal = (imageIndex: number) => {
@@ -52,7 +52,7 @@ export default function GalleryTable({ items }: { items?: GalleryItem[] }) {
 
         {/* Gallery Grid - Modern Card Layout */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mx-auto">
-          {reversedGalleryData.map((item: GalleryItem, index) => {
+          {displayGalleryData.map((item: GalleryItem, index) => {
             return (
               <motion.div
                 key={item.id}
@@ -96,7 +96,7 @@ export default function GalleryTable({ items }: { items?: GalleryItem[] }) {
         <GalleryModal
           isOpen={isModalOpen}
           onClose={closeModal}
-          images={reversedGalleryData.map((item) => ({
+          images={displayGalleryData.map((item) => ({
             ...item,
             image: resolveImageUrl(item.image, { width: 1200, quality: "auto" }),
           }))}

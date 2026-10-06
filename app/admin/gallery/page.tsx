@@ -217,7 +217,7 @@ export default function GalleryAdminPage() {
         </div>
         <button
           onClick={handleOpenAddModal}
-          className="inline-flex items-center gap-2 px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-sm font-semibold shadow-xs transition-colors shrink-0"
+          className="inline-flex items-center gap-2 px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-none text-sm font-semibold shadow-xs transition-colors shrink-0 cursor-pointer"
         >
           <Plus className="w-4 h-4" />
           <span>Add New Photo</span>
@@ -225,7 +225,7 @@ export default function GalleryAdminPage() {
       </div>
 
       {/* Filter and Search Bar */}
-      <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-xs flex flex-col md:flex-row gap-4 justify-between items-center">
+      <div className="bg-white p-4 rounded-none border border-slate-200 shadow-xs flex flex-col md:flex-row gap-4 justify-between items-center">
         {/* Search */}
         <div className="relative w-full md:w-80">
           <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
@@ -234,7 +234,7 @@ export default function GalleryAdminPage() {
             placeholder="Search by tag, path, or title..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-9 pr-4 py-2 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            className="w-full pl-9 pr-4 py-2 rounded-none border border-slate-200 text-sm focus:outline-none focus:ring-1 focus:ring-emerald-500"
           />
         </div>
 
@@ -244,10 +244,10 @@ export default function GalleryAdminPage() {
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors ${
+              className={`px-3 py-1.5 rounded-none text-xs font-semibold whitespace-nowrap transition-colors cursor-pointer border ${
                 selectedCategory === cat
-                  ? "bg-slate-900 text-white"
-                  : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                  ? "bg-slate-900 text-white border-slate-900"
+                  : "bg-slate-100 text-slate-600 hover:bg-slate-200 border-slate-200"
               }`}
             >
               {cat}
@@ -263,7 +263,7 @@ export default function GalleryAdminPage() {
           <p className="text-sm">Loading gallery collection...</p>
         </div>
       ) : filteredItems.length === 0 ? (
-        <div className="py-20 bg-white rounded-xl border border-slate-200 text-center">
+        <div className="py-20 bg-white rounded-none border border-slate-200 text-center">
           <p className="text-slate-500 text-sm">No photos match your filter criteria.</p>
         </div>
       ) : (
@@ -271,7 +271,7 @@ export default function GalleryAdminPage() {
           {filteredItems.map((item) => (
             <div
               key={item.id}
-              className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-md transition-all group flex flex-col justify-between"
+              className="bg-white rounded-none border border-slate-200 overflow-hidden shadow-xs hover:border-slate-400 transition-all group flex flex-col justify-between"
             >
               {/* Image Preview Container */}
               <div className="relative aspect-video bg-slate-100 overflow-hidden">
@@ -281,10 +281,10 @@ export default function GalleryAdminPage() {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                 />
-                <span className="absolute top-2 left-2 bg-slate-900/80 backdrop-blur-xs text-white text-[11px] font-bold px-2 py-0.5 rounded">
+                <span className="absolute top-2 left-2 bg-slate-900/90 text-white text-[11px] font-bold px-2 py-0.5 rounded-none border border-slate-700">
                   {item.category}
                 </span>
-                <span className="absolute top-2 right-2 bg-white/90 text-slate-700 text-[10px] font-mono px-1.5 py-0.5 rounded shadow-xs">
+                <span className="absolute top-2 right-2 bg-white text-slate-800 text-[10px] font-mono px-1.5 py-0.5 rounded-none border border-slate-300">
                   #{item.id}
                 </span>
               </div>
@@ -300,7 +300,7 @@ export default function GalleryAdminPage() {
                       {item.tags.slice(0, 3).map((tag, idx) => (
                         <span
                           key={idx}
-                          className="bg-slate-100 text-slate-600 text-[10px] px-2 py-0.5 rounded-full"
+                          className="bg-slate-100 text-slate-600 text-[10px] px-2 py-0.5 rounded-none border border-slate-200 font-medium"
                         >
                           {tag}
                         </span>
@@ -318,14 +318,14 @@ export default function GalleryAdminPage() {
                   <div className="flex items-center gap-1">
                     <button
                       onClick={() => handleOpenEditModal(item)}
-                      className="p-1.5 text-slate-600 hover:text-emerald-600 hover:bg-emerald-50 rounded transition-colors"
+                      className="p-1.5 text-slate-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-none transition-colors"
                       title="Edit photo"
                     >
                       <Edit className="w-4 h-4" />
                     </button>
                     <button
                       onClick={() => handleDelete(item.id)}
-                      className="p-1.5 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded transition-colors"
+                      className="p-1.5 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded-none transition-colors"
                       title="Delete photo"
                     >
                       <Trash2 className="w-4 h-4" />
@@ -341,14 +341,14 @@ export default function GalleryAdminPage() {
       {/* Add / Edit Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-xs flex items-center justify-center p-3 sm:p-4">
-          <div className="bg-white rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto p-5 sm:p-6 shadow-2xl space-y-5 animate-in fade-in zoom-in-95 duration-150 border border-slate-100">
+          <div className="bg-white rounded-none max-w-lg w-full max-h-[90vh] overflow-y-auto no-scrollbar p-5 sm:p-6 shadow-2xl space-y-5 animate-in fade-in zoom-in-95 duration-150 border border-slate-300">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
               <h3 className="font-bold text-lg text-slate-900">
                 {editingItem ? "Edit Gallery Photo" : "Add New Gallery Photo"}
               </h3>
               <button
                 onClick={() => setIsModalOpen(false)}
-                className="text-slate-400 hover:text-slate-600 p-1"
+                className="text-slate-400 hover:text-slate-600 p-1 cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -360,7 +360,7 @@ export default function GalleryAdminPage() {
                 <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
                   Upload Image File (Supabase Storage)
                 </label>
-                <div className="border-2 border-dashed border-slate-300 rounded-xl p-4 text-center hover:border-emerald-500 bg-slate-50 transition-colors cursor-pointer relative">
+                <div className="border border-dashed border-slate-300 rounded-none p-4 text-center hover:border-emerald-500 bg-slate-50 transition-colors cursor-pointer relative">
                   <input
                     type="file"
                     accept="image/*"
@@ -398,7 +398,7 @@ export default function GalleryAdminPage() {
                   placeholder="e.g. /DSC110.jpg or PROJECT_GIANT_1_hbej7q"
                   value={formData.image}
                   onChange={(e) => setFormData({ ...formData, image: e.target.value })}
-                  className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                  className="w-full px-3 py-2 rounded-none border border-slate-300 text-sm focus:ring-1 focus:ring-emerald-500 focus:outline-none"
                 />
                 <p className="text-[11px] text-slate-400 mt-1">
                   Enter local public path (e.g. <code>/DSC100.jpg</code>) or a Cloudinary public ID.
@@ -407,8 +407,8 @@ export default function GalleryAdminPage() {
 
               {/* Live Preview if image provided */}
               {formData.image && (
-                <div className="p-2 border border-slate-200 rounded-lg bg-slate-50 flex items-center gap-3">
-                  <div className="w-16 h-12 bg-slate-200 rounded overflow-hidden shrink-0">
+                <div className="p-2 border border-slate-200 rounded-none bg-slate-50 flex items-center gap-3">
+                  <div className="w-16 h-12 bg-slate-200 rounded-none overflow-hidden shrink-0">
                     <img
                       src={resolveImageUrl(formData.image, { width: 100 })}
                       alt="Preview"
@@ -432,7 +432,7 @@ export default function GalleryAdminPage() {
                   <select
                     value={formData.category}
                     onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                    className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none bg-white"
+                    className="w-full px-3 py-2 rounded-none border border-slate-300 text-sm focus:ring-1 focus:ring-emerald-500 focus:outline-none bg-white"
                   >
                     {CATEGORIES.filter((c) => c !== "All").map((cat) => (
                       <option key={cat} value={cat}>
@@ -452,7 +452,7 @@ export default function GalleryAdminPage() {
                     onChange={(e) =>
                       setFormData({ ...formData, display_order: Number(e.target.value) })
                     }
-                    className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                    className="w-full px-3 py-2 rounded-none border border-slate-300 text-sm focus:ring-1 focus:ring-emerald-500 focus:outline-none"
                   />
                 </div>
               </div>
@@ -466,7 +466,7 @@ export default function GalleryAdminPage() {
                   placeholder="e.g. Students, Civic Education, History"
                   value={formData.tags}
                   onChange={(e) => setFormData({ ...formData, tags: e.target.value })}
-                  className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                  className="w-full px-3 py-2 rounded-none border border-slate-300 text-sm focus:ring-1 focus:ring-emerald-500 focus:outline-none"
                 />
               </div>
 
@@ -474,14 +474,14 @@ export default function GalleryAdminPage() {
                 <button
                   type="button"
                   onClick={() => setIsModalOpen(false)}
-                  className="px-4 py-2 text-sm font-semibold text-slate-600 hover:bg-slate-100 rounded-lg transition-colors"
+                  className="px-4 py-2 text-sm font-semibold text-slate-600 hover:bg-slate-100 rounded-none transition-colors cursor-pointer"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={isSaving}
-                  className="px-5 py-2 text-sm font-semibold bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors flex items-center gap-2"
+                  className="px-5 py-2 text-sm font-semibold bg-emerald-600 hover:bg-emerald-700 text-white rounded-none transition-colors flex items-center gap-2 cursor-pointer"
                 >
                   {isSaving && <Loader2 className="w-4 h-4 animate-spin" />}
                   <span>{editingItem ? "Save Changes" : "Add to Gallery"}</span>

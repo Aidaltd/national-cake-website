@@ -151,7 +151,7 @@ export default function EventsAdminPage() {
         </div>
         <button
           onClick={handleOpenAdd}
-          className="inline-flex items-center gap-2 px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-sm font-semibold shadow-xs transition-colors shrink-0"
+          className="inline-flex items-center gap-2 px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-none text-sm font-semibold shadow-xs transition-colors shrink-0 cursor-pointer"
         >
           <Plus className="w-4 h-4" />
           <span>Add New Event</span>
@@ -165,7 +165,7 @@ export default function EventsAdminPage() {
           <p className="text-sm">Loading competitions...</p>
         </div>
       ) : events.length === 0 ? (
-        <div className="py-16 bg-white rounded-xl border border-slate-200 text-center">
+        <div className="py-16 bg-white rounded-none border border-slate-200 text-center">
           <p className="text-slate-500 text-sm">No competitions found.</p>
         </div>
       ) : (
@@ -173,11 +173,11 @@ export default function EventsAdminPage() {
           {events.map((evt) => (
             <div
               key={evt.id}
-              className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-xs hover:border-slate-300 transition-all flex flex-col justify-between"
+              className="bg-white rounded-none border border-slate-200 overflow-hidden shadow-xs hover:border-slate-300 transition-all flex flex-col justify-between"
             >
               <div className="p-6">
                 <div className="flex items-start justify-between gap-3 mb-3">
-                  <span className="px-3 py-1 bg-emerald-50 text-emerald-700 font-bold text-xs rounded-full border border-emerald-200">
+                  <span className="px-3 py-1 bg-emerald-50 text-emerald-700 font-bold text-xs rounded-none border border-emerald-200">
                     {evt.tag}
                   </span>
                   <span className="text-xs font-mono text-slate-400">Order: {evt.display_order}</span>
@@ -187,7 +187,7 @@ export default function EventsAdminPage() {
                 <p className="text-xs text-slate-600 leading-relaxed mb-4">{evt.description}</p>
 
                 {evt.registration_link && (
-                  <div className="flex items-center gap-1 text-xs text-emerald-600 truncate bg-slate-50 p-2 rounded border border-slate-100 mb-2">
+                  <div className="flex items-center gap-1 text-xs text-emerald-600 truncate bg-slate-50 p-2 rounded-none border border-slate-100 mb-2">
                     <ExternalLink className="w-3.5 h-3.5 shrink-0" />
                     <span className="truncate">{evt.registration_link}</span>
                   </div>
@@ -201,13 +201,13 @@ export default function EventsAdminPage() {
                 <div className="flex items-center gap-1">
                   <button
                     onClick={() => handleOpenEdit(evt)}
-                    className="p-1.5 text-slate-500 hover:text-emerald-600 hover:bg-emerald-50 rounded transition-colors"
+                    className="p-1.5 text-slate-500 hover:text-emerald-600 hover:bg-emerald-50 rounded-none transition-colors cursor-pointer"
                   >
                     <Edit className="w-4 h-4" />
                   </button>
                   <button
                     onClick={() => handleDelete(evt.id)}
-                    className="p-1.5 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded transition-colors"
+                    className="p-1.5 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded-none transition-colors cursor-pointer"
                   >
                     <Trash2 className="w-4 h-4" />
                   </button>
@@ -221,14 +221,14 @@ export default function EventsAdminPage() {
       {/* Add / Edit Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-xs flex items-center justify-center p-3 sm:p-4">
-          <div className="bg-white rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto p-5 sm:p-6 shadow-2xl space-y-5 animate-in fade-in zoom-in-95 duration-150 border border-slate-100">
+          <div className="bg-white rounded-none max-w-lg w-full max-h-[90vh] overflow-y-auto no-scrollbar p-5 sm:p-6 shadow-2xl space-y-5 animate-in fade-in zoom-in-95 duration-150 border border-slate-300">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
               <h3 className="font-bold text-lg text-slate-900">
                 {editingEvent ? "Edit Competition" : "Add Competition / Event"}
               </h3>
               <button
                 onClick={() => setIsModalOpen(false)}
-                className="text-slate-400 hover:text-slate-600 p-1"
+                className="text-slate-400 hover:text-slate-600 p-1 cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -245,7 +245,7 @@ export default function EventsAdminPage() {
                   placeholder="e.g. National Cake Inter-Campus Competition"
                   value={formData.title}
                   onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                  className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                  className="w-full px-3 py-2 rounded-none border border-slate-300 text-sm focus:ring-1 focus:ring-emerald-500 focus:outline-none"
                 />
               </div>
 
@@ -258,7 +258,7 @@ export default function EventsAdminPage() {
                     type="text"
                     value={formData.tag}
                     onChange={(e) => setFormData({ ...formData, tag: e.target.value })}
-                    className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                    className="w-full px-3 py-2 rounded-none border border-slate-300 text-sm focus:ring-1 focus:ring-emerald-500 focus:outline-none"
                   />
                 </div>
 
@@ -270,7 +270,7 @@ export default function EventsAdminPage() {
                     type="text"
                     value={formData.button_text}
                     onChange={(e) => setFormData({ ...formData, button_text: e.target.value })}
-                    className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                    className="w-full px-3 py-2 rounded-none border border-slate-300 text-sm focus:ring-1 focus:ring-emerald-500 focus:outline-none"
                   />
                 </div>
               </div>
@@ -284,7 +284,7 @@ export default function EventsAdminPage() {
                   placeholder="https://forms.gle/..."
                   value={formData.registration_link}
                   onChange={(e) => setFormData({ ...formData, registration_link: e.target.value })}
-                  className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                  className="w-full px-3 py-2 rounded-none border border-slate-300 text-sm focus:ring-1 focus:ring-emerald-500 focus:outline-none"
                 />
               </div>
 
@@ -297,7 +297,7 @@ export default function EventsAdminPage() {
                   rows={4}
                   value={formData.description}
                   onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                  className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                  className="w-full px-3 py-2 rounded-none border border-slate-300 text-sm focus:ring-1 focus:ring-emerald-500 focus:outline-none"
                 />
               </div>
 
@@ -305,14 +305,14 @@ export default function EventsAdminPage() {
                 <button
                   type="button"
                   onClick={() => setIsModalOpen(false)}
-                  className="px-4 py-2 text-sm font-semibold text-slate-600 hover:bg-slate-100 rounded-lg transition-colors"
+                  className="px-4 py-2 text-sm font-semibold text-slate-600 hover:bg-slate-100 rounded-none transition-colors cursor-pointer"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={isSaving}
-                  className="px-5 py-2 text-sm font-semibold bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors flex items-center gap-2"
+                  className="px-5 py-2 text-sm font-semibold bg-emerald-600 hover:bg-emerald-700 text-white rounded-none transition-colors flex items-center gap-2 cursor-pointer"
                 >
                   {isSaving && <Loader2 className="w-4 h-4 animate-spin" />}
                   <span>{editingEvent ? "Save Changes" : "Save Event"}</span>

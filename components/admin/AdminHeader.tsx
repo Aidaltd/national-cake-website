@@ -51,13 +51,13 @@ export default function AdminHeader() {
   };
 
   return (
-    <header className="h-16 bg-white/95 backdrop-blur-md border-b border-slate-200/90 px-4 sm:px-6 md:px-8 flex items-center justify-between sticky top-0 z-30 shadow-xs">
+    <header className="h-16 bg-white border-b border-slate-200 px-4 sm:px-6 md:px-8 flex items-center justify-between shrink-0 z-30">
       {/* Left side: Hamburger button + Title */}
       <div className="flex items-center gap-3">
         {/* Mobile menu trigger */}
         <button
           onClick={toggleNav}
-          className="p-2 -ml-1 text-slate-700 hover:text-slate-900 hover:bg-slate-100 rounded-lg lg:hidden transition-colors cursor-pointer"
+          className="p-2 -ml-1 text-slate-700 hover:text-slate-900 hover:bg-slate-100 lg:hidden transition-colors cursor-pointer"
           aria-label="Toggle navigation menu"
         >
           <Menu className="w-5 h-5" />
@@ -77,10 +77,10 @@ export default function AdminHeader() {
       <div className="flex items-center gap-2 sm:gap-3">
         {/* Supabase Status Badge */}
         <div
-          className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold border ${
+          className={`flex items-center gap-1.5 px-2.5 py-1 text-[11px] font-semibold border ${
             isConfigured
-              ? "bg-emerald-50 text-emerald-700 border-emerald-200/80"
-              : "bg-amber-50 text-amber-700 border-amber-200/80"
+              ? "bg-emerald-50 text-emerald-700 border-emerald-300"
+              : "bg-amber-50 text-amber-700 border-amber-300"
           }`}
           title={
             isConfigured
@@ -96,7 +96,7 @@ export default function AdminHeader() {
 
         {/* Admin User Chip */}
         <div className="flex items-center gap-2 pl-2 sm:pl-3 border-l border-slate-200">
-          <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold text-xs shadow-xs">
+          <div className="w-7 h-7 sm:w-8 sm:h-8 bg-slate-900 text-white flex items-center justify-center font-bold text-xs">
             <Shield className="w-3.5 h-3.5 text-emerald-400" />
           </div>
           <div className="hidden md:block text-left">
@@ -113,7 +113,7 @@ export default function AdminHeader() {
         <button
           onClick={handleSignOut}
           title="Sign Out"
-          className="p-2 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors cursor-pointer"
+          className="p-2 text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition-colors cursor-pointer border border-transparent hover:border-rose-200"
           aria-label="Sign out"
         >
           <LogOut className="w-4 h-4" />

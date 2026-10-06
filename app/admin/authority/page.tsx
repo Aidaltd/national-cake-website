@@ -138,7 +138,7 @@ export default function AuthorityAdminPage() {
         </div>
         <button
           onClick={handleOpenAdd}
-          className="inline-flex items-center gap-2 px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-sm font-semibold shadow-xs transition-colors shrink-0"
+          className="inline-flex items-center gap-2 px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-none text-sm font-semibold shadow-xs transition-colors shrink-0 cursor-pointer"
         >
           <Plus className="w-4 h-4" />
           <span>Add VIP Presentation</span>
@@ -152,7 +152,7 @@ export default function AuthorityAdminPage() {
           <p className="text-sm">Loading presentations...</p>
         </div>
       ) : items.length === 0 ? (
-        <div className="py-16 bg-white rounded-xl border border-slate-200 text-center">
+        <div className="py-16 bg-white rounded-none border border-slate-200 text-center">
           <p className="text-slate-500 text-sm">No presentations found.</p>
         </div>
       ) : (
@@ -160,7 +160,7 @@ export default function AuthorityAdminPage() {
           {items.map((item) => (
             <div
               key={item.id}
-              className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-xs hover:border-slate-300 transition-all flex flex-col justify-between"
+              className="bg-white rounded-none border border-slate-200 overflow-hidden shadow-xs hover:border-slate-300 transition-all flex flex-col justify-between"
             >
               <div className="aspect-video bg-slate-100 overflow-hidden relative">
                 <img
@@ -181,13 +181,13 @@ export default function AuthorityAdminPage() {
                   <div className="flex items-center gap-1">
                     <button
                       onClick={() => handleOpenEdit(item)}
-                      className="p-1.5 text-slate-500 hover:text-emerald-600 hover:bg-emerald-50 rounded transition-colors"
+                      className="p-1.5 text-slate-500 hover:text-emerald-600 hover:bg-emerald-50 rounded-none transition-colors cursor-pointer"
                     >
                       <Edit className="w-4 h-4" />
                     </button>
                     <button
                       onClick={() => handleDelete(item.id)}
-                      className="p-1.5 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded transition-colors"
+                      className="p-1.5 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded-none transition-colors cursor-pointer"
                     >
                       <Trash2 className="w-4 h-4" />
                     </button>
@@ -202,14 +202,14 @@ export default function AuthorityAdminPage() {
       {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-xs flex items-center justify-center p-3 sm:p-4">
-          <div className="bg-white rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto p-5 sm:p-6 shadow-2xl space-y-5 animate-in fade-in zoom-in-95 duration-150 border border-slate-100">
+          <div className="bg-white rounded-none max-w-lg w-full max-h-[90vh] overflow-y-auto no-scrollbar p-5 sm:p-6 shadow-2xl space-y-5 animate-in fade-in zoom-in-95 duration-150 border border-slate-300">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
               <h3 className="font-bold text-lg text-slate-900">
                 {editingItem ? "Edit VIP Slide" : "Add VIP Slide"}
               </h3>
               <button
                 onClick={() => setIsModalOpen(false)}
-                className="text-slate-400 hover:text-slate-600 p-1"
+                className="text-slate-400 hover:text-slate-600 p-1 cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -226,7 +226,7 @@ export default function AuthorityAdminPage() {
                   placeholder="e.g. H.E Babatunde Raji Fashola CON, SAN"
                   value={formData.title}
                   onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                  className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                  className="w-full px-3 py-2 rounded-none border border-slate-300 text-sm focus:ring-1 focus:ring-emerald-500 focus:outline-none"
                 />
               </div>
 
@@ -240,7 +240,7 @@ export default function AuthorityAdminPage() {
                   placeholder="e.g. Babatunde Fashola"
                   value={formData.dignitary_name}
                   onChange={(e) => setFormData({ ...formData, dignitary_name: e.target.value })}
-                  className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                  className="w-full px-3 py-2 rounded-none border border-slate-300 text-sm focus:ring-1 focus:ring-emerald-500 focus:outline-none"
                 />
               </div>
 
@@ -254,7 +254,7 @@ export default function AuthorityAdminPage() {
                   placeholder="e.g. /NATIONAL_CAKE_PRESENTATION_TO_ALI_BABA.jpg"
                   value={formData.image}
                   onChange={(e) => setFormData({ ...formData, image: e.target.value })}
-                  className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                  className="w-full px-3 py-2 rounded-none border border-slate-300 text-sm focus:ring-1 focus:ring-emerald-500 focus:outline-none"
                 />
               </div>
 
@@ -266,7 +266,7 @@ export default function AuthorityAdminPage() {
                   type="number"
                   value={formData.display_order}
                   onChange={(e) => setFormData({ ...formData, display_order: Number(e.target.value) })}
-                  className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                  className="w-full px-3 py-2 rounded-none border border-slate-300 text-sm focus:ring-1 focus:ring-emerald-500 focus:outline-none"
                 />
               </div>
 
@@ -274,14 +274,14 @@ export default function AuthorityAdminPage() {
                 <button
                   type="button"
                   onClick={() => setIsModalOpen(false)}
-                  className="px-4 py-2 text-sm font-semibold text-slate-600 hover:bg-slate-100 rounded-lg transition-colors"
+                  className="px-4 py-2 text-sm font-semibold text-slate-600 hover:bg-slate-100 rounded-none transition-colors cursor-pointer"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={isSaving}
-                  className="px-5 py-2 text-sm font-semibold bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors flex items-center gap-2"
+                  className="px-5 py-2 text-sm font-semibold bg-emerald-600 hover:bg-emerald-700 text-white rounded-none transition-colors flex items-center gap-2 cursor-pointer"
                 >
                   {isSaving && <Loader2 className="w-4 h-4 animate-spin" />}
                   <span>{editingItem ? "Save Changes" : "Save Presentation"}</span>

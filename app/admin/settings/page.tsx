@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Save, Loader2, DollarSign, Building, Phone, Mail, Share2, Info, Database } from "lucide-react";
+import { Save, Loader2, DollarSign, Building, Phone, Database } from "lucide-react";
 import { toast } from "sonner";
 import { SiteSettings } from "@/lib/supabase/types";
 
@@ -90,7 +90,7 @@ export default function SettingsAdminPage() {
         <button
           type="submit"
           disabled={isSaving}
-          className="inline-flex items-center gap-2 px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-sm font-semibold shadow-xs transition-colors shrink-0"
+          className="inline-flex items-center gap-2 px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-none text-sm font-semibold shadow-xs transition-colors shrink-0 cursor-pointer"
         >
           {isSaving ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
           <span>Save Changes</span>
@@ -98,7 +98,7 @@ export default function SettingsAdminPage() {
       </div>
 
       {/* Pricing Configuration */}
-      <div className="bg-white rounded-xl border border-slate-200 p-6 space-y-4">
+      <div className="bg-white rounded-none border border-slate-200 p-6 space-y-4">
         <div className="flex items-center gap-2 pb-3 border-b border-slate-100">
           <DollarSign className="w-5 h-5 text-emerald-600" />
           <h2 className="font-bold text-slate-900">Product & Donation Pricing (₦ NGN)</h2>
@@ -113,7 +113,7 @@ export default function SettingsAdminPage() {
               type="number"
               value={settings.product_price}
               onChange={(e) => setSettings({ ...settings, product_price: Number(e.target.value) })}
-              className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+              className="w-full px-3 py-2 rounded-none border border-slate-300 text-sm focus:ring-1 focus:ring-emerald-500 focus:outline-none"
             />
             <span className="text-[11px] text-slate-400 mt-1 block">Displayed on /order</span>
           </div>
@@ -126,7 +126,7 @@ export default function SettingsAdminPage() {
               type="number"
               value={settings.donation_price}
               onChange={(e) => setSettings({ ...settings, donation_price: Number(e.target.value) })}
-              className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+              className="w-full px-3 py-2 rounded-none border border-slate-300 text-sm focus:ring-1 focus:ring-emerald-500 focus:outline-none"
             />
             <span className="text-[11px] text-slate-400 mt-1 block">Displayed on /donate-to-schools</span>
           </div>
@@ -141,7 +141,7 @@ export default function SettingsAdminPage() {
               type="url"
               value={settings.paystack_product_url}
               onChange={(e) => setSettings({ ...settings, paystack_product_url: e.target.value })}
-              className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+              className="w-full px-3 py-2 rounded-none border border-slate-300 text-sm focus:ring-1 focus:ring-emerald-500 focus:outline-none"
             />
           </div>
 
@@ -153,14 +153,14 @@ export default function SettingsAdminPage() {
               type="url"
               value={settings.paystack_donation_url}
               onChange={(e) => setSettings({ ...settings, paystack_donation_url: e.target.value })}
-              className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+              className="w-full px-3 py-2 rounded-none border border-slate-300 text-sm focus:ring-1 focus:ring-emerald-500 focus:outline-none"
             />
           </div>
         </div>
       </div>
 
       {/* Official Bank Account Information */}
-      <div className="bg-white rounded-xl border border-slate-200 p-6 space-y-4">
+      <div className="bg-white rounded-none border border-slate-200 p-6 space-y-4">
         <div className="flex items-center gap-2 pb-3 border-b border-slate-100">
           <Building className="w-5 h-5 text-emerald-600" />
           <h2 className="font-bold text-slate-900">Official Donation Bank Details</h2>
@@ -175,7 +175,7 @@ export default function SettingsAdminPage() {
               type="text"
               value={settings.bank_name}
               onChange={(e) => setSettings({ ...settings, bank_name: e.target.value })}
-              className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+              className="w-full px-3 py-2 rounded-none border border-slate-300 text-sm focus:ring-1 focus:ring-emerald-500 focus:outline-none"
             />
           </div>
 
@@ -187,7 +187,7 @@ export default function SettingsAdminPage() {
               type="text"
               value={settings.account_number}
               onChange={(e) => setSettings({ ...settings, account_number: e.target.value })}
-              className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm font-mono focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+              className="w-full px-3 py-2 rounded-none border border-slate-300 text-sm font-mono focus:ring-1 focus:ring-emerald-500 focus:outline-none"
             />
           </div>
 
@@ -199,14 +199,14 @@ export default function SettingsAdminPage() {
               type="text"
               value={settings.account_name}
               onChange={(e) => setSettings({ ...settings, account_name: e.target.value })}
-              className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+              className="w-full px-3 py-2 rounded-none border border-slate-300 text-sm focus:ring-1 focus:ring-emerald-500 focus:outline-none"
             />
           </div>
         </div>
       </div>
 
       {/* Contact & Social Links */}
-      <div className="bg-white rounded-xl border border-slate-200 p-6 space-y-4">
+      <div className="bg-white rounded-none border border-slate-200 p-6 space-y-4">
         <div className="flex items-center gap-2 pb-3 border-b border-slate-100">
           <Phone className="w-5 h-5 text-emerald-600" />
           <h2 className="font-bold text-slate-900">Contact Channels & Social Media</h2>
@@ -221,7 +221,7 @@ export default function SettingsAdminPage() {
               type="text"
               value={settings.phone_primary}
               onChange={(e) => setSettings({ ...settings, phone_primary: e.target.value })}
-              className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+              className="w-full px-3 py-2 rounded-none border border-slate-300 text-sm focus:ring-1 focus:ring-emerald-500 focus:outline-none"
             />
           </div>
 
@@ -233,7 +233,7 @@ export default function SettingsAdminPage() {
               type="text"
               value={settings.phone_secondary}
               onChange={(e) => setSettings({ ...settings, phone_secondary: e.target.value })}
-              className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+              className="w-full px-3 py-2 rounded-none border border-slate-300 text-sm focus:ring-1 focus:ring-emerald-500 focus:outline-none"
             />
           </div>
 
@@ -245,7 +245,7 @@ export default function SettingsAdminPage() {
               type="email"
               value={settings.contact_email}
               onChange={(e) => setSettings({ ...settings, contact_email: e.target.value })}
-              className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+              className="w-full px-3 py-2 rounded-none border border-slate-300 text-sm focus:ring-1 focus:ring-emerald-500 focus:outline-none"
             />
           </div>
 
@@ -257,7 +257,7 @@ export default function SettingsAdminPage() {
               type="email"
               value={settings.donation_email}
               onChange={(e) => setSettings({ ...settings, donation_email: e.target.value })}
-              className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+              className="w-full px-3 py-2 rounded-none border border-slate-300 text-sm focus:ring-1 focus:ring-emerald-500 focus:outline-none"
             />
           </div>
         </div>
@@ -269,7 +269,7 @@ export default function SettingsAdminPage() {
               type="url"
               value={settings.twitter_url}
               onChange={(e) => setSettings({ ...settings, twitter_url: e.target.value })}
-              className="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+              className="w-full px-3 py-1.5 rounded-none border border-slate-300 text-xs focus:ring-1 focus:ring-emerald-500 focus:outline-none"
             />
           </div>
 
@@ -279,7 +279,7 @@ export default function SettingsAdminPage() {
               type="url"
               value={settings.facebook_url}
               onChange={(e) => setSettings({ ...settings, facebook_url: e.target.value })}
-              className="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+              className="w-full px-3 py-1.5 rounded-none border border-slate-300 text-xs focus:ring-1 focus:ring-emerald-500 focus:outline-none"
             />
           </div>
 
@@ -289,7 +289,7 @@ export default function SettingsAdminPage() {
               type="url"
               value={settings.instagram_url}
               onChange={(e) => setSettings({ ...settings, instagram_url: e.target.value })}
-              className="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+              className="w-full px-3 py-1.5 rounded-none border border-slate-300 text-xs focus:ring-1 focus:ring-emerald-500 focus:outline-none"
             />
           </div>
 
@@ -299,14 +299,14 @@ export default function SettingsAdminPage() {
               type="url"
               value={settings.linkedin_url}
               onChange={(e) => setSettings({ ...settings, linkedin_url: e.target.value })}
-              className="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+              className="w-full px-3 py-1.5 rounded-none border border-slate-300 text-xs focus:ring-1 focus:ring-emerald-500 focus:outline-none"
             />
           </div>
         </div>
       </div>
 
       {/* Supabase Connection Setup Box */}
-      <div className="bg-slate-900 text-white rounded-xl p-6 space-y-3">
+      <div className="bg-slate-900 text-white rounded-none border border-slate-800 p-6 space-y-3">
         <div className="flex items-center gap-2">
           <Database className="w-5 h-5 text-emerald-400" />
           <h3 className="font-bold text-base text-white">How to connect Supabase</h3>

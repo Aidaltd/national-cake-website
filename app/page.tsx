@@ -48,7 +48,6 @@ export default async function Home() {
       <Hero />
       <AuthorityImages />
       <Mentions />
-      {/* <LogoTicker />   */}
       <AboutGame />
       <PlayBook />
       <ImageCarousel />

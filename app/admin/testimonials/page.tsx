@@ -147,7 +147,7 @@ export default function TestimonialsAdminPage() {
         </div>
         <button
           onClick={handleOpenAdd}
-          className="inline-flex items-center gap-2 px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-sm font-semibold shadow-xs transition-colors shrink-0"
+          className="inline-flex items-center gap-2 px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-none text-sm font-semibold shadow-xs transition-colors shrink-0 cursor-pointer"
         >
           <Plus className="w-4 h-4" />
           <span>Add Testimonial</span>
@@ -161,7 +161,7 @@ export default function TestimonialsAdminPage() {
           <p className="text-sm">Loading testimonials...</p>
         </div>
       ) : items.length === 0 ? (
-        <div className="py-16 bg-white rounded-xl border border-slate-200 text-center">
+        <div className="py-16 bg-white rounded-none border border-slate-200 text-center">
           <p className="text-slate-500 text-sm">No testimonials added yet.</p>
         </div>
       ) : (
@@ -169,12 +169,12 @@ export default function TestimonialsAdminPage() {
           {items.map((item) => (
             <div
               key={item.id}
-              className="bg-white rounded-xl border border-slate-200 p-6 shadow-xs flex flex-col justify-between hover:border-slate-300 transition-all"
+              className="bg-white rounded-none border border-slate-200 p-6 shadow-xs flex flex-col justify-between hover:border-slate-300 transition-all"
             >
               <div>
                 <div className="flex items-center justify-between gap-3 mb-4">
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-full overflow-hidden bg-slate-100 shrink-0 border border-slate-200">
+                    <div className="w-12 h-12 rounded-none overflow-hidden bg-slate-100 shrink-0 border border-slate-200">
                       {item.image ? (
                         <img
                           src={resolveImageUrl(item.image, { width: 100 })}
@@ -200,7 +200,7 @@ export default function TestimonialsAdminPage() {
                   </div>
                 </div>
 
-                <blockquote className="text-xs text-slate-700 italic leading-relaxed line-clamp-4 bg-slate-50 p-3 rounded-lg border border-slate-100 mb-4">
+                <blockquote className="text-xs text-slate-700 italic leading-relaxed line-clamp-4 bg-slate-50 p-3 rounded-none border border-slate-200 mb-4">
                   &ldquo;{item.quote}&rdquo;
                 </blockquote>
               </div>
@@ -210,13 +210,13 @@ export default function TestimonialsAdminPage() {
                 <div className="flex items-center gap-1">
                   <button
                     onClick={() => handleOpenEdit(item)}
-                    className="p-1.5 text-slate-500 hover:text-emerald-600 hover:bg-emerald-50 rounded transition-colors"
+                    className="p-1.5 text-slate-500 hover:text-emerald-600 hover:bg-emerald-50 rounded-none transition-colors cursor-pointer"
                   >
                     <Edit className="w-4 h-4" />
                   </button>
                   <button
                     onClick={() => handleDelete(item.id)}
-                    className="p-1.5 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded transition-colors"
+                    className="p-1.5 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded-none transition-colors cursor-pointer"
                   >
                     <Trash2 className="w-4 h-4" />
                   </button>
@@ -230,14 +230,14 @@ export default function TestimonialsAdminPage() {
       {/* Add / Edit Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-xs flex items-center justify-center p-3 sm:p-4">
-          <div className="bg-white rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto p-5 sm:p-6 shadow-2xl space-y-5 animate-in fade-in zoom-in-95 duration-150 border border-slate-100">
+          <div className="bg-white rounded-none max-w-lg w-full max-h-[90vh] overflow-y-auto no-scrollbar p-5 sm:p-6 shadow-2xl space-y-5 animate-in fade-in zoom-in-95 duration-150 border border-slate-300">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
               <h3 className="font-bold text-lg text-slate-900">
                 {editingItem ? "Edit Testimonial" : "Add Testimonial"}
               </h3>
               <button
                 onClick={() => setIsModalOpen(false)}
-                className="text-slate-400 hover:text-slate-600 p-1"
+                className="text-slate-400 hover:text-slate-600 p-1 cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -255,7 +255,7 @@ export default function TestimonialsAdminPage() {
                     placeholder="e.g. Dr. Hyeladi Haruna"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                    className="w-full px-3 py-2 rounded-none border border-slate-300 text-sm focus:ring-1 focus:ring-emerald-500 focus:outline-none"
                   />
                 </div>
 
@@ -269,7 +269,7 @@ export default function TestimonialsAdminPage() {
                     placeholder="e.g. Founder: Heladi Holdings"
                     value={formData.role}
                     onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-                    className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                    className="w-full px-3 py-2 rounded-none border border-slate-300 text-sm focus:ring-1 focus:ring-emerald-500 focus:outline-none"
                   />
                 </div>
               </div>
@@ -283,7 +283,7 @@ export default function TestimonialsAdminPage() {
                   placeholder="e.g. /DR-HYELADI-HARUNA.jpg"
                   value={formData.image}
                   onChange={(e) => setFormData({ ...formData, image: e.target.value })}
-                  className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                  className="w-full px-3 py-2 rounded-none border border-slate-300 text-sm focus:ring-1 focus:ring-emerald-500 focus:outline-none"
                 />
               </div>
 
@@ -298,7 +298,7 @@ export default function TestimonialsAdminPage() {
                     max={5}
                     value={formData.rating}
                     onChange={(e) => setFormData({ ...formData, rating: Number(e.target.value) })}
-                    className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                    className="w-full px-3 py-2 rounded-none border border-slate-300 text-sm focus:ring-1 focus:ring-emerald-500 focus:outline-none"
                   />
                 </div>
 
@@ -310,7 +310,7 @@ export default function TestimonialsAdminPage() {
                     type="number"
                     value={formData.display_order}
                     onChange={(e) => setFormData({ ...formData, display_order: Number(e.target.value) })}
-                    className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                    className="w-full px-3 py-2 rounded-none border border-slate-300 text-sm focus:ring-1 focus:ring-emerald-500 focus:outline-none"
                   />
                 </div>
               </div>
@@ -324,7 +324,7 @@ export default function TestimonialsAdminPage() {
                   rows={4}
                   value={formData.quote}
                   onChange={(e) => setFormData({ ...formData, quote: e.target.value })}
-                  className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                  className="w-full px-3 py-2 rounded-none border border-slate-300 text-sm focus:ring-1 focus:ring-emerald-500 focus:outline-none"
                 />
               </div>
 
@@ -332,14 +332,14 @@ export default function TestimonialsAdminPage() {
                 <button
                   type="button"
                   onClick={() => setIsModalOpen(false)}
-                  className="px-4 py-2 text-sm font-semibold text-slate-600 hover:bg-slate-100 rounded-lg transition-colors"
+                  className="px-4 py-2 text-sm font-semibold text-slate-600 hover:bg-slate-100 rounded-none transition-colors cursor-pointer"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={isSaving}
-                  className="px-5 py-2 text-sm font-semibold bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors flex items-center gap-2"
+                  className="px-5 py-2 text-sm font-semibold bg-emerald-600 hover:bg-emerald-700 text-white rounded-none transition-colors flex items-center gap-2 cursor-pointer"
                 >
                   {isSaving && <Loader2 className="w-4 h-4 animate-spin" />}
                   <span>{editingItem ? "Save Changes" : "Save Testimonial"}</span>

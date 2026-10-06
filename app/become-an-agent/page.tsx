@@ -6,7 +6,6 @@ export default function BecomeAnAgent() {
     return (    
     <>
     <AgentHero />
-    {/* <LogoTicker /> */}
     <Context />
     <AgentFaq />
     </>

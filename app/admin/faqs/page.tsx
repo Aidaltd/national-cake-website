@@ -144,7 +144,7 @@ export default function FaqsAdminPage() {
 
   return (
     <div className="space-y-6 max-w-5xl mx-auto">
-      {/* Header */}
+      {/* Page Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold text-slate-900 tracking-tight">FAQ Management</h1>
@@ -154,7 +154,7 @@ export default function FaqsAdminPage() {
         </div>
         <button
           onClick={handleOpenAdd}
-          className="inline-flex items-center gap-2 px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-sm font-semibold shadow-xs transition-colors shrink-0"
+          className="inline-flex items-center gap-2 px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-none text-sm font-semibold shadow-xs transition-colors shrink-0 cursor-pointer"
         >
           <Plus className="w-4 h-4" />
           <span>Add New FAQ</span>
@@ -162,12 +162,12 @@ export default function FaqsAdminPage() {
       </div>
 
       {/* Category Tabs */}
-      <div className="flex items-center gap-2 bg-slate-200/70 p-1.5 rounded-xl w-fit">
+      <div className="flex items-center gap-2 bg-slate-200/70 p-1.5 rounded-none w-fit border border-slate-300">
         <button
           onClick={() => setActiveCategory("general")}
-          className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all ${
+          className={`px-4 py-2 rounded-none text-sm font-semibold transition-all cursor-pointer ${
             activeCategory === "general"
-              ? "bg-white text-slate-900 shadow-xs"
+              ? "bg-white text-slate-900 border border-slate-300 shadow-xs"
               : "text-slate-600 hover:text-slate-900"
           }`}
         >
@@ -175,9 +175,9 @@ export default function FaqsAdminPage() {
         </button>
         <button
           onClick={() => setActiveCategory("agent")}
-          className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all ${
+          className={`px-4 py-2 rounded-none text-sm font-semibold transition-all cursor-pointer ${
             activeCategory === "agent"
-              ? "bg-white text-slate-900 shadow-xs"
+              ? "bg-white text-slate-900 border border-slate-300 shadow-xs"
               : "text-slate-600 hover:text-slate-900"
           }`}
         >
@@ -185,9 +185,9 @@ export default function FaqsAdminPage() {
         </button>
         <button
           onClick={() => setActiveCategory("order")}
-          className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all ${
+          className={`px-4 py-2 rounded-none text-sm font-semibold transition-all cursor-pointer ${
             activeCategory === "order"
-              ? "bg-white text-slate-900 shadow-xs"
+              ? "bg-white text-slate-900 border border-slate-300 shadow-xs"
               : "text-slate-600 hover:text-slate-900"
           }`}
         >
@@ -202,7 +202,7 @@ export default function FaqsAdminPage() {
           <p className="text-sm">Loading FAQs...</p>
         </div>
       ) : faqs.length === 0 ? (
-        <div className="py-16 bg-white rounded-xl border border-slate-200 text-center">
+        <div className="py-16 bg-white rounded-none border border-slate-200 text-center">
           <p className="text-slate-500 text-sm">No FAQs found in this section.</p>
         </div>
       ) : (
@@ -212,14 +212,14 @@ export default function FaqsAdminPage() {
             return (
               <div
                 key={faq.id}
-                className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-xs hover:border-slate-300 transition-all"
+                className="bg-white rounded-none border border-slate-200 overflow-hidden shadow-xs hover:border-slate-300 transition-all"
               >
                 <div
                   className="p-5 flex items-start justify-between gap-4 cursor-pointer"
                   onClick={() => setExpandedId(isExpanded ? null : faq.id)}
                 >
                   <div className="flex items-start gap-3">
-                    <span className="w-6 h-6 rounded-full bg-emerald-50 text-emerald-700 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">
+                    <span className="w-6 h-6 rounded-none bg-emerald-50 text-emerald-700 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
                       {index + 1}
                     </span>
                     <div>
@@ -237,21 +237,21 @@ export default function FaqsAdminPage() {
                   <div className="flex items-center gap-2 shrink-0" onClick={(e) => e.stopPropagation()}>
                     <button
                       onClick={() => handleOpenEdit(faq)}
-                      className="p-1.5 text-slate-500 hover:text-emerald-600 hover:bg-emerald-50 rounded transition-colors"
+                      className="p-1.5 text-slate-500 hover:text-emerald-600 hover:bg-emerald-50 rounded-none transition-colors cursor-pointer"
                       title="Edit FAQ"
                     >
                       <Edit className="w-4 h-4" />
                     </button>
                     <button
                       onClick={() => handleDelete(faq.id)}
-                      className="p-1.5 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded transition-colors"
+                      className="p-1.5 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded-none transition-colors cursor-pointer"
                       title="Delete FAQ"
                     >
                       <Trash2 className="w-4 h-4" />
                     </button>
                     <button
                       onClick={() => setExpandedId(isExpanded ? null : faq.id)}
-                      className="p-1.5 text-slate-400 hover:text-slate-700"
+                      className="p-1.5 text-slate-400 hover:text-slate-700 cursor-pointer"
                     >
                       {isExpanded ? (
                         <ChevronUp className="w-4 h-4" />
@@ -283,14 +283,14 @@ export default function FaqsAdminPage() {
       {/* Add / Edit Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-xs flex items-center justify-center p-3 sm:p-4">
-          <div className="bg-white rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto p-5 sm:p-6 shadow-2xl space-y-5 animate-in fade-in zoom-in-95 duration-150 border border-slate-100">
+          <div className="bg-white rounded-none max-w-lg w-full max-h-[90vh] overflow-y-auto no-scrollbar p-5 sm:p-6 shadow-2xl space-y-5 animate-in fade-in zoom-in-95 duration-150 border border-slate-300">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
               <h3 className="font-bold text-lg text-slate-900">
                 {editingFaq ? "Edit FAQ" : "Add New FAQ"} ({activeCategory.toUpperCase()})
               </h3>
               <button
                 onClick={() => setIsModalOpen(false)}
-                className="text-slate-400 hover:text-slate-600 p-1"
+                className="text-slate-400 hover:text-slate-600 p-1 cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -307,7 +307,7 @@ export default function FaqsAdminPage() {
                   placeholder="e.g. Why is it called 'National Cake'?"
                   value={formData.question}
                   onChange={(e) => setFormData({ ...formData, question: e.target.value })}
-                  className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                  className="w-full px-3 py-2 rounded-none border border-slate-300 text-sm focus:ring-1 focus:ring-emerald-500 focus:outline-none"
                 />
               </div>
 
@@ -321,7 +321,7 @@ export default function FaqsAdminPage() {
                   placeholder="Provide the explanation or answer text..."
                   value={formData.answer}
                   onChange={(e) => setFormData({ ...formData, answer: e.target.value })}
-                  className="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                  className="w-full px-3 py-2 rounded-none border border-slate-300 text-sm focus:ring-1 focus:ring-emerald-500 focus:outline-none"
                 />
               </div>
 
@@ -336,7 +336,7 @@ export default function FaqsAdminPage() {
                   onChange={(e) =>
                     setFormData({ ...formData, listItemsString: e.target.value })
                   }
-                  className="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs font-mono focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                  className="w-full px-3 py-2 rounded-none border border-slate-300 text-xs font-mono focus:ring-1 focus:ring-emerald-500 focus:outline-none"
                 />
               </div>
 
@@ -344,14 +344,14 @@ export default function FaqsAdminPage() {
                 <button
                   type="button"
                   onClick={() => setIsModalOpen(false)}
-                  className="px-4 py-2 text-sm font-semibold text-slate-600 hover:bg-slate-100 rounded-lg transition-colors"
+                  className="px-4 py-2 text-sm font-semibold text-slate-600 hover:bg-slate-100 rounded-none transition-colors cursor-pointer"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={isSaving}
-                  className="px-5 py-2 text-sm font-semibold bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors flex items-center gap-2"
+                  className="px-5 py-2 text-sm font-semibold bg-emerald-600 hover:bg-emerald-700 text-white rounded-none transition-colors flex items-center gap-2 cursor-pointer"
                 >
                   {isSaving && <Loader2 className="w-4 h-4 animate-spin" />}
                   <span>{editingFaq ? "Save Changes" : "Save FAQ"}</span>
