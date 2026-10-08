@@ -248,18 +248,6 @@ export default function AuthorityAdminPage() {
         </div>
       )}
 
-      {/* Media Picker Modal */}
-      <MediaPickerModal
-        isOpen={isMediaPickerOpen}
-        onClose={() => setIsMediaPickerOpen(false)}
-        currentImage={formData.image}
-        title="Select Image for VIP Presentation"
-        onSelect={(url) => {
-          setFormData((prev) => ({ ...prev, image: url }));
-          toast.success("Image selected from gallery!");
-        }}
-      />
-
       {/* Main Add/Edit Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-xs flex items-center justify-center p-3 sm:p-4">
@@ -438,6 +426,18 @@ export default function AuthorityAdminPage() {
           </div>
         </div>
       )}
+
+      {/* Media Picker Modal (rendered with high z-index over main modal) */}
+      <MediaPickerModal
+        isOpen={isMediaPickerOpen}
+        onClose={() => setIsMediaPickerOpen(false)}
+        currentImage={formData.image}
+        title="Select Image for VIP Presentation"
+        onSelect={(url) => {
+          setFormData((prev) => ({ ...prev, image: url }));
+          toast.success("Image selected from gallery!");
+        }}
+      />
     </div>
   );
 }
