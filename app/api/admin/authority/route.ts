@@ -4,14 +4,35 @@ import { fetchAuthorityPresentations } from "@/lib/supabase/data-service";
 import { revalidatePath } from "next/cache";
 
 export async function GET() {
-  const items = await fetchAuthorityPresentations();
-  return NextResponse.json({ success: true, data: items });
+  if (!isSupabaseConfigured()) {
+    const items = await fetchAuthorityPresentations();
+    return NextResponse.json({ success: true, data: items });
+  }
+
+  try {
+    const supabase = await createServerSupabaseClient();
+    const { data, error } = await supabase
+      .from("authority_presentations")
+      .select("*")
+      .order("display_order", { ascending: true })
+      .order("created_at", { ascending: false });
+
+    if (error) {
+      const items = await fetchAuthorityPresentations();
+      return NextResponse.json({ success: true, data: items });
+    }
+
+    return NextResponse.json({ success: true, data: data || [] });
+  } catch {
+    const items = await fetchAuthorityPresentations();
+    return NextResponse.json({ success: true, data: items });
+  }
 }
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { title, dignitary_name, image, display_order } = body;
+    const { title, dignitary_name, image, display_order, is_active } = body;
 
     if (!title || !image) {
       return NextResponse.json({ success: false, error: "Title and image are required" }, { status: 400 });
@@ -26,8 +47,8 @@ export async function POST(req: NextRequest) {
           title,
           dignitary_name: dignitary_name || title,
           image,
-          display_order: display_order || 1,
-          is_active: true,
+          display_order: display_order !== undefined ? Number(display_order) : 1,
+          is_active: is_active !== undefined ? Boolean(is_active) : true,
         },
       });
     }
@@ -40,8 +61,8 @@ export async function POST(req: NextRequest) {
           title,
           dignitary_name: dignitary_name || title,
           image,
-          display_order: display_order || 0,
-          is_active: true,
+          display_order: display_order !== undefined ? Number(display_order) : 0,
+          is_active: is_active !== undefined ? Boolean(is_active) : true,
         },
       ])
       .select()
@@ -52,6 +73,7 @@ export async function POST(req: NextRequest) {
     }
 
     revalidatePath("/");
+    revalidatePath("/admin/authority");
     return NextResponse.json({ success: true, data });
   } catch (err: unknown) {
     const message = err instanceof Error ? err.message : "Internal error";
@@ -89,6 +111,7 @@ export async function PUT(req: NextRequest) {
     }
 
     revalidatePath("/");
+    revalidatePath("/admin/authority");
     return NextResponse.json({ success: true, data });
   } catch (err: unknown) {
     const message = err instanceof Error ? err.message : "Internal error";
@@ -120,6 +143,7 @@ export async function DELETE(req: NextRequest) {
     }
 
     revalidatePath("/");
+    revalidatePath("/admin/authority");
     return NextResponse.json({ success: true, message: "Deleted successfully" });
   } catch (err: unknown) {
     const message = err instanceof Error ? err.message : "Internal error";

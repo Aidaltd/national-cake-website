@@ -376,7 +376,7 @@ export async function fetchTestimonials(): Promise<TestimonialItem[]> {
 
 export async function fetchAuthorityPresentations(): Promise<AuthorityPresentationItem[]> {
   if (!isSupabaseConfigured()) {
-    return [...fallbackAuthority].reverse();
+    return [...fallbackAuthority];
   }
 
   try {
@@ -385,15 +385,16 @@ export async function fetchAuthorityPresentations(): Promise<AuthorityPresentati
       .from("authority_presentations")
       .select("*")
       .eq("is_active", true)
+      .order("display_order", { ascending: true })
       .order("created_at", { ascending: false });
 
     if (error || !data || data.length === 0) {
-      return [...fallbackAuthority].reverse();
+      return [...fallbackAuthority];
     }
 
     return data as AuthorityPresentationItem[];
   } catch {
-    return [...fallbackAuthority].reverse();
+    return [...fallbackAuthority];
   }
 }
 

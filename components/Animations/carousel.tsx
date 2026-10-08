@@ -102,7 +102,18 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
             decoding="sync"
           />
           {current === index && (
-            <div className="absolute inset-0 bg-black/30 transition-all duration-1000" />
+            <div className="absolute inset-0 bg-black/25 transition-all duration-1000" />
+          )}
+          {title && (
+            <div
+              className={`absolute inset-x-0 bottom-0 p-3 sm:p-4 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none transition-all duration-300 ${
+                current === index ? "opacity-100" : "opacity-0 sm:opacity-60"
+              }`}
+            >
+              <p className="text-xs sm:text-sm font-bold text-white text-center drop-shadow-md line-clamp-2">
+                {title}
+              </p>
+            </div>
           )}
         </div>
       </li>

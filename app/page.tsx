@@ -13,7 +13,7 @@ import DreamMagazine from "@/pages/Activities/DreamMagazine";
 import NationalOven from "@/pages/Activities/NationalOven";
 import PlayBook from "@/pages/Home/PlayBook";
 import { cloudinaryUrl } from "@/lib/cloudinary";
-import { fetchFaqs } from "@/lib/supabase/data-service";
+import { fetchFaqs, fetchAuthorityPresentations } from "@/lib/supabase/data-service";
 
 
 export const metadata = {
@@ -41,12 +41,15 @@ export const metadata = {
 export const revalidate = 60;
 
 export default async function Home() {
-  const faqs = await fetchFaqs("general");
+  const [faqs, authorityItems] = await Promise.all([
+    fetchFaqs("general"),
+    fetchAuthorityPresentations(),
+  ]);
 
   return (
     <>
       <Hero />
-      <AuthorityImages />
+      <AuthorityImages items={authorityItems} />
       <Mentions />
       <AboutGame />
       <PlayBook />
